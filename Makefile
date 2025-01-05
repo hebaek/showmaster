@@ -1,4 +1,4 @@
-all: data/compiled/manus-mics.pdf
+all: data/compiled/compiled.json data/compiled/manus-expanded.pdf data/compiled/manus-mics.pdf
 	echo all
 
 
@@ -15,6 +15,12 @@ data/compiled/manus-expanded.pdf: scripts/* data/sources/*
 
 data/compiled/manus-mics.pdf: data/compiled/manus-expanded.pdf data/compiled/compiled.json
 	python3 scripts/annotate.py
+
+
+
+deploy:
+	rm -rf www-deploy/*
+	cp -r www-test/* www-deploy/
 
 
 
