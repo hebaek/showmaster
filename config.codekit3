@@ -116,9 +116,9 @@
     "\/graphics\/logo.png" : {
       "ft" : 32768,
       "iS" : 116493,
-      "oA" : 1,
-      "oAP" : "\/www-test\/graphics\/logo.png",
-      "oF" : 1,
+      "oA" : 2,
+      "oAP" : "\/www-test\/img\/logo.png",
+      "oF" : 3,
       "oIPL" : 0,
       "opt" : 1,
       "oT" : 1,
