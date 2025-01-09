@@ -1,185 +1,625 @@
-import fitz  # PyMuPDF
+import argparse
 import json
 import copy
+import pathlib
 
-from datetime import datetime
-from collections import defaultdict
-
-import pprint
-
+from ordered_set import OrderedSet
+from pprint import pprint
 
 
-def load_json(file_path):
+
+
+
+
+def load_data(file_path, show=None):
+    result = {}
     with open(file_path, 'r', encoding='utf-8') as f:
-        return json.load(f)
+        result = json.load(f)
+
+    if show:
+        show = result.get(show, {})
+        result = result.get('static', {})
+
+        for key in show:
+            result[key] = show[key]
+
+    return result
 
 
 
-def calculate_pagemap(lastpage, acts, scenes, lines, music, data_manus):
-    pagemap = []
+def save_json(path, filename, data):
+    fullpath = pathlib.Path(path)
+    fullname = fullpath / filename
 
-    for page in range(1, lastpage + 1):
-        name = str(page)
-        pagemap.append({ 'target': page, 'source': name })
+    fullpath.mkdir(parents=True, exist_ok=True)
 
-    pages = data_manus.get("extra_pages")
-    offset = 0
-    for p in pages:
-        pagemap.insert(p['after'] + offset, { 'source': p['name'], 'target': p['after'] + offset })
-        for p in pagemap[p['after'] + offset:]:
-            p['target'] += 1
-
-        offset += 1
-
-
-    for p in pagemap:
-        for named in data_manus.get("named_pages"):
-            if named['page'] == p['source']:
-                p['name'] = named['name']
-
-
-    return pagemap
+    with open(fullname, "w") as outfile:
+        json.dump(data, outfile, ensure_ascii=False)
+        print(f'JSON data saved to: {fullname}')
 
 
 
-def calculate_ensemblemap(ecdl):
+def get_target_page(source):
+    for page in pages:
+        if page['source'] == str(source):
+            return page['target']
+
+    return None
+
+
+
+def test_removed_location(page, y):
+    removed_parts = manus.get('remove_parts', [])
+
+    if not str(page).isnumeric(): return True
+    if get_target_page(page) == None: return True
+
+    location = get_location(page, y)
+
+    for row in removed_parts:
+        start_location = get_location(row['start']['page']['source'], row['start']['y'])
+        end_location   = get_location(row['end'  ]['page']['source'], row['end'  ]['y'])
+
+        if not start_location['target'] or not end_location['target']:
+            return True
+
+        if location['target'] >= start_location['target'] and location['target'] <= end_location['target']:
+            return True
+
+    return False
+
+
+
+def get_location(source, y):
+    if y == 1.000: y = 0.9999
+
+    target = get_target_page(source)
+    if target: target = round(int(target) + y, 4)
+
+    if str(source).isnumeric(): source = round(int(source) + y, 4)
+    else: source = None
+
+    return {
+        'source': source,
+        'target': target,
+    }
+
+
+
+def get_current(location, data):
     result = {}
 
-    for key in list(ecdl.keys()):
-        result[key] = [{ 'page': '1', 'y': 0.0, 'roles': [], 'extras': [] }]
+    for row in data:
+        if not location['target'] or not row['location']['target']: continue
 
-        for ecd in ecdl[key]:
-            popped = False
-
-            if str(ecd['page']) == str(result[key][-1]['page']) and ecd['y'] == result[key][-1]['y']:
-                newline = result[key].pop()
-                popped = True
-            else:
-                newline = copy.deepcopy(result[key][-1])
-                newline['page'  ] = ecd['page']
-                newline['y'     ] = ecd['y']
-
-            if popped or set(ecd.get('roles', [])) != set(newline['roles']) or set(ecd.get('extras', [])) != set(newline['extras']):
-                result[key].append(ecd)
-
-    for ensemble in result:
-        print(ensemble)
-
-        for line in result[ensemble]:
-            print(line)
+        if row['location']['target'] <= location['target']:
+            result = row
 
     return result
 
 
 
-def calculate_micmap(mcdl):
+
+
+
+def generate_pagemap(manus):
     result = []
 
-    allmics = sorted(set([mic['mic'] for mic in mcdl]))
+    last_page    = manus.get('last_page', 1)
+    extra_pages  = manus.get('extra_pages', [])
+    named_pages  = manus.get('named_pages', [])
+    remove_pages = manus.get('remove_pages', [])
 
-    result.append({ 'page': '1', 'y': 0.0, 'mics': { m: { 'role': None, 'actor': None} for m in allmics } })
 
-    for mcd in mcdl:
-        if str(mcd['page']) == str(result[-1]['page']) and mcd['y'] == result[-1]['y']:
-            newline = result.pop()
-        else:
-            newline = copy.deepcopy(result[-1])
-            newline['page'] = mcd['page']
-            newline['y'   ] = mcd['y']
+    # Create a simple one to one map for all pages from 1 to last_page
+    for page in range(1, int(last_page) + 1):
+        result.append({ 'target': page, 'source': str(page) })
 
-        newline['mics'][mcd['mic']]['role' ] = mcd['role' ]
-        newline['mics'][mcd['mic']]['actor'] = mcd['actor']
 
-        result.append(newline)
+    # Remove pages
+    # For each page after the removal, decrease the target page number
+    for page_range in remove_pages:
+        for remove_page in range(int(page_range['start']['page']), int(page_range['end']['page']) + 1):
+            for page in result:
+                if page['source'] == str(remove_page):
+                    index = result.index(page)
+                    result.remove(page)
+
+                    for laterpage in range(index, len(result)):
+                        result[laterpage]['target'] -= 1
+
+
+    # Add extra pages
+    # For each page after the addition, increase the target page number
+    offset = 0
+    for page in extra_pages:
+        after_page = int(page['after']) + offset
+        offset += 1
+
+        result.insert(after_page, { 'source': page['name'], 'target': after_page })
+        for laterpage in result[after_page:]:
+            laterpage['target'] += 1
+
+
+    # Name all pages in named_pages
+    for page in result:
+       for named in named_pages:
+            if named['page'] == page['source']:
+                page['name'] = named['name']
+
 
     return result
 
 
 
-def compile(data_manus, data_music, ecdl, mcdl):
-    lastpage = data_manus.get('lastpage')
-    acts     = data_manus.get('acts')
-    scenes   = data_manus.get('scenes')
-    lines    = data_manus.get('lines')
-    music    = data_music.get('music')
-
-    pagemap     = calculate_pagemap(lastpage, acts, scenes, lines, music, data_manus)
-    ensemblemap = calculate_ensemblemap(ecdl)
-    micmap      = calculate_micmap(mcdl)
-
-    def get_target_page(source):
-        hits = (p for p in pagemap if p.get('source') == str(source))
-        return next(hits)['target']
 
 
 
+def generate_pagetext(manus):
+    result = []
+
+    for text in manus.get('page_text'):
+        text['location'] = get_location(text['page'], text['y'])
+        text['page'] = { 'source': text['page'], 'target': get_target_page(text['page']) }
+        text['lines'] = text.get('lines', [])
+
+        result.append(text)
+
+    return result
+
+
+
+
+
+
+def generate_extra_pages(manus):
+    result = []
+
+    for page in manus.get('extra_pages'):
+        result.append(page)
+
+    return result
+
+
+
+
+
+
+def generate_remove_pages(manus):
+    result = OrderedSet()
+
+    for page_range in manus.get('remove_pages'):
+        start = int(page_range['start']['page'])
+        end   = int(page_range['end'  ]['page'])
+
+        for page in range(start, end + 1):
+            result.append(page)
+
+    return reversed(list(result))
+
+
+
+
+
+
+def generate_remove_parts(manus):
+    result = []
+
+    for part in manus.get('remove_parts'):
+        part['start']['location'] = get_location(part['start']['page'], part['start']['y'])
+        part['end'  ]['location'] = get_location(part['end'  ]['page'], part['end'  ]['y'])
+
+        part['start']['page'] = { 'source': part['start']['page'], 'target': get_target_page(part['start']['page']) }
+        part['end'  ]['page'] = { 'source': part['end'  ]['page'], 'target': get_target_page(part['end'  ]['page']) }
+
+        result.append(part)
+
+    return result
+
+
+
+
+
+
+def generate_extra_lines(manus):
+    result = []
+
+    for line in manus.get('extra_lines'):
+        line = copy.deepcopy(line)
+        line['location'] = get_location(line['page'], line['y'])
+        line['page'] = { 'source': line['page'], 'target': get_target_page(line['page']) }
+
+        result.append(line)
+
+    return result
+
+
+
+
+
+
+def generate_actmap(manus):
+    result = []
+
+    for act in manus.get('acts'):
+        act['start']['location'] = get_location(act['start']['page'], act['start']['y'])
+        act['end'  ]['location'] = get_location(act['end'  ]['page'], act['end'  ]['y'])
+
+        act['start']['page'] = { 'source': act['start']['page'], 'target': get_target_page(act['start']['page']) }
+        act['end'  ]['page'] = { 'source': act['end'  ]['page'], 'target': get_target_page(act['end'  ]['page']) }
+
+        result.append(act)
+
+    return result
+
+
+
+
+
+def generate_musicmap(music):
+    result = []
+
+    for music in music:
+        music['start']['location'] = get_location(music['start']['page'], music['start']['y'])
+        music['end'  ]['location'] = get_location(music['end'  ]['page'], music['end'  ]['y'])
+
+        music['start']['page'] = { 'source': music['start']['page'], 'target': get_target_page(music['start']['page']) }
+        music['end'  ]['page'] = { 'source': music['end'  ]['page'], 'target': get_target_page(music['end'  ]['page']) }
+
+        result.append(music)
+
+    return result
+
+
+
+
+
+
+def generate_cdl_map(cdl):
+    result = {}
+
+    for role in cdl:
+        result[role] = []
+
+        for location in cdl[role]:
+            location['location'] = get_location(location['page'], location['y'])
+            location['page'] = { 'source': location['page'], 'target': get_target_page(location['page']) }
+
+            result[role].append(location)
+
+
+    return result
+
+
+
+
+
+
+def generate_lines(manus):
+    result = []
+
+    all_lines = manus.get('lines', []) + manus.get('extra_lines', [])
+
+    for line in all_lines:
+        line['location'] = get_location(line['page'], line['y'])
+        line['page'] = { 'source': line['page'], 'target': get_target_page(line['page']) }
+
+        if test_removed_location(line['page']['source'], line['y']):
+#            print('REMOVING LINE at', line['location']['source'])
+            continue
+
+        if 'ensembles' in line:
+            line['ensemble'] = OrderedSet()
+
+            for ensemble in line['ensembles']:
+                current = get_current(line['location'], ensembles[ensemble])
+
+                if 'roles' in current:
+                    line['ensemble'].update(current['roles'])
+
+            line['ensemble'] = list(line['ensemble'])
+
+        result.append(line)
+
+
+    return result
+
+
+
+
+
+
+def generate_scenes(manus, lines):
+    result = []
+
+    for scene in manus.get('scenes', []):
+        scene['start']['location'] = get_location(scene['start']['page'], scene['start']['y'])
+        scene['end'  ]['location'] = get_location(scene['end'  ]['page'], scene['end'  ]['y'])
+
+        scene['start']['page'] = { 'source': scene['start']['page'], 'target': get_target_page(scene['start']['page']) }
+        scene['end'  ]['page'] = { 'source': scene['end'  ]['page'], 'target': get_target_page(scene['end'  ]['page']) }
+
+        scene['roles'   ] = OrderedSet()
+        scene['ensemble'] = OrderedSet()
+
+        for line in lines:
+            if line['location']['target'] >= scene['start']['location']['target'] and line['location']['target'] <= scene['end']['location']['target']:
+                scene['roles'].update(line.get('roles', []))
+                scene['ensemble'].update(line.get('ensemble', []))
+
+        scene['roles'   ] = list(scene['roles'   ])
+        scene['ensemble'] = list(scene['ensemble'])
+
+        result.append(scene)
+
+
+    return result
+
+
+
+
+
+
+def generate_mcdl(scenes, ensembles, actors, mics):
+    result = []
+
+    current = {}
+    trail   = {}
+
+    previous_roles = OrderedSet()
+    previous_scene_end_page     = 1
+    previous_scene_end_y        = 0.0
+    previous_scene_end_location = get_location(previous_scene_end_page, previous_scene_end_y)
+
+
+
+    for scene in scenes:
+        allroles = OrderedSet(scene['roles']).union(OrderedSet(scene['ensemble']))
+        assign_last = []
+
+        # Remove roles not part of this scene
+        remove_roles = OrderedSet(current.keys())
+        for role in scene['roles']: remove_roles.discard(role)
+
+        for role in remove_roles:
+            result.append({ 'location': previous_scene_end_location, 'page': previous_scene_end_page, 'y': previous_scene_end_y, 'mic': mic, 'role': None, 'actor': None })
+            current.pop(role, None)
+
+
+
+        # Add roles with known mics
+        for role in allroles:
+            assigned = False
+            if not role in trail: trail[role] = OrderedSet()
+
+            actor = get_current(scene['start']['location'], actors.get(role, [])).get('actor', '<ingen>')
+
+            # Priority 1: Same mic as current
+            if actor in current:
+                mic = current[role]['mic']
+                assigned = True
+
+            # Priority 2: Exclusive assignments
+            elif role in mics.get('exclusive_assignments', {}):
+                mic = mics.get('exclusive_assignments', {}).get(role, None)
+                assigned = True
+
+            # Priority 3: Fixed assignments
+            elif role in mics.get('fixed_assignments', {}):
+                mic = mics.get('fixed_assignments', {}).get(role, None)
+                assigned = True
+
+            else:
+                print('MISSING MIC FOR', role)
+                assign_last.append((role, actor))
+
+
+            if assigned:
+                current[role] = { 'role': role, 'actor': actor, 'mic': mic }
+                result.append({ 'location': scene['start']['location'], 'page': scene['start']['page'], 'y': scene['start']['y'], 'mic': mic, 'role': role, 'actor': actor })
+
+
+
+        # Add roles with no known mics - first option
+        for (role, actor) in assign_last:
+            assigned = False
+            last = None
+
+            # Priority 4: Reuse last mic for this role
+            if role in trail and len(trail[role]) > 0: last = trail[role][-1]
+
+            if last and last not in map(lambda x: x['mic'], current.values()):
+                mic = last
+                assigned = True
+                assign_last.remove((role, actor))
+
+
+            if assigned:
+                print('#4:', role, ':', mic)
+                trail[role].append(mic)
+                current[role] = { 'role': role, 'actor': actor, 'mic': mic }
+                result.append({ 'location': scene['start']['location'], 'page': scene['start']['page'], 'y': scene['start']['y'], 'mic': mic, 'role': role, 'actor': actor })
+
+
+
+        # Add roles with no known mics - last option
+        for (role, actor) in assign_last:
+            assigned = False
+            last = None
+
+            # Priority 5: Try all mics not in exclusive_assignments
+            available_mics = OrderedSet(mics.get('mics'))
+            for ex in mics.get('exclusive_assignments', []).values(): available_mics.discard(ex)
+
+            for mic in available_mics:
+                if mic not in map(lambda x: x['mic'], current.values()):
+                    assigned = True
+                    break
+
+
+            if assigned:
+                print('#5:', role, ':', mic)
+                trail[role].append(mic)
+                current[role] = { 'role': role, 'actor': actor, 'mic': mic }
+                result.append({ 'location': scene['start']['location'], 'page': scene['start']['page'], 'y': scene['start']['y'], 'mic': mic, 'role': role, 'actor': actor })
+
+            else:
+                print('NO MIC FOR', role)
+
+
+
+        previous_scene_end_location = scene['end']['location']
+        previous_scene_end_page     = scene['end']['page']
+        previous_scene_end_y        = scene['end']['y']
+
+
+    return result
+
+
+
+
+
+
+def generate_micmap(mics, mcdl):
+    result = [{ 'location': { 'source': 1.0, 'target': 1.0 }, 'page': { 'source': '1', 'target': 1 }, 'y': 0.0, 'mics': { mic: { 'role': None, 'actor': None } for mic in mics.get('mics') } }]
+
+    for mcd in mcdl:
+        if mcd['location'] == result[-1]['location']:
+            row = result.pop()
+        else:
+            row = copy.deepcopy(result[-1])
+            row['location'] = mcd['location']
+            row['page'    ] = mcd['page']
+            row['y'       ] = mcd['y']
+
+        row['mics'][str(mcd['mic'])]['role' ] = mcd['role' ]
+        row['mics'][str(mcd['mic'])]['actor'] = mcd['actor']
+
+        result.append(row)
+
+    return result
+
+
+
+
+
+
+def compile_commondata(shows):
     result = {
-        'showtime':     '2025-01-02 02:00:00Z',
+        'showdata': {},
+        'pdf':      {},
+    }
 
-        'pagemap':      [{ 'target': p['target'], 'source': p['source'], 'name': p.get('name', None) } for p in pagemap],
+    for show in shows:
+        result['showdata'][show] = f'data/compiled/{show}/showdata.json'
+        result['pdf'     ][show] = f'data/compiled/{show}/manus.pdf'
 
-        'ensemblemap':  { ensemble: [
-                            {
-                                'location': {
-                                    'page':   get_target_page(x.get('page', 0)),
-                                    'y':      float(x.get('y', 0.0)),
-                                },
-                                'roles':  x.get('roles', []),
-                                'extras': x.get('extras', [])
-                            } for x in ensemblemap[ensemble]
-                        ] for ensemble in ensemblemap },
+    return result
 
-        'micmap':       [{  'location': {
-                                'page': get_target_page(x.get('page', 0)),
-                                'y':    float(x.get('y', 0.0)),
-                            },
-                            'mics': x.get('mics'),
+
+
+
+
+
+def compile_showdata(shows, pages, micmap, acts):
+    result = {
+        'showinfo':     shows.get(show, {}),
+
+        'pagemap':      [{ 'target': p['target'], 'source': p['source'], 'name': p.get('name', None) } for p in pages],
+
+        'miclist':      [ x for x in mics.get('mics') ],
+
+        'micmap':       [{  'location': x.get('location', 0.0),
+                            'page':     x.get('page', 0),
+                            'y':        x.get('y', 0.0),
+                            'mics':     x.get('mics'),
                         } for x in micmap],
 
         'acts':         [{  'id':   x.get('id'),
                             'name': x.get('name'),
                             'start': {
-                                'page': get_target_page(x.get('start', {}).get('page', 0)),
-                                'y':    float(x.get('start', {}).get('y', 0.0)),
+                                'location': x.get('start', {}).get('location', {}),
+                                'page':     x.get('start', {}).get('page', 0),
+                                'y':        x.get('start', {}).get('y', 0.0),
                             },
                             'end': {
-                                'page': get_target_page(x.get('end', {}).get('page', 0)),
-                                'y':    float(x.get('end', {}).get('y', 0.0)),
+                                'location': x.get('end', {}).get('location', {}),
+                                'page':     x.get('end', {}).get('page', 0),
+                                'y':        x.get('end', {}).get('y', 0.0),
                             },
                         } for x in acts],
 
         'scenes':       [{  'id':   x.get('id'),
                             'name': x.get('name'),
                             'start': {
-                                'page': get_target_page(x.get('start', {}).get('page', 0)),
-                                'y':    float(x.get('start', {}).get('y', 0.0)),
+                                'location': x.get('start', {}).get('location'),
+                                'page':     x.get('start', {}).get('page', 0),
+                                'y':        x.get('start', {}).get('y', 0.0),
                             },
                             'end': {
-                                'page': get_target_page(x.get('end', {}).get('page', 0)),
-                                'y':    float(x.get('end', {}).get('y', 0.0)),
+                                'location': x.get('end', {}).get('location', {}),
+                                'page':     x.get('end', {}).get('page', 0),
+                                'y':        x.get('end', {}).get('y', 0.0),
                             },
+                            'roles':    x.get('roles', []),
+                            'ensemble': x.get('ensemble', []),
                         } for x in scenes],
 
-        'lines':        [{  'location': {
-                                'page': get_target_page(x.get('page', 0)),
-                                'y':    float(x.get('y', 0.0)),
-                            },
-                            'roles':     x.get('roles', []),        # + mic + actor, based on ecdl
-                            'ensembles': x.get('ensembles', []),    # + mic + actor, based on ecdl
+        'lines':        [{  'location':  x.get('location', 0.0),
+                            'page':      x.get('page', 0),
+                            'y':         x.get('y', 0.0),
+                            'roles':     x.get('roles', []),
+                            'ensemble' : x.get('ensemble', []),
+                            'ensembles': x.get('ensembles', []),
                          } for x in lines],
 
         'music':        [{  'id':   x.get('id'),
                             'name': x.get('name'),
                             'type': x.get('type'),
                             'start': {
-                                'page': get_target_page(x.get('start', {}).get('page', 0)),
-                                'y':    float(x.get('start', {}).get('y', 0.0)),
+                                'location': x.get('start', {}).get('location'),
+                                'page':     x.get('start', {}).get('page', 0),
+                                'y':        x.get('start', {}).get('y', 0.0),
                             },
                             'end': {
-                                'page': get_target_page(x.get('end', {}).get('page', 0)),
-                                'y':    float(x.get('end', {}).get('y', 0.0)),
+                                'location': x.get('end', {}).get('location', {}),
+                                'page':     x.get('end', {}).get('page', 0),
+                                'y':        x.get('end', {}).get('y', 0.0),
                             },
-                        } for x in music]
+                        } for x in music],
+
+        'pagetext':     [{  'location':  x.get('location', 0.0),
+                            'page':      x.get('page', 0),
+                            'y':         x.get('y', 0.0),
+                            'heading':   x.get('heading'),
+                            'lines':     x.get('lines'),
+                        } for x in pagetext],
+
+        'remove_pages': [ x for x in remove_pages ],
+
+        'remove_parts': [{  'start': {
+                                'location': x.get('start', {}).get('location'),
+                                'page':     x.get('start', {}).get('page', 0),
+                                'y':        x.get('start', {}).get('y', 0.0),
+                            },
+                            'end': {
+                                'location': x.get('end', {}).get('location', {}),
+                                'page':     x.get('end', {}).get('page', 0),
+                                'y':        x.get('end', {}).get('y', 0.0),
+                            },
+                        } for x in remove_parts ],
+
+        'extra_pages':  [{  'name':  x.get('name'),
+                            'after': x.get('after'),
+                        } for x in extra_pages],
+
+        'extra_lines':  [{  'location':  x.get('location', 0.0),
+                            'page':      x.get('page', 0),
+                            'y':         x.get('y', 0.0),
+                            'roles':     x.get('roles', []),
+                            'ensembles': x.get('ensembles', []),
+                            'lines':     x.get('lines'),
+                        } for x in extra_lines],
     }
 
 
@@ -187,86 +627,55 @@ def compile(data_manus, data_music, ecdl, mcdl):
 
 
 
-def create_pdf(original, output, data_manus, data):
-    doc = fitz.open(original)
-
-
-    def add_text(page, y, texts):
-        y = 200
-        for text in texts:
-            page.insert_textbox(
-                (page.rect.width / 2 - 200, y, page.rect.width / 2 + 200, y + 28),
-                text,
-                fontsize=16,
-                align=1,
-                color=(0, 0, 0),
-                fontname="Times-Bold"
-            )
-            y = y + 28
-
-    pages = data_manus.get("extra_pages")
-    offset = 0
-    for p in pages:
-        page = doc[p['after'] + offset]
-        page_width, page_height = page.rect.width, page.rect.height
-        page = doc.new_page(pno = p['after'] + offset, width=page_width, height=page_height)
-
-        page.insert_textbox((page.rect.width / 2, 779, page.rect.width / 2 + 218, 810), 'Side ' + p['name'], fontsize=12, align=2, color=(0, 0, 0), fontname="Times-Bold")
-        offset += 1
-
-    texts = data_manus.get("page_texts")
-    for t in texts:
-        pagenumber = [page['target'] for page in data['pagemap'] if page['source'] == t['page']][0]
-        page = doc[pagenumber - 1]
-
-        x1, x2 = page.rect.width / 2 - 200, page.rect.width / 2 + 200
-        y1, y2 = float(t['y']) * page_height, float(t['y']) * page_height + 28
-        page.insert_textbox(
-            (x1, y1, x2, y2),
-            t['heading'],
-            fontsize=16,
-            align=1,
-            color=(0, 0, 0),
-            fontname="Times-Bold"
-        )
-
-        y1 += 30
-        y2 += 30
-        for line in t['lines']:
-            y1 += 20
-            y2 += 20
-            page.insert_textbox(
-                (x1, y1, x2, y2),
-                line,
-                fontsize=12,
-                align=1,
-                color=(0, 0, 0),
-                fontname="Times-Roman"
-            )
-
-
-    doc.save(output)
-    print(f"Annotated PDF saved to: {output}")
-
 
 
 
 if __name__ == "__main__":
-    pdf_original = "data/originals/manus.pdf"
-    pdf_output   = "data/compiled/manus-expanded.pdf"
+    # Common data
+    shows = load_data('data/sources/shows.json')
+    manus = load_data('data/sources/manus.json')
+    music = load_data('data/sources/music.json')
+    mics  = load_data('data/sources/mics.json')
 
-    data_manus = load_json('data/sources/manus.json')
-    data_music = load_json('data/sources/music.json')
-    data_ecdl  = load_json('data/sources/ecdl.json')
-    data_mcdl  = load_json('data/sources/mcdl.json')
+    pages    = generate_pagemap(manus)
+    pagetext = generate_pagetext(manus)
+    acts     = generate_actmap(manus)
+    music    = generate_musicmap(music)
 
-    data = compile(data_manus, data_music, data_ecdl, data_mcdl)
+    commondata = compile_commondata(shows)
+    save_json('data/compiled/', 'showdata.json', commondata)
 
-    # Print the result
-    pprint.pprint(data)
 
-    with open('data/compiled/compiled.json', "w") as outfile:
-        pprint.pprint(json.dump(data, outfile))
-        print(f"JSON data saved to: {'compiled.json'}")
+    # Per-show data
+    for show in shows:
+        manus = load_data('data/sources/manus.json')
+        music = load_data('data/sources/music.json')
+        mics  = load_data('data/sources/mics.json')
 
-    create_pdf(pdf_original, pdf_output, data_manus, data)
+        pages        = generate_pagemap(manus)
+        pagetext     = generate_pagetext(manus)
+        extra_pages  = generate_extra_pages(manus)
+        remove_pages = generate_remove_pages(manus)
+        remove_parts = generate_remove_parts(manus)
+        extra_lines  = generate_extra_lines(manus)
+        acts         = generate_actmap(manus)
+        music        = generate_musicmap(music)
+
+        acdl  = load_data('data/sources/acdl.json', show)
+        ecdl  = load_data('data/sources/ecdl.json', show)
+
+        ensembles = generate_cdl_map(ecdl)
+        actors    = generate_cdl_map(acdl)
+
+        lines  = generate_lines(manus)
+        scenes = generate_scenes(manus, lines)
+
+        mcdl   = generate_mcdl(scenes, ensembles, actors, mics)
+        micmap = generate_micmap(mics, mcdl)
+
+        showdata = compile_showdata(shows, pages, micmap, acts)
+        save_json(f'data/compiled/{show}/', 'showdata.json', showdata)
+
+
+    print(f'All done!')
+    pprint(showdata)

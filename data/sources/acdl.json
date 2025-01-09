@@ -1,0 +1,78 @@
+{
+    "static": {
+        "ALEXANDRA":       [ { "page": 1, "y": 0.0, "actor": "Juliane"  }, { "page": 56, "y": 0.0, "actor": "Frida"   }, { "page": 78, "y": 0.0, "actor": "Andrea"         }, { "page": 100, "y": 0.0, "actor": "Synne"     } ],
+        "JANE":            [ { "page": 1, "y": 0.0, "actor": "Aurora J" }, { "page": 56, "y": 0.0, "actor": "Astrid"  }, { "page": 78, "y": 0.0, "actor": "Marie-Nikoline" }, { "page": 100, "y": 0.0, "actor": "Aurora Ch" } ],
+        "SUKIE":           [ { "page": 1, "y": 0.0, "actor": "Eiril"    }, { "page": 56, "y": 0.0, "actor": "Andrine" }, { "page": 78, "y": 0.0, "actor": "Elev 4"         }, { "page": 100, "y": 0.0, "actor": "Signe"     } ],
+
+        "FELICIA":         [ { "page": 1, "y": 0.0, "actor": "Annika"  } ],
+        "CLYDE":           [ { "page": 1, "y": 0.0, "actor": "Oskar"   } ],
+        "DEN LILLE JENTA": [ { "page": 1, "y": 0.0, "actor": "Anbjørg" } ],
+        "GINA":            [ { "page": 1, "y": 0.0, "actor": "Eirin"   } ],
+        "GRETA":           [ { "page": 1, "y": 0.0, "actor": "Rebecca" } ],
+        "MARGE":           [ { "page": 1, "y": 0.0, "actor": "Elev 13" } ],
+        "FIDEL":           [ { "page": 1, "y": 0.0, "actor": "Elev 14" } ],
+        "JOE":             [ { "page": 1, "y": 0.0, "actor": "Elev 15" } ],
+        "RAYMOND":         [ { "page": 1, "y": 0.0, "actor": "Elev 16" } ],
+        "TOBY":            [ { "page": 1, "y": 0.0, "actor": "Elev 17" } ],
+        "ED":              [ { "page": 1, "y": 0.0, "actor": "Elev 18" } ],
+        "FRANK":           [ { "page": 1, "y": 0.0, "actor": "Elev 19" } ],
+        "REBECCA":         [ { "page": 1, "y": 0.0, "actor": "Elev 20" } ],
+        "MAVIS":           [ { "page": 1, "y": 0.0, "actor": "Elev 21" } ],
+        "MABEL":           [ { "page": 1, "y": 0.0, "actor": "Elev 22" } ],
+        "MARCY":           [ { "page": 1, "y": 0.0, "actor": "Elev 23" } ],
+        "FRANNY":          [ { "page": 1, "y": 0.0, "actor": "Elev 24" } ],
+        "EUDORA":          [ { "page": 1, "y": 0.0, "actor": "Elev 25" } ],
+        "CURTIS":          [ { "page": 1, "y": 0.0, "actor": "Elev 26" } ],
+        "HOMER":           [ { "page": 1, "y": 0.0, "actor": "Elev 27" } ],
+        "DOKTOR PAT":      [ { "page": 1, "y": 0.0, "actor": "Elev 28" } ]
+    },
+
+    "GP": {
+        "DARRYL":          [ { "page": 1, "y": 0.0, "actor": "Salvador"  }, { "page": 78, "y": 0.0, "actor": "Thomas" } ],
+        "MICHAEL":         [ { "page": 1, "y": 0.0, "actor": "Isak"      } ],
+        "JENNIFER":        [ { "page": 1, "y": 0.0, "actor": "Thea"      } ],
+        "BRENDA":          [ { "page": 1, "y": 0.0, "actor": "Benedicte" } ]
+    },
+
+    "Show 1": {
+        "DARRYL":          [ { "page": 1, "y": 0.0, "actor": "Tobias"    } ],
+        "MICHAEL":         [ { "page": 1, "y": 0.0, "actor": "Oscar"     } ],
+        "JENNIFER":        [ { "page": 1, "y": 0.0, "actor": "Benedicte" } ],
+        "BRENDA":          [ { "page": 1, "y": 0.0, "actor": "Thea"      } ]
+    },
+
+    "Show 2": {
+        "DARRYL":          [ { "page": 1, "y": 0.0, "actor": "Salvador"  }, { "page": 78, "y": 0.0, "actor": "Thomas" } ],
+        "MICHAEL":         [ { "page": 1, "y": 0.0, "actor": "Isak"      } ],
+        "JENNIFER":        [ { "page": 1, "y": 0.0, "actor": "Thea"      } ],
+        "BRENDA":          [ { "page": 1, "y": 0.0, "actor": "Benedicte" } ]
+    },
+
+    "Show 3": {
+        "DARRYL":          [ { "page": 1, "y": 0.0, "actor": "Tobias"    } ],
+        "MICHAEL":         [ { "page": 1, "y": 0.0, "actor": "Oscar"     } ],
+        "JENNIFER":        [ { "page": 1, "y": 0.0, "actor": "Benedicte" } ],
+        "BRENDA":          [ { "page": 1, "y": 0.0, "actor": "Thea"      } ]
+    },
+
+    "Show 4": {
+        "DARRYL":          [ { "page": 1, "y": 0.0, "actor": "Salvador"  }, { "page": 78, "y": 0.0, "actor": "Thomas" } ],
+        "MICHAEL":         [ { "page": 1, "y": 0.0, "actor": "Isak"      } ],
+        "JENNIFER":        [ { "page": 1, "y": 0.0, "actor": "Thea"      } ],
+        "BRENDA":          [ { "page": 1, "y": 0.0, "actor": "Benedicte" } ]
+    },
+
+    "Show 5": {
+        "DARRYL":          [ { "page": 1, "y": 0.0, "actor": "Tobias"    } ],
+        "MICHAEL":         [ { "page": 1, "y": 0.0, "actor": "Oscar"     } ],
+        "JENNIFER":        [ { "page": 1, "y": 0.0, "actor": "Benedicte" } ],
+        "BRENDA":          [ { "page": 1, "y": 0.0, "actor": "Thea"      } ]
+    },
+
+    "Show 6": {
+        "DARRYL":          [ { "page": 1, "y": 0.0, "actor": "Salvador"  }, { "page": 78, "y": 0.0, "actor": "Thomas" } ],
+        "MICHAEL":         [ { "page": 1, "y": 0.0, "actor": "Isak"      } ],
+        "JENNIFER":        [ { "page": 1, "y": 0.0, "actor": "Thea"      } ],
+        "BRENDA":          [ { "page": 1, "y": 0.0, "actor": "Benedicte" } ]
+    }
+}

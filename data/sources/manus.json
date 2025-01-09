@@ -1,52 +1,63 @@
 {
-    "lastpage": 136,
+    "last_page": "136",
 
     "extra_pages": [
-        { "name":  "1x", "after":  1 },
-        { "name":  "1y", "after":  1 },
-        { "name": "77x", "after": 77 }
+        { "name":   "1x", "after":  1 },
+        { "name":  "77x", "after": 77 }
     ],
 
     "named_pages": [
         { "page":  "1",  "name": "Forside" },
         { "page":  "1x", "name": "Opening act one" },
-        { "page":  "1y", "name": "Opening act one - reprise" },
         { "page": "77x", "name": "Opening act two" }
     ],
 
-    "page_texts": [
-        { "page":  "1x", "y": 0.200, "heading": "Opening Act One", "lines": ["instrumental"] },
-        { "page":  "1y", "y": 0.200, "heading": "Opening Act One", "lines": ["instrumental","just a test..."] },
-        { "page": "77x", "y": 0.200, "heading": "Opening Act Two", "lines": ["instrumental"] }
+    "page_text": [
+        { "page":   "1x", "y": 0.200, "heading": "Opening Act One", "lines": ["instrumental"] },
+        { "page":  "45",  "y": 0.900, "heading": "Words, words, words - Playoff" },
+        { "page":  "77x", "y": 0.200, "heading": "Opening Act Two" },
+        { "page":  "81",  "y": 0.500, "heading": "Another Night at Darryl's - Playoff", "lines": ["instrumental"] },
+        { "page": "136",  "y": 0.700, "heading": "Bows" }
+    ],
+
+    "extra_lines": [
+    ],
+
+    "remove_parts": [
+        { "start": { "page": "1", "y": 0.4 }, "end": { "page": "1", "y": 0.6 } }
+    ],
+
+    "remove_pages": [
+        { "start": { "page": "121" }, "end": { "page": "126" } }
     ],
 
     "acts": [
-        { "start": { "page": 1,   "y": 0.0 }, "end": { "page": 77,  "y": 1.0 }, "id": "1",  "name": "AKT 1"},
-        { "start": { "page": 78,  "y": 0.0 }, "end": { "page": 136, "y": 1.0 }, "id": "2",  "name": "AKT 2"}
+        { "start": { "page":   "1", "y": 0.0 }, "end": { "page":  "77", "y": 1.0 }, "id": "1",  "name": "AKT 1" },
+        { "start": { "page":  "78", "y": 0.0 }, "end": { "page": "136", "y": 1.0 }, "id": "2",  "name": "AKT 2" }
     ],
 
     "scenes": [
-        { "start": { "page": 2,   "y": 0.132 }, "end": { "page": 3,   "y": 1.000 }, "id": "1.1",  "name": "Viken"},
-        { "start": { "page": 4,   "y": 0.119 }, "end": { "page": 17,  "y": 1.000 }, "id": "1.2",  "name": "Alexandras hjem"},
-        { "start": { "page": 18,  "y": 0.100 }, "end": { "page": 21,  "y": 1.000 }, "id": "1.3",  "name": "Felicias gate og finstue"},
-        { "start": { "page": 22,  "y": 0.100 }, "end": { "page": 30,  "y": 1.000 }, "id": "1.4",  "name": "Kirken"},
-        { "start": { "page": 31,  "y": 0.156 }, "end": { "page": 37,  "y": 1.000 }, "id": "1.5",  "name": "Janes stue"},
-        { "start": { "page": 38,  "y": 0.100 }, "end": { "page": 45,  "y": 1.000 }, "id": "1.6",  "name": "Sukies gate og stue"},
-        { "start": { "page": 46,  "y": 0.100 }, "end": { "page": 51,  "y": 1.000 }, "id": "1.7",  "name": "Alexandras studio"},
-        { "start": { "page": 52,  "y": 0.100 }, "end": { "page": 55,  "y": 1.000 }, "id": "1.8",  "name": "Utkanten av byen"},
-        { "start": { "page": 56,  "y": 0.100 }, "end": { "page": 61,  "y": 1.000 }, "id": "1.9",  "name": "Darryls tennisbane"},
-        { "start": { "page": 62,  "y": 0.100 }, "end": { "page": 67,  "y": 1.000 }, "id": "1.10", "name": "Eastwick gardens"},
-        { "start": { "page": 68,  "y": 0.100 }, "end": { "page": 77,  "y": 1.000 }, "id": "1.11", "name": "Lennox house"},
-        { "start": { "page": 78,  "y": 0.401 }, "end": { "page": 81,  "y": 1.000 }, "id": "2.1",  "name": "Alexandra, Jane og Sukies respektive hus"},
-        { "start": { "page": 82,  "y": 0.100 }, "end": { "page": 89,  "y": 1.000 }, "id": "2.2",  "name": "Nemos kafé"},
-        { "start": { "page": 90,  "y": 0.100 }, "end": { "page": 95,  "y": 1.000 }, "id": "2.3",  "name": "Eastwicks gater og Lennox-huset"},
-        { "start": { "page": 96,  "y": 0.100 }, "end": { "page": 99,  "y": 1.000 }, "id": "2.4",  "name": "Felicias favorittrom"},
-        { "start": { "page": 100, "y": 0.100 }, "end": { "page": 102, "y": 1.000 }, "id": "2.5",  "name": "Soverom i ulike deler av Eastwick"},
-        { "start": { "page": 103, "y": 0.100 }, "end": { "page": 107, "y": 1.000 }, "id": "2.6",  "name": "Lennox-huset"},
-        { "start": { "page": 108, "y": 0.100 }, "end": { "page": 111, "y": 1.000 }, "id": "2.7",  "name": "En kirkegård ved vannet"},
+        { "start": { "page": 2,   "y": 0.132 }, "end": { "page": 3,   "y": 1.000 }, "id": "1.1",  "name": "Eastwick"},
+        { "start": { "page": 4,   "y": 0.119 }, "end": { "page": 17,  "y": 1.000 }, "id": "1.2",  "name": "Alexandra's den"},
+        { "start": { "page": 18,  "y": 0.100 }, "end": { "page": 21,  "y": 1.000 }, "id": "1.3",  "name": "Felicia's street and great room"},
+        { "start": { "page": 22,  "y": 0.100 }, "end": { "page": 30,  "y": 1.000 }, "id": "1.4",  "name": "The church basement"},
+        { "start": { "page": 31,  "y": 0.156 }, "end": { "page": 37,  "y": 1.000 }, "id": "1.5",  "name": "Jane's living room"},
+        { "start": { "page": 38,  "y": 0.100 }, "end": { "page": 45,  "y": 1.000 }, "id": "1.6",  "name": "Sukie's street and parlor"},
+        { "start": { "page": 46,  "y": 0.100 }, "end": { "page": 51,  "y": 1.000 }, "id": "1.7",  "name": "Alexandra's studio"},
+        { "start": { "page": 52,  "y": 0.100 }, "end": { "page": 55,  "y": 1.000 }, "id": "1.8",  "name": "A grassy buff"},
+        { "start": { "page": 56,  "y": 0.100 }, "end": { "page": 61,  "y": 1.000 }, "id": "1.9",  "name": "Darryl's tennis court"},
+        { "start": { "page": 62,  "y": 0.100 }, "end": { "page": 67,  "y": 1.000 }, "id": "1.10", "name": "The backyards of Eastwick"},
+        { "start": { "page": 68,  "y": 0.100 }, "end": { "page": 77,  "y": 1.000 }, "id": "1.11", "name": "The Lenox house"},
+        { "start": { "page": 78,  "y": 0.401 }, "end": { "page": 81,  "y": 1.000 }, "id": "2.1",  "name": "Alexandra, Jane og Sukie's houses"},
+        { "start": { "page": 82,  "y": 0.100 }, "end": { "page": 89,  "y": 1.000 }, "id": "2.2",  "name": "Nemo's diner"},
+        { "start": { "page": 90,  "y": 0.100 }, "end": { "page": 95,  "y": 1.000 }, "id": "2.3",  "name": "The streets of Eastwick and the Lennox house"},
+        { "start": { "page": 96,  "y": 0.100 }, "end": { "page": 99,  "y": 1.000 }, "id": "2.4",  "name": "Felicia's great rom"},
+        { "start": { "page": 100, "y": 0.100 }, "end": { "page": 102, "y": 1.000 }, "id": "2.5",  "name": "The besrooms of Eastwick"},
+        { "start": { "page": 103, "y": 0.100 }, "end": { "page": 107, "y": 1.000 }, "id": "2.6",  "name": "The Lenox house"},
+        { "start": { "page": 108, "y": 0.100 }, "end": { "page": 111, "y": 1.000 }, "id": "2.7",  "name": "A seaside graveyard"},
         { "start": { "page": 112, "y": 0.100 }, "end": { "page": 118, "y": 0.570 }, "id": "2.8",  "name": "Dock street"},
-        { "start": { "page": 118, "y": 0.577 }, "end": { "page": 126, "y": 1.000 }, "id": "2.8A", "name": "Et sted utenfor Eastwick"},
-        { "start": { "page": 127, "y": 0.100 }, "end": { "page": 136, "y": 1.000 }, "id": "2.9",  "name": "Kirken"}
+        { "start": { "page": 118, "y": 0.577 }, "end": { "page": 120, "y": 1.000 }, "id": "2.8A", "name": "Somewhere beyond Eastwick"},
+        { "start": { "page": 127, "y": 0.100 }, "end": { "page": 136, "y": 1.000 }, "id": "2.9",  "name": "The church"}
     ],
 
     "lines": [

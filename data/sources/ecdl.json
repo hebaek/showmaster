@@ -1,143 +1,57 @@
 {
-    "HEKSENE": [ { "page": 1, "y": 0.0, "roles": ["ALEXANDRA","JANE","SUKIE"] } ],
+    "static": {
+        "HEKSENE":  [ { "page":   1, "y": 0.000, "roles": ["ALEXANDRA","JANE","SUKIE"] } ],
 
-    "GRUPPE 1": [
-        { "page": 22, "y": 0.214,
-            "roles": [],
-            "extras": []
-        }
-    ],
+        "GRUPPE 1": [ { "page":  22, "y": 0.214, "roles": [] } ],
 
-    "GRUPPE 2": [
-        { "page": 22, "y": 0.267,
-            "roles": [],
-            "extras": []
-        }
-    ],
+        "GRUPPE 2": [ { "page":  22, "y": 0.267, "roles": [] } ],
 
-    "GRUPPE 3": [
-        { "page": 22, "y": 0.557,
-            "roles": [],
-            "extras": []
-        }
-    ],
+        "GRUPPE 3": [ { "page":  22, "y": 0.557, "roles": [] } ],
 
-    "GRUPPE 4": [
-        { "page": 22, "y": 0.61,
-            "roles": [],
-            "extras": []
-        }
-    ],
+        "GRUPPE 4": [ { "page":  22, "y": 0.610, "roles": [] } ],
 
-    "MENN": [
-        { "page": 23, "y": 0.23,
-            "roles": [],
-            "extras": []
-        },
-        { "page": 87, "y": 0.864,
-            "roles": [],
-            "extras": []
-        }
-    ],
+        "MENN": [
+            { "page":  23, "y": 0.230, "roles": ["CLYDE","FIDEL","JOE","RAYMOND","TOBY","ED","FRANK","CURTIS","HOMER","DOKTOR PAT"] },
+            { "page":  87, "y": 0.864, "roles": ["CLYDE","FIDEL","JOE","RAYMOND","TOBY","ED","FRANK","CURTIS","HOMER","DOKTOR PAT"] }
+        ],
 
-    "KVINNER": [
-        { "page": 63, "y": 0.451,
-            "roles": [],
-            "extras": []
-        }
-    ],
+        "KVINNER": [
+            { "page":  63, "y": 0.451, "roles": ["ALEXANDRA","JANE","SUKIE","FELICIA","GINA","BRENDA","GRETA","MARGE","REBECCA","DEN LILLE JENTA","MAVIS","MABEL","MARCY","FRANNY","EUDORA"] }
+        ],
 
-    "LOKALBEFOLKNINGEN I EASTWICK": [
-        { "page": 24,  "y": 0.106,
-            "roles": [],
-            "extras": []
-        },
-        { "page": 100, "y": 0.273,
-            "roles": [],
-            "extras": []
-        }
-    ],
+        "LOKALBEFOLKNINGEN I EASTWICK": [
+            { "page":  24, "y": 0.106, "roles": ["ALEXANDRA","JANE","SUKIE","FELICIA","CLYDE","FIDEL","GINA","BRENDA","GRETA","MARGE","JOE","RAYMOND","TOBY","ED","FRANK","REBECCA","DEN LILLE JENTA","MAVIS","MABEL","MARCY","FRANNY","EUDORA","CURTIS","HOMER","DOKTOR PAT"] },
+            { "page": 100, "y": 0.273, "roles": ["ALEXANDRA","JANE","SUKIE","FELICIA","CLYDE","FIDEL","GINA","BRENDA","GRETA","MARGE","JOE","RAYMOND","TOBY","ED","FRANK","REBECCA","DEN LILLE JENTA","MAVIS","MABEL","MARCY","FRANNY","EUDORA","CURTIS","HOMER","DOKTOR PAT"] }
+        ],
 
-    "BYFOLKET": [
-        { "page": 27, "y": 0.825,
-            "roles": [],
-            "extras": []
-        },
-        { "page": 102, "y": 0.361,
-            "roles": [],
-            "extras": []
-        },
-        { "page": 112, "y": 0.458,
-            "roles": [],
-            "extras": []
-        },
-        { "page": 115, "y": 0.39,
-            "roles": [],
-            "extras": []
-        },
-        { "page": 127, "y": 0.311,
-            "roles": [],
-            "extras": []
-        },
-        { "page": 130, "y": 0.329,
-            "roles": [],
-            "extras": []
-        }
-    ],
+        "BYFOLKET": [
+            { "page":  27, "y": 0.825, "roles": ["ALEXANDRA","JANE","SUKIE","FELICIA","CLYDE","FIDEL","GINA","BRENDA","GRETA","MARGE","JOE","RAYMOND","TOBY","ED","FRANK","REBECCA","DEN LILLE JENTA","MAVIS","MABEL","MARCY","FRANNY","EUDORA","CURTIS","HOMER","DOKTOR PAT"] },
+            { "page": 102, "y": 0.361, "roles": ["ALEXANDRA","JANE","SUKIE","FELICIA","CLYDE","FIDEL","GINA","BRENDA","GRETA","MARGE","JOE","RAYMOND","TOBY","ED","FRANK","REBECCA","DEN LILLE JENTA","MAVIS","MABEL","MARCY","FRANNY","EUDORA","CURTIS","HOMER","DOKTOR PAT"] },
+            { "page": 112, "y": 0.458, "roles": ["ALEXANDRA","JANE","SUKIE","FELICIA","CLYDE","FIDEL","GINA","BRENDA","GRETA","MARGE","JOE","RAYMOND","TOBY","ED","FRANK","REBECCA","DEN LILLE JENTA","MAVIS","MABEL","MARCY","FRANNY","EUDORA","CURTIS","HOMER","DOKTOR PAT"] },
+            { "page": 115, "y": 0.390, "roles": ["ALEXANDRA","JANE","SUKIE","FELICIA","CLYDE","FIDEL","GINA","BRENDA","GRETA","MARGE","JOE","RAYMOND","TOBY","ED","FRANK","REBECCA","DEN LILLE JENTA","MAVIS","MABEL","MARCY","FRANNY","EUDORA","CURTIS","HOMER","DOKTOR PAT"] },
+            { "page": 127, "y": 0.311, "roles": ["ALEXANDRA","JANE","SUKIE","FELICIA","CLYDE","FIDEL","GINA","BRENDA","GRETA","MARGE","JOE","RAYMOND","TOBY","ED","FRANK","REBECCA","DEN LILLE JENTA","MAVIS","MABEL","MARCY","FRANNY","EUDORA","CURTIS","HOMER","DOKTOR PAT"] },
+            { "page": 130, "y": 0.329, "roles": ["ALEXANDRA","JANE","SUKIE","FELICIA","CLYDE","FIDEL","GINA","BRENDA","GRETA","MARGE","JOE","RAYMOND","TOBY","ED","FRANK","REBECCA","DEN LILLE JENTA","MAVIS","MABEL","MARCY","FRANNY","EUDORA","CURTIS","HOMER","DOKTOR PAT"] }
+        ],
 
-    "ENSEMBLET": [
-        { "page": 123, "y": 0.167,
-            "roles": ["GINA","BRENDA","GRETA","MARGE","JOE","RAYMOND","TOBY","ED","FRANK","REBECCA","DEN LILLE JENTA","MAVIS","MABEL","MARCY","FRANNY","EUDORA","CURTIS","HOMER","DOKTOR PAT"],
-            "extras": []
-        }
-    ],
+        "ENSEMBLET": [
+            { "page": 123, "y": 0.167, "roles": ["GINA","BRENDA","GRETA","MARGE","JOE","RAYMOND","TOBY","ED","FRANK","REBECCA","DEN LILLE JENTA","MAVIS","MABEL","MARCY","FRANNY","EUDORA","CURTIS","HOMER","DOKTOR PAT"] }
+        ],
 
-    "KJÆRESTE VENNER": [
-        { "page": 128, "y": 0.382,
-            "roles": [],
-            "extras": []
-        }
-    ],
+        "KJÆRESTE VENNER": [ { "page": 128, "y": 0.382, "roles": [] } ],
 
-    "ALLE UNNTATT HEKSENE": [
-        { "page": 1, "y": 0.0,
-            "roles": ["FELICIA","CLYDE","FIDEL","GINA","BRENDA","GRETA","MARGE","JOE","RAYMOND","TOBY","ED","FRANK","REBECCA","DEN LILLE JENTA","MAVIS","MABEL","MARCY","FRANNY","EUDORA","CURTIS","HOMER","DOKTOR PAT"],
-            "extras": ["Elev 29", "Elev 30"]
-        }
-    ],
+        "ALLE UNNTATT HEKSENE": [
+            { "page":   1, "y": 0.0, "roles": ["FELICIA","CLYDE","FIDEL","GINA","BRENDA","GRETA","MARGE","JOE","RAYMOND","TOBY","ED","FRANK","REBECCA","DEN LILLE JENTA","MAVIS","MABEL","MARCY","FRANNY","EUDORA","CURTIS","HOMER","DOKTOR PAT"] }
+        ],
 
-    "ALLE": [
-        { "page": 1, "y": 0.0,
-            "roles": ["ALEXANDRA","JANE","SUKIE","FELICIA","CLYDE","FIDEL","GINA","BRENDA","GRETA","MARGE","JOE","RAYMOND","TOBY","ED","FRANK","REBECCA","DEN LILLE JENTA","MAVIS","MABEL","MARCY","FRANNY","EUDORA","CURTIS","HOMER","DOKTOR PAT"],
-            "extras": ["Elev 29", "Elev 30"]
-        },
-        { "page": 23,  "y": 0.159,
-            "roles": ["ALEXANDRA","JANE","SUKIE","FELICIA","JENNIFER","MICHAEL","CLYDE","FIDEL","GINA","BRENDA","GRETA","MARGE","JOE","RAYMOND","TOBY","ED","FRANK","REBECCA","DEN LILLE JENTA","MAVIS","MABEL","MARCY","FRANNY","EUDORA","CURTIS","HOMER","DOKTOR PAT"],
-            "extras": []
-        },
-        { "page": 65,  "y": 0.167,
-            "roles": [],
-            "extras": []
-        },
-        { "page": 101, "y": 0.232,
-            "roles": [],
-            "extras": []
-        },
-        { "page": 112, "y": 0.843,
-            "roles": [],
-            "extras": []
-        },
-        { "page": 119, "y": 0.796,
-            "roles": [],
-            "extras": []
-        },
-        { "page": 121, "y": 0.633,
-            "roles": [],
-            "extras": []
-        },
-        { "page": 133, "y": 0.857,
-            "roles": [],
-            "extras": []
-        }
-    ]
+        "ALLE": [
+            { "page":   1, "y": 0.000, "roles": ["ALEXANDRA","JANE","SUKIE","FELICIA","CLYDE","FIDEL","GINA","BRENDA","GRETA","MARGE","JOE","RAYMOND","TOBY","ED","FRANK","REBECCA","DEN LILLE JENTA","MAVIS","MABEL","MARCY","FRANNY","EUDORA","CURTIS","HOMER","DOKTOR PAT"] },
+            { "page":  23, "y": 0.159, "roles": ["ALEXANDRA","JANE","SUKIE","FELICIA","JENNIFER","MICHAEL","CLYDE","FIDEL","GINA","BRENDA","GRETA","MARGE","JOE","RAYMOND","TOBY","ED","FRANK","REBECCA","DEN LILLE JENTA","MAVIS","MABEL","MARCY","FRANNY","EUDORA","CURTIS","HOMER","DOKTOR PAT"] },
+            { "page":  65, "y": 0.167, "roles": ["ALEXANDRA","JANE","SUKIE","FELICIA","JENNIFER","MICHAEL","CLYDE","FIDEL","GINA","BRENDA","GRETA","MARGE","JOE","RAYMOND","TOBY","ED","FRANK","REBECCA","DEN LILLE JENTA","MAVIS","MABEL","MARCY","FRANNY","EUDORA","CURTIS","HOMER","DOKTOR PAT"] },
+            { "page": 101, "y": 0.232, "roles": ["ALEXANDRA","JANE","SUKIE","FELICIA","JENNIFER","MICHAEL","CLYDE","FIDEL","GINA","BRENDA","GRETA","MARGE","JOE","RAYMOND","TOBY","ED","FRANK","REBECCA","DEN LILLE JENTA","MAVIS","MABEL","MARCY","FRANNY","EUDORA","CURTIS","HOMER","DOKTOR PAT"] },
+            { "page": 112, "y": 0.843, "roles": ["ALEXANDRA","JANE","SUKIE","FELICIA","JENNIFER","MICHAEL","CLYDE","FIDEL","GINA","BRENDA","GRETA","MARGE","JOE","RAYMOND","TOBY","ED","FRANK","REBECCA","DEN LILLE JENTA","MAVIS","MABEL","MARCY","FRANNY","EUDORA","CURTIS","HOMER","DOKTOR PAT"] },
+            { "page": 119, "y": 0.796, "roles": ["ALEXANDRA","JANE","SUKIE","FELICIA","JENNIFER","MICHAEL","CLYDE","FIDEL","GINA","BRENDA","GRETA","MARGE","JOE","RAYMOND","TOBY","ED","FRANK","REBECCA","DEN LILLE JENTA","MAVIS","MABEL","MARCY","FRANNY","EUDORA","CURTIS","HOMER","DOKTOR PAT"] },
+            { "page": 121, "y": 0.633, "roles": ["ALEXANDRA","JANE","SUKIE","FELICIA","JENNIFER","MICHAEL","CLYDE","FIDEL","GINA","BRENDA","GRETA","MARGE","JOE","RAYMOND","TOBY","ED","FRANK","REBECCA","DEN LILLE JENTA","MAVIS","MABEL","MARCY","FRANNY","EUDORA","CURTIS","HOMER","DOKTOR PAT"] },
+            { "page": 133, "y": 0.857, "roles": ["ALEXANDRA","JANE","SUKIE","FELICIA","JENNIFER","MICHAEL","CLYDE","FIDEL","GINA","BRENDA","GRETA","MARGE","JOE","RAYMOND","TOBY","ED","FRANK","REBECCA","DEN LILLE JENTA","MAVIS","MABEL","MARCY","FRANNY","EUDORA","CURTIS","HOMER","DOKTOR PAT"] }
+        ]
+    }
 }

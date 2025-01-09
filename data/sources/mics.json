@@ -1,0 +1,37 @@
+{
+    "mics": ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30"],
+
+    "exclusive_assignments": {
+        "DARRYL":           "1",
+        "ALEXANDRA":        "2",
+        "JANE":             "3",
+        "SUKIE":            "4"
+    },
+
+    "fixed_assignments": {
+        "FELICIA":          "5",
+        "CLYDE":            "6",
+        "MICHAEL":          "7",
+        "JENNIFER":         "8",
+        "DEN LILLE JENTA":  "9",
+        "GINA":            "10",
+        "GRETA":           "11",
+        "BRENDA":          "12",
+        "MARGE":           "13",
+        "FIDEL":           "14",
+        "JOE":             "15",
+        "RAYMOND":         "16",
+        "TOBY":            "17",
+        "ED":              "18",
+        "FRANK":           "19",
+        "REBECCA":         "20",
+        "MAVIS":           "21",
+        "MABEL":           "22",
+        "MARCY":           "23",
+        "FRANNY":          "24",
+        "EUDORA":          "25",
+        "CURTIS":          "26",
+        "HOMER":           "27",
+        "DOKTOR PAT":      "28"
+    }
+}

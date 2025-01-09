@@ -29,17 +29,81 @@
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 2,
+      "oA" : 0,
       "oAP" : "\/www-test\/data\/manus-original.pdf",
-      "oF" : 3
+      "oF" : 2
     },
     "\/data\/compiled\/manus-mics.pdf" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 2,
+      "oA" : 0,
       "oAP" : "\/www-test\/data\/manus-mics.pdf",
-      "oF" : 3
+      "oF" : 2
+    },
+    "\/data\/compiled\/showdata GP.json" : {
+      "ft" : 524288,
+      "oA" : 1,
+      "oAP" : "\/www-test\/data\/compiled\/showdata GP.json",
+      "oF" : 0,
+      "oO" : 1,
+      "oS" : 1
+    },
+    "\/data\/compiled\/showdata Show 1.json" : {
+      "ft" : 524288,
+      "oA" : 1,
+      "oAP" : "\/www-test\/data\/compiled\/showdata Show 1.json",
+      "oF" : 0,
+      "oO" : 1,
+      "oS" : 1
+    },
+    "\/data\/compiled\/showdata Show 2.json" : {
+      "ft" : 524288,
+      "oA" : 1,
+      "oAP" : "\/www-test\/data\/compiled\/showdata Show 2.json",
+      "oF" : 0,
+      "oO" : 1,
+      "oS" : 1
+    },
+    "\/data\/compiled\/showdata Show 3.json" : {
+      "ft" : 524288,
+      "oA" : 1,
+      "oAP" : "\/www-test\/data\/compiled\/showdata Show 3.json",
+      "oF" : 0,
+      "oO" : 1,
+      "oS" : 1
+    },
+    "\/data\/compiled\/showdata Show 4.json" : {
+      "ft" : 524288,
+      "oA" : 1,
+      "oAP" : "\/www-test\/data\/compiled\/showdata Show 4.json",
+      "oF" : 0,
+      "oO" : 1,
+      "oS" : 1
+    },
+    "\/data\/compiled\/showdata Show 5.json" : {
+      "ft" : 524288,
+      "oA" : 1,
+      "oAP" : "\/www-test\/data\/compiled\/showdata Show 5.json",
+      "oF" : 0,
+      "oO" : 1,
+      "oS" : 1
+    },
+    "\/data\/compiled\/showdata Show 6.json" : {
+      "ft" : 524288,
+      "oA" : 1,
+      "oAP" : "\/www-test\/data\/compiled\/showdata Show 6.json",
+      "oF" : 0,
+      "oO" : 1,
+      "oS" : 1
+    },
+    "\/data\/compiled\/showdata.json" : {
+      "ft" : 524288,
+      "oA" : 1,
+      "oAP" : "\/www-test\/data\/compiled\/showdata.json",
+      "oF" : 0,
+      "oO" : 1,
+      "oS" : 1
     },
     "\/data\/originals-backup\/manus.pdf" : {
       "cB" : 0,
@@ -73,6 +137,14 @@
       "oO" : 1,
       "oS" : 1
     },
+    "\/data\/sources\/acdl.json" : {
+      "ft" : 524288,
+      "oA" : 1,
+      "oAP" : "\/www-test\/data\/sources\/acdl.json",
+      "oF" : 0,
+      "oO" : 1,
+      "oS" : 1
+    },
     "\/data\/sources\/ecdl.json" : {
       "ft" : 524288,
       "oA" : 1,
@@ -89,11 +161,11 @@
       "oO" : 1,
       "oS" : 1
     },
-    "\/data\/sources\/mcdl.json" : {
+    "\/data\/sources\/mics.json" : {
       "ft" : 524288,
       "oA" : 1,
-      "oAP" : "\/www-test\/data\/sources\/mcdl.json",
-      "oF" : 1,
+      "oAP" : "\/www-test\/data\/sources\/mics.json",
+      "oF" : 0,
       "oO" : 1,
       "oS" : 1
     },
@@ -102,6 +174,14 @@
       "oA" : 1,
       "oAP" : "\/www-test\/data\/sources\/music.json",
       "oF" : 1,
+      "oO" : 1,
+      "oS" : 1
+    },
+    "\/data\/sources\/shows.json" : {
+      "ft" : 524288,
+      "oA" : 1,
+      "oAP" : "\/www-test\/data\/sources\/shows.json",
+      "oF" : 0,
       "oO" : 1,
       "oS" : 1
     },
@@ -150,13 +230,29 @@
       "oAP" : "\/www-test\/scripts\/annotate.py",
       "oF" : 1
     },
-    "\/scripts\/compile.py" : {
+    "\/scripts\/compile-old.py" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 1,
-      "oAP" : "\/www-test\/scripts\/compile.py",
+      "oAP" : "\/www-test\/scripts\/compile-old.py",
       "oF" : 1
+    },
+    "\/scripts\/compile.py" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/www-test\/scripts\/compile.py",
+      "oF" : 0
+    },
+    "\/scripts\/render.py" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/www-test\/scripts\/render.py",
+      "oF" : 0
     },
     "\/www-code\/css\/login.scss" : {
       "aP" : 0,
@@ -198,7 +294,7 @@
     },
     "\/www-code\/img\/logo.png" : {
       "ft" : 32768,
-      "iS" : 251821,
+      "iS" : 149733,
       "oA" : 0,
       "oAP" : "\/www-test\/img\/logo.png",
       "oF" : 0,
@@ -280,6 +376,14 @@
       "oAP" : "\/www-test\/login.php",
       "oF" : 0
     },
+    "\/www-code\/poe-ideas.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/www-test\/poe-ideas.html",
+      "oF" : 0
+    },
     "\/www-deploy" : {
       "ft" : 65536,
       "oA" : 1,
@@ -305,7 +409,7 @@
     "displayValueWasSetByUser" : 0,
     "iconImageName" : "brackets-brick",
     "iconImageWasSetByUser" : 0,
-    "lastBuiltDate" : 757812096.841259
+    "lastBuiltDate" : 757942408.45108604
   },
   "projectSettings" : {
     "abortBuildOnError" : 1,
