@@ -1,9 +1,9 @@
 {
-    "GP":     { "date": "2025-02-11", "time": "19:00:00", "name": "Generalprøve" },
+    "GP":     { "date": "2025-02-11", "time": "14:00:00", "name": "Generalprøve" },
     "Show 1": { "date": "2025-02-11", "time": "19:00:00", "name": "Premiere" },
-    "Show 2": { "date": "2025-02-12", "time": "14:00:00", "name": "Onsdag formiddag" },
-    "Show 3": { "date": "2025-02-12", "time": "19:00:00", "name": "Onsdag kveld" },
-    "Show 4": { "date": "2025-02-13", "time": "14:00:00", "name": "Torsdag formiddag" },
-    "Show 5": { "date": "2025-02-13", "time": "19:00:00", "name": "Torsdag kveld" },
+    "Show 2": { "date": "2025-02-12", "time": "19:00:00", "name": "Onsdag kveld" },
+    "Show 3": { "date": "2025-02-13", "time": "12:00:00", "name": "Torsdag formiddag" },
+    "Show 4": { "date": "2025-02-13", "time": "19:00:00", "name": "Torsdag kveld" },
+    "Show 5": { "date": "2025-02-14", "time": "12:00:00", "name": "Onsdag formiddag" },
     "Show 6": { "date": "2025-02-14", "time": "19:00:00", "name": "Fredag" }
 }

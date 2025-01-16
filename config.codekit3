@@ -17,90 +17,90 @@
       "oAP" : "\/www-test\/.gitignore",
       "oF" : 1
     },
-    "\/data\/compiled\/compiled.json" : {
-      "ft" : 524288,
-      "oA" : 2,
-      "oAP" : "\/www-test\/data\/data.json",
-      "oF" : 3,
-      "oO" : 1,
-      "oS" : 1
-    },
-    "\/data\/compiled\/manus-expanded.pdf" : {
+    "\/data\/compiled\/pdf\/manus-empty.pdf" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/www-test\/data\/manus-original.pdf",
-      "oF" : 2
+      "oAP" : "\/www-test\/data\/compiled\/pdf\/manus-empty.pdf",
+      "oF" : 0
     },
-    "\/data\/compiled\/manus-mics.pdf" : {
+    "\/data\/compiled\/pdf\/manus-mics.pdf" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/www-test\/data\/manus-mics.pdf",
-      "oF" : 2
+      "oAP" : "\/www-test\/data\/compiled\/pdf\/manus-mics.pdf",
+      "oF" : 0
     },
-    "\/data\/compiled\/showdata GP.json" : {
+    "\/data\/compiled\/pdf\/manus-music.pdf" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/www-test\/data\/compiled\/pdf\/manus-music.pdf",
+      "oF" : 0
+    },
+    "\/data\/compiled\/showdata\/GP\/showdata.json" : {
       "ft" : 524288,
       "oA" : 1,
-      "oAP" : "\/www-test\/data\/compiled\/showdata GP.json",
+      "oAP" : "\/www-test\/data\/compiled\/showdata\/GP\/showdata.json",
       "oF" : 0,
       "oO" : 1,
       "oS" : 1
     },
-    "\/data\/compiled\/showdata Show 1.json" : {
+    "\/data\/compiled\/showdata\/Show 1\/showdata.json" : {
       "ft" : 524288,
       "oA" : 1,
-      "oAP" : "\/www-test\/data\/compiled\/showdata Show 1.json",
+      "oAP" : "\/www-test\/data\/compiled\/showdata\/Show 1\/showdata.json",
       "oF" : 0,
       "oO" : 1,
       "oS" : 1
     },
-    "\/data\/compiled\/showdata Show 2.json" : {
+    "\/data\/compiled\/showdata\/Show 2\/showdata.json" : {
       "ft" : 524288,
       "oA" : 1,
-      "oAP" : "\/www-test\/data\/compiled\/showdata Show 2.json",
+      "oAP" : "\/www-test\/data\/compiled\/showdata\/Show 2\/showdata.json",
       "oF" : 0,
       "oO" : 1,
       "oS" : 1
     },
-    "\/data\/compiled\/showdata Show 3.json" : {
+    "\/data\/compiled\/showdata\/Show 3\/showdata.json" : {
       "ft" : 524288,
       "oA" : 1,
-      "oAP" : "\/www-test\/data\/compiled\/showdata Show 3.json",
+      "oAP" : "\/www-test\/data\/compiled\/showdata\/Show 3\/showdata.json",
       "oF" : 0,
       "oO" : 1,
       "oS" : 1
     },
-    "\/data\/compiled\/showdata Show 4.json" : {
+    "\/data\/compiled\/showdata\/Show 4\/showdata.json" : {
       "ft" : 524288,
       "oA" : 1,
-      "oAP" : "\/www-test\/data\/compiled\/showdata Show 4.json",
+      "oAP" : "\/www-test\/data\/compiled\/showdata\/Show 4\/showdata.json",
       "oF" : 0,
       "oO" : 1,
       "oS" : 1
     },
-    "\/data\/compiled\/showdata Show 5.json" : {
+    "\/data\/compiled\/showdata\/Show 5\/showdata.json" : {
       "ft" : 524288,
       "oA" : 1,
-      "oAP" : "\/www-test\/data\/compiled\/showdata Show 5.json",
+      "oAP" : "\/www-test\/data\/compiled\/showdata\/Show 5\/showdata.json",
       "oF" : 0,
       "oO" : 1,
       "oS" : 1
     },
-    "\/data\/compiled\/showdata Show 6.json" : {
+    "\/data\/compiled\/showdata\/Show 6\/showdata.json" : {
       "ft" : 524288,
       "oA" : 1,
-      "oAP" : "\/www-test\/data\/compiled\/showdata Show 6.json",
+      "oAP" : "\/www-test\/data\/compiled\/showdata\/Show 6\/showdata.json",
       "oF" : 0,
       "oO" : 1,
       "oS" : 1
     },
-    "\/data\/compiled\/showdata.json" : {
+    "\/data\/compiled\/showdata\/shows.json" : {
       "ft" : 524288,
       "oA" : 1,
-      "oAP" : "\/www-test\/data\/compiled\/showdata.json",
+      "oAP" : "\/www-test\/data\/compiled\/showdata\/shows.json",
       "oF" : 0,
       "oO" : 1,
       "oS" : 1
@@ -141,7 +141,7 @@
       "ft" : 524288,
       "oA" : 1,
       "oAP" : "\/www-test\/data\/sources\/acdl.json",
-      "oF" : 0,
+      "oF" : 1,
       "oO" : 1,
       "oS" : 1
     },
@@ -165,7 +165,7 @@
       "ft" : 524288,
       "oA" : 1,
       "oAP" : "\/www-test\/data\/sources\/mics.json",
-      "oF" : 0,
+      "oF" : 1,
       "oO" : 1,
       "oS" : 1
     },
@@ -181,7 +181,7 @@
       "ft" : 524288,
       "oA" : 1,
       "oAP" : "\/www-test\/data\/sources\/shows.json",
-      "oF" : 0,
+      "oF" : 1,
       "oO" : 1,
       "oS" : 1
     },
@@ -214,45 +214,37 @@
       "oAP" : "\/www-test\/Makefile",
       "oF" : 1
     },
-    "\/scripts\/analyze.py" : {
+    "\/scripts\/analyze_pdf.py" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 1,
-      "oAP" : "\/www-test\/scripts\/analyze.py",
+      "oAP" : "\/www-test\/scripts\/analyze_pdf.py",
       "oF" : 1
     },
-    "\/scripts\/annotate.py" : {
+    "\/scripts\/analyze_showdata.py" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 1,
-      "oAP" : "\/www-test\/scripts\/annotate.py",
-      "oF" : 1
-    },
-    "\/scripts\/compile-old.py" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 1,
-      "oAP" : "\/www-test\/scripts\/compile-old.py",
+      "oAP" : "\/www-test\/scripts\/analyze_showdata.py",
       "oF" : 1
     },
     "\/scripts\/compile.py" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 0,
+      "oA" : 1,
       "oAP" : "\/www-test\/scripts\/compile.py",
-      "oF" : 0
+      "oF" : 1
     },
     "\/scripts\/render.py" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 0,
+      "oA" : 1,
       "oAP" : "\/www-test\/scripts\/render.py",
-      "oF" : 0
+      "oF" : 1
     },
     "\/www-code\/css\/login.scss" : {
       "aP" : 0,
@@ -279,6 +271,19 @@
       "oF" : 0,
       "pg" : 0
     },
+    "\/www-code\/css\/showmaster-old.scss" : {
+      "aP" : 0,
+      "bl" : 0,
+      "co" : 0,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 0,
+      "oAP" : "\/www-test\/css\/showmaster-old.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0
+    },
     "\/www-code\/css\/showmaster.scss" : {
       "aP" : 0,
       "bl" : 0,
@@ -291,19 +296,6 @@
       "oF" : 0,
       "oS" : 0,
       "pg" : 0
-    },
-    "\/www-code\/img\/logo.png" : {
-      "ft" : 32768,
-      "iS" : 149733,
-      "oA" : 0,
-      "oAP" : "\/www-test\/img\/logo.png",
-      "oF" : 0,
-      "oIPL" : 0,
-      "opt" : 1,
-      "oT" : 1,
-      "ou" : "lpckwebp-none",
-      "q" : 90,
-      "rq" : 75
     },
     "\/www-code\/index.php" : {
       "cB" : 0,
@@ -357,6 +349,17 @@
       "sC" : 3,
       "tS" : 0
     },
+    "\/www-code\/js\/showmaster-old.js" : {
+      "bF" : 0,
+      "ft" : 64,
+      "ma" : 0,
+      "mi" : 0,
+      "oA" : 0,
+      "oAP" : "\/www-test\/js\/showmaster-old.js",
+      "oF" : 0,
+      "sC" : 3,
+      "tS" : 0
+    },
     "\/www-code\/js\/showmaster.js" : {
       "bF" : 0,
       "ft" : 64,
@@ -380,9 +383,9 @@
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 0,
+      "oA" : 1,
       "oAP" : "\/www-test\/poe-ideas.html",
-      "oF" : 0
+      "oF" : 1
     },
     "\/www-deploy" : {
       "ft" : 65536,
@@ -409,7 +412,7 @@
     "displayValueWasSetByUser" : 0,
     "iconImageName" : "brackets-brick",
     "iconImageWasSetByUser" : 0,
-    "lastBuiltDate" : 757942408.45108604
+    "lastBuiltDate" : 758660045.31938505
   },
   "projectSettings" : {
     "abortBuildOnError" : 1,
@@ -1068,7 +1071,7 @@
         "active" : 0
       },
       "no-empty" : {
-        "active" : 1,
+        "active" : 0,
         "optionString" : "{'allowEmptyCatch': false}"
       },
       "no-empty-character-class" : {

@@ -29,27 +29,27 @@
 
     "GP": {
         "DARRYL":          [ { "page": 1, "y": 0.0, "actor": "Salvador"  }, { "page": 78, "y": 0.0, "actor": "Thomas" } ],
-        "MICHAEL":         [ { "page": 1, "y": 0.0, "actor": "Isak"      } ],
-        "JENNIFER":        [ { "page": 1, "y": 0.0, "actor": "Thea"      } ],
-        "BRENDA":          [ { "page": 1, "y": 0.0, "actor": "Benedicte" } ]
-    },
-
-    "Show 1": {
-        "DARRYL":          [ { "page": 1, "y": 0.0, "actor": "Tobias"    } ],
         "MICHAEL":         [ { "page": 1, "y": 0.0, "actor": "Oscar"     } ],
         "JENNIFER":        [ { "page": 1, "y": 0.0, "actor": "Benedicte" } ],
         "BRENDA":          [ { "page": 1, "y": 0.0, "actor": "Thea"      } ]
     },
 
-    "Show 2": {
-        "DARRYL":          [ { "page": 1, "y": 0.0, "actor": "Salvador"  }, { "page": 78, "y": 0.0, "actor": "Thomas" } ],
+    "Show 1": {
+        "DARRYL":          [ { "page": 1, "y": 0.0, "actor": "Tobias"    } ],
         "MICHAEL":         [ { "page": 1, "y": 0.0, "actor": "Isak"      } ],
         "JENNIFER":        [ { "page": 1, "y": 0.0, "actor": "Thea"      } ],
         "BRENDA":          [ { "page": 1, "y": 0.0, "actor": "Benedicte" } ]
     },
 
+    "Show 2": {
+        "DARRYL":          [ { "page": 1, "y": 0.0, "actor": "Salvador"  }, { "page": 78, "y": 0.0, "actor": "Thomas" } ],
+        "MICHAEL":         [ { "page": 1, "y": 0.0, "actor": "Oscar"     } ],
+        "JENNIFER":        [ { "page": 1, "y": 0.0, "actor": "Benedicte" } ],
+        "BRENDA":          [ { "page": 1, "y": 0.0, "actor": "Thea"      } ]
+    },
+
     "Show 3": {
-        "DARRYL":          [ { "page": 1, "y": 0.0, "actor": "Tobias"    } ],
+        "DARRYL":          [ { "page": 1, "y": 0.0, "actor": "Salvador"  }, { "page": 78, "y": 0.0, "actor": "Thomas" } ],
         "MICHAEL":         [ { "page": 1, "y": 0.0, "actor": "Oscar"     } ],
         "JENNIFER":        [ { "page": 1, "y": 0.0, "actor": "Benedicte" } ],
         "BRENDA":          [ { "page": 1, "y": 0.0, "actor": "Thea"      } ]
@@ -64,13 +64,13 @@
 
     "Show 5": {
         "DARRYL":          [ { "page": 1, "y": 0.0, "actor": "Tobias"    } ],
-        "MICHAEL":         [ { "page": 1, "y": 0.0, "actor": "Oscar"     } ],
-        "JENNIFER":        [ { "page": 1, "y": 0.0, "actor": "Benedicte" } ],
-        "BRENDA":          [ { "page": 1, "y": 0.0, "actor": "Thea"      } ]
+        "MICHAEL":         [ { "page": 1, "y": 0.0, "actor": "Isak"      } ],
+        "JENNIFER":        [ { "page": 1, "y": 0.0, "actor": "Thea"      } ],
+        "BRENDA":          [ { "page": 1, "y": 0.0, "actor": "Benedicte" } ]
     },
 
     "Show 6": {
-        "DARRYL":          [ { "page": 1, "y": 0.0, "actor": "Salvador"  }, { "page": 78, "y": 0.0, "actor": "Thomas" } ],
+        "DARRYL":          [ { "page": 1, "y": 0.0, "actor": "Tobias"    } ],
         "MICHAEL":         [ { "page": 1, "y": 0.0, "actor": "Isak"      } ],
         "JENNIFER":        [ { "page": 1, "y": 0.0, "actor": "Thea"      } ],
         "BRENDA":          [ { "page": 1, "y": 0.0, "actor": "Benedicte" } ]
