@@ -136,7 +136,7 @@ body {
   grid-area: display;
 }
 .toolbar .display .button {
-  width: 40%;
+  width: 100%;
   height: 3rem;
   background-color: green;
   border: 1px solid black;

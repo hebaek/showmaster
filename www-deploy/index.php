@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    if ($_SESSION['username'] != 'stale') {
+    if ($_SESSION['username'] != 'svgs') {
         header('location:login.php');
     }
 ?>
@@ -28,8 +28,8 @@
 <body>
     <div class="toolbar">
         <div class='display'>
-            <div class='button' id='pdf-original'>Original</div>
-            <div class='button' id='pdf-mics'>Mikrofoner</div>
+            <div class='button' id='pdf-original'>Manus: Originalmanus</div>
+            <div class='button' id='pdf-mics'>Manus: Med mikrofoner</div>
         </div>
 
         <div class="scenes">

@@ -8,6 +8,14 @@ body {
   color: #fff;
 }
 
+img {
+  width: 300px;
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 .login-container {
   background: #ffffff;
   color: #333;
@@ -19,14 +27,9 @@ body {
   text-align: center;
 }
 
-.login-container img {
-  width: 200px;
-  margin-bottom: 1rem;
-}
-
 .login-container h1 {
   font-size: 1.8rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 .login-container form {

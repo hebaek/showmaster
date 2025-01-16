@@ -14,7 +14,7 @@
     session_start();
 
     if (isset($clean['username'])) {
-        if($clean['username'] === "stale" && $clean['password'] === "stale") {
+        if($clean['username'] === "svgs" && $clean['password'] === "svgs") {
             $_SESSION['username'] = $clean['username'];
             header('location:index.php');
         }
@@ -46,9 +46,9 @@
 </head>
 
 <body>
+    <img src="img/logo.png" alt="Logo"> <!-- Replace 'logo.png' with the path to your logo -->
     <div class="login-container">
-        <img src="img/logo.png" alt="Logo"> <!-- Replace 'logo.png' with the path to your logo -->
-        <h1>Login</h1>
+        <h1>Logg inn</h1>
 
         <form name='form' method='post' action='login.php'>
             <input type="text" name="username" placeholder="brukernavn" required>
