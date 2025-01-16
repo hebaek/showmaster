@@ -13,8 +13,20 @@ data/compiled/manus-expanded.pdf: scripts/* data/sources/*
 
 
 
-data/compiled/manus-mics.pdf: data/compiled/manus-expanded.pdf data/compiled/compiled.json
-	python3 scripts/annotate.py
+data/compiled/common/manus-mics.pdf: data/compiled/common/manus-music.pdf data/compiled/showdata.json
+	python3 scripts/render.py
+
+
+
+publish:
+	rm -rf www-test/data
+	rm -rf www-test/pdf
+
+	install -d www-test/data
+	install -d www-test/pdf
+
+	cp -r data/compiled/showdata/* www-test/data/
+	cp -r data/compiled/pdf/*      www-test/pdf/
 
 
 

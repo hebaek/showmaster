@@ -1,5 +1,6 @@
 '''
 FIX: Add pages is in conflict with remove pages
+Bytt "show" med action: empty, music, mics...
 
 Take in showdata
 Create pdfs for show:
@@ -267,21 +268,24 @@ if __name__ == "__main__":
     shows = load_data('data/sources/shows.json')
     if not show in shows: print('ERROR! No show', show); exit()
 
-    data  = load_data(f'data/compiled/{show}/showdata.json')
+    data  = load_data(f'data/compiled/showdata/{show}/showdata.json')
+
     manusfile = 'data/originals/manus.pdf'
-    emptyfile = 'data/compiled/manus-empty.pdf'
-    musicfile = 'data/compiled/manus-music.pdf'
+    emptyfile = 'data/compiled/pdf/manus-empty.pdf'
+    musicfile = 'data/compiled/pdf/manus-music.pdf'
+    micsfile  = 'data/compiled/pdf/manus-mics.pdf'
+
 
     # create empty pdf with removed pages and extra pages
     empty_pdf = create_empty(manusfile, data)
-    save_pdf(f'data/compiled/', 'manus-empty.pdf', empty_pdf)
+    save_pdf(f'data/compiled/pdf/', 'manus-empty.pdf', empty_pdf)
 
 
     # create music based on empty
     music_pdf = create_music(emptyfile, data)
-    save_pdf(f'data/compiled/', 'manus-music.pdf', music_pdf)
+    save_pdf(f'data/compiled/pdf/', 'manus-music.pdf', music_pdf)
 
 
     # create mics based on music
     mics_pdf = create_mics(musicfile, data)
-    save_pdf(f'data/compiled/', 'manus-mics.pdf', mics_pdf)
+    save_pdf(f'data/compiled/pdf/', 'manus-mics.pdf', mics_pdf)

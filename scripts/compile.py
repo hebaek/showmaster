@@ -511,8 +511,16 @@ def compile_commondata(shows):
     }
 
     for show in shows:
-        result['showdata'][show] = f'data/compiled/{show}/showdata.json'
-        result['pdf'     ][show] = f'data/compiled/{show}/manus.pdf'
+        result['pdf']['empty'] = { 'url': f'pdf/manus-empty.pdf', 'name': 'original'   }
+        result['pdf']['music'] = { 'url': f'pdf/manus-music.pdf', 'name': 'musikk'     }
+        result['pdf']['mics' ] = { 'url': f'pdf/manus-mics.pdf',  'name': 'mikrofoner' }
+
+        result['showdata'][show] = {
+            'url': f'data/{show}/showdata.json',
+            'name': shows[show]['name'],
+            'date': shows[show]['date'],
+            'time': shows[show]['time'],
+        }
 
     return result
 
@@ -643,7 +651,7 @@ if __name__ == "__main__":
     music    = generate_musicmap(music)
 
     commondata = compile_commondata(shows)
-    save_json('data/compiled/', 'showdata.json', commondata)
+    save_json('data/compiled/showdata/', 'shows.json', commondata)
 
 
     # Per-show data
@@ -674,7 +682,7 @@ if __name__ == "__main__":
         micmap = generate_micmap(mics, mcdl)
 
         showdata = compile_showdata(shows, pages, micmap, acts)
-        save_json(f'data/compiled/{show}/', 'showdata.json', showdata)
+        save_json(f'data/compiled/showdata/{show}/', 'showdata.json', showdata)
 
 
     print(f'All done!')
