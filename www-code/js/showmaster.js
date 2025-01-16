@@ -1,90 +1,47 @@
-let lastCounterValue = null
+const projectfile = 'data/shows.json'
+const projectdata = {}
+const pdfdata     = {}
 
-let data = null
-let showtime = new Date()
-let lastpage = null
-let miclist  = null
+let showdata = null
 
-const jsonUrl         = 'data/data.json'
-const pdfUrl_original = 'data/manus-original.pdf'
-const pdfUrl_mics     = 'data/manus-mics.pdf'
+const state = {
+    'firstpage':    null,
+    'lastpage':     null,
 
-let pdfDoc      = null
-let lastpdfpage = null
-let viewportWidth = 0
-let viewportHeight = 0
+    'currentpage':  null,
+    'currentscene': null,
+    'currentsong':  null,
 
-let current_scene = null
-let current_music = null
-let current_page  = { source: null, target: 1, name: null }
-
-
-
-const get_page = (type, page) => {
-    if (type == 'source') return data.pagemap.find(p => p.source == page)
-    if (type == 'target') return data.pagemap.find(p => p.target == page)
-    if (type == 'name'  ) return data.pagemap.find(p => p.name   == page)
-
-    return { source: 1, target: 1, name: null }
+    'doc':          null,
 }
 
 
 
-const set_current_page = (type, page) => {
-    const realpage = get_page(type, page)
-
-    current_page.source = realpage.source
-    current_page.target = realpage.target
-    current_page.name   = realpage.name
-}
-
-
-/*
-const setShowtime = () => {
-    const h = String(showtime.getHours()).padStart(2, '0')
-    const m = String(showtime.getMinutes()).padStart(2, '0')
-    const s = String(showtime.getSeconds()).padStart(2, '0')
-    document.getElementById('showtime').textContent = `${h}:${m}:${s}`
-}
-
-
-
-const updateClock = () => {
-    const now = new Date()
-    const countdown = new Date(showtime - now)
-
-    const wh = String(now.getHours()).padStart(2, '0')
-    const wm = String(now.getMinutes()).padStart(2, '0')
-    const ws = String(now.getSeconds()).padStart(2, '0')
-    document.getElementById('walltime').textContent = `${wh}:${wm}:${ws}`
-
-    const ch = String(countdown.getHours()).padStart(2, '0')
-    const cm = String(countdown.getMinutes()).padStart(2, '0')
-    const cs = String(countdown.getSeconds()).padStart(2, '0')
-    document.getElementById('countdown').textContent = `${ch}:${cm}:${cs}`
-}
-*/
-
-
-const fetchJsonData = async () => {
+const fetch_showdata = async () => {
     try {
-        const response = await fetch(jsonUrl)
-        if (!response.ok) {
-            throw new Error('Feil ved lasting av JSON-fil')
+        const response = await fetch(projectfile)
+        if (!response.ok) { throw new Error('Feil ved lasting av showdata') }
+
+        const shows = await response.json()
+
+        for (const show in shows.showdata) {
+            console.log(show, shows.showdata[show])
+            projectdata[show] = {
+                'url':  shows.showdata[show].url,
+                'name': shows.showdata[show].name,
+                'date': shows.showdata[show].date,
+                'time': shows.showdata[show].time,
+            }
         }
-        data = await response.json()
 
-        lastpage = get_page('target', Math.max(...data.pagemap.map(p => p.target)))
-        miclist  = Object.keys(data.micmap[0]['mics'])
+        for (const pdf in shows.pdf) {
+            pdfdata[pdf] = {
+                'url':  shows.pdf[pdf].url,
+                'name': shows.pdf[pdf].name,
+            }
+        }
 
-
-//        showtime = new Date(data.showtime)
-
-//        setShowtime()
-        createShortcuts()
-        createMicList()
-        loadPdf(pdfUrl_mics)
-        updateLocation('target', current_page.target)
+        state['currentpage'] = 1
     } catch (error) {
         console.error('Klarte ikke å laste JSON:', error)
     }
@@ -92,57 +49,69 @@ const fetchJsonData = async () => {
 
 
 
-const createShortcuts = () => {
-    data.scenes.forEach((scene) => {
-        const button = document.createElement("button")
-        button.textContent = `${scene.id} - ${scene.name}`
-        button.addEventListener("click", () => {
-            updateLocation('target', scene.start.page)
-            $('.shortcuts').hide()
-        })
+const load_show = async (show) => {
+    try {
+        const response = await fetch(projectdata[show].url)
+        if (!response.ok) { throw new Error('Feil ved lasting av showdata') }
 
-        $('.shortcuts.scenes').append(button)
-    })
-
-    data.music.forEach((music) => {
-        const button = document.createElement("button")
-        button.textContent = `${music.id} - ${music.name}`
-        button.addEventListener("click", () => {
-            updateLocation('target', music.start.page)
-            $('.shortcuts').hide()
-        })
-
-        $('.shortcuts.music').append(button)
-        if (music.type == 'instrumental') {
-            $(button).addClass('instrumental')
-        }
-    })
-
-    data.pagemap.forEach((page) => {
-        let text = `Side ${page.source}`
-        if (page.name) { text += ` - ${page.name}` }
-
-        const button = document.createElement("button")
-        button.textContent = text
-        button.addEventListener("click", () => {
-            updateLocation('target', page.target)
-            $('.shortcuts').hide()
-        })
-
-        $('.shortcuts.pages').append(button)
-    })
-
-    $('.shortcuts button').addClass('shortcut')
-
+        return await response.json()
+    } catch (error) {
+        console.error('Klarte ikke å laste JSON:', error)
+    }
 }
 
 
 
-const createMicList = () => {
-    $('#details').html('')
+const get_current_show = async () => {
+    return 'Show 1'
+}
 
-    for (mic of miclist) {
-        $('#details').append(`
+
+
+const populate_show = async show => {
+    showdata = await load_show(show)
+
+    pdf_load('mics')
+
+    console.log(showdata)
+    create_shortcuts(showdata)
+    create_miclist(showdata)
+
+    $('#pdf-original').html(projectdata[show].name)
+}
+
+
+
+const create_shortcuts = () => {
+    showdata.scenes.forEach(scene => {
+        let classes = 'shortcut'
+        let text = `${scene.id} - ${scene.name}`
+
+        $('.scenes > .shortcuts').append(`<button class='${classes}' data-page='${scene.start.page.target}'>${text}</button>`)
+    })
+
+    showdata.music.forEach(music => {
+        let classes = 'shortcut'; if (music.type == 'instrumental') { classes += ' instrumental' }
+        let text = `${music.id} - ${music.name}`
+
+        $('.music > .shortcuts').append(`<button class='${classes}' data-page='${music.start.page.target}'>${text}</button>`)
+    })
+
+    showdata.pagemap.forEach(page => {
+        let classes = 'shortcut'
+        let text = `Side ${page.source}`; if (page.name) { text += ` - ${page.name}` }
+
+        $('.pages > .shortcuts').append(`<button class='${classes}' data-page='${page.target}'>${text}</button>`)
+    })
+}
+
+
+
+const create_miclist = () => {
+    $('#miclist').html('')
+
+    for (const mic of showdata.miclist) {
+        $('#miclist').append(`
             <div class='row' id='mic_${mic}'>
                 <div class='mic'>${mic}</div>
                 <div class='role'></div>
@@ -154,325 +123,199 @@ const createMicList = () => {
 
 
 
-const updateMicList = (scene_index, music_index, page) => {
-    const pageList = () => {
-        const current_ensembles = {}
-        for (ensemble in data.ensemblemap) {
-            current = data.ensemblemap[ensemble].filter(ens => ens.location.page + ens.location.y < page + 1).pop()
-            current_ensembles[ensemble] = current
+const update_miclist = () => {
+    const micmap = showdata.micmap.filter(row => row.location.target < state['currentpage'] + 0.99).pop()
+    const lines = showdata.lines.filter(line => line.location.target < state['currentpage'] + 1 && line.location.target >= state['currentpage'])
+    const roles    = new Set(lines.map(line => line.roles   ).reduce((result, roles) => [...result, ...roles], []))
+    const ensemble = new Set(lines.map(line => line.ensemble).reduce((result, roles) => [...result, ...roles], []))
+
+    $('.row').removeClass('passive active role ensemble')
+    $('.row > .role').html('')
+    $('.row > .actor').html('')
+
+    for (const mic in micmap.mics) {
+        // Go through all roles on page
+        if (roles.has(micmap.mics[mic].role)) {
+            $(`#mic_${mic}`).addClass('active role')
+            $(`#mic_${mic} > .role` ).html(micmap.mics[mic].role )
+            $(`#mic_${mic} > .actor`).html(micmap.mics[mic].actor)
         }
 
-        const current_mics = data.micmap.filter(mics => mics.location.page + mics.location.y < page + 1).pop()
-        const current_roles = {}
-        const current_actors = {}
-
-        for (const [mic, data] of Object.entries(current_mics['mics'])) {
-            if (data.role)  { current_roles[data.role  ] = mic }
-            if (data.actor) { current_actors[data.actor] = mic }
+        // Go through ensemble on page
+        if (ensemble.has(micmap.mics[mic].role)) {
+            $(`#mic_${mic}`).addClass('active ensemble')
+            $(`#mic_${mic} > .role` ).html(micmap.mics[mic].role )
+            $(`#mic_${mic} > .actor`).html(micmap.mics[mic].actor)
         }
 
-
-
-        for (mic in current_mics['mics']) {
-            $(`#mic_${mic} > .role` ).html(current_mics['mics'][mic].role)
-            $(`#mic_${mic} > .actor`).html(current_mics['mics'][mic].actor)
-        }
-
-        const page_lines = data.lines.filter(line => line.location.page + line.location.y < page + 1 && line.location.page + line.location.y >= page)
-
-        $(`.row`).removeClass('active ensemble')
-        for (line of page_lines) {
-            for (role of line.roles) {
-                $(`#mic_${current_roles[role]}`).addClass('active')
-            }
-            for (ensemble of line.ensembles) {
-                const roles  = current_ensembles[ensemble].roles
-                const extras = current_ensembles[ensemble].extras
-
-                for (role  of roles ) { $(`#mic_${current_roles[role]}`  ).addClass('ensemble') }
-                for (actor of extras) { $(`#mic_${current_actors[actor]}`).addClass('ensemble') }
-            }
-        }
-    }
-
-
-
-    const sceneList = () => {
-        $(`.row`).removeClass('passive')
-
-        if (scene_index === null) {
-            return
-        }
-
-        const current_ensembles = {}
-        for (ensemble in data.ensemblemap) {
-            current = data.ensemblemap[ensemble].filter(ens => ens.location.page + ens.location.y < page + 1).pop()
-            current_ensembles[ensemble] = current
-        }
-
-        const current_mics = data.micmap.filter(mics => mics.location.page + mics.location.y < page + 1).pop()
-        const current_roles = {}
-
-        for (const [mic, data] of Object.entries(current_mics['mics'])) {
-            if (data.role) {
-                current_roles[data.role] = mic
-            }
-        }
-
-        const passive_mics = new Set()
-
-        const firstpage = data.scenes[scene_index].start.page
-        const lastpage  = data.scenes[scene_index].end.page
-
-        for (let page = firstpage; page < lastpage; page++) {
-            const current_ensembles = {}
-            for (ensemble in data.ensemblemap) {
-                current = data.ensemblemap[ensemble].filter(ens => ens.location.page + ens.location.y < page + 1).pop()
-                current_ensembles[ensemble] = current
-            }
-
-            const current_mics = data.micmap.filter(mics => mics.location.page + mics.location.y < page + 1).pop()
-            const current_roles = {}
-
-            for (const [mic, data] of Object.entries(current_mics['mics'])) {
-                if (data.role) {
-                    current_roles[data.role] = mic
+        if (state['currentscene']) {
+            // Go through all roles in scene
+            for (const [index, role] of showdata.scenes[state['currentscene']].roles.entries()) {
+                if (role == micmap.mics[mic].role) {
+                    $(`#mic_${mic}`).addClass('passive role')
+                    $(`#mic_${mic} > .role` ).html(micmap.mics[mic].role )
+                    $(`#mic_${mic} > .actor`).html(micmap.mics[mic].actor)
                 }
             }
 
-            const page_lines = data.lines.filter(line => line.location.page + line.location.y < page + 1 && line.location.page + line.location.y >= page)
-
-            for (line of page_lines) {
-                for (role of line.roles) {
-                    passive_mics.add(current_roles[role])
-                }
-
-                for (ensemble of line.ensembles) {
-                    const roles  = current_ensembles[ensemble].roles
-                    const extras = current_ensembles[ensemble].extras
-
-                    for (role of roles) {
-                        passive_mics.add(current_roles[role])
-                    }
-                    for (role of extras) {
-                        passive_mics.add(current_roles[role])
-                    }
+            // Go through ensemble in scene
+            for (const [index, role] of showdata.scenes[state['currentscene']].ensemble.entries()) {
+                if (role == micmap.mics[mic].role) {
+                    $(`#mic_${mic}`).addClass('passive ensemble')
+                    $(`#mic_${mic} > .role` ).html(micmap.mics[mic].role )
+                    $(`#mic_${mic} > .actor`).html(micmap.mics[mic].actor)
                 }
             }
         }
-
-        for (mic of passive_mics) {
-            $(`#mic_${mic}`).addClass('passive')
-        }
     }
 
-
-
-    pageList()
-    sceneList()
 }
 
 
 
-const loadPdf = async pdfUrl => {
-    const loadingTask = pdfjsLib.getDocument(pdfUrl)
+const goto_page = page => {
+    if (page > state['lastpage'])  return
+    if (page < state['firstpage']) return
 
-    pdfDoc = await loadingTask.promise
-    lastpdfpage = pdfDoc.numPages
+    state['currentpage'] = page
+    state['currentscene'] = null
+    state['currentmusic'] = null
 
-    renderPdf(current_page.target)
-}
+    let pagehtml  = `<div class='header empty'>(ingen side)</div>`
+    let scenehtml = `<div class='header empty'>(ingen scene)</div>`
+    let musichtml = `<div class='header empty'>(ingen musikk)</div>`
 
-const renderPdf = pageNum => {
-    if (! pdfDoc) return
+    if (state['currentpage']) {
+        const sourcepage = showdata.pagemap.find(x => x.target == state['currentpage'])
+        const lastpage   = showdata.pagemap.find(x => x.target == state['lastpage'   ])
 
-    pdfDoc.getPage(pageNum).then((page) => {
-        const canvas = document.getElementById('pdf-canvas')
-        const context = canvas.getContext('2d')
-
-        const desiredWidth  = $('#pdf-viewer').innerWidth()
-        const desiredHeight = $('#pdf-viewer').innerHeight()
-
-        const testViewport = page.getViewport({ scale: 1, })
-        const scaleWidth  = desiredWidth  / testViewport.width
-        const scaleHeight = desiredHeight / testViewport.height
-        const scale = Math.min(scaleWidth, scaleHeight)
-
-        var viewport = page.getViewport({ scale: scale, })
-        canvas.height = viewport.height
-        canvas.width = viewport.width
-
-        viewportHeight = viewport.height
-        viewportWidth = viewport.width
-
-        var renderContext = {
-            canvasContext: context,
-            viewport: viewport,
-        }
-        page.render(renderContext)
-    })
-}
-
-
-
-
-const updateLocation = (type, pagesource) => {
-    pagemap = get_page(type, pagesource)
-
-    if (pagemap.source == current_page.source) return
-    if (pagemap.target >  lastpage.target    ) return
-    if (pagemap.target <  1                  ) return
-
-    current_page = pagemap
-
-    let scene_index = null
-    let music_index = null
-
-    let current_scene = `<div class='header empty'>(ingen scene)</div>`
-    let current_music  = `<div class='header empty'>(ingen musikk)</div>`
-
-    for (let i = 0; i < data.scenes.length; i++) {
-        if (data.scenes[i].start.page <= current_page.target && data.scenes[i].end.page >= current_page.target) {
-            current_scene = `<div class='header'>${data.scenes[i].id} - ${data.scenes[i].name}</div>`
-            scene_index = i
-        }
+        pagehtml = `<div class='header'>Side ${sourcepage.source} av ${lastpage.source}</div>`
     }
 
-    for (let i = 0; i < data.music.length; i++) {
-        if (data.music[i].start.page <= current_page.target && data.music[i].end.page >= current_page.target) {
-            current_music = `<div class='header'>${data.music[i].id} - ${data.music[i].name}</div>`
-            music_index = i
-        }
+    for (const scene in showdata.scenes) {
+        const start_location = showdata.scenes[scene].start.location.target
+        const end_location   = showdata.scenes[scene].end.location.target
+
+        if (start_location < page + 1 && end_location >= page) { state['currentscene'] = parseInt(scene) }
     }
 
-    $('.scenes > .content').html(`${current_scene}`)
-    $('.music > .content').html(`${current_music}`)
-    $('.pages > .content').html(`<div class='header'>Side ${current_page.source} av ${lastpage.source}</div>`)
+    for (const music in showdata.music) {
+        const start_location = showdata.music[music].start.location.target
+        const end_location   = showdata.music[music].end.location.target
 
-    renderPdf(current_page.target)
-    updateMicList(scene_index, music_index, current_page.target)
-}
-
-
-
-const prevScene = () => {
-    for (let i = data.scenes.length - 1; i >= 0; i--) {
-        if (data.scenes[i].end.page < current_page.target) {
-            updateLocation('target', data.scenes[i].start.page)
-            return
-        }
+        if (start_location < page + 1 && end_location >= page) { state['currentmusic'] = parseInt(music) }
     }
-}
+
+    if (state['currentscene']) { scenehtml = `<div class='header empty'>${showdata.scenes[state['currentscene']].id} - ${showdata.scenes[state['currentscene']].name}</div>` }
+    if (state['currentmusic']) { musichtml = `<div class='header empty'>${showdata.music [state['currentmusic']].id} - ${showdata.music [state['currentmusic']].name}</div>` }
 
 
 
-const nextScene = () => {
-    for (let i = 0; i < data.scenes.length; i++) {
-        if (data.scenes[i].start.page > current_page.target) {
-            updateLocation('target', data.scenes[i].start.page)
-            return
-        }
+    let prev_page  = null, next_page  = null
+    let prev_scene = null, next_scene = null
+    let prev_music = null, next_music = null
+
+    if (state['currentpage']) {
+        prev_page = state['currentpage' ] - 1
+        next_page = state['currentpage' ] + 1
+    } else {
+
     }
-}
 
+    if (state['currentscene']) {
+        prev_scene = showdata.scenes[state['currentscene'] - 1].start.page.target
+        next_scene = showdata.scenes[state['currentscene'] + 1].start.page.target
+    } else {
 
-
-const prevMusic = () => {
-    for (let i = data.music.length - 1; i >= 0; i--) {
-        if (data.music[i].end.page < current_page.target) {
-            updateLocation('target', data.music[i].start.page)
-            return
-        }
     }
-}
 
+    if (state['currentmusic']) {
+        prev_music = showdata.music[state['currentmusic'] - 1].start.page.target
+        next_music = showdata.music[state['currentmusic'] + 1].start.page.target
+    } else {
 
-
-const nextMusic = () => {
-    for (let i = 0; i < data.music.length; i++) {
-        if (data.music[i].start.page > current_page.target) {
-            updateLocation('target', data.music[i].start.page)
-            return
-        }
     }
+
+    $('.pages > .content' ).html(pagehtml)
+    $('.scenes > .content').html(scenehtml)
+    $('.music > .content' ).html(musichtml)
+
+    $('.pages > .prev' ).data('page', prev_page)
+    $('.pages > .next' ).data('page', next_page)
+    $('.scenes > .prev').data('page', prev_scene)
+    $('.scenes > .next').data('page', next_scene)
+    $('.music > .prev' ).data('page', prev_music)
+    $('.music > .next' ).data('page', next_music)
+
+    pdf_render()
+    update_miclist()
 }
 
 
 
-const setHandlers = () => {
-    $(window).on('resize', () => renderPdf(current_page.target))
+const pdf_load = async pdf => {
+    const loadingtask = pdfjsLib.getDocument(pdfdata[pdf])
+    state['doc'] = await loadingtask.promise
 
-    $(document).on('click', '.scenes > .content', () => { $('.shortcuts:not(.scenes)').hide(); $('.shortcuts.scenes').toggle() })
-    $(document).on('click', '.music > .content',  () => { $('.shortcuts:not(.music)' ).hide(); $('.shortcuts.music' ).toggle() })
-    $(document).on('click', '.pages > .content',  () => { $('.shortcuts:not(.pages)' ).hide(); $('.shortcuts.pages' ).toggle() })
+    state['lastpage']  = state['doc'].numPages
+    state['firstpage'] = 1
 
-    $(document).on('click', '.scenes > .prev', () => { prevScene() })
-    $(document).on('click', '.scenes > .next', () => { nextScene() })
-
-    $(document).on('click', '.music > .prev', () => { prevMusic() })
-    $(document).on('click', '.music > .next', () => { nextMusic() })
-
-    $(document).on('click', '.pages > .prev', () => { updateLocation('target', current_page.target - 1) })
-    $(document).on('click', '.pages > .next', () => { updateLocation('target', current_page.target + 1) })
-
-    $(document).on('click', '#pdf-original', () => { loadPdf(pdfUrl_original) })
-    $(document).on('click', '#pdf-mics',     () => { loadPdf(pdfUrl_mics) })
-
-
-
-//    $(document).on('mousemove', '#pdf-canvas', async event => { c = getPdfCoordinates(event).then(c => { $('.showtime .header').html("y:" + c.y) }) })
+    goto_page(state['currentpage'])
 }
 
 
 
-const getPdfCoordinates = async event => {
-    const result = await pdfDoc.getPage(current_page.target).then((page) => {
-        const canvas = document.getElementById('pdf-canvas')
-        const rect = canvas.getBoundingClientRect()
-        const x = event.clientX - rect.left
-        const y = event.clientY - rect.top
+const pdf_render = async () => {
+    if (! state['doc']) return
 
-        relative_x = Math.round(x / viewportWidth  * 1000) / 1000
-        relative_y = Math.round(y / viewportHeight * 1000) / 1000
+    const page = await state['doc'].getPage(state['currentpage'])
 
-        return { x: relative_x, y: relative_y }
-    })
+    const canvas = document.getElementById('pdf-canvas')
+    const context = canvas.getContext('2d')
 
-    return result
-}
+    const desiredWidth  = $('#pdf-viewer').innerWidth()
+    const desiredHeight = $('#pdf-viewer').innerHeight()
 
+    const testViewport = page.getViewport({ scale: 1, })
+    const scaleWidth  = desiredWidth  / testViewport.width
+    const scaleHeight = desiredHeight / testViewport.height
+    const scale = Math.min(scaleWidth, scaleHeight)
 
+    var viewport = page.getViewport({ scale: scale, })
+    canvas.height = viewport.height
+    canvas.width = viewport.width
 
-const checkForChanges = async () => {
-    try {
-        const response = await fetch('updates.php')
-        const currentCounter = await response.text()
-console.log(currentCounter)
+    viewportHeight = viewport.height
+    viewportWidth = viewport.width
 
-        // Check if the counter value has changed
-        if (lastCounterValue !== null && currentCounter !== lastCounterValue) {
-            alert('File has changed!') // Trigger your desired action
-        }
-
-        // Update the cached counter value
-        lastCounterValue = currentCounter;
-    } catch (error) {
-        console.error('Error checking for changes:', error);
+    var renderContext = {
+        canvasContext: context,
+        viewport: viewport,
     }
+    page.render(renderContext)
 }
 
 
 
-$(document).ready(function() {
-    fetchJsonData()
+const set_eventhandlers = () => {
+    $(window).on('resize', pdf_render)
 
-//    setInterval(updateClock, 25)
-//    updateClock()
-//    setShowtime()
+    $(document).on('click', '.scenes > .content', () => { $('.navigation:not(.scenes) .shortcuts').hide(); $('.scenes .shortcuts').toggle() })
+    $(document).on('click', '.music > .content',  () => { $('.navigation:not(.music)  .shortcuts').hide(); $('.music  .shortcuts').toggle() })
+    $(document).on('click', '.pages > .content',  () => { $('.navigation:not(.pages)  .shortcuts').hide(); $('.pages  .shortcuts').toggle() })
 
-    setHandlers()
+    $(document).on('click', '.shortcut', event => { $('.shortcuts').hide(); goto_page($(event.target).data('page')) })
+    $(document).on('click', '.prev',     event => { $('.shortcuts').hide(); goto_page($(event.target).data('page')) })
+    $(document).on('click', '.next',     event => { $('.shortcuts').hide(); goto_page($(event.target).data('page')) })
+}
 
-// Poll the PHP script every 60 seconds (adjust as needed)
-//    setInterval(checkForChanges, 60000) // 60,000 ms = 1 minute
-//    checkForChanges() // Initial check
+
+
+$(document).ready(async () => {
+    await fetch_showdata()
+
+    const show = await get_current_show()
+
+    await populate_show(show)
+    await set_eventhandlers()
 })

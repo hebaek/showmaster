@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    if ($_SESSION['username'] != 'stale') {
+    if ($_SESSION['username'] != 'svgs') {
         header('location:login.php');
     }
 ?>
@@ -26,35 +26,39 @@
 </head>
 
 <body>
-    <div class="toolbar">
+    <div id="toolbar">
         <div class='display'>
-            <div class='button' id='pdf-original'>Original</div>
-            <div class='button' id='pdf-mics'>Mikrofoner</div>
+            <div class='button' id='pdf-original'>Manus: Originalmanus</div>
+            <div class='button' id='pdf-mics'>Manus: Med mikrofoner</div>
         </div>
 
-        <div class="scenes">
+        <div class="navigation scenes">
+            <div class="shortcuts"></div>
             <button class="content"></button>
             <button class="prev">forrige</button>
             <button class="next">neste</button>
         </div>
-        <div class="music">
+        <div class="navigation music">
+            <div class="shortcuts"></div>
             <button class="content"></button>
             <button class="prev">forrige</button>
             <button class="next">neste</button>
         </div>
-        <div class="pages">
+        <div class="navigation pages">
+            <div class="shortcuts"></div>
             <button class="content"></button>
             <button class="prev">forrige</button>
             <button class="next">neste</button>
         </div>
     </div>
 
-    <div class="shortcuts scenes"></div>
-    <div class="shortcuts music"></div>
-    <div class="shortcuts pages"></div>
+    <div id='pdf-viewer'>
+        <canvas id='pdf-canvas'></canvas>
+    </div>
 
-    <div class='module' id='pdf-viewer'><canvas id='pdf-canvas'></canvas></div>
-    <div class='module' id='details'></div>
+    <div id='infobar'>
+        <div id='miclist'></div>
+    </div>
 </body>
 
 </html>
