@@ -65,15 +65,13 @@ body                    { background-color: var(--background-color); }
 #infobar #miclist .row {
     .actor              { color: var(--actor-color); }
 
-    &.passive.ensemble  { background-color: var(--mic-passive-background-color);  }
-    &.passive.role      { background-color: var(--mic-passive-background-color);  }
-    &.active.ensemble   { background-color: var(--mic-ensemble-background-color); }
-    &.active.role       { background-color: var(--mic-active-background-color);   }
+    &.passive           { background-color: var(--mic-passive-background-color);  }
+    &.active_ensemble   { background-color: var(--mic-ensemble-background-color); }
+    &.active_role       { background-color: var(--mic-active-background-color);   }
 
-    &.passive.ensemble > .mic { background-color: var(--mic-passive-color);  }
-    &.passive.role     > .mic { background-color: var(--mic-passive-color);  }
-    &.active.ensemble  > .mic { background-color: var(--mic-ensemble-color); }
-    &.active.role      > .mic { background-color: var(--mic-active-color);   }
+    &.passive          > .mic { background-color: var(--mic-passive-color);  }
+    &.active_ensemble  > .mic { background-color: var(--mic-ensemble-color); }
+    &.active_role      > .mic { background-color: var(--mic-active-color);   }
 }
 
 .shortcuts.settings {
@@ -225,8 +223,8 @@ body {
 
 #miclist .row  { border-radius: 0.4em; }
 #miclist .mic  { border: 1px solid var(--mic-border-default); border-radius: 10.0em; }
-#miclist .active.ensemble .mic { border-color: var(--mic-border-ensemble); }
-#miclist .active.role     .mic { border-color: var(--mic-border-role    ); }
+#miclist .active_ensemble .mic { border-color: var(--mic-border-ensemble); }
+#miclist .active_role     .mic { border-color: var(--mic-border-role    ); }
 
 .shortcuts .shortcut {
     border: none;

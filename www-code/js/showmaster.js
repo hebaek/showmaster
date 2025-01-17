@@ -150,21 +150,21 @@ const update_miclist = () => {
     const roles    = new Set(lines.map(line => line.roles   ).reduce((result, roles) => [...result, ...roles], []))
     const ensemble = new Set(lines.map(line => line.ensemble).reduce((result, roles) => [...result, ...roles], []))
 
-    $('.row').removeClass('passive active role ensemble')
+    $('.row').removeClass('passive active_role active_ensemble')
     $('.row > .role').html('')
     $('.row > .actor').html('')
 
     for (const mic in micmap.mics) {
         // Go through all roles on page
         if (roles.has(micmap.mics[mic].role)) {
-            $(`#mic_${mic}`).addClass('active role')
+            $(`#mic_${mic}`).addClass('active_role')
             $(`#mic_${mic} > .role` ).html(micmap.mics[mic].role )
             $(`#mic_${mic} > .actor`).html(micmap.mics[mic].actor)
         }
 
         // Go through ensemble on page
         if (ensemble.has(micmap.mics[mic].role)) {
-            $(`#mic_${mic}`).addClass('active ensemble')
+            $(`#mic_${mic}`).addClass('active_ensemble')
             $(`#mic_${mic} > .role` ).html(micmap.mics[mic].role )
             $(`#mic_${mic} > .actor`).html(micmap.mics[mic].actor)
         }
@@ -173,7 +173,7 @@ const update_miclist = () => {
             // Go through all roles in scene
             for (const [index, role] of showdata.scenes[state['currentscene']].roles.entries()) {
                 if (role == micmap.mics[mic].role) {
-                    $(`#mic_${mic}`).addClass('passive role')
+                    $(`#mic_${mic}`).addClass('passive')
                     $(`#mic_${mic} > .role` ).html(micmap.mics[mic].role )
                     $(`#mic_${mic} > .actor`).html(micmap.mics[mic].actor)
                 }
@@ -182,7 +182,7 @@ const update_miclist = () => {
             // Go through ensemble in scene
             for (const [index, role] of showdata.scenes[state['currentscene']].ensemble.entries()) {
                 if (role == micmap.mics[mic].role) {
-                    $(`#mic_${mic}`).addClass('passive ensemble')
+                    $(`#mic_${mic}`).addClass('passive')
                     $(`#mic_${mic} > .role` ).html(micmap.mics[mic].role )
                     $(`#mic_${mic} > .actor`).html(micmap.mics[mic].actor)
                 }
