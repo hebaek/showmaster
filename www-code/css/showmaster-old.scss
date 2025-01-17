@@ -1,0 +1,364 @@
+body {
+    overflow: hidden;
+    background-color: #f4f4f9;
+
+    display: grid;
+    grid:
+        'toolbar' 100vh
+        'pdf    ' 100vh
+        'details' 100vh
+        / 16rem auto auto;
+}
+
+@media screen and (max-width: 1024px) {
+    body {
+    grid:
+        'pdf     pdf    ' 80vh
+        'details details' 80vh
+        'toolbar toolbar' 20vh
+        / 1fr 1fr;
+    }
+}
+
+.toolbar {
+    background-color: #2c3e50;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+    overflow-y: auto;
+}
+
+
+
+
+
+.module {
+    background-color: #ecf0f1;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+#scene-list button {
+    width: 100%;
+    padding: 15px;
+    margin: 2px 0;
+    background-color: hsl(101, 100%, 30%);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: left;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#scene-list button:hover {
+    background-color: hsl(101, 100%, 40%);
+    transform: scale(1.05);
+}
+
+
+
+
+
+
+
+
+
+
+.toolbar {
+    grid-area: toolbar;
+
+    display: grid;
+    grid:
+        'time   ' auto
+        'display' auto
+        '.      ' 1fr
+        'scenes ' auto
+        'music  ' auto
+        'pages  ' auto
+        / 1fr;
+
+
+    .display {
+        grid-area: display;
+
+        .button {
+            height: 3rem;
+            background-color: green;
+
+            border: 1px solid black;
+            border-radius: 20px;
+
+            align-content: center;
+            text-align: center;
+        }
+    }
+
+
+    .scenes {
+        grid-area: scenes;
+
+        display: grid;
+        grid-template-columns: 2;
+        grid-template-rows:    2;
+    }
+
+
+    .music {
+        grid-area: music;
+
+        display: grid;
+        grid-template-columns: 2;
+        grid-template-rows:    2;
+    }
+
+
+    .pages {
+        grid-area: pages;
+
+        display: grid;
+        grid-template-columns: 2;
+        grid-template-rows:    2;
+    }
+
+
+    .content {
+        grid-row: 1; grid-column: 1 / span 2;
+        min-height: 3.5rem;
+        margin-top: 1.0rem;
+        padding: 0.6rem;
+        border-radius: 10px 10px 0 0;
+        border: none;
+        text-align: center;
+        color: white;
+        font-size: 1.0rem;
+        align-content: center;
+    }
+    .prev {
+        grid-row: 2; grid-column: 1;
+        background-color: hsla(0, 0%, 70%, 0.597);
+        margin-bottom: 1.0rem;
+        padding: 0.6rem;
+        border-radius: 0 0 10px 10px;
+        border: none;
+        text-align: center;
+        color: white;
+        font-size: 1.0rem;
+        cursor: pointer;
+    }
+    .next {
+        grid-row: 2; grid-column: 2;
+        background-color: hsla(0, 0%, 70%, 0.597);
+        margin-bottom: 1.0rem;
+        padding: 0.8rem;
+        border-radius: 0 0 10px 10px;
+        border: none;
+        text-align: center;
+        color: white;
+        font-size: 1.0rem;
+        cursor: pointer;
+    }
+
+    .scenes > .content { background-color: hsl(101, 100%, 30%); .empty { color: hsl(101, 40%, 60%); }}
+    .music  > .content { background-color: hsl(190, 100%, 30%); .empty { color: hsl(190, 40%, 60%); }}
+    .pages  > .content { background-color: hsl( 47, 100%, 30%); .empty { color: hsl( 47, 40%, 60%); }}
+
+    .scenes > .prev:hover { background-color: hsl(101, 100%, 30%); }
+    .music  > .prev:hover { background-color: hsl(190, 100%, 30%); }
+    .pages  > .prev:hover { background-color: hsl( 47, 100%, 30%); }
+
+    .scenes > .next:hover { background-color: hsl(101, 100%, 30%); }
+    .music  > .next:hover { background-color: hsl(190, 100%, 30%); }
+    .pages  > .next:hover { background-color: hsl( 47, 100%, 30%); }
+}
+
+
+
+.shortcuts {
+    position: absolute;
+    overflow-y: scroll;
+
+    left: 16rem;
+    width: 30rem;
+    height: 100vh;
+    box-shadow: 3px 0 3px 3px rgba(0, 0, 0, 0.3);
+
+    z-index: 2;
+
+    display: none;
+
+    &.scenes { background-color: hsl(101, 100%, 30%); }
+    &.music  { background-color: hsl(190, 100%, 30%); }
+    &.pages  { background-color: hsl( 47, 100%, 30%); }
+
+    .shortcut {
+        padding: 1.2rem 1.0rem;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-size: 1rem;
+        text-align: left;
+        width: 100%;
+        transition: background-color 0.3s;
+    }
+
+    &.scenes > .shortcut { background-color: hsl(101, 100%, 30%); }
+    &.music  > .shortcut { background-color: hsl(190, 100%, 30%); }
+    &.pages  > .shortcut { background-color: hsl( 47, 100%, 30%); }
+
+    .shortcut:hover {
+        background-color: #2c3e50;
+    }
+
+    .shortcut.instrumental:after {
+        content: "instrumental";
+        position: absolute;
+        border: 2px solid yellow;
+        border-radius: 1.0rem;
+        width: 7.0rem;
+        height: 2.0rem;
+        right: 1.0rem;
+        transform: translate(0, -0.5rem);
+        text-align: center;
+        align-content: center;
+    }
+}
+
+
+
+.module {
+    overflow: scroll;
+}
+
+#pdf-viewer {
+    grid-area: pdf;
+
+    position: relative;
+    text-align: center;
+    align-content: center;
+
+    #pdf-canvas {
+        border: 1px solid #ddd;
+        max-width: 100%;
+        max-height: 100vh;
+
+        text-align: center;
+        align-content: center;
+
+        overflow: hidden;
+    }
+}
+
+#details {
+    grid-area: details;
+
+    display: grid;
+    grid-template-rows: repeat(auto-fill, 1.8rem);
+
+    width: max-content;
+
+    padding-left: 0.2rem;
+    column-gap: 0.0rem;
+
+    grid-auto-flow: column;
+    align-items: start;
+}
+
+.row {
+    align-content: center;
+
+    display: grid;
+    grid-template-columns: max-content max-content max-content;
+
+    border-radius: 0.4rem;
+}
+
+.mic {
+    grid-column: 1;
+
+    width: 2.0rem;
+    height: 1.4rem;
+    border: 2px solid hsl(0, 0%, 50%);
+    border-radius: 1.2rem;
+
+    align-content: center;
+    text-align: center;
+
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 1.0rem;
+}
+
+.role {
+    grid-column: 2;
+
+    margin-left: 0.6rem;
+    margin-top: 0.1rem;
+
+    align-content: center;
+    text-align: left;
+
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+.actor {
+    grid-column: 3;
+
+    margin-right: 0.2rem;
+    margin-top: 0.1rem;
+
+    align-content: center;
+    text-align: right;
+
+    font-family: sans-serif;
+    font-weight: normal;
+    font-size: 0.8rem;
+}
+
+
+.row {
+    color: hsl(0, 0%, 80%);
+
+    >.mic {
+        color: black;
+    }
+}
+
+.row.passive {
+    background-color: hsl(0, 0%, 80%);
+    color: black;
+
+    >.mic {
+        background-color: hsl(0, 0%, 95%);
+        border-color: hsl(0, 0%, 50%);
+    }
+}
+
+.row.ensemble {
+    background-color: hsl(67, 69%, 77%);
+    color: black;
+
+    >.mic {
+        background-color: hsl(67, 69%, 95%);
+        border-color: hsl(67, 50%, 50%);
+    }
+}
+
+.row.active {
+    background-color: hsl(109, 69%, 77%);
+    color: black;
+
+    >.mic {
+        background-color: hsl(109, 69%, 95%);
+        border-color: hsl(109, 50%, 50%);
+    }
+}
