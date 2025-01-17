@@ -52,8 +52,16 @@ body                    { background-color: var(--background-color); }
 #toolbar .navigation {
     .buttons > button { background-color: var(--button-color); color: white; }
     .scenes .content  { background-color: var(--scenes-color); color: white; }
-    .music  .content  { background-color: var(--music-color);  color: white; }
-    .pages  .content  { background-color: var(--pages-color);  color: white; }
+    .scenes .prev:hover  { background-color: var(--scenes-color); }
+    .scenes .next:hover  { background-color: var(--scenes-color); }
+
+    .music .content  { background-color: var(--music-color);  color: white; }
+    .music .prev:hover  { background-color: var(--music-color); }
+    .music .next:hover  { background-color: var(--music-color); }
+
+    .pages .content  { background-color: var(--pages-color);  color: white; }
+    .pages .prev:hover  { background-color: var(--pages-color); }
+    .pages .next:hover  { background-color: var(--pages-color); }
 
     .content .header.empty { color: var(--content-empty); }
 }
@@ -102,7 +110,6 @@ body                    { background-color: var(--background-color); }
 .shortcut {
     transition: background-color 0.3s;
     color: white;
-    &:hover { background-color: var(--toolbar-color); }
 }
 
 
@@ -366,8 +373,11 @@ button {
     z-index: 7;
 
     .shortcut {
-        cursor: pointer;
         text-align: left;
+    }
+
+    .shortcut:hover {
+        background-color: var(--toolbar-color);
     }
 }
 
