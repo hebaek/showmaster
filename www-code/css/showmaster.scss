@@ -4,14 +4,20 @@
     --infobar-color: hsl(210, 29%, 98%);
     --pdf-color:     hsl( 50, 29%, 98%);
 
-    --scenes-color: hsl(101, 100%, 30%);
-    --music-color:  hsl(190, 100%, 30%);
-    --pages-color:  hsl( 47, 100%, 30%);
+    --menubutton-color: hsl(210, 29%, 50%);
 
-    --button-color: hsl(0, 0%, 53%);
+    --settings-color: hsl(101, 0%, 70%);
+    --print-color:    hsl(101, 0%, 70%);
 
-    --mic-active-background-color:   hsl(109,  90%, 85%);
-    --mic-ensemble-background-color: hsl( 67,  90%, 85%);
+    --scenes-color:  hsl(101, 100%, 30%);
+    --music-color:   hsl(190, 100%, 30%);
+    --pages-color:   hsl( 47, 100%, 30%);
+    --content-empty: hsl(0, 0%, 70%);
+
+    --button-color: hsl(0, 0%, 50%);
+
+    --mic-active-background-color:   hsl(109,  69%, 77%);
+    --mic-ensemble-background-color: hsl( 67,  90%, 77%);
     --mic-passive-background-color:  hsl(  0,   0%, 85%);
 
     --mic-active-color:   hsl(101, 100%, 95%);
@@ -44,11 +50,18 @@ body                    { background-color: var(--background-color); }
 #pdf-viewer             { background-color: var(--pdf-color);        }
 
 #toolbar .navigation {
-    >button             { background-color: var(--button-color); color: white; }
-    &.scenes > .content { background-color: var(--scenes-color); color: white; }
-    &.music  > .content { background-color: var(--music-color);  color: white; }
-    &.pages  > .content { background-color: var(--pages-color);  color: white; }
+    .buttons > button { background-color: var(--button-color); color: white; }
+    .scenes .content  { background-color: var(--scenes-color); color: white; }
+    .music  .content  { background-color: var(--music-color);  color: white; }
+    .pages  .content  { background-color: var(--pages-color);  color: white; }
+
+    .content .header.empty { color: var(--content-empty); }
 }
+
+#menu button {
+    background-color: var(--menubutton-color);
+}
+
 #infobar #miclist .row {
     .actor              { color: var(--actor-color); }
 
@@ -63,17 +76,27 @@ body                    { background-color: var(--background-color); }
     &.active.role      > .mic { background-color: var(--mic-active-color);   }
 }
 
-.navigation.scenes .shortcuts {
-    background-color: var(--scenes-color);
-    > .shortcut { background-color: var(--scenes-color); }
+.shortcuts.settings {
+    background-color: var(--settings-color);
+    > .shortcut { background-color: var(--settings-color); }
 }
 
-.navigation.music .shortcuts {
+.shortcuts.print {
+    background-color: var(--print-color);
+    > .shortcut { background-color: var(--print-color); }
+}
+
+.shortcuts.scenes {
+    background-color: var(--scenes-color);
+    .shortcut { background-color: var(--scenes-color); }
+}
+
+.shortcuts.music {
     background-color: var(--music-color);
     > .shortcut { background-color: var(--music-color);  }
 }
 
-.navigation.pages .shortcuts {
+.shortcuts.pages {
     background-color: var(--pages-color);
     > .shortcut { background-color: var(--pages-color);  }
 }
@@ -103,21 +126,35 @@ canvas     { box-shadow:   0 0 15px var(--default-shadow); }
 
 body                 { display: grid; }
 #toolbar             { display: grid; }
+#toolbar #menu       { display: grid; }
 #toolbar .navigation { display: grid; }
+.navigation .buttons { display: grid; }
+
 #miclist             { display: grid; }
 #miclist .row        { display: grid; }
 
 #toolbar       { grid-area: toolbar; }
 #pdf-viewer    { grid-area: pdf;     }
 #infobar       { grid-area: infobar; }
-#toolbar .navigation {
-    &.scenes   { grid-area: scenes;  }
-    &.music    { grid-area: music;   }
-    &.pages    { grid-area: pages;   }
 
-    > .content { grid-area: content; }
-    > .prev    { grid-area: prev;    }
-    > .next    { grid-area: next;    }
+#toolbar #menu {
+    grid-area: menu;
+
+    #logout   { grid-area: logout;   }
+    #settings { grid-area: settings; }
+    #print    { grid-area: print;    }
+}
+
+#toolbar .navigation {
+    grid-area: navigation;
+
+    .scenes  { grid-area: scenes;  }
+    .music   { grid-area: music;   }
+    .pages   { grid-area: pages;   }
+
+    .content { grid-area: content; }
+    .prev    { grid-area: prev;    }
+    .next    { grid-area: next;    }
 }
 
 body {
@@ -128,15 +165,28 @@ body {
 
 #toolbar {
     grid:
-        'top   ' max-content
-        '.     ' auto
-        'scenes' max-content
-        'music ' max-content
-        'pages ' max-content
+        'menu      ' max-content
+        '.         ' auto
+        'navigation' max-content
         / 1fr;
 }
 
+#toolbar #menu {
+    grid:
+        'logout .   settings print' auto
+        / 1fr   2fr 1fr      1fr;
+}
+
 #toolbar .navigation {
+    grid:
+        '.     ' auto
+        'scenes' 9em
+        'music'  9em
+        'pages'  9em
+        / 1fr;
+}
+
+.navigation .buttons {
     grid:
         'content content' 5fr
         'prev    next   ' 4fr
@@ -149,7 +199,7 @@ body {
 
     column-gap: 2px; row-gap: 1px;
 
-    .row { grid-template-columns: 2.6em 10em 6em; }
+    .row { grid-template-columns: 2.6em 10em 8em; }
 }
 
 
@@ -166,10 +216,12 @@ body {
 #toolbar .navigation {
     button     { border: none; }
 
-    > .content { border-top-left-radius:    0.8em; border-top-right-radius:    0.8em; }
-    > .prev    { border-bottom-left-radius: 0.8em; border-bottom-right-radius: 0.8em; }
-    > .next    { border-bottom-left-radius: 0.8em; border-bottom-right-radius: 0.8em; }
+    .content { border-top-left-radius:    0.8em; border-top-right-radius:    0.8em; }
+    .prev    { border-bottom-left-radius: 0.8em; border-bottom-right-radius: 0.8em; }
+    .next    { border-bottom-left-radius: 0.8em; border-bottom-right-radius: 0.8em; }
 }
+
+#menu button { border: none; border-radius: 0.5em; }
 
 #miclist .row  { border-radius: 0.4em; }
 #miclist .mic  { border: 1px solid var(--mic-border-default); border-radius: 10.0em; }
@@ -196,13 +248,20 @@ body {
 }
 
 #toolbar {
-    width: 20em;
+    width: 18em;
     .content { margin-top: 1em; height: 4em; }
 
     .prev, .next { margin-bottom: 1em; }
 
     .prev, .content { margin-left:  1em; }
     .next, .content { margin-right: 1em; }
+}
+
+#menu button {
+    width: 1.8em;
+    height: 1.8em;
+
+    margin: 0.1em;
 }
 
 #pdf-viewer {
@@ -220,7 +279,7 @@ body {
 }
 
 .shortcuts {
-    top: 0; left: 22em;
+    top: 0; left: 18em;
     width: 30em; height: 100vh;
 
     .shortcut {
@@ -239,8 +298,16 @@ body {
 ******************************************************************************/
 
 #toolbar {
+    font-family: sans-serif;
+
+    .shortcut    { font-size: 1.0em; }
     .content     { font-size: 1.0em; }
     .prev, .next { font-size: 1.0em; }
+
+}
+
+#menu button {
+    font-size: 2em;
 }
 
 #miclist .row {
@@ -270,6 +337,11 @@ body {
     z-index: 4;
 }
 
+button {
+    vertical-align: middle;
+    cursor: pointer;
+}
+
 #pdf-viewer {
     text-align: center;
     align-content: center;
@@ -293,15 +365,13 @@ body {
     position: absolute;
     overflow-y: scroll;
 
-    z-index: 3;
+    z-index: 7;
 
     .shortcut {
         cursor: pointer;
         text-align: left;
     }
 }
-
-
 
 
 
@@ -342,7 +412,8 @@ body {
 @media (max-aspect-ratio: 4/3) {
     body {
         grid:
-            'pdf     infobar' calc(100vh - 9em)
+            'menu    menu   ' 4em
+            'pdf     infobar' calc(100vh - 13em)
             'toolbar toolbar' 9em
             / auto max-content;
     }
@@ -352,7 +423,36 @@ body {
         width: 100%;
 
         grid:
-            'top . scenes music pages' auto
-            / 2em auto 16em 16em 16em;
+            'navigation' auto
+            / 1fr;
+
+        .content { height: unset; }
+    }
+
+    #toolbar #menu {
+        background-color: var(--toolbar-color);
+
+        float: left;
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%;
+
+        box-shadow: 0 0 10px var(--default-shadow);
+
+        grid:
+            'settings print .    logout' 4em
+            / 4em     4em   auto 4em;
+    }
+
+    #toolbar .navigation {
+        grid:
+            '.    scenes music pages .  ' auto
+            / 1fr 16em   16em  16em  1fr;
+    }
+
+    .shortcuts {
+        top: 4em;
+        left: 0;
+        height: calc(100vh - 13em);
     }
 }

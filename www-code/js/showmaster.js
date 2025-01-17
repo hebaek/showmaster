@@ -10,10 +10,13 @@ const state = {
 
     'currentpage':  null,
     'currentscene': null,
-    'currentsong':  null,
+    'currentmusic': null,
 
     'doc':          null,
 }
+
+
+
 
 
 
@@ -49,6 +52,9 @@ const fetch_showdata = async () => {
 
 
 
+
+
+
 const load_show = async (show) => {
     try {
         const response = await fetch(projectdata[show].url)
@@ -62,9 +68,15 @@ const load_show = async (show) => {
 
 
 
+
+
+
 const get_current_show = async () => {
     return 'Show 1'
 }
+
+
+
 
 
 
@@ -82,28 +94,34 @@ const populate_show = async show => {
 
 
 
+
+
+
 const create_shortcuts = () => {
     showdata.scenes.forEach(scene => {
         let classes = 'shortcut'
         let text = `${scene.id} - ${scene.name}`
 
-        $('.scenes > .shortcuts').append(`<button class='${classes}' data-page='${scene.start.page.target}'>${text}</button>`)
+        $('.shortcuts.scenes').append(`<button class='${classes}' data-page='${scene.start.page.target}'>${text}</button>`)
     })
 
     showdata.music.forEach(music => {
         let classes = 'shortcut'; if (music.type == 'instrumental') { classes += ' instrumental' }
         let text = `${music.id} - ${music.name}`
 
-        $('.music > .shortcuts').append(`<button class='${classes}' data-page='${music.start.page.target}'>${text}</button>`)
+        $('.shortcuts.music').append(`<button class='${classes}' data-page='${music.start.page.target}'>${text}</button>`)
     })
 
     showdata.pagemap.forEach(page => {
         let classes = 'shortcut'
         let text = `Side ${page.source}`; if (page.name) { text += ` - ${page.name}` }
 
-        $('.pages > .shortcuts').append(`<button class='${classes}' data-page='${page.target}'>${text}</button>`)
+        $('.shortcuts.pages').append(`<button class='${classes}' data-page='${page.target}'>${text}</button>`)
     })
 }
+
+
+
 
 
 
@@ -120,6 +138,9 @@ const create_miclist = () => {
         `)
     }
 }
+
+
+
 
 
 
@@ -173,6 +194,9 @@ const update_miclist = () => {
 
 
 
+
+
+
 const goto_page = page => {
     if (page > state['lastpage'])  return
     if (page < state['firstpage']) return
@@ -185,7 +209,7 @@ const goto_page = page => {
     let scenehtml = `<div class='header empty'>(ingen scene)</div>`
     let musichtml = `<div class='header empty'>(ingen musikk)</div>`
 
-    if (state['currentpage']) {
+    if (state['currentpage'] !== null) {
         const sourcepage = showdata.pagemap.find(x => x.target == state['currentpage'])
         const lastpage   = showdata.pagemap.find(x => x.target == state['lastpage'   ])
 
@@ -206,8 +230,8 @@ const goto_page = page => {
         if (start_location < page + 1 && end_location >= page) { state['currentmusic'] = parseInt(music) }
     }
 
-    if (state['currentscene']) { scenehtml = `<div class='header empty'>${showdata.scenes[state['currentscene']].id} - ${showdata.scenes[state['currentscene']].name}</div>` }
-    if (state['currentmusic']) { musichtml = `<div class='header empty'>${showdata.music [state['currentmusic']].id} - ${showdata.music [state['currentmusic']].name}</div>` }
+    if (state['currentscene'] !== null) { scenehtml = `<div class='header'>${showdata.scenes[state['currentscene']].id} - ${showdata.scenes[state['currentscene']].name}</div>` }
+    if (state['currentmusic'] !== null) { musichtml = `<div class='header'>${showdata.music [state['currentmusic']].id} - ${showdata.music [state['currentmusic']].name}</div>` }
 
 
 
@@ -215,25 +239,31 @@ const goto_page = page => {
     let prev_scene = null, next_scene = null
     let prev_music = null, next_music = null
 
-    if (state['currentpage']) {
+    if (state['currentpage'] !== null) {
         prev_page = state['currentpage' ] - 1
         next_page = state['currentpage' ] + 1
-    } else {
-
     }
 
-    if (state['currentscene']) {
-        prev_scene = showdata.scenes[state['currentscene'] - 1].start.page.target
-        next_scene = showdata.scenes[state['currentscene'] + 1].start.page.target
+    if (state['currentscene'] !== null) {
+        if (state['currentscene'] > 0                         ) { prev_scene = showdata.scenes[state['currentscene'] - 1]?.start?.page.target }
+        if (state['currentscene'] < showdata.scenes.length - 1) { next_scene = showdata.scenes[state['currentscene'] + 1]?.start?.page.target }
     } else {
+        const prev_scenes = showdata.scenes.filter(scene => scene.start.location.target < page)
+        const next_scenes = showdata.scenes.filter(scene => scene.start.location.target > page + 1)
 
+        if (prev_scenes.length) { prev_scene = prev_scenes[-1]?.start?.page.target }
+        if (next_scenes.length) { next_scene = next_scenes[ 0]?.start?.page.target }
     }
 
-    if (state['currentmusic']) {
-        prev_music = showdata.music[state['currentmusic'] - 1].start.page.target
-        next_music = showdata.music[state['currentmusic'] + 1].start.page.target
+    if (state['currentmusic'] !== null) {
+        if (state['currentmusic'] > 0                        ) { prev_music = showdata.music[state['currentmusic'] - 1]?.start?.page.target }
+        if (state['currentmusic'] < showdata.music.length - 1) { next_music = showdata.music[state['currentmusic'] + 1]?.start?.page.target }
     } else {
+        const prev_musics = showdata.music.filter(music => music.start.location.target < page    )
+        const next_musics = showdata.music.filter(music => music.start.location.target > page + 1)
 
+        if (prev_musics.length) { prev_music = prev_musics[-1]?.start?.page.target }
+        if (next_musics.length) { next_music = next_musics[ 0]?.start?.page.target }
     }
 
     $('.pages > .content' ).html(pagehtml)
@@ -253,6 +283,9 @@ const goto_page = page => {
 
 
 
+
+
+
 const pdf_load = async pdf => {
     const loadingtask = pdfjsLib.getDocument(pdfdata[pdf])
     state['doc'] = await loadingtask.promise
@@ -262,6 +295,9 @@ const pdf_load = async pdf => {
 
     goto_page(state['currentpage'])
 }
+
+
+
 
 
 
@@ -297,17 +333,32 @@ const pdf_render = async () => {
 
 
 
+
+
+
 const set_eventhandlers = () => {
     $(window).on('resize', pdf_render)
 
-    $(document).on('click', '.scenes > .content', () => { $('.navigation:not(.scenes) .shortcuts').hide(); $('.scenes .shortcuts').toggle() })
-    $(document).on('click', '.music > .content',  () => { $('.navigation:not(.music)  .shortcuts').hide(); $('.music  .shortcuts').toggle() })
-    $(document).on('click', '.pages > .content',  () => { $('.navigation:not(.pages)  .shortcuts').hide(); $('.pages  .shortcuts').toggle() })
+    $(document).on('click', '#logout',   () => { window.location.replace('login.php') })
 
-    $(document).on('click', '.shortcut', event => { $('.shortcuts').hide(); goto_page($(event.target).data('page')) })
-    $(document).on('click', '.prev',     event => { $('.shortcuts').hide(); goto_page($(event.target).data('page')) })
-    $(document).on('click', '.next',     event => { $('.shortcuts').hide(); goto_page($(event.target).data('page')) })
+    $(document).on('click', '#toolbar',    event => { event.stopPropagation(); $('.shortcuts').hide() })
+    $(document).on('click', '#pdf-viewer', event => { event.stopPropagation(); $('.shortcuts').hide() })
+    $(document).on('click', '#infobar',    event => { event.stopPropagation(); $('.shortcuts').hide() })
+
+    $(document).on('click', '#settings', event => { event.stopPropagation(); $('.shortcuts:not(.settings)').hide(); $('.shortcuts.settings').toggle() })
+    $(document).on('click', '#print',    event => { event.stopPropagation(); $('.shortcuts:not(.print)'   ).hide(); $('.shortcuts.print'   ).toggle() })
+
+    $(document).on('click', '.scenes > .content', event => { event.stopPropagation(); $('.shortcuts:not(.scenes)').hide(); $('.shortcuts.scenes').toggle() })
+    $(document).on('click', '.music > .content',  event => { event.stopPropagation(); $('.shortcuts:not(.music) ').hide(); $('.shortcuts.music' ).toggle() })
+    $(document).on('click', '.pages > .content',  event => { event.stopPropagation(); $('.shortcuts:not(.pages) ').hide(); $('.shortcuts.pages' ).toggle() })
+
+    $(document).on('click', '.shortcut', event => { event.stopPropagation(); $('.shortcuts').hide(); goto_page($(event.target).data('page')) })
+    $(document).on('click', '.prev',     event => { event.stopPropagation(); $('.shortcuts').hide(); goto_page($(event.target).data('page')) })
+    $(document).on('click', '.next',     event => { event.stopPropagation(); $('.shortcuts').hide(); goto_page($(event.target).data('page')) })
 }
+
+
+
 
 
 
