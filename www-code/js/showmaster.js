@@ -220,14 +220,20 @@ const goto_page = page => {
         const start_location = showdata.scenes[scene].start.location.target
         const end_location   = showdata.scenes[scene].end.location.target
 
-        if (start_location < page + 1 && end_location >= page) { state['currentscene'] = parseInt(scene) }
+        if (start_location < page + 1 && end_location >= page) {
+            state['currentscene'] = parseInt(scene)
+            break
+        }
     }
 
     for (const music in showdata.music) {
         const start_location = showdata.music[music].start.location.target
         const end_location   = showdata.music[music].end.location.target
 
-        if (start_location < page + 1 && end_location >= page) { state['currentmusic'] = parseInt(music) }
+        if (start_location < page + 1 && end_location >= page) {
+            state['currentmusic'] = parseInt(music)
+            break
+        }
     }
 
     if (state['currentscene'] !== null) { scenehtml = `<div class='header'>${showdata.scenes[state['currentscene']].id} - ${showdata.scenes[state['currentscene']].name}</div>` }
@@ -244,27 +250,18 @@ const goto_page = page => {
         next_page = state['currentpage' ] + 1
     }
 
-    if (state['currentscene'] !== null) {
-        if (state['currentscene'] > 0                         ) { prev_scene = showdata.scenes[state['currentscene'] - 1]?.start?.page.target }
-        if (state['currentscene'] < showdata.scenes.length - 1) { next_scene = showdata.scenes[state['currentscene'] + 1]?.start?.page.target }
-    } else {
-        const prev_scenes = showdata.scenes.filter(scene => scene.start.location.target < page)
-        const next_scenes = showdata.scenes.filter(scene => scene.start.location.target > page + 1)
 
-        if (prev_scenes.length) { prev_scene = prev_scenes[-1]?.start?.page.target }
-        if (next_scenes.length) { next_scene = next_scenes[ 0]?.start?.page.target }
-    }
+    const prev_scenes = showdata.scenes.filter(scene => scene.end.location.target < page)
+    const next_scenes = showdata.scenes.filter(scene => scene.start.location.target > page + 1)
+    if (prev_scenes.length) { prev_scene = prev_scenes[prev_scenes.length - 1]?.start?.page.target }
+    if (next_scenes.length) { next_scene = next_scenes[0]?.start?.page.target }
 
-    if (state['currentmusic'] !== null) {
-        if (state['currentmusic'] > 0                        ) { prev_music = showdata.music[state['currentmusic'] - 1]?.start?.page.target }
-        if (state['currentmusic'] < showdata.music.length - 1) { next_music = showdata.music[state['currentmusic'] + 1]?.start?.page.target }
-    } else {
-        const prev_musics = showdata.music.filter(music => music.start.location.target < page    )
-        const next_musics = showdata.music.filter(music => music.start.location.target > page + 1)
 
-        if (prev_musics.length) { prev_music = prev_musics[-1]?.start?.page.target }
-        if (next_musics.length) { next_music = next_musics[ 0]?.start?.page.target }
-    }
+    const prev_musics = showdata.music.filter(music => music.end.location.target < page)
+    const next_musics = showdata.music.filter(music => music.start.location.target > page + 1)
+    if (prev_musics.length > 0) { prev_music = prev_musics[prev_musics.length - 1]?.start?.page.target }
+    if (next_musics.length > 0) { next_music = next_musics[ 0]?.start?.page.target }
+
 
     $('.pages > .content' ).html(pagehtml)
     $('.scenes > .content').html(scenehtml)
