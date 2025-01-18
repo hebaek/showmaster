@@ -12,7 +12,7 @@ manus-mics.pdf
 
 import argparse
 import json
-import fitz
+import pymupdf
 import pathlib
 
 from pprint import pprint
@@ -115,7 +115,7 @@ def annotate_ensembles(doc, page, y, mics):
 
 
 def create_empty(base, data):
-    doc = fitz.open(base)
+    doc = pymupdf.open(base)
 
     # Remove pages
     for page in data.get('remove_pages', []):
@@ -182,7 +182,7 @@ def create_empty(base, data):
 
 
 def create_music(base, data):
-    doc = fitz.open(base)
+    doc = pymupdf.open(base)
 
     for music in data.get('music'):
         pdfpage = doc[music['start']['page']['target'] - 1]
@@ -217,7 +217,7 @@ def create_music(base, data):
 
 
 def create_mics(base, data):
-    doc = fitz.open(base)
+    doc = pymupdf.open(base)
 
     micmap = data.get('micmap', [])
 

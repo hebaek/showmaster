@@ -17,6 +17,14 @@
       "oAP" : "\/www-test\/.gitignore",
       "oF" : 1
     },
+    "\/data\/compiled\/pdf\/list.pdf" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/www-test\/data\/compiled\/pdf\/list.pdf",
+      "oF" : 0
+    },
     "\/data\/compiled\/pdf\/manus-empty.pdf" : {
       "cB" : 0,
       "ft" : 8192,
@@ -238,6 +246,14 @@
       "oAP" : "\/www-test\/scripts\/compile.py",
       "oF" : 1
     },
+    "\/scripts\/create.py" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/www-test\/scripts\/create.py",
+      "oF" : 0
+    },
     "\/scripts\/render.py" : {
       "cB" : 0,
       "ft" : 8192,
@@ -269,19 +285,6 @@
       "oA" : 0,
       "oAP" : "\/www-test\/css\/reset.css",
       "oF" : 0,
-      "pg" : 0
-    },
-    "\/www-code\/css\/showmaster-old.scss" : {
-      "aP" : 0,
-      "bl" : 0,
-      "co" : 0,
-      "ec" : 1,
-      "ft" : 4,
-      "ma" : 0,
-      "oA" : 0,
-      "oAP" : "\/www-test\/css\/showmaster-old.css",
-      "oF" : 0,
-      "oS" : 0,
       "pg" : 0
     },
     "\/www-code\/css\/showmaster.scss" : {
