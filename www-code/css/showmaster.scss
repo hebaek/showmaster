@@ -204,7 +204,7 @@ body {
 
     column-gap: 2px; row-gap: 1px;
 
-    .row { grid-template-columns: 2.6em 10em 8em; }
+    .row { grid-column: 1; grid-template-columns: 2.6em 10em 8em; }
 }
 
 
@@ -401,15 +401,6 @@ button {
         text-align: center;
         align-content: center;
     }
-}
-
-
-
-
-
-
-@for $i from 1 through 30 {
-    .row:nth-child(#{$i}) { grid-column: 1; grid-row: #{$i}; }
 }
 
 
