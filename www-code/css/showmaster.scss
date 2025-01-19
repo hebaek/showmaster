@@ -1,4 +1,6 @@
 :root {
+    --unit-100vh: 100vh;
+
     --background-color: hsl(240, 29%, 97%);
     --toolbar-color: hsl(210, 29%, 24%);
     --infobar-color: hsl(210, 29%, 98%);
@@ -164,7 +166,7 @@ body                 { display: grid; }
 
 body {
     grid:
-        'toolbar pdf infobar' 100vh
+        'toolbar pdf infobar' var(--unit-100vh)
         / max-content auto max-content;
 }
 
@@ -249,7 +251,7 @@ body {
 ******************************************************************************/
 
 body {
-    width: 100vw; height: 100vh;
+    width: 100vw; height: var(--unit-100vh);
 }
 
 #toolbar {
@@ -285,7 +287,7 @@ body {
 
 .shortcuts {
     top: 0; left: 18em;
-    width: 30em; height: 100vh;
+    width: 30em; height: var(--unit-100vh);
 
     .shortcut {
         width: 100%;
@@ -412,7 +414,7 @@ button {
     body {
         grid:
             'menu    menu   ' 4em
-            'pdf     infobar' calc(100vh - 13em)
+            'pdf     infobar' calc(var(--unit-100vh) - 13em)
             'toolbar toolbar' 9em
             / auto max-content;
     }
@@ -452,6 +454,14 @@ button {
     .shortcuts {
         top: 4em;
         left: 0;
-        height: calc(100vh - 13em);
+        height: calc(var(--unit-100vh) - 13em);
+    }
+}
+
+
+
+@supports (height: 100dvh) {
+    :root {
+        --unit-100vh: 100dvh;
     }
 }
