@@ -185,6 +185,14 @@
       "oO" : 1,
       "oS" : 1
     },
+    "\/data\/sources\/scdl.json" : {
+      "ft" : 524288,
+      "oA" : 1,
+      "oAP" : "\/www-test\/data\/sources\/scdl.json",
+      "oF" : 0,
+      "oO" : 1,
+      "oS" : 1
+    },
     "\/data\/sources\/shows.json" : {
       "ft" : 524288,
       "oA" : 1,
@@ -299,6 +307,36 @@
       "oF" : 0,
       "oS" : 0,
       "pg" : 0
+    },
+    "\/www-code\/img\/logout.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/www-test\/img\/logout.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 52780316221407,
+      "prP" : 0
+    },
+    "\/www-code\/img\/paper.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/www-test\/img\/paper.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 52780316221407,
+      "prP" : 0
+    },
+    "\/www-code\/img\/view.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/www-test\/img\/view.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 52780316221407,
+      "prP" : 0
     },
     "\/www-code\/index.php" : {
       "cB" : 0,
@@ -415,7 +453,7 @@
     "displayValueWasSetByUser" : 0,
     "iconImageName" : "brackets-brick",
     "iconImageWasSetByUser" : 0,
-    "lastBuiltDate" : 758812055.11774004
+    "lastBuiltDate" : 759070629.94984996
   },
   "projectSettings" : {
     "abortBuildOnError" : 1,

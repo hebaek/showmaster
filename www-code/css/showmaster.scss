@@ -4,12 +4,12 @@
     --background-color: hsl(240, 29%, 97%);
     --toolbar-color: hsl(210, 29%, 24%);
     --infobar-color: hsl(210, 29%, 98%);
-    --pdf-color:     hsl( 50, 29%, 98%);
+    --pdf-color:     hsl( 50, 29%, 75%);
 
-    --menubutton-color: hsl(210, 29%, 50%);
+    --menubutton-color: hsl(210, 45%, 54%);
 
-    --settings-color: hsl(101, 0%, 70%);
-    --print-color:    hsl(101, 0%, 70%);
+    --settings-color: var(--menubutton-color);
+    --print-color:    var(--menubutton-color);
 
     --scenes-color:  hsl(101, 100%, 30%);
     --music-color:   hsl(190, 100%, 30%);
@@ -383,7 +383,20 @@ button {
     }
 }
 
+#menu button {
+    position: relative;
 
+    img {
+        width: 1.2em;
+        height: 1.2em;
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+
+        transform: translate(-50%, -50%);
+    }
+}
 
 
 
