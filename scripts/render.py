@@ -228,18 +228,18 @@ def create_mics(base, data):
         role_mics = []
 
 
-        # Test roles
-        for role in line['roles']:
-            for mic in current_micmap:
-                if current_micmap[mic]['role'] == role:
-                    miclist[mic] = 'role'
-
-
         # Test ensemble
         for role in line['ensemble']:
             for mic in current_micmap:
                 if current_micmap[mic]['role'] == role:
                     miclist[mic] = 'ensemble'
+
+
+        # Test roles
+        for role in line['roles']:
+            for mic in current_micmap:
+                if current_micmap[mic]['role'] == role:
+                    miclist[mic] = 'role'
 
 
         for mic in miclist:

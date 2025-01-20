@@ -37,7 +37,7 @@ def save_pdf(path, filename, doc):
 
 def get_x(start_y, end_y, y):
     min_y, max_y = start_y, end_y
-    min_x, max_x = 20/mm, 410/mm
+    min_x, max_x = 35/mm, 410/mm
 
     return min_x + (y - min_y) * (max_x - min_x) / (max_y - min_y)
 
@@ -82,27 +82,42 @@ def create_scene(page, start_y, end_y, data, scene):
 
 
 
-def create_micmap(page, start_y, end_y, micmap):
+def create_rolemap(page, start_y, end_y, rolemic):
     current = {}
-    for mic in data['miclist']:
-        current[mic] = None
+    y = 23/mm + 4
+    for role in rolemic:
+        y += 9/mm
+        page.insert_htmlbox((10/mm, y, 35/mm, y + 10/mm), role, css='* {text-align:left;vertical-align:middle;font-family:sans-serif;font-size:10px;}' )
 
-    pprint(data['micmap'])
+        for section in rolemic[role]:
+            start = section['start']['location']['target']
+            end   = section['end'  ]['location']['target']
 
-    for map in micmap:
+            start, end = get_x(start_y, end_y, start), get_x(start_y, end_y, end)
+
+            actor = section['actor']
+            mic   = section['mic']
+
+            page.draw_rect((start, y + 1/mm, end, y + 7.2/mm), color=(0, 0, 0), fill=(1, 1, 1), fill_opacity=0.75)
+
+            text = f'{mic} / {actor}'
+
+            if mic:
+                page.insert_htmlbox((start, y + 1/mm, end, y + 8/mm), text, css='* {text-align:left;font-family:serif;font-size:10px;}' )
+
+
 #        if map['location']['target'] < start_y or map['location']['target'] > end_y: return
 
-        x = get_x(start_y, end_y, map['location']['target'])
+#        x = get_x(start_y, end_y, map['location']['target'])
 
-        for (index, mic) in enumerate(map['mics']):
+#        for (index, mic) in enumerate(map['mics']):
 #            print(map['mics'][mic])
-            actor = map['mics'][mic]['actor']
-            if current[mic] != actor:
-               current[mic] = actor
+#            actor = map['mics'][mic]['actor']
+#            if current[mic] != actor:
+#               current[mic] = actor
 
-               if actor is None: actor = '*'
+#               if actor is None: actor = '*'
 
-               page.insert_htmlbox((x, 33/mm + index * 9/mm + 4, x + 20/mm, 42/mm + index * 9/mm), actor, css='* {text-align:left;vertical-align:middle;font-family:sans-serif;font-size:10px;}' )
 
 
 
@@ -115,7 +130,7 @@ def create_page(doc, data, act):
     create_headers(page, data, act)
 
     for (index, mic) in enumerate(data['miclist']):
-        page.insert_htmlbox((10/mm, 33/mm + index * 9/mm + 4, 20/mm, 42/mm + index * 9/mm), mic, css='* {text-align:left;vertical-align:middle;font-family:sans-serif;font-size:14px;font-weight:bold;}' )
+#        page.insert_htmlbox((10/mm, 33/mm + index * 9/mm + 4, 20/mm, 42/mm + index * 9/mm), mic, css='* {text-align:left;vertical-align:middle;font-family:sans-serif;font-size:14px;font-weight:bold;}' )
         page.draw_line((10/mm, 42/mm + index * 9/mm), (410/mm, 42/mm + index * 9/mm), color=(0.0, 0.0, 0.0), width=0.25)
 
 
@@ -142,7 +157,7 @@ def create_pdf(data):
         for scene in [scene for scene in data['scenes'] if scene['start']['location']['target'] >= start_y and scene['end']['location']['target'] <= end_y]:
             create_scene(page, start_y, end_y, data, scene)
 
-        create_micmap(page, start_y, end_y, data['micmap'])
+        create_rolemap(page, start_y, end_y, data['rolemic'])
 
     return doc
 
