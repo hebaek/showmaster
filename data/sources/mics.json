@@ -24,14 +24,10 @@
         "TOBY":            "17",
         "ED":              "18",
         "FRANK":           "19",
-        "REBECCA":         "20",
-        "MAVIS":           "21",
-        "MABEL":           "22",
-        "MARCY":           "23",
-        "FRANNY":          "24",
-        "EUDORA":          "25",
-        "CURTIS":          "26",
-        "HOMER":           "27",
-        "DOKTOR PAT":      "28"
+        "MAVIS":           "20",
+        "MABEL":           "21",
+        "MARCY":           "22",
+        "CURTIS":          "23",
+        "HOMER":           "24"
     }
 }

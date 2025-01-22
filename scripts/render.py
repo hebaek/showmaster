@@ -197,8 +197,8 @@ def create_music(base, data):
         x1, x2 = 0, pdfpage.rect.width
         y = music['start']['y'] * page_height
 
-        pdfpage.draw_line((x1, y), (x2, y), color=(0, 0, .5))
-        pdfpage.insert_textbox((x1, y - 15, x2, y + 10), text, fontsize=12, align=1, color=(0, 0, .5), fontname='Helvetica-Bold')
+        pdfpage.draw_line((x1, y), (x2, y), color=(0, 0, .5), width=0.5, stroke_opacity=0.8)
+        pdfpage.insert_textbox((x1, y - 15, x2, y + 10), text, fontsize=10, align=1, color=(0, 0, .5), fontname='Helvetica-Bold')
 
         pdfpage = doc[music['end']['page']['target'] - 1]
         page_width, page_height = pdfpage.rect.width, pdfpage.rect.height
@@ -206,7 +206,7 @@ def create_music(base, data):
         x1, x2 = 0, pdfpage.rect.width
         y = music['end']['y'] * page_height
 
-        pdfpage.draw_line((x1, y), (x2, y), color=(0, 0, .5))
+        pdfpage.draw_line((x1, y), (x2, y), color=(0, 0, .5), width=0.5, stroke_opacity=0.8)
 
 
     return doc
