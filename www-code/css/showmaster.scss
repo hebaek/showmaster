@@ -68,7 +68,7 @@ body                    { background-color: var(--background-color); }
     .content .header.empty { color: var(--content-empty); }
 }
 
-#menu button {
+#menu > button {
     background-color: var(--menubutton-color);
 }
 
@@ -91,7 +91,7 @@ body                    { background-color: var(--background-color); }
 
 .shortcuts.print {
     background-color: var(--print-color);
-    > .shortcut { background-color: var(--print-color); }
+    > .pdf { background-color: var(--print-color); }
 }
 
 .shortcuts.scenes {
@@ -109,7 +109,7 @@ body                    { background-color: var(--background-color); }
     > .shortcut { background-color: var(--pages-color);  }
 }
 
-.shortcut {
+.pdf,.shortcut {
     transition: background-color 0.3s;
     color: white;
 }
@@ -228,14 +228,14 @@ body {
     .next    { border-bottom-left-radius: 0.8em; border-bottom-right-radius: 0.8em; }
 }
 
-#menu button { border: none; border-radius: 0.5em; }
+#menu > button { border: none; border-radius: 0.5em; }
 
 #miclist .row  { border-radius: 0.4em; }
 #miclist .mic  { border: 1px solid var(--mic-border-default); border-radius: 10.0em; }
 #miclist .active_ensemble .mic { border-color: var(--mic-border-ensemble); }
 #miclist .active_role     .mic { border-color: var(--mic-border-role    ); }
 
-.shortcuts .shortcut {
+.shortcuts .pdf,.shortcut {
     border: none;
 }
 
@@ -264,7 +264,7 @@ body {
     .next, .content { margin-right: 1em; }
 }
 
-#menu button {
+#menu > button {
     width: 1.8em;
     height: 1.8em;
 
@@ -289,6 +289,17 @@ body {
     top: 0; left: 18em;
     width: 30em; height: var(--unit-100vh);
 
+    .heading {
+        width: 100%;
+        margin-top: 2.0em;
+        padding-left: 0.6em;
+    }
+
+    .pdf {
+        width: 100%;
+        padding: 1.0em 1.0em;
+    }
+
     .shortcut {
         width: 100%;
         padding: 1.0em 1.0em;
@@ -307,13 +318,15 @@ body {
 #toolbar {
     font-family: sans-serif;
 
+    .heading     { font-size: 1.6em; }
+    .pdf         { font-size: 1.0em; }
     .shortcut    { font-size: 1.0em; }
     .content     { font-size: 1.0em; }
     .prev, .next { font-size: 1.0em; }
 
 }
 
-#menu button {
+#menu > button {
     font-size: 2em;
 }
 
@@ -374,16 +387,14 @@ button {
 
     z-index: 7;
 
-    .shortcut {
-        text-align: left;
-    }
+    .pdf      { text-align: left; }
+    .shortcut { text-align: left; }
 
-    .shortcut:hover {
-        background-color: var(--toolbar-color);
-    }
+    .pdf:hover      { background-color: var(--toolbar-color); }
+    .shortcut:hover { background-color: var(--toolbar-color); }
 }
 
-#menu button {
+#menu > button {
     position: relative;
 
     img {

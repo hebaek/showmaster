@@ -28,7 +28,6 @@ const fetch_showdata = async () => {
         const shows = await response.json()
 
         for (const show in shows.showdata) {
-            console.log(show, shows.showdata[show])
             projectdata[show] = {
                 'url':  shows.showdata[show].url,
                 'name': shows.showdata[show].name,
@@ -85,7 +84,6 @@ const populate_show = async show => {
 
     pdf_load('mics')
 
-    console.log(showdata)
     create_shortcuts(showdata)
     create_miclist(showdata)
 
@@ -98,6 +96,22 @@ const populate_show = async show => {
 
 
 const create_shortcuts = () => {
+    $('.shortcuts.print').append(`<div class='heading'>Manus</div>`)
+    for (pdf of ['empty', 'music', 'mics']) {
+        let url  = `${pdfdata[pdf].url}`
+        let text = `${pdfdata[pdf].name}`
+        $('.shortcuts.print').append(`<button class='pdf' data-url='${url}'>${text}</button>`)
+    }
+
+    $('.shortcuts.print').append(`<div class='heading'>Mikrofonlister</div>`)
+    for (pdf of ['actor:mic/role', 'role:mic/actor', 'mic:actor/role', 'mic:role/actor']) {
+        let url  = `${pdfdata[pdf].url}`
+        let text = `${pdfdata[pdf].name}`
+        $('.shortcuts.print').append(`<button class='pdf' data-url='${url}'>${text}</button>`)
+    }
+
+
+
     showdata.scenes.forEach(scene => {
         let classes = 'shortcut'
         let text = `${scene.id} - ${scene.name}`
@@ -190,6 +204,15 @@ const update_miclist = () => {
         }
     }
 
+}
+
+
+
+
+
+
+const download = url => {
+    window.open(url)
 }
 
 
@@ -344,6 +367,8 @@ const set_eventhandlers = () => {
 
     $(document).on('click', '#settings', event => { event.stopPropagation(); $('.shortcuts:not(.settings)').hide(); $('.shortcuts.settings').toggle() })
     $(document).on('click', '#print',    event => { event.stopPropagation(); $('.shortcuts:not(.print)'   ).hide(); $('.shortcuts.print'   ).toggle() })
+
+    $(document).on('click', '.pdf', event => { event.stopPropagation(); $('.shortcuts').hide(); download($(event.target).data('url')) })
 
     $(document).on('click', '.scenes > .content', event => { event.stopPropagation(); $('.shortcuts:not(.scenes)').hide(); $('.shortcuts.scenes').toggle() })
     $(document).on('click', '.music > .content',  event => { event.stopPropagation(); $('.shortcuts:not(.music) ').hide(); $('.shortcuts.music' ).toggle() })

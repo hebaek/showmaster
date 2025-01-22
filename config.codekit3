@@ -17,12 +17,12 @@
       "oAP" : "\/www-test\/.gitignore",
       "oF" : 1
     },
-    "\/data\/compiled\/pdf\/list.pdf" : {
+    "\/data\/compiled\/pdf\/actor-mic-role.pdf" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/www-test\/data\/compiled\/pdf\/list.pdf",
+      "oAP" : "\/www-test\/data\/compiled\/pdf\/actor-mic-role.pdf",
       "oF" : 0
     },
     "\/data\/compiled\/pdf\/manus-empty.pdf" : {
@@ -47,6 +47,30 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/www-test\/data\/compiled\/pdf\/manus-music.pdf",
+      "oF" : 0
+    },
+    "\/data\/compiled\/pdf\/mic-actor-role.pdf" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/www-test\/data\/compiled\/pdf\/mic-actor-role.pdf",
+      "oF" : 0
+    },
+    "\/data\/compiled\/pdf\/mic-role-actor.pdf" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/www-test\/data\/compiled\/pdf\/mic-role-actor.pdf",
+      "oF" : 0
+    },
+    "\/data\/compiled\/pdf\/role-mic-actor.pdf" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/www-test\/data\/compiled\/pdf\/role-mic-actor.pdf",
       "oF" : 0
     },
     "\/data\/compiled\/showdata\/GP\/showdata.json" : {
@@ -390,17 +414,6 @@
       "sC" : 3,
       "tS" : 0
     },
-    "\/www-code\/js\/showmaster-old.js" : {
-      "bF" : 0,
-      "ft" : 64,
-      "ma" : 0,
-      "mi" : 0,
-      "oA" : 0,
-      "oAP" : "\/www-test\/js\/showmaster-old.js",
-      "oF" : 0,
-      "sC" : 3,
-      "tS" : 0
-    },
     "\/www-code\/js\/showmaster.js" : {
       "bF" : 0,
       "ft" : 64,
@@ -453,7 +466,7 @@
     "displayValueWasSetByUser" : 0,
     "iconImageName" : "brackets-brick",
     "iconImageWasSetByUser" : 0,
-    "lastBuiltDate" : 759070629.94984996
+    "lastBuiltDate" : 759257045.97298002
   },
   "projectSettings" : {
     "abortBuildOnError" : 1,
