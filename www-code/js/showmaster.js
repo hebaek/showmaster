@@ -330,7 +330,7 @@ const pdf_render = async () => {
     const desiredWidth  = $('#pdf').innerWidth()
     const desiredHeight = $('#pdf').innerHeight()
 
-    const testViewport = page.getViewport({ scale: 1, })
+    const testViewport = page.getViewport({ scale: 1.0 })
     const scaleWidth  = desiredWidth  / testViewport.width
     const scaleHeight = desiredHeight / testViewport.height
     const scale = Math.min(scaleWidth, scaleHeight)

@@ -49,7 +49,7 @@
 body                    { background-color: var(--background-color); }
 #toolbar                { background-color: var(--toolbar-color);    }
 #infobar                { background-color: var(--infobar-color);    }
-#pdf                  { background-color: var(--pdf-color);        }
+#pdf                    { background-color: var(--pdf-color);        }
 
 #toolbar .navigation {
     .buttons > button    { background-color: var(--button-color); color: white; }
@@ -120,10 +120,10 @@ body                    { background-color: var(--background-color); }
 
 
 
-#toolbar   { box-shadow:   0 0 10px var(--default-shadow); }
-#infobar   { box-shadow:   0 0 10px var(--default-shadow); }
-canvas     { box-shadow:   0 0 15px var(--default-shadow); }
-.shortcuts { box-shadow: 5px 0 10px var(--default-shadow); }
+#toolbar    { box-shadow:   0 0 10px var(--default-shadow); }
+#infobar    { box-shadow:   0 0 10px var(--default-shadow); }
+#pdf-canvas { box-shadow:   0 0 15px var(--default-shadow); }
+.shortcuts  { box-shadow: 5px 0 10px var(--default-shadow); }
 
 
 
@@ -145,7 +145,7 @@ body                 { display: grid; }
 #miclist .row        { display: grid; }
 
 #toolbar       { grid-area: toolbar; }
-#pdf         { grid-area: pdf;     }
+#pdf           { grid-area: pdf;     }
 #infobar       { grid-area: infobar; }
 
 #toolbar #menu {
