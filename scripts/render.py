@@ -1,12 +1,6 @@
 '''
 FIX: Add pages is in conflict with remove pages
 Bytt "show" med action: empty, music, mics...
-
-Take in showdata
-Create pdfs for show:
-manus-empty.pdf
-manus-music.pdf
-manus-mics.pdf
 '''
 
 
@@ -34,7 +28,7 @@ def save_pdf(path, filename, doc):
 
     fullpath.mkdir(parents=True, exist_ok=True)
 
-    doc.save(fullname)
+    doc.save(fullname, garbage=4, deflate=True, use_objstms=True)
     doc.close()
 
     print(f'PDF saved to: {fullname}')

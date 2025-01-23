@@ -29,7 +29,7 @@ def save_pdf(path, filename, doc):
 
     fullpath.mkdir(parents=True, exist_ok=True)
 
-    doc.save(fullname)
+    doc.save(fullname, garbage=4, deflate=True, use_objstms=True)
     doc.close()
 
     print(f'PDF saved to: {fullname}')
@@ -385,9 +385,9 @@ def draw_miclist(page, p, data, act):
 
             if start_x < p['content']['left'] or end_x > p['content']['right']: continue
 
-            if   int(section['mic']) <  5: color = (1.00, 0.80, 1.00)
-            elif int(section['mic']) < 13: color = (0.80, 1.00, 1.00)
-            else:                          color = (1.00, 0.95, 0.75)
+            if   int(section['mic']) <  5: color = (0.73, 0.94, 0.71)
+            elif int(section['mic']) < 13: color = (0.71, 0.81, 0.94)
+            else:                          color = (0.94, 0.90, 0.71)
 
             text = f'''<span class='primo'>{primo}</span> / <span class='secundo'>{secundo}</span>'''
             page.draw_rect     ((start_x, p['leader']['top'] + offset, end_x, p['leader']['top'] + offset + height), fill=color, width=0.5)
