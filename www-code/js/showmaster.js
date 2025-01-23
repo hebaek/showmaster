@@ -86,8 +86,6 @@ const populate_show = async show => {
 
     create_shortcuts(showdata)
     create_miclist(showdata)
-
-    $('#pdf-original').html(projectdata[show].name)
 }
 
 
@@ -329,8 +327,8 @@ const pdf_render = async () => {
     const canvas = document.getElementById('pdf-canvas')
     const context = canvas.getContext('2d')
 
-    const desiredWidth  = $('#pdf-viewer').innerWidth()
-    const desiredHeight = $('#pdf-viewer').innerHeight()
+    const desiredWidth  = $('#pdf').innerWidth()
+    const desiredHeight = $('#pdf').innerHeight()
 
     const testViewport = page.getViewport({ scale: 1, })
     const scaleWidth  = desiredWidth  / testViewport.width
@@ -361,9 +359,9 @@ const set_eventhandlers = () => {
 
     $(document).on('click', '#logout',   () => { window.location.replace('login.php') })
 
-    $(document).on('click', '#toolbar',    event => { event.stopPropagation(); $('.shortcuts').hide() })
-    $(document).on('click', '#pdf-viewer', event => { event.stopPropagation(); $('.shortcuts').hide() })
-    $(document).on('click', '#infobar',    event => { event.stopPropagation(); $('.shortcuts').hide() })
+    $(document).on('click', '#toolbar',  event => { event.stopPropagation(); $('.shortcuts').hide() })
+    $(document).on('click', '#pdf',    event => { event.stopPropagation(); $('.shortcuts').hide() })
+    $(document).on('click', '#infobar',  event => { event.stopPropagation(); $('.shortcuts').hide() })
 
     $(document).on('click', '#settings', event => { event.stopPropagation(); $('.shortcuts:not(.settings)').hide(); $('.shortcuts.settings').toggle() })
     $(document).on('click', '#print',    event => { event.stopPropagation(); $('.shortcuts:not(.print)'   ).hide(); $('.shortcuts.print'   ).toggle() })

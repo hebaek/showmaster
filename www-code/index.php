@@ -57,7 +57,7 @@
         </div>
     </div>
 
-    <div id='pdf-viewer'>
+    <div id='pdf'>
         <canvas id='pdf-canvas'></canvas>
     </div>
 
