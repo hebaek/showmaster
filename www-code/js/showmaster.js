@@ -326,7 +326,7 @@ const goto_page = page => {
 
 
 const pdf_load = async pdf => {
-    const loadingtask = pdfjsLib.getDocument(pdfdata[pdf])
+    const loadingtask = pdfjsLib.getDocument(pdfdata[pdf].url)
     state['doc'] = await loadingtask.promise
 
     state['lastpage']  = state['doc'].numPages
@@ -375,6 +375,24 @@ const pdf_render = async () => {
 
 
 
+const pdf_list_show = pdf => {
+    const url = pdfdata[pdf].url
+    $('#pdf-viewer').attr('src', url)
+
+    $('#pdf-viewer').show()
+    $('#infobar').hide()
+}
+
+const pdf_list_hide = () => {
+    $('#pdf-viewer').hide()
+    $('#infobar').show()
+}
+
+
+
+
+
+
 const set_eventhandlers = () => {
     $(window).on('resize', pdf_render)
 
@@ -396,6 +414,11 @@ const set_eventhandlers = () => {
     $(document).on('click', '.shortcut', event => { event.stopPropagation(); $('.shortcuts').hide(); goto_page($(event.target).data('page')) })
     $(document).on('click', '.prev',     event => { event.stopPropagation(); $('.shortcuts').hide(); goto_page($(event.target).data('page')) })
     $(document).on('click', '.next',     event => { event.stopPropagation(); $('.shortcuts').hide(); goto_page($(event.target).data('page')) })
+
+
+
+    $(document).on('click', '#settings', event => { event.stopPropagation(); $('.shortcuts:not(.settings)').hide(); $('.shortcuts.settings').toggle(); pdf_list_show('actor:mic/role') })
+    $(document).on('click', '#print',    event => { event.stopPropagation(); $('.shortcuts:not(.print)'   ).hide(); $('.shortcuts.print'   ).toggle(); pdf_list_hide() })
 }
 
 
