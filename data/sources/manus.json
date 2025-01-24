@@ -24,7 +24,6 @@
     ],
 
     "remove_parts": [
-        { "start": { "page": "1", "y": 0.4 }, "end": { "page": "1", "y": 0.6 } }
     ],
 
     "remove_pages": [

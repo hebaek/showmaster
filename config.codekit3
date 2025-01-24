@@ -250,9 +250,17 @@
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 1,
+      "oA" : 0,
       "oAP" : "\/www-test\/Makefile",
-      "oF" : 1
+      "oF" : 0
+    },
+    "\/password" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/www-test\/password",
+      "oF" : 0
     },
     "\/scripts\/analyze_pdf.py" : {
       "cB" : 0,
@@ -370,50 +378,6 @@
       "oAP" : "\/www-test\/index.php",
       "oF" : 0
     },
-    "\/www-code\/js\/jquery-3.7.1.min.js" : {
-      "bF" : 0,
-      "ft" : 64,
-      "ma" : 0,
-      "mi" : 0,
-      "oA" : 2,
-      "oAP" : "\/www-test\/js\/jquery-3.7.1.min.js",
-      "oF" : 1,
-      "sC" : 3,
-      "tS" : 0
-    },
-    "\/www-code\/js\/jquery-ui-1.14.0.min.js" : {
-      "bF" : 0,
-      "ft" : 64,
-      "ma" : 0,
-      "mi" : 0,
-      "oA" : 2,
-      "oAP" : "\/www-test\/js\/jquery-ui-1.14.0.min.js",
-      "oF" : 1,
-      "sC" : 3,
-      "tS" : 0
-    },
-    "\/www-code\/js\/pdf.min.js" : {
-      "bF" : 0,
-      "ft" : 64,
-      "ma" : 0,
-      "mi" : 0,
-      "oA" : 2,
-      "oAP" : "\/www-test\/js\/pdf.min.js",
-      "oF" : 1,
-      "sC" : 3,
-      "tS" : 0
-    },
-    "\/www-code\/js\/pdf.worker.min.js" : {
-      "bF" : 0,
-      "ft" : 64,
-      "ma" : 0,
-      "mi" : 0,
-      "oA" : 2,
-      "oAP" : "\/www-test\/js\/pdf.worker.min.js",
-      "oF" : 1,
-      "sC" : 3,
-      "tS" : 0
-    },
     "\/www-code\/js\/showmaster.js" : {
       "bF" : 0,
       "ft" : 64,
@@ -466,7 +430,7 @@
     "displayValueWasSetByUser" : 0,
     "iconImageName" : "brackets-brick",
     "iconImageWasSetByUser" : 0,
-    "lastBuiltDate" : 759329199.82586706
+    "lastBuiltDate" : 759368224.37638998
   },
   "projectSettings" : {
     "abortBuildOnError" : 1,
