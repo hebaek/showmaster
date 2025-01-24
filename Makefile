@@ -1,39 +1,38 @@
-all: data/compiled/compiled.json data/compiled/manus-expanded.pdf data/compiled/manus-mics.pdf
+all: publish
 	echo all
 
+.PHONY: all
+.PHONY: manus
 
 
-data/compiled/compiled.json: scripts/* data/sources/*
+manus: data/compiled/pdf/manus-mics
+
+
+
+data/compiled/showdata/shows.json: $(wildcard data/sources/*)
 	python3 scripts/compile.py
 
-
-
-data/compiled/manus-expanded.pdf: scripts/* data/sources/*
-	python3 scripts/compile.py
-
-
-
-data/compiled/common/manus-mics.pdf: data/compiled/common/manus-music.pdf data/compiled/showdata.json
+data/compiled/pdf/manus-mics: data/compiled/showdata/shows.json
 	python3 scripts/render.py
 
-
-
-publish:
-	rm -rf www-test/data
-	rm -rf www-test/pdf
-
-	install -d www-test/data
-	install -d www-test/pdf
-
-	cp -r data/compiled/showdata/* www-test/data/
-	cp -r data/compiled/pdf/*      www-test/pdf/
+data/compiled/pdf/actor-mic-role.pdf: data/compiled/showdata/shows.json
+	python3 scripts/create.py "Show 1"
 
 
 
-deploy:
-	rm -rf www-deploy/*
-	cp -r www-test/* www-deploy/
 
+
+
+
+publish: data/compiled/showdata/shows.json data/compiled/pdf/actor-mic-role.pdf
+	rsync -r -v -c --delete data/compiled/showdata/ www-test/data/
+	rsync -r -v -c --delete data/compiled/pdf/      www-test/pdf/
+
+
+
+deploy: publish
+	rsync -r -v -c --delete www-test/ www-deploy/
+	rsync -r -v -c -n --delete --password-file=password www-deploy/ w1357675@1357675.web.tornado-node.net://var/www/0/1357675/www
 
 
 clean:
