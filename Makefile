@@ -1,9 +1,9 @@
-all: publish
-	echo all
-
 .PHONY: all
 .PHONY: manus
 
+
+
+all: publish
 
 manus: data/compiled/pdf/manus-mics
 
@@ -32,8 +32,3 @@ publish: data/compiled/showdata/shows.json data/compiled/pdf/actor-mic-role.pdf
 
 deploy: publish
 	rsync -r -v -c --delete www-test/ www-deploy/
-	rsync -r -v -c -n --delete --password-file=password www-deploy/ w1357675@1357675.web.tornado-node.net://var/www/0/1357675/www
-
-
-clean:
-	echo clean

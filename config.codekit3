@@ -250,9 +250,9 @@
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 0,
+      "oA" : 1,
       "oAP" : "\/www-test\/Makefile",
-      "oF" : 0
+      "oF" : 1
     },
     "\/scripts\/analyze_pdf.py" : {
       "cB" : 0,
@@ -422,7 +422,7 @@
     "displayValueWasSetByUser" : 0,
     "iconImageName" : "brackets-brick",
     "iconImageWasSetByUser" : 0,
-    "lastBuiltDate" : 759402148.89253199
+    "lastBuiltDate" : 759403817.71153903
   },
   "projectSettings" : {
     "abortBuildOnError" : 1,
