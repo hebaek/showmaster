@@ -16,11 +16,8 @@
     <link rel='stylesheet' href='css/reset.css' />
     <link rel='stylesheet' href='css/showmaster.css' />
 
-    <script src='js/pdf.worker.min.js'></script>
-    <script src='js/pdf.min.js'></script>
-
-    <script src='js/jquery-3.7.1.min.js'></script>
-    <script src='js/jquery-ui-1.14.0.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.9.179/pdf.min.js'></script>
+    <script src='https://code.jquery.com/jquery-3.7.1.min.js'></script>
 
     <script src='js/showmaster.js'></script>
 </head>
