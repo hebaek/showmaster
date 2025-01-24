@@ -29,10 +29,11 @@ const fetch_showdata = async () => {
 
         for (const show in shows.showdata) {
             projectdata[show] = {
-                'url':  shows.showdata[show].url,
-                'name': shows.showdata[show].name,
-                'date': shows.showdata[show].date,
-                'time': shows.showdata[show].time,
+                'url':    shows.showdata[show].url,
+                'name':   shows.showdata[show].name,
+                'date':   shows.showdata[show].date,
+                'time':   shows.showdata[show].time,
+                'durata': shows.showdata[show].durata,
             }
         }
 
@@ -71,7 +72,27 @@ const load_show = async (show) => {
 
 
 const get_current_show = async () => {
-    return 'Show 1'
+    const now = new Date(Date.now())
+
+    for (const show in projectdata) {
+        const date   = projectdata[show].date
+        const time   = projectdata[show].time
+        const durata = projectdata[show].durata
+
+        const starttime = new Date(`${date}T${time}`)
+        const endtime   = new Date(`${date}T${time}`)
+        const h = new Date(`${date}T${durata}`).getHours()
+        const m = new Date(`${date}T${durata}`).getMinutes()
+        const s = new Date(`${date}T${durata}`).getSeconds()
+
+        endtime.setTime(endtime.getTime() + h * 60*60*1000)
+        endtime.setTime(endtime.getTime() + m *    60*1000)
+        endtime.setTime(endtime.getTime() + s *       1000)
+
+        if (endtime > now) {
+            return show
+        }
+    }
 }
 
 
@@ -383,6 +404,8 @@ const set_eventhandlers = () => {
 
 
 $(document).ready(async () => {
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.9.179/pdf.worker.min.js'
+
     await fetch_showdata()
 
     const show = await get_current_show()

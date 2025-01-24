@@ -643,10 +643,11 @@ def compile_commondata(shows):
         result['pdf']['mic:role/actor' ] = { 'url': f'pdf/mic-role-actor.pdf',  'name': 'mikrofon: rolle/skuespiller' }
 
         result['showdata'][show] = {
-            'url': f'data/{show}/showdata.json',
-            'name': shows[show]['name'],
-            'date': shows[show]['date'],
-            'time': shows[show]['time'],
+            'url':    f'data/{show}/showdata.json',
+            'name':   shows[show]['name'  ],
+            'date':   shows[show]['date'  ],
+            'time':   shows[show]['time'  ],
+            'durata': shows[show]['durata'],
         }
 
     return result
