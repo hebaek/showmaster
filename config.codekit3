@@ -397,6 +397,14 @@
       "oAP" : "\/www-test\/poe-ideas.html",
       "oF" : 1
     },
+    "\/www-code\/resources.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/www-test\/resources.php",
+      "oF" : 0
+    },
     "\/www-deploy" : {
       "ft" : 65536,
       "oA" : 1,

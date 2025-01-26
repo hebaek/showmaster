@@ -17,9 +17,11 @@
         if($clean['username'] === "svgs" && $clean['password'] === "svgs") {
             $_SESSION['username'] = $clean['username'];
             header('location:index.php');
+            exit;
         }
         else {
             header('location:login.php?error=badcredentials');
+            exit;
         }
     }
 
