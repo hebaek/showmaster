@@ -161,6 +161,9 @@ body                 { display: grid; }
     #logout   { grid-area: logout;   }
     #settings { grid-area: settings; }
     #print    { grid-area: print;    }
+
+    #read     { grid-area: read;     }
+    #write    { grid-area: write;    }
 }
 
 #toolbar .navigation {
@@ -192,6 +195,7 @@ body {
 #toolbar #menu {
     grid:
         'logout .   settings print' auto
+        '.      .   write    read ' auto
         / 1fr   2fr 1fr      1fr;
 }
 
@@ -217,7 +221,7 @@ body {
 
     column-gap: 2px; row-gap: 1px;
 
-    .row { grid-column: 1; grid-template-columns: 3.2em 10em 7em; }
+    .row { grid-column: 1; grid-template-columns: 3.4em 10em 7em; }
 }
 
 

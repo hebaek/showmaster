@@ -28,6 +28,10 @@
             <button class='settings' id='logout'><img src='img/logout.svg' alt='logg ut'></button>
             <button class='settings' id='settings'><img src='img/view.svg' alt='oppsett'></button>
             <button class='settings' id='print'><img src='img/paper.svg' alt='pdf'></button>
+
+            <button class='settings' id='read'><img src='img/read.svg' ></button>
+            <button class='settings' id='write'><img src='img/write.svg' ></button>
+
             <div class='shortcuts settings'></div>
             <div class='shortcuts print'></div>
         </div>

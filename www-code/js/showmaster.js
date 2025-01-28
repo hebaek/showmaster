@@ -4,6 +4,11 @@ const pdfdata     = {}
 
 let showdata = null
 
+const serverdata  = {
+    'read':  true,
+    'write': true,
+}
+
 const state = {
     'firstpage':    null,
     'lastpage':     null,
@@ -255,24 +260,24 @@ const handle_keypress = event => {
         case 'PageUp':
         case 'Backspace':
             page = $('.pages > .prev').data('page')
-            goto_page(page)
+            goto_page('write', page)
             break
 
         case 'ArrowRight':
         case 'PageDown':
         case 'Space':
             page = $('.pages > .next').data('page')
-            goto_page(page)
+            goto_page('write', page)
             break
 
         case 'ArrowUp':
             page = $('.scenes > .prev').data('page')
-            goto_page(page)
+            goto_page('write', page)
             break
 
         case 'ArrowDown':
             page = $('.scenes > .next').data('page')
-            goto_page(page)
+            goto_page('write', page)
             break
     }
 }
@@ -282,9 +287,11 @@ const handle_keypress = event => {
 
 
 
-const goto_page = page => {
+const goto_page = (mode, page) => {
     if (page > state['lastpage'])  return
     if (page < state['firstpage']) return
+
+    if (mode == 'write' && serverdata['write'] == true) { server_setpage(page) }
 
     state['currentpage'] = page
     state['currentscene'] = null
@@ -375,7 +382,7 @@ const pdf_load = async pdf => {
     state['lastpage']  = state['doc'].numPages
     state['firstpage'] = 1
 
-    goto_page(state['currentpage'])
+    goto_page('read', state['currentpage'])
 }
 
 
@@ -459,9 +466,9 @@ const set_eventhandlers = () => {
     $(document).on('click', '.music > .content',  event => { event.stopPropagation(); $('.shortcuts:not(.music) ').hide(); $('.shortcuts.music' ).toggle() })
     $(document).on('click', '.pages > .content',  event => { event.stopPropagation(); $('.shortcuts:not(.pages) ').hide(); $('.shortcuts.pages' ).toggle() })
 
-    $(document).on('click', '.shortcut', event => { event.stopPropagation(); $('.shortcuts').hide(); goto_page($(event.target).data('page')) })
-    $(document).on('click', '.prev',     event => { event.stopPropagation(); $('.shortcuts').hide(); goto_page($(event.target).data('page')) })
-    $(document).on('click', '.next',     event => { event.stopPropagation(); $('.shortcuts').hide(); goto_page($(event.target).data('page')) })
+    $(document).on('click', '.shortcut', event => { event.stopPropagation(); $('.shortcuts').hide(); goto_page('write', $(event.target).data('page')) })
+    $(document).on('click', '.prev',     event => { event.stopPropagation(); $('.shortcuts').hide(); goto_page('write', $(event.target).data('page')) })
+    $(document).on('click', '.next',     event => { event.stopPropagation(); $('.shortcuts').hide(); goto_page('write', $(event.target).data('page')) })
 
     $(document).on('keydown', event => { event.stopPropagation(); handle_keypress(event) })
 
@@ -472,6 +479,37 @@ const set_eventhandlers = () => {
 }
 
 
+
+
+const server_getpage = () => {
+    fetch('getpage.php')
+    .then(response => response.text())
+    .then(page => {
+        const pageNumber = parseInt(page, 10);
+        if (!isNaN(pageNumber) && pageNumber !== state['currentpage']) {
+            goto_page('read', pageNumber)
+        }
+    })
+    .catch(error => console.error('Error fetching page:', error));
+}
+
+const server_setpage = page => {
+    fetch('setpage.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: `page=${page}`,
+    })
+    .then(response => response.text())
+    .then(message => console.log(message))
+    .catch(error => console.error('Error updating page:', error));
+}
+
+const server_poll = () => {
+    if (serverdata['read']) {
+        server_getpage()
+        setTimeout(server_poll, 500)
+    }
+}
 
 
 
@@ -485,4 +523,6 @@ $(document).ready(async () => {
 
     await populate_show(show)
     await set_eventhandlers()
+
+    server_poll()
 })

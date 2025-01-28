@@ -348,6 +348,14 @@
       "oS" : 0,
       "pg" : 0
     },
+    "\/www-code\/getpage.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/www-test\/getpage.php",
+      "oF" : 0
+    },
     "\/www-code\/img\/logout.svg" : {
       "ft" : 2097152,
       "miP" : 0,
@@ -368,11 +376,31 @@
       "plM" : 52780316221407,
       "prP" : 0
     },
+    "\/www-code\/img\/read.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/www-test\/img\/read.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 52780316221407,
+      "prP" : 0
+    },
     "\/www-code\/img\/view.svg" : {
       "ft" : 2097152,
       "miP" : 0,
       "oA" : 2,
       "oAP" : "\/www-test\/img\/view.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 52780316221407,
+      "prP" : 0
+    },
+    "\/www-code\/img\/write.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/www-test\/img\/write.svg",
       "oF" : 0,
       "opt" : 0,
       "plM" : 52780316221407,
@@ -421,6 +449,14 @@
       "oAP" : "\/www-test\/resources.php",
       "oF" : 0
     },
+    "\/www-code\/setpage.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/www-test\/setpage.php",
+      "oF" : 0
+    },
     "\/www-deploy" : {
       "ft" : 65536,
       "oA" : 1,
@@ -446,7 +482,7 @@
     "displayValueWasSetByUser" : 0,
     "iconImageName" : "brackets-brick",
     "iconImageWasSetByUser" : 0,
-    "lastBuiltDate" : 759752939.99480295
+    "lastBuiltDate" : 759791369.19636905
   },
   "projectSettings" : {
     "abortBuildOnError" : 1,
