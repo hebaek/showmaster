@@ -39,18 +39,30 @@ def save_pdf(path, filename, doc):
 
 
 def print_mic(pdfpage, x, y, type, text):
-    if type == 'role':     color = (0,    0,    0   ); fill = (0.7, 1.0, 0.7)
-    if type == 'ensemble': color = (0,    0,    0   ); fill = (1.0, 1.0, 0.5)
-    if type == 'off':      color = (0.70, 0.70, 0.70); fill = (1.0, 1.0, 1.0)
-
     page_width, page_height = pdfpage.rect.width, pdfpage.rect.height
 
-    shape = pdfpage.new_shape()
-    shape.draw_circle((x, y), 9)
-    shape.finish(color=color, fill=fill)
-    shape.commit()
+    if text == 'Kor':
+        if type == 'off': color = (0.70, 0.70, 0.70); fill = (1.0, 1.0, 1.0)
+        else:             color = (0.00, 0.00, 0.00); fill = (0.9, 0.8, 1.0)
 
-    pdfpage.insert_textbox((x-14.9, y-8.5, x+15, y+25), text, fontsize=12, align=1, color=(0, 0, 0), fontname="Helvetica-Bold")
+        shape = pdfpage.new_shape()
+        shape.draw_rect((x-9, y-9, x+29, y+9), radius=0.5)
+        shape.finish(color=color, fill=fill)
+        shape.commit()
+
+        pdfpage.insert_textbox((x-14.9, y-8.5, x+15+18, y+25), text, fontsize=12, align=1, color=(0, 0, 0), fontname="Helvetica-Bold")
+
+    else:
+        if type == 'role':     color = (0.00, 0.00, 0.00); fill = (0.7, 1.0, 0.7)
+        if type == 'ensemble': color = (0.00, 0.00, 0.00); fill = (1.0, 1.0, 0.5)
+        if type == 'off':      color = (0.70, 0.70, 0.70); fill = (1.0, 1.0, 1.0)
+
+        shape = pdfpage.new_shape()
+        shape.draw_circle((x, y), 9)
+        shape.finish(color=color, fill=fill)
+        shape.commit()
+
+        pdfpage.insert_textbox((x-14.9, y-8.5, x+15, y+25), text, fontsize=12, align=1, color=(0, 0, 0), fontname="Helvetica-Bold")
 
 
 
@@ -62,7 +74,6 @@ def annotate_roles(doc, page, y, mics):
     page_width, page_height = pdfpage.rect.width, pdfpage.rect.height
 
     x1, x2 = 0.010, 0.111
-    fill = (0.8, 1, 0.8)
 
     offset_x = 0
     offset_y = 0
@@ -127,6 +138,16 @@ def create_empty(base, data):
         offset += 1
 
 
+    # Remove parts
+    for part in data.get('remove_parts'):
+        pdfpage = doc[part['start']['page']['target'] - 1]
+
+        x1, x2 = -1, pdfpage.rect.width + 1
+        y1, y2 = part['start']['y'] * page_height, part['end']['y'] * page_height
+
+        pdfpage.draw_rect((x1, y1, x2, y2), fill=(.95, .95, .95))
+
+
     # Add extra page text
     for text in data.get('pagetext'):
         pdfpage = doc[text['page']['target'] - 1]
@@ -136,20 +157,10 @@ def create_empty(base, data):
 
         pdfpage.insert_textbox((x1, y, x2, y + 28), text['heading'], fontsize=16, align=1, color=(0, 0, 0), fontname='Times-Bold' )
 
-        y += 40
+        y += 30
         for line in text['lines']:
-            pdfpage.insert_textbox((x1, y, x2, y + 28), line, fontsize=12, align=1, color=(0, 0, 0), fontname='Times-Roman' )
-            y += 20
-
-
-    # Remove parts
-    for part in data.get('remove_parts'):
-        pdfpage = doc[part['start']['page']['target'] - 1]
-
-        x1, x2 = -1, pdfpage.rect.width + 1
-        y1, y2 = part['start']['y'] * page_height, part['end']['y'] * page_height
-
-        pdfpage.draw_rect((x1, y1, x2, y2), fill=(1, 1, 1), fill_opacity=0.9)
+            pdfpage.insert_textbox((x1, y, x2, y + 28), line, fontsize=12, align=1, color=(0, 0, 0), fontname='Times-Italic' )
+            y += 16
 
 
     # Add extra lines
@@ -184,6 +195,7 @@ def create_music(base, data):
 
         text = ''
         if music['type'] == 'song':         text += 'Sang: '
+        if music['type'] == 'dialog':       text += 'Dialogmusikk: '
         if music['type'] == 'instrumental': text += 'Instrumental: '
 
         text += music['id'] + ' - ' + music['name']
@@ -191,8 +203,8 @@ def create_music(base, data):
         x1, x2 = 0, pdfpage.rect.width
         y = music['start']['y'] * page_height
 
-        pdfpage.draw_line((x1, y), (x2, y), color=(0, 0, .5), width=0.5, stroke_opacity=0.8)
-        pdfpage.insert_textbox((x1, y - 15, x2, y + 10), text, fontsize=10, align=1, color=(0, 0, .5), fontname='Helvetica-Bold')
+        pdfpage.draw_rect((x1-2, y, x2+2, y + 18), fill=(0.8, 0.8, 1), width=0.25)
+        pdfpage.insert_textbox((x1, y, x2, y + 25), text, fontsize=12, align=1, color=(0, 0, 0), fontname='Helvetica')
 
         pdfpage = doc[music['end']['page']['target'] - 1]
         page_width, page_height = pdfpage.rect.width, pdfpage.rect.height
@@ -200,7 +212,8 @@ def create_music(base, data):
         x1, x2 = 0, pdfpage.rect.width
         y = music['end']['y'] * page_height
 
-        pdfpage.draw_line((x1, y), (x2, y), color=(0, 0, .5), width=0.5, stroke_opacity=0.8)
+        pdfpage.draw_rect((x1-2, y-18, x2+2, y), fill=(0.8, 0.8, 1), width=0.25)
+        pdfpage.insert_textbox((x1, y-18, x2, y + 7), 'musikk slutt', fontsize=12, align=1, color=(0, 0, 0), fontname='Helvetica')
 
 
     return doc
@@ -255,8 +268,9 @@ def create_mics(base, data):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("show")
-    args = parser.parse_args()
+    parser.add_argument("manus")
 
+    args = parser.parse_args()
     show = args.show
 
     shows = load_data('data/sources/shows.json')
@@ -264,22 +278,25 @@ if __name__ == "__main__":
 
     data  = load_data(f'data/compiled/showdata/{show}/showdata.json')
 
-    manusfile = 'data/originals/manus.pdf'
+    manusfile = 'data/originals/manus-nytt.pdf'
     emptyfile = 'data/compiled/pdf/manus-empty.pdf'
     musicfile = 'data/compiled/pdf/manus-music.pdf'
     micsfile  = 'data/compiled/pdf/manus-mics.pdf'
 
 
     # create empty pdf with removed pages and extra pages
-    empty_pdf = create_empty(manusfile, data)
-    save_pdf(f'data/compiled/pdf/', 'manus-empty.pdf', empty_pdf)
+    if args.manus == 'empty':
+        empty_pdf = create_empty(manusfile, data)
+        save_pdf(f'data/compiled/pdf/', 'manus-empty.pdf', empty_pdf)
 
 
     # create music based on empty
-    music_pdf = create_music(emptyfile, data)
-    save_pdf(f'data/compiled/pdf/', 'manus-music.pdf', music_pdf)
+    if args.manus == 'music':
+        music_pdf = create_music(emptyfile, data)
+        save_pdf(f'data/compiled/pdf/', 'manus-music.pdf', music_pdf)
 
 
     # create mics based on music
-    mics_pdf = create_mics(musicfile, data)
-    save_pdf(f'data/compiled/pdf/', 'manus-mics.pdf', mics_pdf)
+    if args.manus == 'mics':
+        mics_pdf = create_mics(musicfile, data)
+        save_pdf(f'data/compiled/pdf/', 'manus-mics.pdf', mics_pdf)

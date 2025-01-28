@@ -57,7 +57,7 @@
     <div id='pdf'>
         <canvas id='pdf-canvas'></canvas>
     </div>
-    <iframe id='pdf-viewer'></iframe>
+<!--    <iframe id='pdf-viewer'></iframe>       -->
 
     <div id='infobar'>
         <div id='miclist'></div>

@@ -158,7 +158,7 @@ def generate_pagemap(manus):
 def generate_pagetext(manus):
     result = []
 
-    for text in manus.get('page_text'):
+    for text in manus.get('page_text', []):
         text['location'] = get_location(text['page'], text['y'])
         text['page'] = { 'source': text['page'], 'target': get_target_page(text['page']) }
         text['lines'] = text.get('lines', [])
@@ -175,7 +175,7 @@ def generate_pagetext(manus):
 def generate_extra_pages(manus):
     result = []
 
-    for page in manus.get('extra_pages'):
+    for page in manus.get('extra_pages', []):
         result.append(page)
 
     return result
@@ -188,7 +188,7 @@ def generate_extra_pages(manus):
 def generate_remove_pages(manus):
     result = OrderedSet()
 
-    for page_range in manus.get('remove_pages'):
+    for page_range in manus.get('remove_pages', []):
         start = int(page_range['start']['page'])
         end   = int(page_range['end'  ]['page'])
 
@@ -205,7 +205,7 @@ def generate_remove_pages(manus):
 def generate_remove_parts(manus):
     result = []
 
-    for part in manus.get('remove_parts'):
+    for part in manus.get('remove_parts', []):
         part['start']['location'] = get_location(part['start']['page'], part['start']['y'])
         part['end'  ]['location'] = get_location(part['end'  ]['page'], part['end'  ]['y'])
 
@@ -224,7 +224,7 @@ def generate_remove_parts(manus):
 def generate_extra_lines(manus):
     result = []
 
-    for line in manus.get('extra_lines'):
+    for line in manus.get('extra_lines', []):
         line = copy.deepcopy(line)
         line['location'] = get_location(line['page'], line['y'])
         line['page'] = { 'source': line['page'], 'target': get_target_page(line['page']) }
@@ -256,10 +256,10 @@ def generate_actmap(manus):
 
 
 
-def generate_musicmap(music):
+def generate_musicmap(manus):
     result = []
 
-    for music in music:
+    for music in manus.get('music', []):
         music['start']['location'] = get_location(music['start']['page'], music['start']['y'])
         music['end'  ]['location'] = get_location(music['end'  ]['page'], music['end'  ]['y'])
 
@@ -286,7 +286,6 @@ def generate_acdl_map(acdl):
             location['page'] = { 'source': location['page'], 'target': get_target_page(location['page']) }
 
             result[role].append(location)
-
 
     return result
 
@@ -340,16 +339,21 @@ def generate_scdl_map(scdl):
 
 def generate_lines(manus):
     result = []
+    all_lines = []
 
-    all_lines = manus.get('lines', []) + manus.get('extra_lines', [])
 
+    for line in manus.get('lines', []):
+        if test_removed_location(line['page'], line['y']):
+            print('REMOVING LINE at', line['page'], line['y'])
+            continue
+
+        all_lines.append(line)
+
+
+    all_lines += manus.get('extra_lines', [])
     for line in all_lines:
         line['location'] = get_location(line['page'], line['y'])
         line['page'] = { 'source': line['page'], 'target': get_target_page(line['page']) }
-
-        if test_removed_location(line['page']['source'], line['y']):
-#            print('REMOVING LINE at', line['location']['source'])
-            continue
 
         if 'ensembles' in line:
             line['ensemble'] = OrderedSet()
@@ -363,7 +367,6 @@ def generate_lines(manus):
             line['ensemble'] = list(line['ensemble'])
 
         result.append(line)
-
 
     return result
 
@@ -403,32 +406,57 @@ def generate_scenes(manus, lines):
 
 
 
-def generate_staging(scdl, scenes, lines):
-    result = {}
+def generate_staging(scdl, scenes, music, lines):
+    result = {
+        'scenes': {},
+        'music':  {},
+    }
 
     for scene in scenes:
-        result[scene['id']] = {}
+        result['scenes'][scene['id']] = {}
 
         scene_start = scene['start']['location']['target']
         scene_end   = scene['end'  ]['location']['target']
 
+
         for line in [line for line in lines if line['location']['target'] >= scene_start and line['location']['target'] <= scene_end]:
             for role in line.get('roles', []) + line.get('ensemble', []):
-                result[scene['id']][role] = [
+                if role == 'Backstage-kor': continue
+
+                result['scenes'][scene['id']][role] = [
                     { 'location': scene['start']['location'], 'page': scene['start']['page'], 'y': scene['start']['y'], 'action': 'enter' },
                     { 'location': scene['end'  ]['location'], 'page': scene['end'  ]['page'], 'y': scene['end'  ]['y'], 'action': 'exit'  }
                 ]
 
     for scene in scdl:
         for role in scdl[scene]:
+            if role == 'Backstage-kor': continue
+
             cdl = scdl[scene][role]
 
             if cdl[0]['action'] == 'enter' and cdl[len(cdl) - 1]['action'] == 'exit':
-                result[scene][role] = cdl
+                result['scenes'][scene][role] = cdl
             elif cdl[0]['action'] == 'enter':
-                result[scene][role][0:1] = cdl
+                result['scenes'][scene][role][0:1] = cdl
             elif cdl[0]['action'] == 'exit':
-                result[scene][role][1:] = cdl
+                result['scenes'][scene][role][1:] = cdl
+
+
+    for song in music:
+        result['music'][song['id']] = {}
+
+        song_start = song['start']['location']['target']
+        song_end   = song['end'  ]['location']['target']
+
+        for line in [line for line in lines if line['location']['target'] >= song_start and line['location']['target'] <= song_end]:
+            for role in line.get('roles', []) + line.get('ensemble', []):
+                if role != 'Backstage-kor': continue
+
+                result['music'][song['id']][role] = [
+                    { 'location': song['start']['location'], 'page': song['start']['page'], 'y': song['start']['y'], 'action': 'enter' },
+                    { 'location': song['end'  ]['location'], 'page': song['end'  ]['page'], 'y': song['end'  ]['y'], 'action': 'exit'  }
+                ]
+
 
     return result
 
@@ -437,162 +465,66 @@ def generate_staging(scdl, scenes, lines):
 
 
 
-def generate_mcdl_2(lines, ensembles, actors, staging, mics):
+def generate_mcdl(lines, ensembles, actors, staging, mics):
     result = {}
-    rolemic = {}
 
     for role in mics['exclusive_assignments']:
-        if not role in rolemic: rolemic[role] = []
+        if not role in result: result[role] = []
 
     for role in mics['fixed_assignments']:
-        if not role in rolemic: rolemic[role] = []
+        if not role in result: result[role] = []
 
 
-
-    for scene in staging:
-        for role in staging[scene]:
+    for scene in staging['scenes']:
+        for role in staging['scenes'][scene]:
             mic, actor = None, None
 
             if role in mics['exclusive_assignments']: mic = mics['exclusive_assignments'][role]
             if role in mics['fixed_assignments'    ]: mic = mics['fixed_assignments'    ][role]
 
-            for action in staging[scene][role]:
+            for action in staging['scenes'][scene][role]:
                 current = list(filter(lambda x: x['location']['target'] <= action['location']['target'], actors[role])).pop()
                 actor = current['actor']
 
                 if action['action'] == 'enter':
-                    if len(rolemic[role]) == 0:
-                        rolemic[role].append({ 'start': { 'location': action['location'], 'page': action['page'], 'y': action['y'] }, 'end': None, 'actor': actor, 'mic': mic })
+                    if len(result[role]) == 0:
+                        result[role].append({ 'start': { 'location': action['location'], 'page': action['page'], 'y': action['y'] }, 'end': None, 'actor': actor, 'mic': mic })
 
                     else:
-                        prev_end = rolemic[role][len(rolemic[role]) - 1]['end']['location'].get('target', 0)
+                        prev_end = result[role][len(result[role]) - 1]['end']['location'].get('target', 0)
                         this_start = action['location']['target']
 
                         if (this_start - prev_end) > 0.5:
-                            rolemic[role].append({ 'start': { 'location': action['location'], 'page': action['page'], 'y': action['y'] }, 'end': None, 'actor': actor, 'mic': mic })
+                            result[role].append({ 'start': { 'location': action['location'], 'page': action['page'], 'y': action['y'] }, 'end': None, 'actor': actor, 'mic': mic })
 
                 elif action['action'] == 'exit':
-                    rolemic[role][len(rolemic[role]) - 1]['end'] = { 'location': action['location'], 'page': action['page'], 'y': action['y'] }
-
-    result = rolemic
-    return result
+                    result[role][len(result[role]) - 1]['end'] = { 'location': action['location'], 'page': action['page'], 'y': action['y'] }
 
 
+    for music in staging['music']:
+        for role in staging['music'][music]:
+            mic, actor = None, None
 
+            if role in mics['exclusive_assignments']: mic = mics['exclusive_assignments'][role]
+            if role in mics['fixed_assignments'    ]: mic = mics['fixed_assignments'    ][role]
 
+            for action in staging['music'][music][role]:
+                current = list(filter(lambda x: x['location']['target'] <= action['location']['target'], actors[role])).pop()
+                actor = current['actor']
 
+                if action['action'] == 'enter':
+                    if len(result[role]) == 0:
+                        result[role].append({ 'start': { 'location': action['location'], 'page': action['page'], 'y': action['y'] }, 'end': None, 'actor': actor, 'mic': mic })
 
-def generate_mcdl(scenes, ensembles, actors, mics):
-    result = []
+                    else:
+                        prev_end = result[role][len(result[role]) - 1]['end']['location'].get('target', 0)
+                        this_start = action['location']['target']
 
-    current = {}
-    trail   = {}
+                        if (this_start - prev_end) > 0.5:
+                            result[role].append({ 'start': { 'location': action['location'], 'page': action['page'], 'y': action['y'] }, 'end': None, 'actor': actor, 'mic': mic })
 
-    previous_roles = OrderedSet()
-    previous_scene_end_page     = 1
-    previous_scene_end_y        = 0.0
-    previous_scene_end_location = get_location(previous_scene_end_page, previous_scene_end_y)
-
-
-
-    for scene in scenes:
-        allroles = OrderedSet(scene['roles']).union(OrderedSet(scene['ensemble']))
-        assign_last = []
-
-        # Remove roles not part of this scene
-        remove_roles = OrderedSet(current.keys())
-        for role in scene['roles']: remove_roles.discard(role)
-
-        for role in remove_roles:
-            result.append({ 'location': previous_scene_end_location, 'page': previous_scene_end_page, 'y': previous_scene_end_y, 'mic': mic, 'role': None, 'actor': None })
-            current.pop(role, None)
-
-
-
-        # Add roles with known mics
-        for role in allroles:
-            assigned = False
-            if not role in trail: trail[role] = OrderedSet()
-
-            actor = get_current(scene['start']['location'], actors.get(role, [])).get('actor', '<ingen>')
-
-            # Priority 1: Same mic as current
-            if actor in current:
-                mic = current[role]['mic']
-                assigned = True
-
-            # Priority 2: Exclusive assignments
-            elif role in mics.get('exclusive_assignments', {}):
-                mic = mics.get('exclusive_assignments', {}).get(role, None)
-                assigned = True
-
-            # Priority 3: Fixed assignments
-            elif role in mics.get('fixed_assignments', {}):
-                mic = mics.get('fixed_assignments', {}).get(role, None)
-                assigned = True
-
-            else:
-                print('MISSING MIC FOR', role)
-                assign_last.append((role, actor))
-
-
-            if assigned:
-                current[role] = { 'role': role, 'actor': actor, 'mic': mic }
-                result.append({ 'location': scene['start']['location'], 'page': scene['start']['page'], 'y': scene['start']['y'], 'mic': mic, 'role': role, 'actor': actor })
-
-
-
-        # Add roles with no known mics - first option
-        for (role, actor) in assign_last:
-            assigned = False
-            last = None
-
-            # Priority 4: Reuse last mic for this role
-            if role in trail and len(trail[role]) > 0: last = trail[role][-1]
-
-            if last and last not in map(lambda x: x['mic'], current.values()):
-                mic = last
-                assigned = True
-                assign_last.remove((role, actor))
-
-
-            if assigned:
-                print('#4:', role, ':', mic)
-                trail[role].append(mic)
-                current[role] = { 'role': role, 'actor': actor, 'mic': mic }
-                result.append({ 'location': scene['start']['location'], 'page': scene['start']['page'], 'y': scene['start']['y'], 'mic': mic, 'role': role, 'actor': actor })
-
-
-
-        # Add roles with no known mics - last option
-        for (role, actor) in assign_last:
-            assigned = False
-            last = None
-
-            # Priority 5: Try all mics not in exclusive_assignments
-            available_mics = OrderedSet(mics.get('mics'))
-            for ex in mics.get('exclusive_assignments', []).values(): available_mics.discard(ex)
-
-            for mic in available_mics:
-                if mic not in map(lambda x: x['mic'], current.values()):
-                    assigned = True
-                    break
-
-
-            if assigned:
-                print('#5:', role, ':', mic)
-                trail[role].append(mic)
-                current[role] = { 'role': role, 'actor': actor, 'mic': mic }
-                result.append({ 'location': scene['start']['location'], 'page': scene['start']['page'], 'y': scene['start']['y'], 'mic': mic, 'role': role, 'actor': actor })
-
-            else:
-                print('NO MIC FOR', role)
-
-
-
-        previous_scene_end_location = scene['end']['location']
-        previous_scene_end_page     = scene['end']['page']
-        previous_scene_end_y        = scene['end']['y']
+                elif action['action'] == 'exit':
+                    result[role][len(result[role]) - 1]['end'] = { 'location': action['location'], 'page': action['page'], 'y': action['y'] }
 
 
     return result
@@ -602,22 +534,47 @@ def generate_mcdl(scenes, ensembles, actors, mics):
 
 
 
-def generate_micmap(mics, mcdl):
+def generate_micmap(mcdl):
     result = [{ 'location': { 'source': 1.0, 'target': 1.0 }, 'page': { 'source': '1', 'target': 1 }, 'y': 0.0, 'mics': { mic: { 'role': None, 'actor': None } for mic in mics.get('mics') } }]
 
-    for mcd in mcdl:
-        if mcd['location'] == result[-1]['location']:
+    temp_cdl = []
+    for role in mcdl:
+        for mcd in mcdl[role]:
+            temp_cdl.append({
+                'location': mcd['start']['location'],
+                'page':     mcd['start']['page'],
+                'y':        mcd['start']['y'],
+                'mic':      mcd['mic'],
+                'actor':    mcd['actor'],
+                'role':     role,
+            })
+            temp_cdl.append({
+                'location': mcd['end']['location'],
+                'page':     mcd['end']['page'],
+                'y':        mcd['end']['y'],
+                'mic':      mcd['mic'],
+                'actor':    None,
+                'role':     None,
+            })
+
+    def location(x): return x['location']['target']
+    temp_cdl.sort(key=location)
+
+
+    for cdl in temp_cdl:
+        if abs(cdl['location']['target'] - result[len(result) - 1]['location']['target']) < 0.1:
             row = result.pop()
         else:
-            row = copy.deepcopy(result[-1])
-            row['location'] = mcd['location']
-            row['page'    ] = mcd['page']
-            row['y'       ] = mcd['y']
+            row = copy.deepcopy(result[len(result) - 1])
+            row['location'] = cdl['location']
+            row['page']     = cdl['page']
+            row['y']        = cdl['y']
 
-        row['mics'][str(mcd['mic'])]['role' ] = mcd['role' ]
-        row['mics'][str(mcd['mic'])]['actor'] = mcd['actor']
+        row['mics'][str(cdl['mic'])]['role' ] = cdl['role']
+        row['mics'][str(cdl['mic'])]['actor'] = cdl['actor']
 
         result.append(row)
+
 
     return result
 
@@ -671,9 +628,6 @@ def compile_showdata(shows, pages, micmap, acts):
                             'mics':     x.get('mics'),
                         } for x in micmap],
 
-
-
-
         'rolemic':      { role: [{
                             'start': {
                                 'location': x.get('start', {}).get('location', {}),
@@ -687,10 +641,7 @@ def compile_showdata(shows, pages, micmap, acts):
                             },
                             'actor': x.get('actor', None),
                             'mic':   x.get('mic', None),
-                        } for x in mcdl_2[role]] for role in mcdl_2},
-
-
-
+                        } for x in mcdl[role]] for role in mcdl},
 
         'acts':         [{  'id':   x.get('id'),
                             'name': x.get('name'),
@@ -791,13 +742,12 @@ if __name__ == "__main__":
     # Common data
     shows = load_data('data/sources/shows.json')
     manus = load_data('data/sources/manus.json')
-    music = load_data('data/sources/music.json')
     mics  = load_data('data/sources/mics.json')
 
     pages    = generate_pagemap(manus)
     pagetext = generate_pagetext(manus)
     acts     = generate_actmap(manus)
-    music    = generate_musicmap(music)
+    music    = generate_musicmap(manus)
 
     commondata = compile_commondata(shows)
     save_json('data/compiled/showdata/', 'shows.json', commondata)
@@ -806,7 +756,6 @@ if __name__ == "__main__":
     # Per-show data
     for show in shows:
         manus = load_data('data/sources/manus.json')
-        music = load_data('data/sources/music.json')
         mics  = load_data('data/sources/mics.json')
 
         pages        = generate_pagemap(manus)
@@ -816,7 +765,7 @@ if __name__ == "__main__":
         remove_parts = generate_remove_parts(manus)
         extra_lines  = generate_extra_lines(manus)
         acts         = generate_actmap(manus)
-        music        = generate_musicmap(music)
+        music        = generate_musicmap(manus)
 
         acdl = load_data('data/sources/acdl.json', show)
         ecdl = load_data('data/sources/ecdl.json', show)
@@ -828,12 +777,10 @@ if __name__ == "__main__":
 
         lines   = generate_lines(manus)
         scenes  = generate_scenes(manus, lines)
-        staging = generate_staging(scdl, scenes, lines)
+        staging = generate_staging(scdl, scenes, music, lines)
 
-        mcdl_2 = generate_mcdl_2(lines, ensembles, actors, staging, mics)
-
-        mcdl   = generate_mcdl(scenes, ensembles, actors, mics)
-        micmap = generate_micmap(mics, mcdl)
+        mcdl   = generate_mcdl(lines, ensembles, actors, staging, mics)
+        micmap = generate_micmap(mcdl)
 
         showdata = compile_showdata(shows, pages, micmap, acts)
         save_json(f'data/compiled/showdata/{show}/', 'showdata.json', showdata)

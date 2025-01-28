@@ -385,9 +385,12 @@ def draw_miclist(page, p, data, act):
 
             if start_x < p['content']['left'] or end_x > p['content']['right']: continue
 
-            if   int(section['mic']) <  5: color = (0.73, 0.94, 0.71)
-            elif int(section['mic']) < 13: color = (0.71, 0.81, 0.94)
-            else:                          color = (0.94, 0.90, 0.71)
+            try:
+                if   int(section['mic']) <  5: color = (0.73, 0.94, 0.71)
+                elif int(section['mic']) < 13: color = (0.71, 0.81, 0.94)
+                else:                          color = (0.94, 0.90, 0.71)
+            except ValueError:
+                color = (0.9, 0.8, 1.0)
 
             text = f'''<span class='primo'>{primo}</span> / <span class='secundo'>{secundo}</span>'''
             page.draw_rect     ((start_x, p['leader']['top'] + offset, end_x, p['leader']['top'] + offset + height), fill=color, width=0.5)
@@ -441,8 +444,11 @@ def create_pdf(data, type):
 
     elif type == 'role:mic/actor':
         for role in data['rolemic']:
+            if role == 'Backstage-kor': continue
             micdata[role] = []
+
             for section in data['rolemic'][role]:
+
                 micdata[role].append({
                     'mic':     section['mic'],
                     'primo':   section['mic'],
@@ -456,6 +462,7 @@ def create_pdf(data, type):
         actors = set()
 
         for role in data['rolemic']:
+            if role == 'Backstage-kor': continue
             for section in data['rolemic'][role]:
                 actors.add(section['actor'])
 
@@ -463,6 +470,7 @@ def create_pdf(data, type):
             micdata[actor] = []
 
         for role in data['rolemic']:
+            if role == 'Backstage-kor': continue
             for section in data['rolemic'][role]:
                 micdata[section['actor']].append({
                     'mic':     section['mic'],
@@ -495,8 +503,9 @@ def create_pdf(data, type):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("show")
-    args = parser.parse_args()
+    parser.add_argument("list")
 
+    args = parser.parse_args()
     show = args.show
 
     shows = load_data('data/sources/shows.json')
@@ -504,14 +513,22 @@ if __name__ == "__main__":
 
     data = load_data(f'data/compiled/showdata/{show}/showdata.json')
 
-    pdf = {
-        'mic:role/actor': create_pdf(data, 'mic:role/actor'),
-        'mic:actor/role': create_pdf(data, 'mic:actor/role'),
-        'role:mic/actor': create_pdf(data, 'role:mic/actor'),
-        'actor:mic/role': create_pdf(data, 'actor:mic/role'),
-    }
 
-    save_pdf(f'data/compiled/pdf/', 'mic-role-actor.pdf', pdf['mic:role/actor'])
-    save_pdf(f'data/compiled/pdf/', 'mic-actor-role.pdf', pdf['mic:actor/role'])
-    save_pdf(f'data/compiled/pdf/', 'role-mic-actor.pdf', pdf['role:mic/actor'])
-    save_pdf(f'data/compiled/pdf/', 'actor-mic-role.pdf', pdf['actor:mic/role'])
+    if args.list == 'mic:role/actor':
+        pdf = create_pdf(data, 'mic:role/actor')
+        save_pdf(f'data/compiled/pdf/', 'mic-role-actor.pdf', pdf)
+
+
+    if args.list == 'mic:actor/role':
+        pdf = create_pdf(data, 'mic:actor/role')
+        save_pdf(f'data/compiled/pdf/', 'mic-actor-role.pdf', pdf)
+
+
+    if args.list == 'role:mic/actor':
+        pdf = create_pdf(data, 'role:mic/actor')
+        save_pdf(f'data/compiled/pdf/', 'role-mic-actor.pdf', pdf)
+
+
+    if args.list == 'actor:mic/role':
+        pdf = create_pdf(data, 'actor:mic/role')
+        save_pdf(f'data/compiled/pdf/', 'actor-mic-role.pdf', pdf)

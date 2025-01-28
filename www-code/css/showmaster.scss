@@ -18,13 +18,15 @@
 
     --button-color: hsl(0, 0%, 50%);
 
+    --mic-passive-background-color:  hsl(  0,   0%, 85%);
     --mic-active-background-color:   hsl(109,  69%, 77%);
     --mic-ensemble-background-color: hsl( 67,  90%, 77%);
-    --mic-passive-background-color:  hsl(  0,   0%, 85%);
+    --mic-choir-background-color:    hsl(269,  90%, 85%);
 
-    --mic-active-color:   hsl(101, 100%, 95%);
-    --mic-ensemble-color: hsl( 55, 100%, 95%);
     --mic-passive-color:  hsl(  0,   0%, 95%);
+    --mic-active-color:   hsl(109,  69%, 75%);
+    --mic-ensemble-color: hsl( 67,  90%, 75%);
+    --mic-choir-color:    hsl(269, 90%, 83%);
 
     --mic-border-default:  hsl(  0,  0%, 50%);
     --mic-border-role:     hsl(109, 100%, 30%);
@@ -75,13 +77,18 @@ body                    { background-color: var(--background-color); }
 #infobar #miclist .row {
     .actor              { color: var(--actor-color); }
 
-    &.passive           { background-color: var(--mic-passive-background-color);  }
-    &.active_ensemble   { background-color: var(--mic-ensemble-background-color); }
-    &.active_role       { background-color: var(--mic-active-background-color);   }
+    &.passive_ensemble       { background-color: var(--mic-passive-background-color);  }
+    &.passive_role           { background-color: var(--mic-passive-background-color);  }
+    &.active_ensemble        { background-color: var(--mic-ensemble-background-color); }
+    &.active_role            { background-color: var(--mic-active-background-color);   }
+    &.active_ensemble.choir  { background-color: var(--mic-choir-background-color);    }
 
-    &.passive          > .mic { background-color: var(--mic-passive-color);  }
-    &.active_ensemble  > .mic { background-color: var(--mic-ensemble-color); }
-    &.active_role      > .mic { background-color: var(--mic-active-color);   }
+    &.passive_ensemble       > .mic { background-color: var(--mic-ensemble-color);  }
+    &.active_ensemble        > .mic { background-color: var(--mic-ensemble-color); }
+    &.passive_role           > .mic { background-color: var(--mic-active-color);  }
+    &.active_role            > .mic { background-color: var(--mic-active-color);   }
+    &.passive_ensemble.choir > .mic { background-color: var(--mic-choir-color);    }
+    &.active_ensemble.choir  > .mic { background-color: var(--mic-choir-color);    }
 }
 
 .shortcuts.settings {
@@ -210,7 +217,7 @@ body {
 
     column-gap: 2px; row-gap: 1px;
 
-    .row { grid-column: 1; grid-template-columns: 2.6em 10em 8em; }
+    .row { grid-column: 1; grid-template-columns: 3.2em 10em 7em; }
 }
 
 
@@ -286,7 +293,7 @@ body {
         .actor { margin-left: 0.2em; margin-right: 0.3em; padding-top: 0.60em; }
     }
 
-    .row .mic { width: 2.0em; }
+    .row .mic { width: 2.5em; }
 }
 
 .shortcuts {
@@ -431,6 +438,19 @@ button {
         text-align: center;
         align-content: center;
     }
+
+    .shortcut.dialog:after {
+        content: "dialog";
+        position: absolute;
+        border: 2px solid yellow;
+        border-radius: 1.0em;
+        width: 7.0em;
+        height: 2.0em;
+        right: 1.0em;
+        transform: translate(0, -0.5em);
+        text-align: center;
+        align-content: center;
+    }
 }
 
 
@@ -499,7 +519,7 @@ button {
 
 
 
-
+/*
 #pdf-viewer {
     grid-area: pdf;
     z-index: 10;
@@ -507,3 +527,4 @@ button {
     height: 100%;
     display: none;
 }
+*/

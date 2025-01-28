@@ -139,7 +139,9 @@ const create_shortcuts = () => {
     })
 
     showdata.music.forEach(music => {
-        let classes = 'shortcut'; if (music.type == 'instrumental') { classes += ' instrumental' }
+        let classes = 'shortcut'
+        if (music.type == 'instrumental') { classes += ' instrumental' }
+        if (music.type == 'dialog'      ) { classes += ' dialog'       }
         let text = `${music.id} - ${music.name}`
 
         $('.shortcuts.music').append(`<button class='${classes}' data-page='${music.start.page.target}'>${text}</button>`)
@@ -178,19 +180,23 @@ const create_miclist = () => {
 
 
 const update_miclist = () => {
-    const micmap = showdata.micmap.filter(row => row.location.target < state['currentpage'] + 0.99).pop()
+    const micmap = showdata.micmap.filter(row => row.location.target < state['currentpage'] + 0.01).pop()
     const lines = showdata.lines.filter(line => line.location.target < state['currentpage'] + 1 && line.location.target >= state['currentpage'])
     const roles    = new Set(lines.map(line => line.roles   ).reduce((result, roles) => [...result, ...roles], []))
     const ensemble = new Set(lines.map(line => line.ensemble).reduce((result, roles) => [...result, ...roles], []))
 
-    $('.row').removeClass('passive active_role active_ensemble')
+    $('.row').removeClass('passive_role passive_ensemble active_role active_ensemble choir')
     $('.row > .role').html('')
     $('.row > .actor').html('')
 
     for (const mic in micmap.mics) {
+        let choirclass = ''
+        if (micmap.mics[mic].actor == 'Kor') { choirclass = 'choir' }
+
         // Go through all roles on page
         if (roles.has(micmap.mics[mic].role)) {
             $(`#mic_${mic}`).addClass('active_role')
+            $(`#mic_${mic}`).addClass(choirclass)
             $(`#mic_${mic} > .role` ).html(micmap.mics[mic].role )
             $(`#mic_${mic} > .actor`).html(micmap.mics[mic].actor)
         }
@@ -198,6 +204,7 @@ const update_miclist = () => {
         // Go through ensemble on page
         if (ensemble.has(micmap.mics[mic].role)) {
             $(`#mic_${mic}`).addClass('active_ensemble')
+            $(`#mic_${mic}`).addClass(choirclass)
             $(`#mic_${mic} > .role` ).html(micmap.mics[mic].role )
             $(`#mic_${mic} > .actor`).html(micmap.mics[mic].actor)
         }
@@ -206,7 +213,8 @@ const update_miclist = () => {
             // Go through all roles in scene
             for (const [index, role] of showdata.scenes[state['currentscene']].roles.entries()) {
                 if (role == micmap.mics[mic].role) {
-                    $(`#mic_${mic}`).addClass('passive')
+                    $(`#mic_${mic}`).addClass('passive_role')
+                    $(`#mic_${mic}`).addClass(choirclass)
                     $(`#mic_${mic} > .role` ).html(micmap.mics[mic].role )
                     $(`#mic_${mic} > .actor`).html(micmap.mics[mic].actor)
                 }
@@ -215,7 +223,8 @@ const update_miclist = () => {
             // Go through ensemble in scene
             for (const [index, role] of showdata.scenes[state['currentscene']].ensemble.entries()) {
                 if (role == micmap.mics[mic].role) {
-                    $(`#mic_${mic}`).addClass('passive')
+                    $(`#mic_${mic}`).addClass('passive_ensemble')
+                    $(`#mic_${mic}`).addClass(choirclass)
                     $(`#mic_${mic} > .role` ).html(micmap.mics[mic].role )
                     $(`#mic_${mic} > .actor`).html(micmap.mics[mic].actor)
                 }
@@ -232,6 +241,40 @@ const update_miclist = () => {
 
 const download = url => {
     window.open(url)
+}
+
+
+
+
+
+
+const handle_keypress = event => {
+    console.log(event.originalEvent.code)
+    switch (event.originalEvent.code) {
+        case 'ArrowLeft':
+        case 'PageUp':
+        case 'Backspace':
+            page = $('.pages > .prev').data('page')
+            goto_page(page)
+            break
+
+        case 'ArrowRight':
+        case 'PageDown':
+        case 'Space':
+            page = $('.pages > .next').data('page')
+            goto_page(page)
+            break
+
+        case 'ArrowUp':
+            page = $('.scenes > .prev').data('page')
+            goto_page(page)
+            break
+
+        case 'ArrowDown':
+            page = $('.scenes > .next').data('page')
+            goto_page(page)
+            break
+    }
 }
 
 
@@ -351,14 +394,18 @@ const pdf_render = async () => {
     const desiredWidth  = $('#pdf').innerWidth()
     const desiredHeight = $('#pdf').innerHeight()
 
-    const testViewport = page.getViewport({ scale: 1.0 })
+    const testViewport = page.getViewport({ scale: 4.0 })
+
     const scaleWidth  = desiredWidth  / testViewport.width
     const scaleHeight = desiredHeight / testViewport.height
     const scale = Math.min(scaleWidth, scaleHeight)
 
-    var viewport = page.getViewport({ scale: scale, })
-    canvas.height = viewport.height
-    canvas.width = viewport.width
+    var viewport = page.getViewport({ scale: 4 * scale })
+    canvas.height = 4 * viewport.height
+    canvas.width  = 4 * viewport.width
+
+    canvas.style.height = viewport.height + 'px'
+    canvas.style .width = viewport.width  + 'px'
 
     viewportHeight = viewport.height
     viewportWidth = viewport.width
@@ -366,6 +413,7 @@ const pdf_render = async () => {
     var renderContext = {
         canvasContext: context,
         viewport: viewport,
+        transform: [4, 0, 0, 4, 0, 0],
     }
     page.render(renderContext)
 }
@@ -374,7 +422,7 @@ const pdf_render = async () => {
 
 
 
-
+/*
 const pdf_list_show = pdf => {
     const url = pdfdata[pdf].url
     $('#pdf-viewer').attr('src', url)
@@ -387,7 +435,7 @@ const pdf_list_hide = () => {
     $('#pdf-viewer').hide()
     $('#infobar').show()
 }
-
+*/
 
 
 
@@ -415,10 +463,12 @@ const set_eventhandlers = () => {
     $(document).on('click', '.prev',     event => { event.stopPropagation(); $('.shortcuts').hide(); goto_page($(event.target).data('page')) })
     $(document).on('click', '.next',     event => { event.stopPropagation(); $('.shortcuts').hide(); goto_page($(event.target).data('page')) })
 
+    $(document).on('keydown', event => { event.stopPropagation(); handle_keypress(event) })
 
 
-    $(document).on('click', '#settings', event => { event.stopPropagation(); $('.shortcuts:not(.settings)').hide(); $('.shortcuts.settings').toggle(); pdf_list_show('actor:mic/role') })
-    $(document).on('click', '#print',    event => { event.stopPropagation(); $('.shortcuts:not(.print)'   ).hide(); $('.shortcuts.print'   ).toggle(); pdf_list_hide() })
+
+//    $(document).on('click', '#settings', event => { event.stopPropagation(); $('.shortcuts:not(.settings)').hide(); $('.shortcuts.settings').toggle(); pdf_list_show('actor:mic/role') })
+//    $(document).on('click', '#print',    event => { event.stopPropagation(); $('.shortcuts:not(.print)'   ).hide(); $('.shortcuts.print'   ).toggle(); pdf_list_hide() })
 }
 
 
