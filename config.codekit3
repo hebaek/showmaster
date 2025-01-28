@@ -25,6 +25,14 @@
       "oAP" : "\/www-test\/data\/compiled\/pdf\/actor-mic-role.pdf",
       "oF" : 0
     },
+    "\/data\/compiled\/pdf\/manus-analyzed.pdf" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/www-test\/data\/compiled\/pdf\/manus-analyzed.pdf",
+      "oF" : 0
+    },
     "\/data\/compiled\/pdf\/manus-empty.pdf" : {
       "cB" : 0,
       "ft" : 8192,
@@ -153,6 +161,22 @@
       "oO" : 1,
       "oS" : 1
     },
+    "\/data\/originals\/manus-nytt.indd" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/www-test\/data\/originals\/manus-nytt.indd",
+      "oF" : 0
+    },
+    "\/data\/originals\/manus-nytt.pdf" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/www-test\/data\/originals\/manus-nytt.pdf",
+      "oF" : 0
+    },
     "\/data\/originals\/manus.pdf" : {
       "cB" : 0,
       "ft" : 8192,
@@ -189,7 +213,7 @@
       "ft" : 524288,
       "oA" : 1,
       "oAP" : "\/www-test\/data\/sources\/manus.json",
-      "oF" : 1,
+      "oF" : 0,
       "oO" : 1,
       "oS" : 1
     },
@@ -197,14 +221,6 @@
       "ft" : 524288,
       "oA" : 1,
       "oAP" : "\/www-test\/data\/sources\/mics.json",
-      "oF" : 1,
-      "oO" : 1,
-      "oS" : 1
-    },
-    "\/data\/sources\/music.json" : {
-      "ft" : 524288,
-      "oA" : 1,
-      "oAP" : "\/www-test\/data\/sources\/music.json",
       "oF" : 1,
       "oO" : 1,
       "oS" : 1
@@ -430,7 +446,7 @@
     "displayValueWasSetByUser" : 0,
     "iconImageName" : "brackets-brick",
     "iconImageWasSetByUser" : 0,
-    "lastBuiltDate" : 759403817.71153903
+    "lastBuiltDate" : 759752939.99480295
   },
   "projectSettings" : {
     "abortBuildOnError" : 1,
