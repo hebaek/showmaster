@@ -5,8 +5,8 @@ const pdfdata     = {}
 let showdata = null
 
 const serverdata  = {
-    'read':  true,
-    'write': true,
+    'read':  false,
+    'write': false,
 }
 
 const state = {
@@ -18,6 +18,8 @@ const state = {
     'currentmusic': null,
 
     'doc':          null,
+
+    'renderer':     null,
 }
 
 
@@ -427,7 +429,23 @@ const pdf_render = async () => {
         viewport: viewport,
         transform: [4, 0, 0, 4, 0, 0],
     }
-    page.render(renderContext)
+
+    if (!state['renderer']) {
+        state['renderer'] = page.render(renderContext)
+
+        try {
+            await state['renderer'].promise
+        } catch (error) {
+            if (error.name === "RenderingCancelledException") { console.log("Render cancelled.")       }
+            else                                              { console.error("Render failed:", error) }
+        } finally {
+            state['renderer'] = null
+        }
+    } else {
+        state['renderer'].cancel()
+        state['renderer'] = null
+        setTimeout(pdf_render, 10)
+    }
 }
 
 
