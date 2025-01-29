@@ -493,8 +493,8 @@ button {
         box-shadow: 0 0 10px var(--default-shadow);
 
         grid:
-            'settings print .    logout' 4em
-            / 4em     4em   auto 4em;
+            'settings print . write read . logout' 4em
+            / 4em     4em  1fr 4em  4em 1fr 4em;
     }
 
     #toolbar .navigation {
@@ -532,3 +532,16 @@ button {
     display: none;
 }
 */
+#read, #write {
+    > svg { width: 100%; height: 100%; transition: ease-in 0.3s; }
+    &.sync  svg { transition: ease-in 0.2s; color: greenyellow; }
+    &.error svg { transition: ease-in 0.2s; color: red;         }
+
+    &.disabled {
+        background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' preserveAspectRatio='none' viewBox='0 0 30 30'> <path d='M0 0 L30 30 ' stroke='red' /></svg>");
+        background-repeat:no-repeat;
+        background-position:center center;
+        background-size: 100% 100%, auto;
+        border: solid red 2px;
+    }
+}

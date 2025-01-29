@@ -279,6 +279,11 @@ const handle_keypress = event => {
             page = $('.scenes > .next').data('page')
             goto_page('write', page)
             break
+
+        case 'Enter':
+            server_toggle('read')
+            server_toggle('write')
+            break
     }
 }
 
@@ -454,11 +459,14 @@ const set_eventhandlers = () => {
     $(document).on('click', '#logout',   () => { window.location.replace('login.php') })
 
     $(document).on('click', '#toolbar',  event => { event.stopPropagation(); $('.shortcuts').hide() })
-    $(document).on('click', '#pdf',    event => { event.stopPropagation(); $('.shortcuts').hide() })
+    $(document).on('click', '#pdf',      event => { event.stopPropagation(); $('.shortcuts').hide() })
     $(document).on('click', '#infobar',  event => { event.stopPropagation(); $('.shortcuts').hide() })
 
     $(document).on('click', '#settings', event => { event.stopPropagation(); $('.shortcuts:not(.settings)').hide(); $('.shortcuts.settings').toggle() })
     $(document).on('click', '#print',    event => { event.stopPropagation(); $('.shortcuts:not(.print)'   ).hide(); $('.shortcuts.print'   ).toggle() })
+
+    $(document).on('click', '#write',    event => { event.stopPropagation(); server_toggle('write') })
+    $(document).on('click', '#read',     event => { event.stopPropagation(); server_toggle('read' ) })
 
     $(document).on('click', '.pdf', event => { event.stopPropagation(); $('.shortcuts').hide(); download($(event.target).data('url')) })
 
@@ -481,16 +489,37 @@ const set_eventhandlers = () => {
 
 
 
+
+
+const server_toggle = mode => {
+    if (mode == 'write') { serverdata['write'] = !serverdata['write'] }
+    if (mode == 'read' ) { serverdata['read' ] = !serverdata['read' ]; server_poll() }
+
+    for (const mode of ['write', 'read']) {
+        if (serverdata[mode]) {
+            $(`#${mode}`).removeClass('disabled')
+        } else {
+            $(`#${mode}`).addClass('disabled')
+        }
+    }
+}
+
 const server_getpage = () => {
     fetch('getpage.php')
     .then(response => response.text())
     .then(page => {
+        $('#read').addClass('sync')
+        setTimeout(() => $('#read').removeClass('sync error'), 250)
+
         const pageNumber = parseInt(page, 10);
         if (!isNaN(pageNumber) && pageNumber !== state['currentpage']) {
             goto_page('read', pageNumber)
         }
     })
-    .catch(error => console.error('Error fetching page:', error));
+    .catch(error => {
+        console.error('Error getting page:', error)
+        $('#read').addClass('error')
+    })
 }
 
 const server_setpage = page => {
@@ -501,13 +530,20 @@ const server_setpage = page => {
     })
     .then(response => response.text())
     .then(message => console.log(message))
-    .catch(error => console.error('Error updating page:', error));
+    .then(() => {
+        $('#write').addClass('sync')
+        setTimeout(() => $('#write').removeClass('sync error'), 250)
+    })
+    .catch(error => {
+        console.error('Error setting page:', error)
+        $('#write').addClass('error')
+    })
 }
 
 const server_poll = () => {
     if (serverdata['read']) {
         server_getpage()
-        setTimeout(server_poll, 500)
+        setTimeout(server_poll, 1000)
     }
 }
 

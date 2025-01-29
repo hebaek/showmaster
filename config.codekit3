@@ -376,6 +376,16 @@
       "plM" : 52780316221407,
       "prP" : 0
     },
+    "\/www-code\/img\/read-sync.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/www-test\/img\/read-sync.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 52780316221407,
+      "prP" : 0
+    },
     "\/www-code\/img\/read.svg" : {
       "ft" : 2097152,
       "miP" : 0,
@@ -482,7 +492,7 @@
     "displayValueWasSetByUser" : 0,
     "iconImageName" : "brackets-brick",
     "iconImageWasSetByUser" : 0,
-    "lastBuiltDate" : 759791369.19636905
+    "lastBuiltDate" : 759830388.094311
   },
   "projectSettings" : {
     "abortBuildOnError" : 1,
