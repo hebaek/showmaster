@@ -298,9 +298,9 @@
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 0,
+      "oA" : 1,
       "oAP" : "\/www-test\/scripts\/create.py",
-      "oF" : 0
+      "oF" : 1
     },
     "\/scripts\/render.py" : {
       "cB" : 0,
@@ -348,6 +348,14 @@
       "oS" : 0,
       "pg" : 0
     },
+    "\/www-code\/currentpage.txt" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 2,
+      "oAP" : "\/www-test\/currentpage.txt",
+      "oF" : 1
+    },
     "\/www-code\/getpage.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -371,16 +379,6 @@
       "miP" : 0,
       "oA" : 2,
       "oAP" : "\/www-test\/img\/paper.svg",
-      "oF" : 0,
-      "opt" : 0,
-      "plM" : 52780316221407,
-      "prP" : 0
-    },
-    "\/www-code\/img\/read-sync.svg" : {
-      "ft" : 2097152,
-      "miP" : 0,
-      "oA" : 2,
-      "oAP" : "\/www-test\/img\/read-sync.svg",
       "oF" : 0,
       "opt" : 0,
       "plM" : 52780316221407,
@@ -443,22 +441,6 @@
       "oAP" : "\/www-test\/login.php",
       "oF" : 0
     },
-    "\/www-code\/poe-ideas.html" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 1,
-      "oAP" : "\/www-test\/poe-ideas.html",
-      "oF" : 1
-    },
-    "\/www-code\/resources.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/www-test\/resources.php",
-      "oF" : 0
-    },
     "\/www-code\/setpage.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -492,7 +474,7 @@
     "displayValueWasSetByUser" : 0,
     "iconImageName" : "brackets-brick",
     "iconImageWasSetByUser" : 0,
-    "lastBuiltDate" : 759830388.094311
+    "lastBuiltDate" : 759832269.69467795
   },
   "projectSettings" : {
     "abortBuildOnError" : 1,
