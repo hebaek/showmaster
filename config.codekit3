@@ -17,68 +17,68 @@
       "oAP" : "\/www-test\/.gitignore",
       "oF" : 1
     },
-    "\/data\/compiled\/pdf\/actor-mic-role.pdf" : {
+    "\/data\/compiled\/manus\/manus-analyzed.pdf" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/www-test\/data\/compiled\/pdf\/actor-mic-role.pdf",
+      "oAP" : "\/www-test\/data\/compiled\/manus\/manus-analyzed.pdf",
       "oF" : 0
     },
-    "\/data\/compiled\/pdf\/manus-analyzed.pdf" : {
+    "\/data\/compiled\/manus\/manus-empty.pdf" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/www-test\/data\/compiled\/pdf\/manus-analyzed.pdf",
+      "oAP" : "\/www-test\/data\/compiled\/manus\/manus-empty.pdf",
       "oF" : 0
     },
-    "\/data\/compiled\/pdf\/manus-empty.pdf" : {
+    "\/data\/compiled\/manus\/manus-mics.pdf" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/www-test\/data\/compiled\/pdf\/manus-empty.pdf",
+      "oAP" : "\/www-test\/data\/compiled\/manus\/manus-mics.pdf",
       "oF" : 0
     },
-    "\/data\/compiled\/pdf\/manus-mics.pdf" : {
+    "\/data\/compiled\/manus\/manus-music.pdf" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/www-test\/data\/compiled\/pdf\/manus-mics.pdf",
+      "oAP" : "\/www-test\/data\/compiled\/manus\/manus-music.pdf",
       "oF" : 0
     },
-    "\/data\/compiled\/pdf\/manus-music.pdf" : {
+    "\/data\/compiled\/showdata\/GP\/actor-mic-role.pdf" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/www-test\/data\/compiled\/pdf\/manus-music.pdf",
+      "oAP" : "\/www-test\/data\/compiled\/showdata\/GP\/actor-mic-role.pdf",
       "oF" : 0
     },
-    "\/data\/compiled\/pdf\/mic-actor-role.pdf" : {
+    "\/data\/compiled\/showdata\/GP\/mic-actor-role.pdf" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/www-test\/data\/compiled\/pdf\/mic-actor-role.pdf",
+      "oAP" : "\/www-test\/data\/compiled\/showdata\/GP\/mic-actor-role.pdf",
       "oF" : 0
     },
-    "\/data\/compiled\/pdf\/mic-role-actor.pdf" : {
+    "\/data\/compiled\/showdata\/GP\/mic-role-actor.pdf" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/www-test\/data\/compiled\/pdf\/mic-role-actor.pdf",
+      "oAP" : "\/www-test\/data\/compiled\/showdata\/GP\/mic-role-actor.pdf",
       "oF" : 0
     },
-    "\/data\/compiled\/pdf\/role-mic-actor.pdf" : {
+    "\/data\/compiled\/showdata\/GP\/role-mic-actor.pdf" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/www-test\/data\/compiled\/pdf\/role-mic-actor.pdf",
+      "oAP" : "\/www-test\/data\/compiled\/showdata\/GP\/role-mic-actor.pdf",
       "oF" : 0
     },
     "\/data\/compiled\/showdata\/GP\/showdata.json" : {
@@ -89,6 +89,38 @@
       "oO" : 1,
       "oS" : 1
     },
+    "\/data\/compiled\/showdata\/Show 1\/actor-mic-role.pdf" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/www-test\/data\/compiled\/showdata\/Show 1\/actor-mic-role.pdf",
+      "oF" : 0
+    },
+    "\/data\/compiled\/showdata\/Show 1\/mic-actor-role.pdf" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/www-test\/data\/compiled\/showdata\/Show 1\/mic-actor-role.pdf",
+      "oF" : 0
+    },
+    "\/data\/compiled\/showdata\/Show 1\/mic-role-actor.pdf" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/www-test\/data\/compiled\/showdata\/Show 1\/mic-role-actor.pdf",
+      "oF" : 0
+    },
+    "\/data\/compiled\/showdata\/Show 1\/role-mic-actor.pdf" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/www-test\/data\/compiled\/showdata\/Show 1\/role-mic-actor.pdf",
+      "oF" : 0
+    },
     "\/data\/compiled\/showdata\/Show 1\/showdata.json" : {
       "ft" : 524288,
       "oA" : 1,
@@ -96,6 +128,38 @@
       "oF" : 0,
       "oO" : 1,
       "oS" : 1
+    },
+    "\/data\/compiled\/showdata\/Show 2\/actor-mic-role.pdf" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/www-test\/data\/compiled\/showdata\/Show 2\/actor-mic-role.pdf",
+      "oF" : 0
+    },
+    "\/data\/compiled\/showdata\/Show 2\/mic-actor-role.pdf" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/www-test\/data\/compiled\/showdata\/Show 2\/mic-actor-role.pdf",
+      "oF" : 0
+    },
+    "\/data\/compiled\/showdata\/Show 2\/mic-role-actor.pdf" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/www-test\/data\/compiled\/showdata\/Show 2\/mic-role-actor.pdf",
+      "oF" : 0
+    },
+    "\/data\/compiled\/showdata\/Show 2\/role-mic-actor.pdf" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/www-test\/data\/compiled\/showdata\/Show 2\/role-mic-actor.pdf",
+      "oF" : 0
     },
     "\/data\/compiled\/showdata\/Show 2\/showdata.json" : {
       "ft" : 524288,
@@ -105,6 +169,38 @@
       "oO" : 1,
       "oS" : 1
     },
+    "\/data\/compiled\/showdata\/Show 3\/actor-mic-role.pdf" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/www-test\/data\/compiled\/showdata\/Show 3\/actor-mic-role.pdf",
+      "oF" : 0
+    },
+    "\/data\/compiled\/showdata\/Show 3\/mic-actor-role.pdf" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/www-test\/data\/compiled\/showdata\/Show 3\/mic-actor-role.pdf",
+      "oF" : 0
+    },
+    "\/data\/compiled\/showdata\/Show 3\/mic-role-actor.pdf" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/www-test\/data\/compiled\/showdata\/Show 3\/mic-role-actor.pdf",
+      "oF" : 0
+    },
+    "\/data\/compiled\/showdata\/Show 3\/role-mic-actor.pdf" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/www-test\/data\/compiled\/showdata\/Show 3\/role-mic-actor.pdf",
+      "oF" : 0
+    },
     "\/data\/compiled\/showdata\/Show 3\/showdata.json" : {
       "ft" : 524288,
       "oA" : 1,
@@ -112,6 +208,38 @@
       "oF" : 0,
       "oO" : 1,
       "oS" : 1
+    },
+    "\/data\/compiled\/showdata\/Show 4\/actor-mic-role.pdf" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/www-test\/data\/compiled\/showdata\/Show 4\/actor-mic-role.pdf",
+      "oF" : 0
+    },
+    "\/data\/compiled\/showdata\/Show 4\/mic-actor-role.pdf" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/www-test\/data\/compiled\/showdata\/Show 4\/mic-actor-role.pdf",
+      "oF" : 0
+    },
+    "\/data\/compiled\/showdata\/Show 4\/mic-role-actor.pdf" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/www-test\/data\/compiled\/showdata\/Show 4\/mic-role-actor.pdf",
+      "oF" : 0
+    },
+    "\/data\/compiled\/showdata\/Show 4\/role-mic-actor.pdf" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/www-test\/data\/compiled\/showdata\/Show 4\/role-mic-actor.pdf",
+      "oF" : 0
     },
     "\/data\/compiled\/showdata\/Show 4\/showdata.json" : {
       "ft" : 524288,
@@ -121,6 +249,38 @@
       "oO" : 1,
       "oS" : 1
     },
+    "\/data\/compiled\/showdata\/Show 5\/actor-mic-role.pdf" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/www-test\/data\/compiled\/showdata\/Show 5\/actor-mic-role.pdf",
+      "oF" : 0
+    },
+    "\/data\/compiled\/showdata\/Show 5\/mic-actor-role.pdf" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/www-test\/data\/compiled\/showdata\/Show 5\/mic-actor-role.pdf",
+      "oF" : 0
+    },
+    "\/data\/compiled\/showdata\/Show 5\/mic-role-actor.pdf" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/www-test\/data\/compiled\/showdata\/Show 5\/mic-role-actor.pdf",
+      "oF" : 0
+    },
+    "\/data\/compiled\/showdata\/Show 5\/role-mic-actor.pdf" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/www-test\/data\/compiled\/showdata\/Show 5\/role-mic-actor.pdf",
+      "oF" : 0
+    },
     "\/data\/compiled\/showdata\/Show 5\/showdata.json" : {
       "ft" : 524288,
       "oA" : 1,
@@ -128,6 +288,38 @@
       "oF" : 0,
       "oO" : 1,
       "oS" : 1
+    },
+    "\/data\/compiled\/showdata\/Show 6\/actor-mic-role.pdf" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/www-test\/data\/compiled\/showdata\/Show 6\/actor-mic-role.pdf",
+      "oF" : 0
+    },
+    "\/data\/compiled\/showdata\/Show 6\/mic-actor-role.pdf" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/www-test\/data\/compiled\/showdata\/Show 6\/mic-actor-role.pdf",
+      "oF" : 0
+    },
+    "\/data\/compiled\/showdata\/Show 6\/mic-role-actor.pdf" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/www-test\/data\/compiled\/showdata\/Show 6\/mic-role-actor.pdf",
+      "oF" : 0
+    },
+    "\/data\/compiled\/showdata\/Show 6\/role-mic-actor.pdf" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/www-test\/data\/compiled\/showdata\/Show 6\/role-mic-actor.pdf",
+      "oF" : 0
     },
     "\/data\/compiled\/showdata\/Show 6\/showdata.json" : {
       "ft" : 524288,
@@ -161,13 +353,37 @@
       "oO" : 1,
       "oS" : 1
     },
-    "\/data\/originals\/manus-nytt.indd" : {
+    "\/data\/originals\/~manus-nytt~7uwv1v.idlk" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/www-test\/data\/originals\/manus-nytt.indd",
+      "oAP" : "\/www-test\/data\/originals\/~manus-nytt~7uwv1v.idlk",
       "oF" : 0
+    },
+    "\/data\/originals\/manus-nytt-kopi.indd" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/www-test\/data\/originals\/manus-nytt-kopi.indd",
+      "oF" : 0
+    },
+    "\/data\/originals\/manus-nytt.docx" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/www-test\/data\/originals\/manus-nytt.docx",
+      "oF" : 1
+    },
+    "\/data\/originals\/manus-nytt.indd" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/www-test\/data\/originals\/manus-nytt.indd",
+      "oF" : 1
     },
     "\/data\/originals\/manus-nytt.pdf" : {
       "cB" : 0,
@@ -474,7 +690,7 @@
     "displayValueWasSetByUser" : 0,
     "iconImageName" : "brackets-brick",
     "iconImageWasSetByUser" : 0,
-    "lastBuiltDate" : 759878644.63674498
+    "lastBuiltDate" : 760314185.549335
   },
   "projectSettings" : {
     "abortBuildOnError" : 1,

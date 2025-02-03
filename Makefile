@@ -1,10 +1,17 @@
 .PHONY: all
-all: publish
+all:
+	make publish SHOW="GP"
+	make publish SHOW="Show 1"
+	make publish SHOW="Show 2"
+	make publish SHOW="Show 3"
+	make publish SHOW="Show 4"
+	make publish SHOW="Show 5"
+	make publish SHOW="Show 6"
 
 
 
 .PHONY: manus
-manus: data/compiled/pdf/manus-mics
+manus: data/compiled/manus/manus-mics
 
 
 
@@ -16,27 +23,27 @@ data/compiled/showdata/shows.json: $(wildcard data/sources/*)
 
 
 
-data/compiled/pdf/manus-empty.pdf: data/compiled/showdata/shows.json
+data/compiled/manus/manus-empty.pdf: data/compiled/showdata/shows.json
 	python3 scripts/render.py "$(SHOW)" empty
 
-data/compiled/pdf/manus-music.pdf: data/compiled/pdf/manus-empty.pdf
+data/compiled/manus/manus-music.pdf: data/compiled/manus/manus-empty.pdf
 	python3 scripts/render.py "$(SHOW)" music
 
-data/compiled/pdf/manus-mics.pdf: data/compiled/pdf/manus-music.pdf
+data/compiled/manus/manus-mics.pdf: data/compiled/manus/manus-music.pdf
 	python3 scripts/render.py "$(SHOW)" mics
 
 
 
-data/compiled/pdf/actor-mic-role.pdf: data/compiled/showdata/shows.json
+"data/compiled/showdata/$(SHOW)/actor-mic-role.pdf": data/compiled/showdata/shows.json
 	python3 scripts/create.py "$(SHOW)" "actor:mic/role"
 
-data/compiled/pdf/role-mic-actor.pdf: data/compiled/showdata/shows.json
+"data/compiled/showdata/$(SHOW)/role-mic-actor.pdf": data/compiled/showdata/shows.json
 	python3 scripts/create.py "$(SHOW)" "role:mic/actor"
 
-data/compiled/pdf/mic-actor-role.pdf: data/compiled/showdata/shows.json
+"data/compiled/showdata/$(SHOW)/mic-actor-role.pdf": data/compiled/showdata/shows.json
 	python3 scripts/create.py "$(SHOW)" "mic:actor/role"
 
-data/compiled/pdf/mic-role-actor.pdf: data/compiled/showdata/shows.json
+"data/compiled/showdata/$(SHOW)/mic-role-actor.pdf": data/compiled/showdata/shows.json
 	python3 scripts/create.py "$(SHOW)" "mic:role/actor"
 
 
@@ -45,9 +52,15 @@ data/compiled/pdf/mic-role-actor.pdf: data/compiled/showdata/shows.json
 
 
 .PHONY: publish
-publish: data/compiled/showdata/shows.json data/compiled/pdf/manus-mics.pdf data/compiled/pdf/actor-mic-role.pdf data/compiled/pdf/role-mic-actor.pdf data/compiled/pdf/mic-actor-role.pdf data/compiled/pdf/mic-role-actor.pdf
+publish: \
+data/compiled/showdata/shows.json \
+data/compiled/manus/manus-mics.pdf \
+"data/compiled/showdata/$(SHOW)/actor-mic-role.pdf" \
+"data/compiled/showdata/$(SHOW)/role-mic-actor.pdf" \
+"data/compiled/showdata/$(SHOW)/mic-actor-role.pdf" \
+"data/compiled/showdata/$(SHOW)/mic-role-actor.pdf"
 	rsync -r -v -c --delete data/compiled/showdata/ www-test/data/
-	rsync -r -v -c --delete data/compiled/pdf/      www-test/pdf/
+	rsync -r -v -c --delete data/compiled/manus/    www-test/manus/
 
 
 

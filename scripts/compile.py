@@ -590,14 +590,16 @@ def compile_commondata(shows):
     }
 
     for show in shows:
-        result['pdf']['empty'] = { 'url': f'pdf/manus-empty.pdf', 'name': 'original'   }
-        result['pdf']['music'] = { 'url': f'pdf/manus-music.pdf', 'name': 'musikk'     }
-        result['pdf']['mics' ] = { 'url': f'pdf/manus-mics.pdf',  'name': 'mikrofoner' }
+        result['pdf']['empty'] = { 'url': f'manus/manus-empty.pdf', 'name': 'original'   }
+        result['pdf']['music'] = { 'url': f'manus/manus-music.pdf', 'name': 'musikk'     }
+        result['pdf']['mics' ] = { 'url': f'manus/manus-mics.pdf',  'name': 'mikrofoner' }
 
-        result['pdf']['actor:mic/role' ] = { 'url': f'pdf/actor-mic-role.pdf',  'name': 'skuespiller: mikrofon/rolle' }
-        result['pdf']['role:mic/actor' ] = { 'url': f'pdf/role-mic-actor.pdf',  'name': 'rolle: mikrofon/skuespiller' }
-        result['pdf']['mic:actor/role' ] = { 'url': f'pdf/mic-actor-role.pdf',  'name': 'mikrofon: skuespiller/rolle' }
-        result['pdf']['mic:role/actor' ] = { 'url': f'pdf/mic-role-actor.pdf',  'name': 'mikrofon: rolle/skuespiller' }
+        result['pdf'][show] = {}
+
+        result['pdf'][show]['actor:mic/role' ] = { 'url': f'data/{show}/actor-mic-role.pdf',  'name': 'skuespiller: mikrofon/rolle' }
+        result['pdf'][show]['role:mic/actor' ] = { 'url': f'data/{show}/role-mic-actor.pdf',  'name': 'rolle: mikrofon/skuespiller' }
+        result['pdf'][show]['mic:actor/role' ] = { 'url': f'data/{show}/mic-actor-role.pdf',  'name': 'mikrofon: skuespiller/rolle' }
+        result['pdf'][show]['mic:role/actor' ] = { 'url': f'data/{show}/mic-role-actor.pdf',  'name': 'mikrofon: rolle/skuespiller' }
 
         result['showdata'][show] = {
             'url':    f'data/{show}/showdata.json',

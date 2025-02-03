@@ -516,19 +516,19 @@ if __name__ == "__main__":
 
     if args.list == 'mic:role/actor':
         pdf = create_pdf(data, 'mic:role/actor')
-        save_pdf(f'data/compiled/pdf/', 'mic-role-actor.pdf', pdf)
+        save_pdf(f'data/compiled/showdata/{show}/', 'mic-role-actor.pdf', pdf)
 
 
     if args.list == 'mic:actor/role':
         pdf = create_pdf(data, 'mic:actor/role')
-        save_pdf(f'data/compiled/pdf/', 'mic-actor-role.pdf', pdf)
+        save_pdf(f'data/compiled/showdata/{show}/', 'mic-actor-role.pdf', pdf)
 
 
     if args.list == 'role:mic/actor':
         pdf = create_pdf(data, 'role:mic/actor')
-        save_pdf(f'data/compiled/pdf/', 'role-mic-actor.pdf', pdf)
+        save_pdf(f'data/compiled/showdata/{show}/', 'role-mic-actor.pdf', pdf)
 
 
     if args.list == 'actor:mic/role':
         pdf = create_pdf(data, 'actor:mic/role')
-        save_pdf(f'data/compiled/pdf/', 'actor-mic-role.pdf', pdf)
+        save_pdf(f'data/compiled/showdata/{show}/', 'actor-mic-role.pdf', pdf)

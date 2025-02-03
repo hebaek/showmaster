@@ -279,24 +279,24 @@ if __name__ == "__main__":
     data  = load_data(f'data/compiled/showdata/{show}/showdata.json')
 
     manusfile = 'data/originals/manus-nytt.pdf'
-    emptyfile = 'data/compiled/pdf/manus-empty.pdf'
-    musicfile = 'data/compiled/pdf/manus-music.pdf'
-    micsfile  = 'data/compiled/pdf/manus-mics.pdf'
+    emptyfile = 'data/compiled/manus/manus-empty.pdf'
+    musicfile = 'data/compiled/manus/manus-music.pdf'
+    micsfile  = 'data/compiled/manus/manus-mics.pdf'
 
 
     # create empty pdf with removed pages and extra pages
     if args.manus == 'empty':
         empty_pdf = create_empty(manusfile, data)
-        save_pdf(f'data/compiled/pdf/', 'manus-empty.pdf', empty_pdf)
+        save_pdf(f'data/compiled/manus/', 'manus-empty.pdf', empty_pdf)
 
 
     # create music based on empty
     if args.manus == 'music':
         music_pdf = create_music(emptyfile, data)
-        save_pdf(f'data/compiled/pdf/', 'manus-music.pdf', music_pdf)
+        save_pdf(f'data/compiled/manus/', 'manus-music.pdf', music_pdf)
 
 
     # create mics based on music
     if args.manus == 'mics':
         mics_pdf = create_mics(musicfile, data)
-        save_pdf(f'data/compiled/pdf/', 'manus-mics.pdf', mics_pdf)
+        save_pdf(f'data/compiled/manus/', 'manus-mics.pdf', mics_pdf)

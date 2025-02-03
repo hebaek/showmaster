@@ -44,10 +44,19 @@ const fetch_showdata = async () => {
             }
         }
 
-        for (const pdf in shows.pdf) {
+        show = await get_current_show()
+
+        for (const pdf of ['empty', 'music', 'mics']) {
             pdfdata[pdf] = {
                 'url':  shows.pdf[pdf].url,
                 'name': shows.pdf[pdf].name,
+            }
+        }
+
+        for (const pdf in shows.pdf[show]) {
+            pdfdata[pdf] = {
+                'url':  shows.pdf[show][pdf].url,
+                'name': shows.pdf[show][pdf].name,
             }
         }
 
@@ -123,6 +132,7 @@ const populate_show = async show => {
 
 const create_shortcuts = () => {
     $('.shortcuts.print').append(`<div class='heading'>Manus</div>`)
+
     for (pdf of ['empty', 'music', 'mics']) {
         let url  = `${pdfdata[pdf].url}`
         let text = `${pdfdata[pdf].name}`

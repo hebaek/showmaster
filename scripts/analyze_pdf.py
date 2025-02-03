@@ -422,7 +422,7 @@ if __name__ == "__main__":
     pdf_path = "data/originals/manus-nytt.pdf"  # Replace with your PDF file path
 
     # Path to the output annotated PDF
-    output_pdf_path = "data/compiled/pdf/manus-analyzed.pdf"
+    output_pdf_path = "data/compiled/manus/manus-analyzed.pdf"
 
     # Path to the output JSON file
     output_json_path = "data/sources/manus.json"
