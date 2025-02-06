@@ -1,9 +1,4 @@
 {
     "static": {
-        "1.4": {
-            "DARRYL": [
-                { "page":  18, "y": 0.500, "action": "enter" }
-            ]
-        }
     }
 }

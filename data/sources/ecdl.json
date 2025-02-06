@@ -1,37 +1,45 @@
 {
     "static": {
-        "ALLE FEM": [ { "page":   1, "y": 0.000, "roles": [] } ],
-        "ALLE TRE": [ { "page":   1, "y": 0.000, "roles": [] } ],
+        "ALLE FEM":  [ { "page":   1, "y": 0.000, "roles": [] } ],
+        "ALLE FIRE": [ { "page":   1, "y": 0.000, "roles": [] } ],
+        "ALLE TRE":  [ { "page":   1, "y": 0.000, "roles": [] } ],
 
-        "HEKSENE":  [ { "page":   1, "y": 0.000, "roles": ["ALEXANDRA","JANE","SUKIE"] } ],
+        "HEKSENE":   [ { "page":   1, "y": 0.000, "roles": ["ALEXANDRA","JANE","SUKIE"] } ],
 
-        "GRUPPE 1": [ { "page":  17, "y": 0.000, "roles": [] } ],
-        "GRUPPE 2": [ { "page":  17, "y": 0.000, "roles": [] } ],
-        "GRUPPE 3": [ { "page":  17, "y": 0.000, "roles": [] } ],
-        "GRUPPE 4": [ { "page":  17, "y": 0.000, "roles": [] } ],
+        "GRUPPE 1":  [ { "page":  16, "y": 0.000, "roles": ["FELICIA","CLYDE","19","25"] } ],
+        "GRUPPE 2":  [ { "page":  16, "y": 0.000, "roles": [                                       ] } ],
+        "GRUPPE 3":  [ { "page":  16, "y": 0.000, "roles": ["JENNIFER","BRENDA","ED"               ] } ],
+        "GRUPPE 4":  [ { "page":  16, "y": 0.000, "roles": ["DEN LILLE JENTA","23","14"] } ],
+        "GRUPPE 5":  [ { "page":  16, "y": 0.000, "roles": ["ALEXANDRA","JANE","SUKIE"             ] } ],
+        "GRUPPE 6":  [ { "page":  16, "y": 0.000, "roles": ["JOE","GINA","RAYMOND","GRETA"         ] } ],
+
+        "KOR":       [ { "page":   1, "y": 0.000, "roles": ["Backstage-kor"] } ],
 
         "MENN": [
-            { "page":  17, "y": 0.000, "roles": ["CLYDE","FIDEL","JOE","RAYMOND","TOBY","ED","FRANK","CURTIS","HOMER"] }
+            { "page":  17, "y": 0.000, "roles": ["CLYDE","FIDEL","JOE","RAYMOND","TOBY","ED","FRANK","CURTIS","HOMER"] },
+            { "page":  45, "y": 0.000, "roles": ["JOE","RAYMOND","TOBY","CLYDE","ED","19"] }
         ],
 
         "KVINNER": [
-            { "page":  49, "y": 0.000, "roles": ["ALEXANDRA","JANE","SUKIE","FELICIA","GINA","BRENDA","GRETA","MARGE","DEN LILLE JENTA","MAVIS","MABEL","MARCY"] }
+            { "page":  45, "y": 0.000, "roles": ["GINA","GRETA","BRENDA","MARGE","MARCY"] }
+        ],
+
+        "EKSTRA": [
+            { "page":  45, "y": 0.000, "roles": ["14","21","23","24"] }
         ],
 
         "BYFOLKET": [
-            { "page":  19, "y": 0.000, "roles": ["ALEXANDRA","JANE","SUKIE","FELICIA","CLYDE","FIDEL","GINA","BRENDA","GRETA","MARGE","JOE","RAYMOND","TOBY","ED","FRANK","DEN LILLE JENTA","MAVIS","MABEL","MARCY","CURTIS","HOMER"] }
-        ],
-
-        "KJÆRESTE VENNER": [
-            { "page": 104, "y": 0.000, "roles": [] }
+            { "page":  19, "y": 0.000, "roles": ["ALEXANDRA","JANE","SUKIE","FELICIA","CLYDE","MICHAEL","JENNIFER","DEN LILLE JENTA","GINA","GRETA","BRENDA","MARGE","14","JOE","RAYMOND","TOBY","ED","19","20","21","MARCY","23","24","25","26","27","28"] },
+            { "page":  84, "y": 0.000, "roles": ["ALEXANDRA","JANE","SUKIE","FELICIA","CLYDE","MICHAEL","JENNIFER","DEN LILLE JENTA","FRANNY","EUDORA","BRENDA","MARGE","14","JOE","RAYMOND","TOBY","ED","19","20","21","MARCY","23","24","25","26","27","28"] }
         ],
 
         "ALLE UNNTATT HEKSENE": [
-            { "page":  18, "y": 0.0, "roles": ["FELICIA","CLYDE","FIDEL","GINA","BRENDA","GRETA","MARGE","JOE","RAYMOND","TOBY","ED","FRANK","DEN LILLE JENTA","MAVIS","MABEL","MARCY","CURTIS","HOMER"] }
+            { "page":  18, "y": 0.0, "roles": ["FELICIA","CLYDE","MICHAEL","JENNIFER","DEN LILLE JENTA","GINA","GRETA","BRENDA","MARGE","14","JOE","RAYMOND","TOBY","ED","19","20","21","MARCY","23","24","25","26","27","28"] }
         ],
 
         "ALLE": [
-            { "page":   1, "y": 0.000, "roles": ["ALEXANDRA","JANE","SUKIE","FELICIA","JENNIFER","MICHAEL","CLYDE","FIDEL","GINA","BRENDA","GRETA","MARGE","JOE","RAYMOND","TOBY","ED","FRANK","DEN LILLE JENTA","MAVIS","MABEL","MARCY","CURTIS","HOMER","Backstage-kor"] }
+            { "page":   1, "y": 0.000, "roles": ["ALEXANDRA","JANE","SUKIE","FELICIA","CLYDE","MICHAEL","JENNIFER","DEN LILLE JENTA","GINA","GRETA","BRENDA","MARGE","14","JOE","RAYMOND","TOBY","ED","19","20","21","MARCY","23","24","25","26","27","28"] },
+            { "page":  84, "y": 0.000, "roles": ["ALEXANDRA","JANE","SUKIE","FELICIA","CLYDE","MICHAEL","JENNIFER","DEN LILLE JENTA","FRANNY","EUDORA","BRENDA","MARGE","14","JOE","RAYMOND","TOBY","ED","19","20","21","MARCY","23","24","25","26","27","28"] }
         ]
     }
 }

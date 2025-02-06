@@ -1,76 +1,104 @@
 {
     "static": {
-        "ALEXANDRA":       [ { "page": 3, "y": 0.0, "actor": "Juliane"  }, { "page": 45, "y": 0.0, "actor": "Frida"   }, { "page": 60, "y": 0.0, "actor": "Andrea"         }, { "page": 82, "y": 0.0, "actor": "Synne"     } ],
-        "JANE":            [ { "page": 3, "y": 0.0, "actor": "Aurora J" }, { "page": 45, "y": 0.0, "actor": "Astrid"  }, { "page": 60, "y": 0.0, "actor": "Marie-Nikoline" }, { "page": 82, "y": 0.0, "actor": "Aurora Ch" } ],
-        "SUKIE":           [ { "page": 3, "y": 0.0, "actor": "Eiril"    }, { "page": 45, "y": 0.0, "actor": "Andrine" }, { "page": 60, "y": 0.0, "actor": "Elev 4"         }, { "page": 82, "y": 0.0, "actor": "Signe"     } ],
+        "ALEXANDRA":       [ { "page":  3, "y": 0.0, "actor": "Juliane"  }, { "page": 43, "y": 0.0, "actor": "Frida"   }, { "page": 58, "y": 0.0, "actor": "Andrea"         }, { "page": 71, "y": 0.0, "actor": "Synne"     } ],
+        "JANE":            [ { "page":  3, "y": 0.0, "actor": "Aurora J" }, { "page": 43, "y": 0.0, "actor": "Astrid"  }, { "page": 58, "y": 0.0, "actor": "Marie-Nikoline" }, { "page": 71, "y": 0.0, "actor": "Aurora Ch" } ],
+        "SUKIE":           [ { "page":  3, "y": 0.0, "actor": "Eiril"    }, { "page": 43, "y": 0.0, "actor": "Andrine" }, { "page": 58, "y": 0.0, "actor": "Juliane"        }, { "page": 71, "y": 0.0, "actor": "Signe"     } ],
 
-        "FELICIA":         [ { "page": 3, "y": 0.0, "actor": "Annika"      } ],
-        "CLYDE":           [ { "page": 3, "y": 0.0, "actor": "Oskar Boman" } ],
-        "DEN LILLE JENTA": [ { "page": 3, "y": 0.0, "actor": "Anbjørg"     } ],
-        "GINA":            [ { "page": 3, "y": 0.0, "actor": "Eirin"       } ],
-        "GRETA":           [ { "page": 3, "y": 0.0, "actor": "Rebecca"     } ],
-        "MARGE":           [ { "page": 3, "y": 0.0, "actor": "Malin"       } ],
-        "FIDEL":           [ { "page": 3, "y": 0.0, "actor": "Elev 14"     } ],
-        "JOE":             [ { "page": 3, "y": 0.0, "actor": "Sigurd"      } ],
-        "RAYMOND":         [ { "page": 3, "y": 0.0, "actor": "Einar"       } ],
-        "TOBY":            [ { "page": 3, "y": 0.0, "actor": "Truls"       } ],
-        "ED":              [ { "page": 3, "y": 0.0, "actor": "Quentin"     } ],
-        "FRANK":           [ { "page": 3, "y": 0.0, "actor": "Elev 19"     } ],
-        "MAVIS":           [ { "page": 3, "y": 0.0, "actor": "Elev 21"     } ],
-        "MABEL":           [ { "page": 3, "y": 0.0, "actor": "Elev 22"     } ],
-        "MARCY":           [ { "page": 3, "y": 0.0, "actor": "Ina"         } ],
-        "CURTIS":          [ { "page": 3, "y": 0.0, "actor": "Elev 26"     } ],
-        "HOMER":           [ { "page": 3, "y": 0.0, "actor": "Elev 27"     } ],
+        "FELICIA":         [ { "page":  3, "y": 0.0, "actor": "Annika"         } ],
+        "CLYDE":           [ { "page":  3, "y": 0.0, "actor": "Oskar Boman"    } ],
+        "DEN LILLE JENTA": [ { "page":  3, "y": 0.0, "actor": "Anbjørg"        } ],
+        "GINA":            [ { "page":  3, "y": 0.0, "actor": "Eirin"          } ],
+        "GRETA":           [ { "page":  3, "y": 0.0, "actor": "Rebecca"        } ],
+        "BRENDA":          [ { "page":  3, "y": 0.0, "actor": "Kristina"       } ],
+        "MARGE":           [ { "page":  3, "y": 0.0, "actor": "Malin"          } ],
+        "JOE":             [ { "page":  3, "y": 0.0, "actor": "Sigurd"         } ],
+        "RAYMOND":         [ { "page":  3, "y": 0.0, "actor": "Einar"          } ],
+        "TOBY":            [ { "page":  3, "y": 0.0, "actor": "Truls"          } ],
+        "ED":              [ { "page":  3, "y": 0.0, "actor": "Quentin"        } ],
+        "MARCY":           [ { "page":  3, "y": 0.0, "actor": "Ina"            } ],
+        "BIBLIOTEKAR":     [ { "page":  3, "y": 0.0, "actor": "Tuva"           } ],
+        "EUDORA":          [ { "page":  3, "y": 0.0, "actor": "Eirin"          } ],
+        "FRANNY":          [ { "page":  3, "y": 0.0, "actor": "Rebecca"        } ],
 
-        "Backstage-kor":   [ { "page": 3, "y": 0.0, "actor": "Kor"         } ]
+        "Backstage-kor":   [ { "page":  3, "y": 0.0, "actor": "Kor"            } ],
+
+        "14":        [ { "page":  3, "y": 0.0, "actor": "Emma"           } ],
+        "19":        [ { "page":  3, "y": 0.0, "actor": "Syver"          } ],
+        "23":        [ { "page":  3, "y": 0.0, "actor": "Kaja"           } ],
+        "25":        [ { "page":  3, "y": 0.0, "actor": "Tiril Sofie"    } ],
+
+        "20":        [
+            { "page":  3, "y": 0.0, "actor": "Signe"          },
+            { "page": 71, "y": 0.0, "actor": "Eiril"          }
+        ],
+        "21":        [
+            { "page":  3, "y": 0.0, "actor": "Marie Nikoline" },
+            { "page": 43, "y": 0.0, "actor": "Hanna Sofia"    },
+            { "page": 58, "y": 0.0, "actor": "Astrid"         },
+            { "page": 71, "y": 0.0, "actor": "Marie Nikoline" }
+        ],
+        "24":        [
+            { "page":  3, "y": 0.0, "actor": "Andrea"         },
+            { "page": 43, "y": 0.0, "actor": "Kalandra"       },
+            { "page": 58, "y": 0.0, "actor": "Eiril"          },
+            { "page": 71, "y": 0.0, "actor": "Andrea"         }
+        ],
+        "26":        [
+            { "page":  3, "y": 0.0, "actor": "Synne"          },
+            { "page": 71, "y": 0.0, "actor": "Frida"          }
+        ],
+        "27":        [
+            { "page":  3, "y": 0.0, "actor": "Aurora Ch"      },
+            { "page": 71, "y": 0.0, "actor": "Astrid"         }
+        ]
     },
 
     "GP": {
-        "DARRYL":          [ { "page": 3, "y": 0.0, "actor": "Salvador"      }, { "page": 60, "y": 0.0, "actor": "Thomas" } ],
+        "DARRYL":          [ { "page": 3, "y": 0.0, "actor": "Salvador"      }, { "page": 58, "y": 0.0, "actor": "Thomas" } ],
         "MICHAEL":         [ { "page": 3, "y": 0.0, "actor": "Oscar Bålsrød" } ],
         "JENNIFER":        [ { "page": 3, "y": 0.0, "actor": "Benedicte"     } ],
-        "BRENDA":          [ { "page": 3, "y": 0.0, "actor": "Kristina"      } ]
+        "28":        [ { "page": 3, "y": 0.0, "actor": "Isak"          } ]
     },
 
     "Show 1": {
         "DARRYL":          [ { "page": 3, "y": 0.0, "actor": "Tobias"        } ],
         "MICHAEL":         [ { "page": 3, "y": 0.0, "actor": "Isak"          } ],
         "JENNIFER":        [ { "page": 3, "y": 0.0, "actor": "Thea"          } ],
-        "BRENDA":          [ { "page": 3, "y": 0.0, "actor": "Benedicte"     } ]
+        "28":        [ { "page": 3, "y": 0.0, "actor": "Oscar"         } ]
     },
 
     "Show 2": {
-        "DARRYL":          [ { "page": 3, "y": 0.0, "actor": "Salvador"      }, { "page": 60, "y": 0.0, "actor": "Thomas" } ],
+        "DARRYL":          [ { "page": 3, "y": 0.0, "actor": "Salvador"      }, { "page": 58, "y": 0.0, "actor": "Thomas" } ],
         "MICHAEL":         [ { "page": 3, "y": 0.0, "actor": "Oscar Bålsrød" } ],
         "JENNIFER":        [ { "page": 3, "y": 0.0, "actor": "Benedicte"     } ],
-        "BRENDA":          [ { "page": 3, "y": 0.0, "actor": "Kristina"      } ]
+        "28":        [ { "page": 3, "y": 0.0, "actor": "Isak"          } ]
     },
 
     "Show 3": {
-        "DARRYL":          [ { "page": 3, "y": 0.0, "actor": "Salvador"      }, { "page": 60, "y": 0.0, "actor": "Thomas" } ],
+        "DARRYL":          [ { "page": 3, "y": 0.0, "actor": "Salvador"      }, { "page": 58, "y": 0.0, "actor": "Thomas" } ],
         "MICHAEL":         [ { "page": 3, "y": 0.0, "actor": "Oscar Bålsrød" } ],
         "JENNIFER":        [ { "page": 3, "y": 0.0, "actor": "Benedicte"     } ],
-        "BRENDA":          [ { "page": 3, "y": 0.0, "actor": "Kristina"      } ]
+        "28":        [ { "page": 3, "y": 0.0, "actor": "Isak"          } ]
     },
 
     "Show 4": {
-        "DARRYL":          [ { "page": 3, "y": 0.0, "actor": "Salvador"      }, { "page": 60, "y": 0.0, "actor": "Thomas" } ],
+        "DARRYL":          [ { "page": 3, "y": 0.0, "actor": "Salvador"      }, { "page": 58, "y": 0.0, "actor": "Thomas" } ],
         "MICHAEL":         [ { "page": 3, "y": 0.0, "actor": "Isak"          } ],
         "JENNIFER":        [ { "page": 3, "y": 0.0, "actor": "Thea"          } ],
-        "BRENDA":          [ { "page": 3, "y": 0.0, "actor": "Benedicte"     } ]
+        "28":        [ { "page": 3, "y": 0.0, "actor": "Oscar"         } ]
         },
 
     "Show 5": {
         "DARRYL":          [ { "page": 3, "y": 0.0, "actor": "Tobias"        } ],
         "MICHAEL":         [ { "page": 3, "y": 0.0, "actor": "Isak"          } ],
         "JENNIFER":        [ { "page": 3, "y": 0.0, "actor": "Thea"          } ],
-        "BRENDA":          [ { "page": 3, "y": 0.0, "actor": "Benedicte"     } ]
+        "28":        [ { "page": 3, "y": 0.0, "actor": "Oscar"         } ]
     },
 
     "Show 6": {
         "DARRYL":          [ { "page": 3, "y": 0.0, "actor": "Tobias"        } ],
         "MICHAEL":         [ { "page": 3, "y": 0.0, "actor": "Isak"          } ],
         "JENNIFER":        [ { "page": 3, "y": 0.0, "actor": "Thea"          } ],
-        "BRENDA":          [ { "page": 3, "y": 0.0, "actor": "Benedicte"     } ]
+        "28":        [ { "page": 3, "y": 0.0, "actor": "Oscar"         } ]
     }
 }
