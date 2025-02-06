@@ -26,8 +26,9 @@
     <div id='toolbar'>
         <div id='menu'>
             <button class='settings' id='logout'><img src='img/logout.svg' alt='logg ut'></button>
-            <button class='settings' id='settings'><img src='img/view.svg' alt='oppsett'></button>
+            <button class='settings' id='view'><img src='img/view.svg' alt='oppsett'></button>
             <button class='settings' id='print'><img src='img/paper.svg' alt='pdf'></button>
+            <button class='settings' id='help'><img src='img/help.svg' alt='help'></button>
 
             <button class='settings disabled' id='read'>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round">
@@ -40,25 +41,28 @@
                 </svg>
             </button>
 
-            <div class='shortcuts settings'></div>
+            <div class='shortcuts view'></div>
             <div class='shortcuts print'></div>
         </div>
 
         <div class='navigation'>
             <div class='buttons scenes'>
                 <div class='shortcuts scenes'></div>
+                <div class='heading'>Scener</div>
                 <button class='content'></button>
                 <button class='prev'>forrige</button>
                 <button class='next'>neste</button>
             </div>
             <div class='buttons music'>
                 <div class='shortcuts music'></div>
+                <div class='heading'>Musikk</div>
                 <button class='content'></button>
                 <button class='prev'>forrige</button>
                 <button class='next'>neste</button>
             </div>
             <div class='buttons pages'>
                 <div class='shortcuts pages'></div>
+                <div class='heading'>Sider</div>
                 <button class='content'></button>
                 <button class='prev'>forrige</button>
                 <button class='next'>neste</button>

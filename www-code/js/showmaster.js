@@ -27,7 +27,7 @@ const state = {
 
 
 
-const fetch_showdata = async () => {
+const fetch_showdata = async (show) => {
     try {
         const response = await fetch(projectfile)
         if (!response.ok) { throw new Error('Feil ved lasting av showdata') }
@@ -44,7 +44,9 @@ const fetch_showdata = async () => {
             }
         }
 
-        show = await get_current_show()
+        if (!show) {
+            show = await get_current_show()
+        }
 
         for (const pdf of ['empty', 'music', 'mics']) {
             pdfdata[pdf] = {
@@ -131,6 +133,16 @@ const populate_show = async show => {
 
 
 const create_shortcuts = () => {
+    $('.shortcuts.view').append(`<div class='heading'>Manus</div>`)
+
+    for (manus of ['empty', 'music', 'mics']) {
+        let url  = `${pdfdata[manus].url}`
+        let text = `${pdfdata[manus].name}`
+        $('.shortcuts.view').append(`<button class='choice' data-manus='${manus}'>${text}</button>`)
+    }
+
+
+
     $('.shortcuts.print').append(`<div class='heading'>Manus</div>`)
 
     for (pdf of ['empty', 'music', 'mics']) {
@@ -490,13 +502,14 @@ const set_eventhandlers = () => {
     $(document).on('click', '#pdf',      event => { event.stopPropagation(); $('.shortcuts').hide() })
     $(document).on('click', '#infobar',  event => { event.stopPropagation(); $('.shortcuts').hide() })
 
-    $(document).on('click', '#settings', event => { event.stopPropagation(); $('.shortcuts:not(.settings)').hide(); $('.shortcuts.settings').toggle() })
-    $(document).on('click', '#print',    event => { event.stopPropagation(); $('.shortcuts:not(.print)'   ).hide(); $('.shortcuts.print'   ).toggle() })
+    $(document).on('click', '#view',     event => { event.stopPropagation(); $('.shortcuts:not(.view)' ).hide(); $('.shortcuts.view' ).toggle() })
+    $(document).on('click', '#print',    event => { event.stopPropagation(); $('.shortcuts:not(.print)').hide(); $('.shortcuts.print').toggle() })
 
     $(document).on('click', '#write',    event => { event.stopPropagation(); server_toggle('write') })
     $(document).on('click', '#read',     event => { event.stopPropagation(); server_toggle('read' ) })
 
-    $(document).on('click', '.pdf', event => { event.stopPropagation(); $('.shortcuts').hide(); download($(event.target).data('url')) })
+    $(document).on('click', '.pdf',      event => { event.stopPropagation(); $('.shortcuts').hide(); download($(event.target).data('url')) })
+    $(document).on('click', '.choice',   event => { event.stopPropagation(); $('.shortcuts').hide(); pdf_load($(event.target).data('manus')) })
 
     $(document).on('click', '.scenes > .content', event => { event.stopPropagation(); $('.shortcuts:not(.scenes)').hide(); $('.shortcuts.scenes').toggle() })
     $(document).on('click', '.music > .content',  event => { event.stopPropagation(); $('.shortcuts:not(.music) ').hide(); $('.shortcuts.music' ).toggle() })

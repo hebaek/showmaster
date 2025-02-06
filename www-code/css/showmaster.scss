@@ -8,8 +8,8 @@
 
     --menubutton-color: hsl(210, 45%, 54%);
 
-    --settings-color: var(--menubutton-color);
-    --print-color:    var(--menubutton-color);
+    --view-color:  var(--menubutton-color);
+    --print-color: var(--menubutton-color);
 
     --scenes-color:  hsl(101, 100%, 30%);
     --music-color:   hsl(190, 100%, 30%);
@@ -55,17 +55,21 @@ body                    { background-color: var(--background-color); }
 
 #toolbar .navigation {
     .buttons > button    { background-color: var(--button-color); color: white; }
+
+    .scenes > .heading   { color: var(--scenes-color); }
     .scenes .content     { background-color: var(--scenes-color); color: white; }
     .scenes .prev:hover  { background-color: var(--scenes-color); }
     .scenes .next:hover  { background-color: var(--scenes-color); }
 
-    .music .content     { background-color: var(--music-color);  color: white; }
-    .music .prev:hover  { background-color: var(--music-color); }
-    .music .next:hover  { background-color: var(--music-color); }
+    .music > .heading    { color: var(--music-color); }
+    .music .content      { background-color: var(--music-color);  color: white; }
+    .music .prev:hover   { background-color: var(--music-color); }
+    .music .next:hover   { background-color: var(--music-color); }
 
-    .pages .content     { background-color: var(--pages-color);  color: white; }
-    .pages .prev:hover  { background-color: var(--pages-color); }
-    .pages .next:hover  { background-color: var(--pages-color); }
+    .pages > .heading    { color: var(--pages-color); }
+    .pages .content      { background-color: var(--pages-color);  color: white; }
+    .pages .prev:hover   { background-color: var(--pages-color); }
+    .pages .next:hover   { background-color: var(--pages-color); }
 
     .content .header.empty { color: var(--content-empty); }
 }
@@ -75,7 +79,7 @@ body                    { background-color: var(--background-color); }
 }
 
 #infobar #miclist .row {
-    .actor              { color: var(--actor-color); }
+    .actor { color: var(--actor-color); }
 
     &.passive_ensemble       { background-color: var(--mic-passive-background-color);  }
     &.passive_role           { background-color: var(--mic-passive-background-color);  }
@@ -83,7 +87,7 @@ body                    { background-color: var(--background-color); }
     &.active_role            { background-color: var(--mic-active-background-color);   }
     &.active_ensemble.choir  { background-color: var(--mic-choir-background-color);    }
 
-    &.passive_ensemble       > .mic { background-color: var(--mic-ensemble-color);  }
+    &.passive_ensemble       > .mic { background-color: var(--mic-passive-color);  }
     &.active_ensemble        > .mic { background-color: var(--mic-ensemble-color); }
     &.passive_role           > .mic { background-color: var(--mic-active-color);  }
     &.active_role            > .mic { background-color: var(--mic-active-color);   }
@@ -91,9 +95,9 @@ body                    { background-color: var(--background-color); }
     &.active_ensemble.choir  > .mic { background-color: var(--mic-choir-color);    }
 }
 
-.shortcuts.settings {
-    background-color: var(--settings-color);
-    > .shortcut { background-color: var(--settings-color); }
+.shortcuts.view {
+    background-color: var(--view-color);
+    > .choice { background-color: var(--view-color); }
 }
 
 .shortcuts.print {
@@ -117,6 +121,10 @@ body                    { background-color: var(--background-color); }
 }
 
 .pdf {
+    transition: background-color 0.3s;
+}
+
+.choice {
     transition: background-color 0.3s;
 }
 
@@ -159,8 +167,9 @@ body                 { display: grid; }
     grid-area: menu;
 
     #logout   { grid-area: logout;   }
-    #settings { grid-area: settings; }
+    #view     { grid-area: view;     }
     #print    { grid-area: print;    }
+    #help     { grid-area: help;     }
 
     #read     { grid-area: read;     }
     #write    { grid-area: write;    }
@@ -173,6 +182,7 @@ body                 { display: grid; }
     .music   { grid-area: music;   }
     .pages   { grid-area: pages;   }
 
+    .heading { grid-area: heading; }
     .content { grid-area: content; }
     .prev    { grid-area: prev;    }
     .next    { grid-area: next;    }
@@ -194,22 +204,24 @@ body {
 
 #toolbar #menu {
     grid:
-        'logout .   settings print' auto
-        '.      .   write    read ' auto
-        / 1fr   2fr 1fr      1fr;
+        'logout .   view  print' auto
+        '.      .   write read ' auto
+        'help   .   .     .    ' auto
+        / 1fr   2fr 1fr   1fr;
 }
 
 #toolbar .navigation {
     grid:
         '.     ' auto
-        'scenes' 9em
-        'music'  9em
-        'pages'  9em
+        'scenes' 10em
+        'music'  10em
+        'pages'  10em
         / 1fr;
 }
 
 .navigation .buttons {
     grid:
+        'heading heading' 2fr
         'content content' 5fr
         'prev    next   ' 4fr
         / 1fr 1fr;
@@ -250,7 +262,7 @@ body {
 #miclist .active_ensemble .mic { border-color: var(--mic-border-ensemble); }
 #miclist .active_role     .mic { border-color: var(--mic-border-role    ); }
 
-.shortcuts .pdf,.shortcut {
+.shortcuts .pdf,.shortcut, .choice {
     border: none;
 }
 
@@ -271,7 +283,8 @@ body {
 
 #toolbar {
     width: 18em;
-    .content { margin-top: 1em; height: 4em; }
+    .heading { height: 1.8em; line-height: 1.8em; width: 100%; vertical-align: bottom; }
+    .content { margin-top: 0; }
 
     .prev, .next { margin-bottom: 1em; }
 
@@ -315,6 +328,11 @@ body {
         padding: 1.0em 1.0em;
     }
 
+    .choice {
+        width: 100%;
+        padding: 1.0em 1.0em;
+    }
+
     .shortcut {
         width: 100%;
         padding: 1.0em 1.0em;
@@ -335,10 +353,14 @@ body {
 
     .heading     { font-size: 1.6em; }
     .pdf         { font-size: 1.0em; }
+    .choice      { font-size: 1.0em; }
     .shortcut    { font-size: 1.0em; }
     .content     { font-size: 1.0em; }
     .prev, .next { font-size: 1.0em; }
 
+    .scenes > .heading   { font-size: 1.4em; }
+    .music  > .heading   { font-size: 1.4em; }
+    .pages  > .heading   { font-size: 1.4em; }
 }
 
 #menu > button {
@@ -372,6 +394,10 @@ body {
     z-index: 4;
 }
 
+.scenes > .heading   { text-align: center; vertical-align: bottom; }
+.music  > .heading   { text-align: center; vertical-align: bottom; }
+.pages  > .heading   { text-align: center; vertical-align: bottom; }
+
 button {
     vertical-align: middle;
     cursor: pointer;
@@ -403,9 +429,11 @@ button {
     z-index: 7;
 
     .pdf      { text-align: left; }
+    .choice   { text-align: left; }
     .shortcut { text-align: left; }
 
     .pdf:hover      { background-color: var(--toolbar-color); }
+    .choice:hover   { background-color: var(--toolbar-color); }
     .shortcut:hover { background-color: var(--toolbar-color); }
 }
 
@@ -493,8 +521,8 @@ button {
         box-shadow: 0 0 10px var(--default-shadow);
 
         grid:
-            'settings print . write read . logout' 4em
-            / 4em     4em  1fr 4em  4em 1fr 4em;
+            'view print . write read . logout' 4em
+            / 4em 4em  1fr 4em  4em 1fr 4em;
     }
 
     #toolbar .navigation {
