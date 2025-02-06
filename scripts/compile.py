@@ -479,9 +479,29 @@ def generate_mcdl(lines, ensembles, actors, staging, mics):
         for role in staging['scenes'][scene]:
             mic, actor = None, None
 
-            if role in mics['exclusive_assignments']: mic = mics['exclusive_assignments'][role]
-            if role in mics['fixed_assignments'    ]: mic = mics['fixed_assignments'    ][role]
+            if role in mics['exclusive_assignments']:
+                mic = mics['exclusive_assignments'][role]
+            elif role in mics['fixed_assignments']:
+                mic = mics['fixed_assignments'][role]
+            else:
+                free_mics = mics['mics']
+                for result_role in result:
+                    length = len(result[result_role])
+                    if length == 0: continue
 
+                    free_mics = list(filter(lambda mic: mic not in mics['exclusive_assignments'].values(), free_mics))
+                    free_mics = list(filter(lambda mic: mic != result[result_role][length-1]['mic'], free_mics))
+
+                if len(free_mics) == 0:
+                    print('No mic for', role)
+                else:
+                    mic = free_mics[0]
+                    result[role] = []
+                    print('Assigned', mic, 'to', role)
+
+
+
+            print(scene, role)
             for action in staging['scenes'][scene][role]:
                 current = list(filter(lambda x: x['location']['target'] <= action['location']['target'], actors[role])).pop()
                 actor = current['actor']
