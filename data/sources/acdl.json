@@ -1,7 +1,7 @@
 {
     "static": {
         "ALEXANDRA":       [ { "page":  3, "y": 0.0, "actor": "Juliane"  }, { "page": 43, "y": 0.0, "actor": "Frida"   }, { "page": 58, "y": 0.0, "actor": "Andrea"         }, { "page": 71, "y": 0.0, "actor": "Synne"     } ],
-        "JANE":            [ { "page":  3, "y": 0.0, "actor": "Aurora J" }, { "page": 43, "y": 0.0, "actor": "Astrid"  }, { "page": 58, "y": 0.0, "actor": "Marie-Nikoline" }, { "page": 71, "y": 0.0, "actor": "Aurora Ch" } ],
+        "JANE":            [ { "page":  3, "y": 0.0, "actor": "Aurora J" }, { "page": 43, "y": 0.0, "actor": "Astrid"  }, { "page": 58, "y": 0.0, "actor": "Marie Nikoline" }, { "page": 71, "y": 0.0, "actor": "Aurora Ch" } ],
         "SUKIE":           [ { "page":  3, "y": 0.0, "actor": "Eiril"    }, { "page": 43, "y": 0.0, "actor": "Andrine" }, { "page": 58, "y": 0.0, "actor": "Juliane"        }, { "page": 71, "y": 0.0, "actor": "Signe"     } ],
 
         "FELICIA":         [ { "page":  3, "y": 0.0, "actor": "Annika"         } ],
@@ -22,8 +22,8 @@
 
         "Backstage-kor":   [ { "page":  3, "y": 0.0, "actor": "Kor"            } ],
 
-        "14":        [ { "page":  3, "y": 0.0, "actor": "Emma"           } ],
         "19":        [ { "page":  3, "y": 0.0, "actor": "Syver"          } ],
+        "22":        [ { "page":  3, "y": 0.0, "actor": "Emma"           } ],
         "23":        [ { "page":  3, "y": 0.0, "actor": "Kaja"           } ],
         "25":        [ { "page":  3, "y": 0.0, "actor": "Tiril Sofie"    } ],
 
@@ -32,8 +32,7 @@
             { "page": 71, "y": 0.0, "actor": "Eiril"          }
         ],
         "21":        [
-            { "page":  3, "y": 0.0, "actor": "Marie Nikoline" },
-            { "page": 43, "y": 0.0, "actor": "Hanna Sofia"    },
+            { "page":  3, "y": 0.0, "actor": "Hanna Sofia"    },
             { "page": 58, "y": 0.0, "actor": "Astrid"         },
             { "page": 71, "y": 0.0, "actor": "Marie Nikoline" }
         ],
@@ -49,6 +48,8 @@
         ],
         "27":        [
             { "page":  3, "y": 0.0, "actor": "Aurora Ch"      },
+            { "page": 16, "y": 0.0, "actor": "Tuva"           },
+            { "page": 43, "y": 0.0, "actor": "Aurora Ch"      },
             { "page": 71, "y": 0.0, "actor": "Astrid"         }
         ]
     },

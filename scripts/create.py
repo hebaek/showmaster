@@ -147,8 +147,8 @@ def draw_static(page, p, data, act):
 
     text = {
         'left':   f'''<div class='header left'>{data['showinfo']['name']} &ndash; {data['showinfo']['time']}</div>''',
-        'center': f'''<div class='header center'>Top center</div>''',
-        'right':  f'''<div class='header right'>Top right</div>''',
+        'center': f'''<div class='header center'></div>''',
+        'right':  f'''<div class='header right'></div>''',
     }
 
     page.insert_htmlbox((f['left'], f['top'], f['right'], f['bottom']), text['left'  ], css=css)

@@ -7,7 +7,7 @@
       "uuidString" : "B5D03444-4268-4EC6-956A-8EFC165A710C"
     }
   ],
-  "creatorBuild" : "34627",
+  "creatorBuild" : "34680",
   "files" : {
     "\/.gitignore" : {
       "cB" : 0,
@@ -684,7 +684,7 @@
     "displayValueWasSetByUser" : 0,
     "iconImageName" : "brackets-brick",
     "iconImageWasSetByUser" : 0,
-    "lastBuiltDate" : 760314185.549335
+    "lastBuiltDate" : 760568807.17165303
   },
   "projectSettings" : {
     "abortBuildOnError" : 1,
