@@ -70,7 +70,7 @@
         </div>
     </div>
 
-    <div id='pdf twopage'>
+    <div class='twopage' id='pdf'>
         <div id='page_1'>
             <canvas id='pdf-canvas'></canvas>
         </div>
