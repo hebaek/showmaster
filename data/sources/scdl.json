@@ -2,6 +2,10 @@
     "static": {
         "1.5b": {
             "BIBLIOTEKAR": [ { "page": 31, "y": 0.0, "action": "enter" } ]
+        },
+        "2.7": {
+            "EUDORA": [ { "page": 83, "y": 0.0, "action": "enter" } ],
+            "FRANNY": [ { "page": 83, "y": 0.0, "action": "enter" } ]
         }
     }
 }
