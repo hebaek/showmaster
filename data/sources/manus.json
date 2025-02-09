@@ -11,10 +11,10 @@
         },
         {
             "page": 3,
-            "y": 0.502,
+            "y": 0.503,
             "roles": [],
             "ensembles": [
-                "ALLE"
+                "KVINNER"
             ]
         },
         {
@@ -401,7 +401,7 @@
         },
         {
             "page": 7,
-            "y": 0.658,
+            "y": 0.694,
             "roles": [
                 "ALEXANDRA"
             ],
@@ -409,7 +409,7 @@
         },
         {
             "page": 7,
-            "y": 0.712,
+            "y": 0.748,
             "roles": [
                 "SUKIE"
             ],
@@ -417,7 +417,7 @@
         },
         {
             "page": 7,
-            "y": 0.765,
+            "y": 0.801,
             "roles": [
                 "JANE"
             ],
@@ -425,7 +425,7 @@
         },
         {
             "page": 7,
-            "y": 0.819,
+            "y": 0.855,
             "roles": [
                 "ALEXANDRA"
             ],
@@ -1192,8 +1192,7 @@
             "y": 0.159,
             "roles": [],
             "ensembles": [
-                "ALLE",
-                "KOR"
+                "ALLE"
             ]
         },
         {
@@ -1206,7 +1205,7 @@
         },
         {
             "page": 17,
-            "y": 0.401,
+            "y": 0.448,
             "roles": [
                 "DARRYL"
             ],
@@ -1214,7 +1213,7 @@
         },
         {
             "page": 17,
-            "y": 0.454,
+            "y": 0.502,
             "roles": [
                 "DARRYL"
             ],
@@ -1222,39 +1221,47 @@
         },
         {
             "page": 17,
-            "y": 0.666,
+            "y": 0.619,
+            "roles": [],
+            "ensembles": [
+                "ALLE"
+            ]
+        },
+        {
+            "page": 18,
+            "y": 0.105,
             "roles": [
                 "FELICIA"
             ],
             "ensembles": []
         },
         {
-            "page": 17,
-            "y": 0.72,
+            "page": 18,
+            "y": 0.159,
             "roles": [
                 "DARRYL"
             ],
             "ensembles": []
         },
         {
-            "page": 17,
-            "y": 0.774,
+            "page": 18,
+            "y": 0.212,
             "roles": [
                 "FELICIA"
             ],
             "ensembles": []
         },
         {
-            "page": 17,
-            "y": 0.827,
+            "page": 18,
+            "y": 0.266,
             "roles": [
                 "DARRYL"
             ],
             "ensembles": []
         },
         {
-            "page": 17,
-            "y": 0.898,
+            "page": 18,
+            "y": 0.336,
             "roles": [
                 "FELICIA"
             ],
@@ -1460,7 +1467,7 @@
         },
         {
             "page": 22,
-            "y": 0.516,
+            "y": 0.478,
             "roles": [
                 "DARRYL"
             ],
@@ -1468,7 +1475,7 @@
         },
         {
             "page": 22,
-            "y": 0.57,
+            "y": 0.532,
             "roles": [
                 "FELICIA"
             ],
@@ -1476,7 +1483,7 @@
         },
         {
             "page": 22,
-            "y": 0.623,
+            "y": 0.585,
             "roles": [
                 "DARRYL"
             ],
@@ -1484,7 +1491,7 @@
         },
         {
             "page": 22,
-            "y": 0.677,
+            "y": 0.639,
             "roles": [
                 "FELICIA"
             ],
@@ -1492,7 +1499,7 @@
         },
         {
             "page": 22,
-            "y": 0.73,
+            "y": 0.693,
             "roles": [
                 "DARRYL"
             ],
@@ -2011,8 +2018,8 @@
             "ensembles": []
         },
         {
-            "page": 29,
-            "y": 0.845,
+            "page": 30,
+            "y": 0.144,
             "roles": [
                 "DARRYL"
             ],
@@ -2020,7 +2027,7 @@
         },
         {
             "page": 30,
-            "y": 0.105,
+            "y": 0.215,
             "roles": [
                 "SUKIE"
             ],
@@ -2028,7 +2035,7 @@
         },
         {
             "page": 30,
-            "y": 0.159,
+            "y": 0.269,
             "roles": [
                 "DARRYL"
             ],
@@ -2036,7 +2043,7 @@
         },
         {
             "page": 30,
-            "y": 0.212,
+            "y": 0.322,
             "roles": [
                 "SUKIE"
             ],
@@ -2044,7 +2051,7 @@
         },
         {
             "page": 30,
-            "y": 0.266,
+            "y": 0.376,
             "roles": [
                 "DARRYL"
             ],
@@ -2052,7 +2059,7 @@
         },
         {
             "page": 30,
-            "y": 0.32,
+            "y": 0.429,
             "roles": [
                 "SUKIE"
             ],
@@ -2060,7 +2067,7 @@
         },
         {
             "page": 30,
-            "y": 0.373,
+            "y": 0.483,
             "roles": [
                 "DARRYL"
             ],
@@ -2068,7 +2075,7 @@
         },
         {
             "page": 30,
-            "y": 0.427,
+            "y": 0.537,
             "roles": [
                 "SUKIE"
             ],
@@ -2076,7 +2083,7 @@
         },
         {
             "page": 30,
-            "y": 0.48,
+            "y": 0.59,
             "roles": [
                 "DARRYL"
             ],
@@ -2084,7 +2091,7 @@
         },
         {
             "page": 30,
-            "y": 0.534,
+            "y": 0.644,
             "roles": [
                 "SUKIE"
             ],
@@ -2092,7 +2099,7 @@
         },
         {
             "page": 30,
-            "y": 0.588,
+            "y": 0.697,
             "roles": [
                 "DARRYL"
             ],
@@ -2100,7 +2107,7 @@
         },
         {
             "page": 30,
-            "y": 0.641,
+            "y": 0.751,
             "roles": [
                 "SUKIE"
             ],
@@ -2108,7 +2115,7 @@
         },
         {
             "page": 30,
-            "y": 0.695,
+            "y": 0.805,
             "roles": [
                 "DARRYL"
             ],
@@ -2116,17 +2123,9 @@
         },
         {
             "page": 30,
-            "y": 0.766,
+            "y": 0.876,
             "roles": [
                 "SUKIE"
-            ],
-            "ensembles": []
-        },
-        {
-            "page": 30,
-            "y": 0.82,
-            "roles": [
-                "DARRYL"
             ],
             "ensembles": []
         },
@@ -2134,7 +2133,7 @@
             "page": 31,
             "y": 0.105,
             "roles": [
-                "SUKIE"
+                "DARRYL"
             ],
             "ensembles": []
         },
@@ -2142,15 +2141,15 @@
             "page": 31,
             "y": 0.176,
             "roles": [
-                "DARRYL"
+                "SUKIE"
             ],
             "ensembles": []
         },
         {
             "page": 31,
-            "y": 0.229,
+            "y": 0.247,
             "roles": [
-                "SUKIE"
+                "DARRYL"
             ],
             "ensembles": []
         },
@@ -2158,23 +2157,23 @@
             "page": 31,
             "y": 0.3,
             "roles": [
-                "DARRYL"
-            ],
-            "ensembles": []
-        },
-        {
-            "page": 31,
-            "y": 0.421,
-            "roles": [
                 "SUKIE"
             ],
             "ensembles": []
         },
         {
             "page": 31,
-            "y": 0.79,
+            "y": 0.371,
             "roles": [
                 "DARRYL"
+            ],
+            "ensembles": []
+        },
+        {
+            "page": 31,
+            "y": 0.492,
+            "roles": [
+                "SUKIE"
             ],
             "ensembles": []
         },
@@ -2182,13 +2181,21 @@
             "page": 32,
             "y": 0.105,
             "roles": [
+                "DARRYL"
+            ],
+            "ensembles": []
+        },
+        {
+            "page": 32,
+            "y": 0.264,
+            "roles": [
                 "SUKIE"
             ],
             "ensembles": []
         },
         {
             "page": 32,
-            "y": 0.176,
+            "y": 0.335,
             "roles": [
                 "DARRYL"
             ],
@@ -2196,7 +2203,7 @@
         },
         {
             "page": 32,
-            "y": 0.23,
+            "y": 0.389,
             "roles": [
                 "SUKIE"
             ],
@@ -2586,9 +2593,7 @@
             "roles": [
                 "DARRYL"
             ],
-            "ensembles": [
-                "KOR"
-            ]
+            "ensembles": []
         },
         {
             "page": 38,
@@ -2597,17 +2602,7 @@
                 "ALEXANDRA",
                 "DARRYL"
             ],
-            "ensembles": [
-                "KOR"
-            ]
-        },
-        {
-            "page": 38,
-            "y": 0.83,
-            "roles": [],
-            "ensembles": [
-                "KOR"
-            ]
+            "ensembles": []
         },
         {
             "page": 39,
@@ -3227,7 +3222,11 @@
         {
             "page": 46,
             "y": 0.424,
-            "roles": [],
+            "roles": [
+                "GRETA",
+                "GINA",
+                "BRENDA"
+            ],
             "ensembles": [
                 "KVINNER"
             ]
@@ -3351,9 +3350,7 @@
             "y": 0.676,
             "roles": [],
             "ensembles": [
-                "KVINNER",
-                "MENN",
-                "EKSTRA"
+                "ALLE"
             ]
         },
         {
@@ -3369,9 +3366,7 @@
             "y": 0.783,
             "roles": [],
             "ensembles": [
-                "KVINNER",
-                "MENN",
-                "EKSTRA"
+                "ALLE"
             ]
         },
         {
@@ -3385,16 +3380,24 @@
         {
             "page": 48,
             "y": 0.105,
-            "roles": [],
+            "roles": [
+                "FELICIA"
+            ],
             "ensembles": [
-                "KVINNER",
-                "MENN",
-                "EKSTRA"
+                "ALLE"
             ]
         },
         {
             "page": 48,
-            "y": 0.193,
+            "y": 0.159,
+            "roles": [],
+            "ensembles": [
+                "ALLE"
+            ]
+        },
+        {
+            "page": 48,
+            "y": 0.246,
             "roles": [
                 "FELICIA"
             ],
@@ -3402,17 +3405,15 @@
         },
         {
             "page": 48,
-            "y": 0.246,
+            "y": 0.3,
             "roles": [],
             "ensembles": [
-                "KVINNER",
-                "MENN",
-                "EKSTRA"
+                "ALLE"
             ]
         },
         {
             "page": 48,
-            "y": 0.381,
+            "y": 0.434,
             "roles": [],
             "ensembles": [
                 "ALLE"
@@ -3522,6 +3523,8 @@
             "y": 0.778,
             "roles": [
                 "20",
+                "ALEXANDRA",
+                "JANE",
                 "SUKIE"
             ],
             "ensembles": []
@@ -3530,7 +3533,9 @@
             "page": 51,
             "y": 0.832,
             "roles": [
-                "JANE"
+                "ALEXANDRA",
+                "JANE",
+                "SUKIE"
             ],
             "ensembles": []
         },
@@ -3538,7 +3543,9 @@
             "page": 51,
             "y": 0.885,
             "roles": [
-                "ALEXANDRA"
+                "ALEXANDRA",
+                "JANE",
+                "SUKIE"
             ],
             "ensembles": []
         },
@@ -4643,8 +4650,10 @@
         },
         {
             "page": 67,
-            "y": 0.619,
-            "roles": [],
+            "y": 0.622,
+            "roles": [
+                "DARRYL"
+            ],
             "ensembles": [
                 "ALLE"
             ]
@@ -4829,7 +4838,9 @@
             "page": 69,
             "y": 0.856,
             "roles": [
-                "ALEXANDRA"
+                "ALEXANDRA",
+                "JANE",
+                "SUKIE"
             ],
             "ensembles": []
         },
@@ -4843,23 +4854,7 @@
         },
         {
             "page": 70,
-            "y": 0.159,
-            "roles": [
-                "JANE"
-            ],
-            "ensembles": []
-        },
-        {
-            "page": 70,
-            "y": 0.212,
-            "roles": [
-                "SUKIE"
-            ],
-            "ensembles": []
-        },
-        {
-            "page": 70,
-            "y": 0.266,
+            "y": 0.176,
             "roles": [
                 "ALEXANDRA"
             ],
@@ -4867,7 +4862,7 @@
         },
         {
             "page": 70,
-            "y": 0.32,
+            "y": 0.23,
             "roles": [
                 "JANE"
             ],
@@ -4875,7 +4870,7 @@
         },
         {
             "page": 70,
-            "y": 0.373,
+            "y": 0.284,
             "roles": [
                 "SUKIE"
             ],
@@ -4883,7 +4878,7 @@
         },
         {
             "page": 70,
-            "y": 0.427,
+            "y": 0.337,
             "roles": [
                 "ALEXANDRA"
             ],
@@ -4891,7 +4886,7 @@
         },
         {
             "page": 70,
-            "y": 0.48,
+            "y": 0.391,
             "roles": [
                 "JANE"
             ],
@@ -4899,7 +4894,7 @@
         },
         {
             "page": 70,
-            "y": 0.534,
+            "y": 0.444,
             "roles": [
                 "SUKIE"
             ],
@@ -4907,7 +4902,7 @@
         },
         {
             "page": 70,
-            "y": 0.588,
+            "y": 0.498,
             "roles": [
                 "ALEXANDRA"
             ],
@@ -4915,7 +4910,7 @@
         },
         {
             "page": 70,
-            "y": 0.641,
+            "y": 0.552,
             "roles": [
                 "JANE"
             ],
@@ -4923,7 +4918,7 @@
         },
         {
             "page": 70,
-            "y": 0.695,
+            "y": 0.605,
             "roles": [
                 "SUKIE"
             ],
@@ -4931,7 +4926,7 @@
         },
         {
             "page": 70,
-            "y": 0.748,
+            "y": 0.659,
             "roles": [
                 "ALEXANDRA"
             ],
@@ -4939,7 +4934,31 @@
         },
         {
             "page": 70,
-            "y": 0.802,
+            "y": 0.712,
+            "roles": [
+                "JANE"
+            ],
+            "ensembles": []
+        },
+        {
+            "page": 70,
+            "y": 0.766,
+            "roles": [
+                "SUKIE"
+            ],
+            "ensembles": []
+        },
+        {
+            "page": 70,
+            "y": 0.82,
+            "roles": [
+                "ALEXANDRA"
+            ],
+            "ensembles": []
+        },
+        {
+            "page": 70,
+            "y": 0.873,
             "roles": [
                 "SUKIE"
             ],
@@ -5489,6 +5508,14 @@
             "ensembles": []
         },
         {
+            "page": 79,
+            "y": 0.656,
+            "roles": [
+                "DARRYL"
+            ],
+            "ensembles": []
+        },
+        {
             "page": 80,
             "y": 0.191,
             "roles": [
@@ -5524,8 +5551,8 @@
             "page": 80,
             "y": 0.405,
             "roles": [
-                "JANE",
-                "ALEXANDRA"
+                "ALEXANDRA",
+                "JANE"
             ],
             "ensembles": []
         },
@@ -5571,7 +5598,7 @@
         },
         {
             "page": 81,
-            "y": 0.211,
+            "y": 0.176,
             "roles": [
                 "JANE"
             ],
@@ -6565,7 +6592,9 @@
             "roles": [
                 "DARRYL"
             ],
-            "ensembles": []
+            "ensembles": [
+                "ALLE"
+            ]
         },
         {
             "page": 96,
@@ -6996,10 +7025,22 @@
             }
         },
         {
-            "id": "1.5",
-            "name": "Eastwicks bibliotek",
+            "id": "1.5a",
+            "name": "Sukies gate",
             "start": {
                 "page": 29,
+                "y": -0.0
+            },
+            "end": {
+                "page": 29,
+                "y": 1.0
+            }
+        },
+        {
+            "id": "1.5b",
+            "name": "Eastwicks bibliotek",
+            "start": {
+                "page": 30,
                 "y": -0.0
             },
             "end": {
@@ -7245,8 +7286,8 @@
             "name": "Han blir min",
             "type": "song",
             "start": {
-                "page": 8,
-                "y": -0.0
+                "page": 7,
+                "y": 0.651
             },
             "end": {
                 "page": 12,
@@ -7289,7 +7330,7 @@
             },
             "end": {
                 "page": 17,
-                "y": 0.39
+                "y": 0.40800000000000003
             }
         },
         {
@@ -7298,11 +7339,11 @@
             "type": "song",
             "start": {
                 "page": 18,
-                "y": -0.0
+                "y": 0.397
             },
             "end": {
                 "page": 22,
-                "y": 0.443
+                "y": 0.42700000000000005
             }
         },
         {
@@ -7311,7 +7352,7 @@
             "type": "song",
             "start": {
                 "page": 22,
-                "y": 0.442
+                "y": 0.743
             },
             "end": {
                 "page": 23,
@@ -7337,11 +7378,11 @@
             "type": "song",
             "start": {
                 "page": 29,
-                "y": -0.0
+                "y": 0.791
             },
             "end": {
-                "page": 29,
-                "y": 1.0
+                "page": 30,
+                "y": 0.212
             }
         },
         {
@@ -7350,7 +7391,7 @@
             "type": "song",
             "start": {
                 "page": 31,
-                "y": 0.36
+                "y": 0.432
             },
             "end": {
                 "page": 34,

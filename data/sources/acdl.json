@@ -29,18 +29,16 @@
 
         "20":        [
             { "page":  3, "y": 0.0, "actor": "Signe"          },
-            { "page": 71, "y": 0.0, "actor": "Eiril"          }
+            { "page": 71, "y": 0.0, "actor": "Andrea"         }
         ],
         "21":        [
             { "page":  3, "y": 0.0, "actor": "Hanna Sofia"    },
-            { "page": 58, "y": 0.0, "actor": "Astrid"         },
-            { "page": 71, "y": 0.0, "actor": "Marie Nikoline" }
+            { "page": 58, "y": 0.0, "actor": "Astrid"         }
         ],
         "24":        [
             { "page":  3, "y": 0.0, "actor": "Andrea"         },
             { "page": 43, "y": 0.0, "actor": "Kalandra"       },
-            { "page": 58, "y": 0.0, "actor": "Eiril"          },
-            { "page": 71, "y": 0.0, "actor": "Andrea"         }
+            { "page": 58, "y": 0.0, "actor": "Eiril"          }
         ],
         "26":        [
             { "page":  3, "y": 0.0, "actor": "Synne"          },
@@ -50,7 +48,7 @@
             { "page":  3, "y": 0.0, "actor": "Aurora Ch"      },
             { "page": 16, "y": 0.0, "actor": "Tuva"           },
             { "page": 43, "y": 0.0, "actor": "Aurora Ch"      },
-            { "page": 71, "y": 0.0, "actor": "Astrid"         }
+            { "page": 71, "y": 0.0, "actor": "Marie Nikoline" }
         ]
     },
 
