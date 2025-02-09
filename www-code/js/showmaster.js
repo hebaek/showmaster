@@ -20,7 +20,7 @@ const state = {
     'doc':          null,
 
     'renderer':     null,
-    'page_2':       false,
+    'page_2':       true,
 }
 
 
