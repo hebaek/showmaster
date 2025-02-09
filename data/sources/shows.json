@@ -4,6 +4,6 @@
     "Show 2": { "date": "2025-02-12", "time": "19:00:00", "durata": "02:30:00", "name": "Onsdag kveld" },
     "Show 3": { "date": "2025-02-13", "time": "12:00:00", "durata": "02:30:00", "name": "Torsdag formiddag" },
     "Show 4": { "date": "2025-02-13", "time": "19:00:00", "durata": "02:30:00", "name": "Torsdag kveld" },
-    "Show 5": { "date": "2025-02-14", "time": "12:00:00", "durata": "02:30:00", "name": "Onsdag formiddag" },
-    "Show 6": { "date": "2025-02-14", "time": "19:00:00", "durata": "02:30:00", "name": "Fredag" }
+    "Show 5": { "date": "2025-02-14", "time": "12:00:00", "durata": "02:30:00", "name": "Fredag formiddag" },
+    "Show 6": { "date": "2025-02-14", "time": "19:00:00", "durata": "02:30:00", "name": "Fredag kveld" }
 }
