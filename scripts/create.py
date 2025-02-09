@@ -361,6 +361,9 @@ def draw_miclist(page, p, data, act):
         font-size:      10px;
         font-weight:    normal;
     }}
+    .new {{
+        color: #aa0000;
+    }}
     '''
 
     for row in data:
@@ -369,6 +372,7 @@ def draw_miclist(page, p, data, act):
         page.draw_line((p['leader']['left' ], p['leader']['top'] + offset), (p['content']['right'], p['content']['top'] + offset), width=0.25)
 
 
+        lastprimo = ''
         for section in data[row]:
             leader  = row
             primo   = section['primo'  ]
@@ -392,10 +396,15 @@ def draw_miclist(page, p, data, act):
             except ValueError:
                 color = (0.9, 0.8, 1.0)
 
-            text = f'''<span class='primo'>{primo}</span> / <span class='secundo'>{secundo}</span>'''
+            if primo == lastprimo or primo == 'Kor' or secundo == 'BIBLIOTEKAR':
+                text = f'''<span class='primo'>{primo}</span> / <span class='secundo'>{secundo}</span>'''
+            else:
+                text = f'''<span class='primo new'>{primo}</span> / <span class='secundo'>{secundo}</span>'''
+
             page.draw_rect     ((start_x, p['leader']['top'] + offset, end_x, p['leader']['top'] + offset + height), fill=color, width=0.5)
             page.insert_htmlbox((start_x + 1/mm, p['leader']['top'] + offset, end_x + 50/mm, p['leader']['top'] + offset + height), text, css=css)
 
+            lastprimo = primo
 
         offset += height
 
