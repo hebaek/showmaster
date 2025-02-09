@@ -71,9 +71,13 @@
     </div>
 
     <div id='pdf'>
-        <canvas id='pdf-canvas'></canvas>
+        <div id='page_1'>
+            <canvas id='pdf-canvas'></canvas>
+        </div>
+        <div id='page_2'>
+            <canvas id='pdf-canvas2'></canvas>
+        </div>
     </div>
-<!--    <iframe id='pdf-viewer'></iframe>       -->
 
     <div id='infobar'>
         <div class='miclist' id='miclist'></div>
