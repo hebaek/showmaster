@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    if ($_SESSION['username'] != 'svgs') {
+    if ($_SESSION['username'] != 'svgs' and $_SESSION['username'] != 'master') {
         header('location:login.php');
     }
 ?>
@@ -76,7 +76,7 @@
 <!--    <iframe id='pdf-viewer'></iframe>       -->
 
     <div id='infobar'>
-        <div id='miclist'></div>
+        <div class='miclist' id='miclist'></div>
     </div>
 </body>
 
