@@ -219,8 +219,6 @@ const update_miclist = () => {
     const roles    = new Set(lines.map(line => line.roles   ).reduce((result, roles) => [...result, ...roles], []))
     const ensemble = new Set(lines.map(line => line.ensemble).reduce((result, roles) => [...result, ...roles], []))
 
-    console.log(state['currentscene'])
-
     $('.row').removeClass('passive_role passive_ensemble active_role active_ensemble choir')
     $('.row > .role').html('')
     $('.row > .actor').html('')
