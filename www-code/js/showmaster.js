@@ -219,6 +219,8 @@ const update_miclist = () => {
     const roles    = new Set(lines.map(line => line.roles   ).reduce((result, roles) => [...result, ...roles], []))
     const ensemble = new Set(lines.map(line => line.ensemble).reduce((result, roles) => [...result, ...roles], []))
 
+    console.log(state['currentscene'])
+
     $('.row').removeClass('passive_role passive_ensemble active_role active_ensemble choir')
     $('.row > .role').html('')
     $('.row > .actor').html('')
@@ -243,7 +245,7 @@ const update_miclist = () => {
             $(`#mic_${mic} > .actor`).html(micmap.mics[mic].actor)
         }
 
-        if (state['currentscene']) {
+        if (typeof state['currentscene'] === 'number') {
             // Go through all roles in scene
             for (const [index, role] of showdata.scenes[state['currentscene']].roles.entries()) {
                 if (role == micmap.mics[mic].role) {
