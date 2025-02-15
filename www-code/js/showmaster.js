@@ -20,6 +20,7 @@ const state = {
     'doc':          null,
 
     'renderer':     null,
+    'page_2':       true,
 }
 
 
@@ -141,6 +142,10 @@ const create_shortcuts = () => {
         $('.shortcuts.view').append(`<button class='choice' data-manus='${manus}'>${text}</button>`)
     }
 
+    $('.shortcuts.view').append(`<div class='heading'>Visning</div>`)
+    $('.shortcuts.view').append(`<button class='choice' id='show_page_2'>Vis/skjul side 2</button>`)
+    $('.shortcuts.view').append(`<button class='choice' id='hide_infobar'>Vis/skjul mikrofonliste</button>`)
+
 
 
     $('.shortcuts.print').append(`<div class='heading'>Manus</div>`)
@@ -238,7 +243,7 @@ const update_miclist = () => {
             $(`#mic_${mic} > .actor`).html(micmap.mics[mic].actor)
         }
 
-        if (state['currentscene']) {
+        if (typeof state['currentscene'] === 'number') {
             // Go through all roles in scene
             for (const [index, role] of showdata.scenes[state['currentscene']].roles.entries()) {
                 if (role == micmap.mics[mic].role) {
@@ -408,7 +413,7 @@ const pdf_load = async pdf => {
     const loadingtask = pdfjsLib.getDocument(pdfdata[pdf].url)
     state['doc'] = await loadingtask.promise
 
-    state['lastpage']  = state['doc'].numPages
+    state['lastpage']  = state['doc'].numPages - 1
     state['firstpage'] = 1
 
     goto_page('read', state['currentpage'])
@@ -422,40 +427,65 @@ const pdf_load = async pdf => {
 const pdf_render = async () => {
     if (! state['doc']) return
 
-    const page = await state['doc'].getPage(state['currentpage'])
+    const page  = await state['doc'].getPage(state['currentpage'])
+    const page2 = await state['doc'].getPage(state['currentpage'] + 1)
 
     const canvas = document.getElementById('pdf-canvas')
+    const canvas2 = document.getElementById('pdf-canvas2')
     const context = canvas.getContext('2d')
+    const context2 = canvas2.getContext('2d')
 
-    const desiredWidth  = $('#pdf').innerWidth()
-    const desiredHeight = $('#pdf').innerHeight()
+    const desiredWidth   = $('#page_1').innerWidth()
+    const desiredWidth2  = $('#page_2').innerWidth()
+    const desiredHeight  = $('#pdf').innerHeight()
+    const desiredHeight2 = $('#pdf').innerHeight()
 
     const testViewport = page.getViewport({ scale: 4.0 })
+    const testViewport2 = page2.getViewport({ scale: 4.0 })
 
     const scaleWidth  = desiredWidth  / testViewport.width
+    const scaleWidth2  = desiredWidth2  / testViewport2.width
     const scaleHeight = desiredHeight / testViewport.height
+    const scaleHeight2 = desiredHeight2 / testViewport2.height
     const scale = Math.min(scaleWidth, scaleHeight)
+    const scale2 = Math.min(scaleWidth2, scaleHeight2)
 
     var viewport = page.getViewport({ scale: 4 * scale })
+    var viewport2 = page2.getViewport({ scale: 4 * scale2 })
+
     canvas.height = 4 * viewport.height
+    canvas2.height = 4 * viewport2.height
     canvas.width  = 4 * viewport.width
+    canvas2.width  = 4 * viewport2.width
 
     canvas.style.height = viewport.height + 'px'
-    canvas.style .width = viewport.width  + 'px'
+    canvas2.style.height = viewport2.height + 'px'
+    canvas.style .width = 'calc(' + viewport.width  + 'px - 0.5em)'
+    canvas2.style.width = 'calc(' + viewport2.width  + 'px - 0.5em)'
 
     viewportHeight = viewport.height
+    viewportHeight2 = viewport2.height
     viewportWidth = viewport.width
+    viewportWidth2 = viewport2.width
 
     var renderContext = {
         canvasContext: context,
         viewport: viewport,
         transform: [4, 0, 0, 4, 0, 0],
     }
+    var renderContext2 = {
+        canvasContext: context2,
+        viewport: viewport2,
+        transform: [4, 0, 0, 4, 0, 0],
+    }
+
+
 
     if (!state['renderer']) {
-        state['renderer'] = page.render(renderContext)
-
         try {
+            state['renderer'] = page.render(renderContext)
+            await state['renderer'].promise
+            state['renderer'] = page2.render(renderContext2)
             await state['renderer'].promise
         } catch (error) {
             if (error.name === "RenderingCancelledException") { console.log("Render cancelled.")       }
@@ -474,20 +504,19 @@ const pdf_render = async () => {
 
 
 
-/*
-const pdf_list_show = pdf => {
-    const url = pdfdata[pdf].url
-    $('#pdf-viewer').attr('src', url)
-
-    $('#pdf-viewer').show()
-    $('#infobar').hide()
+const page2_toggle = () => {
+    if (state['page_2'] == false) {
+        $('#pdf').addClass('twopage')
+        $('#page_2').show()
+        pdf_render()
+        state['page_2'] = true
+    } else {
+        $('#page_2').hide()
+        $('#pdf').removeClass('twopage')
+        pdf_render()
+        state['page_2'] = false
+    }
 }
-
-const pdf_list_hide = () => {
-    $('#pdf-viewer').hide()
-    $('#infobar').show()
-}
-*/
 
 
 
@@ -521,10 +550,8 @@ const set_eventhandlers = () => {
 
     $(document).on('keydown', event => { event.stopPropagation(); handle_keypress(event) })
 
-
-
-//    $(document).on('click', '#settings', event => { event.stopPropagation(); $('.shortcuts:not(.settings)').hide(); $('.shortcuts.settings').toggle(); pdf_list_show('actor:mic/role') })
-//    $(document).on('click', '#print',    event => { event.stopPropagation(); $('.shortcuts:not(.print)'   ).hide(); $('.shortcuts.print'   ).toggle(); pdf_list_hide() })
+    $(document).on('click', '#show_page_2', event => { event.stopPropagation(); $('.shortcuts').hide(); page2_toggle() })
+    $(document).on('click', '#hide_infobar', event => { event.stopPropagation(); $('.shortcuts').hide(); $('#infobar').toggle(); pdf_render() })
 }
 
 

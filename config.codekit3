@@ -49,6 +49,14 @@
       "oAP" : "\/www-test\/data\/compiled\/manus\/manus-music.pdf",
       "oF" : 0
     },
+    "\/data\/compiled\/manus\/manus.pdf" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/www-test\/data\/compiled\/manus\/manus.pdf",
+      "oF" : 0
+    },
     "\/data\/compiled\/showdata\/GP\/actor-mic-role.pdf" : {
       "cB" : 0,
       "ft" : 8192,
@@ -676,7 +684,7 @@
     "displayValueWasSetByUser" : 0,
     "iconImageName" : "brackets-brick",
     "iconImageWasSetByUser" : 0,
-    "lastBuiltDate" : 760832510.79214501
+    "lastBuiltDate" : 760866716.44131696
   },
   "projectSettings" : {
     "abortBuildOnError" : 1,

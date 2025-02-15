@@ -112,7 +112,7 @@ def annotate_pdf_and_generate_json(pdf_path, output_pdf_path, output_json_path):
 
     # Storage for roles, scenes, and songs
     data = {
-        "last_page": len(doc),
+        "last_page": len(doc) - 1,
         "lines": [],
         "scenes": [],
         "music": [],
