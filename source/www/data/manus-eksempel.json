@@ -1,0 +1,578 @@
+{
+    "title": "Svartedauden",
+    "characters": [
+        { "name": "Sira Lars", "variants": [ "Sika Lars" ] },
+        { "name": "Marit", "variants": [] },
+        { "name": "Jon", "variants": [] },
+        { "name": "Bønder", "variants": [ "Bøndene "] }
+    ],
+    "content": [
+        {
+            "type": "scene",
+            "id": "1",
+            "name": "Prolog",
+            "content": [
+                {
+                    "type": "cues",
+                    "content": [
+                        { "type": "music", "content": [
+                            { "type": "block", "content": [
+                                { "type": "line", "content": [ { "type": "text", "text": "Ståle trigger åpningslåta" } ] }
+                            ]},
+                            { "type": "block", "content": [
+                                { "type": "line", "content": [ { "type": "text", "text": "Skuespillet starter etter 2:40" } ] }
+                            ]}
+                        ]}
+                    ]
+                },
+                {
+                    "type": "action",
+                    "content": [
+                        { "type": "block", "content": [
+                            { "type": "line", "content": [
+                                { "type": "text", "text": "Barnedåp i Margaretakirken. " },
+                                { "type": "character", "name": "Bønder", "text": "Bøndene" },
+                                { "type": "text", "text": " i dalen er samlet." }
+                            ]}
+                        ]}
+                    ]
+                },
+                {
+                    "type": "dialogue",
+                    "content": [
+                        {
+                            "type": "characters",
+                            "content": [
+                                { "type": "line", "content": [
+                                    { "type": "character", "name": "Sira Lars", "text": "Sira Lars" }
+                                ]}
+                            ],
+                        },
+                        {
+                            "type": "lines",
+                            "content": [
+                                { "type": "block", "content": [
+                                    { "type": "line", "content": [
+                                        { "type": "text", "text": "“Marit” skal barnet hete, etter “St. Margaretha”, hun som kirken her er vigslet til og hele dalen vår er oppkalt etter." }
+                                    ]}
+                                ]}
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "dialogue",
+                    "content": [
+                        {
+                            "type": "characters",
+                            "content": [
+                                { "type": "line", "content": [
+                                    { "type": "character", "name": "Sira Lars", "text": "Sira Lars" }
+                                ]}
+                            ],
+                        },
+                        {
+                            "type": "lines",
+                            "content": [
+                                { "type": "block", "content": [
+                                    { "type": "line", "content": [
+                                        { "type": "text", "text": "Den Hellige Margaretha viste oss at den største kjærligheten er å glemme seg selv og be for alle som lider, enda om en selv har det vondt." }
+                                    ]}
+                                ]}
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "action",
+                    "content": [
+                        { "type": "block", "content": [
+                            { "type": "line", "content": [
+                                { "type": "character", "name": "Sira Lars", "text": "Sira Lars" },
+                                { "type": "text", "text": " døper barnet." }
+                            ]}
+                        ]}
+                    ]
+                }
+           ]
+        },
+        {
+            "type": "scene",
+            "id": "2",
+            "name": "Unge Marit og Jon",
+            "content": [
+                {
+                    "type": "action",
+                    "content": [
+                        { "type": "block", "content": [
+                            { "type": "line", "content": [
+                                { "type": "text", "text": "Vi ser " },
+                                { "type": "character", "name": "Unge Jon", "text": "unge Jon" },
+                                { "type": "text", "text": " og " },
+                                { "type": "character", "name": "Unge Marit", "text": "unge Marit" },
+                                { "type": "text", "text": " komme løpende. De leker og ler. Vi skjønner at det har gått litt tid." }
+                            ]}
+                        ]}
+                    ]
+                },
+                {
+                    "type": "dialogue",
+                    "content": [
+                        {
+                            "type": "characters",
+                            "content": [
+                                { "type": "line", "content": [
+                                    { "type": "character", "name": "Unge Jon", "text": "Jon" }
+                                ]}
+                            ],
+                        },
+                        {
+                            "type": "lines",
+                            "content": [
+                                { "type": "block", "content": [
+                                    { "type": "line", "content": [
+                                        { "type": "text", "text": "Marit, vent!" }
+                                    ]}
+                                ]}
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "dialogue",
+                    "content": [
+                        {
+                            "type": "characters",
+                            "content": [
+                                { "type": "line", "content": [
+                                    { "type": "character", "name": "Unge Marit", "text": "Marit" }
+                                ]}
+                            ],
+                        },
+                        {
+                            "type": "lines",
+                            "content": [
+                                { "type": "block", "content": [
+                                    { "type": "line", "content": [
+                                        { "type": "text", "text": "Du klarer ikke å ta meg, Jon!" }
+                                    ]}
+                                ]}
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "dialogue",
+                    "content": [
+                        {
+                            "type": "characters",
+                            "content": [
+                                { "type": "line", "content": [
+                                    { "type": "character", "name": "Unge Jon", "text": "Jon" }
+                                ]}
+                            ],
+                        },
+                        {
+                            "type": "lines",
+                            "content": [
+                                { "type": "block", "content": [
+                                    { "type": "line", "content": [
+                                        { "type": "text", "text": "JO!" }
+                                    ]}
+                                ]}
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "dialogue",
+                    "content": [
+                        {
+                            "type": "characters",
+                            "content": [
+                                { "type": "line", "content": [
+                                    { "type": "character", "name": "Unge Marit", "text": "Marit" }
+                                ]}
+                            ],
+                        },
+                        {
+                            "type": "lines",
+                            "content": [
+                                { "type": "block", "content": [
+                                    { "type": "line", "content": [
+                                        { "type": "text", "text": "Nei, hjelp! Stopp!" }
+                                    ]}
+                                ]}
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "action",
+                    "content": [
+                        { "type": "block", "content": [
+                            { "type": "line", "content": [
+                                { "type": "character", "name": "Sigrunn", "text": "Sigrunn" },
+                                { "type": "text", "text": " får øye på " },
+                                { "type": "character", "name": "Unge Jon", "text": "Jon" },
+                                { "type": "text", "text": " og " },
+                                { "type": "character", "name": "Unge Marit", "text": "Marit" },
+                            ]}
+                        ]}
+                    ]
+                },
+                {
+                    "type": "dialogue",
+                    "content": [
+                        {
+                            "type": "characters",
+                            "content": [
+                                { "type": "line", "content": [
+                                    { "type": "character", "name": "Sigrunn", "text": "Sigrunn" }
+                                ]}
+                            ],
+                        },
+                        {
+                            "type": "lines",
+                            "content": [
+                                { "type": "block", "content": [
+                                    { "type": "line", "content": [
+                                        { "type": "text", "text": "Marit, nå er det leggetid." }
+                                    ]}
+                                ]},
+                                { "type": "block", "content": [
+                                    { "type": "line", "content": [
+                                        { "type": "text", "text": "Hei, Jon!" }
+                                    ]}
+                                ]}
+
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "dialogue",
+                    "content": [
+                        {
+                            "type": "characters",
+                            "content": [
+                                { "type": "line", "content": [
+                                    { "type": "character", "name": "Unge Jon", "text": "Jon" }
+                                ]}
+                            ],
+                        },
+                        {
+                            "type": "lines",
+                            "content": [
+                                { "type": "block", "content": [
+                                    { "type": "line", "content": [
+                                        { "type": "text", "text": "Hei, Sigrunn." }
+                                    ]}
+                                ]}
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "dialogue",
+                    "content": [
+                        {
+                            "type": "characters",
+                            "content": [
+                                { "type": "line", "content": [
+                                    { "type": "character", "name": "Sigrunn", "text": "Sigrunn" }
+                                ]}
+                            ],
+                        },
+                        {
+                            "type": "lines",
+                            "content": [
+                                { "type": "block", "content": [
+                                    { "type": "line", "content": [
+                                        { "type": "text", "text": "Du får komme deg hjem før det blir mørkt." }
+                                    ]}
+                                ]}
+
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "dialogue",
+                    "content": [
+                        {
+                            "type": "characters",
+                            "content": [
+                                { "type": "line", "content": [
+                                    { "type": "character", "name": "Unge Jon", "text": "Jon" }
+                                ]}
+                            ],
+                        },
+                        {
+                            "type": "lines",
+                            "content": [
+                                { "type": "block", "content": [
+                                    { "type": "line", "content": [
+                                        { "type": "text", "text": "Jada, jeg tar snarveien gjennom skogen!" }
+                                    ]}
+                                ]}
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "dialogue",
+                    "content": [
+                        {
+                            "type": "characters",
+                            "content": [
+                                { "type": "line", "content": [
+                                    { "type": "character", "name": "Sigrunn", "text": "Sigrunn" }
+                                ]}
+                            ],
+                        },
+                        {
+                            "type": "lines",
+                            "content": [
+                                { "type": "block", "content": [
+                                    { "type": "line", "content": [
+                                        { "type": "text", "text": "Vær forsiktig, da. Og hils hjem til Brekke." }
+                                    ]}
+                                ]}
+
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "dialogue",
+                    "content": [
+                        {
+                            "type": "characters",
+                            "content": [
+                                { "type": "line", "content": [
+                                    { "type": "character", "name": "Unge Jon", "text": "Jon" }
+                                ]}
+                            ],
+                        },
+                        {
+                            "type": "lines",
+                            "content": [
+                                { "type": "block", "content": [
+                                    { "type": "line", "content": [
+                                        { "type": "text", "text": "Det skal jeg." }
+                                    ]}
+                                ]},
+                                { "type": "block", "content": [
+                                    { "type": "line", "content": [
+                                        { "type": "text", "text": "Hadet, Marit!" }
+                                    ]}
+                                ]}
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "dialogue",
+                    "content": [
+                        {
+                            "type": "characters",
+                            "content": [
+                                { "type": "line", "content": [
+                                    { "type": "character", "name": "Unge Marit", "text": "Marit" }
+                                ]}
+                            ],
+                        },
+                        {
+                            "type": "lines",
+                            "content": [
+                                { "type": "block", "content": [
+                                    { "type": "line", "content": [
+                                        { "type": "text", "text": "Hadet, Jon!" }
+                                    ]}
+                                ]},
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "dialogue",
+                    "content": [
+                        {
+                            "type": "characters",
+                            "content": [
+                                { "type": "line", "content": [
+                                    { "type": "character", "name": "Sigrunn", "text": "Sigrunn" }
+                                ]}
+                            ],
+                        },
+                        {
+                            "type": "lines",
+                            "content": [
+                                { "type": "block", "content": [
+                                    { "type": "line", "content": [
+                                        { "type": "text", "text": "Du, kom hit. Alltid leker dere så sent. Nå må du i seng, vesle Marit-jenta mi." }
+                                    ]}
+                                ]}
+
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "dialogue",
+                    "content": [
+                        {
+                            "type": "characters",
+                            "content": [
+                                { "type": "line", "content": [
+                                    { "type": "character", "name": "Unge Marit", "text": "Marit" }
+                                ]}
+                            ],
+                        },
+                        {
+                            "type": "lines",
+                            "content": [
+                                { "type": "block", "content": [
+                                    { "type": "line", "content": [
+                                        { "type": "text", "text": "Men vi må jo si natta til pappa først?" }
+                                    ]}
+                                ]},
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "dialogue",
+                    "content": [
+                        {
+                            "type": "characters",
+                            "content": [
+                                { "type": "line", "content": [
+                                    { "type": "character", "name": "Sigrunn", "text": "Sigrunn" }
+                                ]}
+                            ],
+                        },
+                        {
+                            "type": "lines",
+                            "content": [
+                                { "type": "block", "content": [
+                                    { "type": "line", "content": [
+                                        { "type": "text", "text": "Selvfølgelig." }
+                                    ]}
+                                ]}
+
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "action",
+                    "content": [
+                        { "type": "block", "content": [
+                            { "type": "line", "content": [
+                                { "type": "text", "text": "De setter seg på trappen og ser opp mot himmelen." },
+                            ]}
+                        ]}
+                    ]
+                },
+                {
+                    "type": "dialogue",
+                    "content": [
+                        {
+                            "type": "characters",
+                            "content": [
+                                { "type": "line", "content": [
+                                    { "type": "character", "name": "Unge Marit", "text": "Marit" }
+                                ]}
+                            ],
+                        },
+                        {
+                            "type": "lines",
+                            "content": [
+                                { "type": "block", "content": [
+                                    { "type": "line", "content": [
+                                        { "type": "text", "text": "Natta, pappa. Sov godt i himmelen." }
+                                    ]}
+                                ]},
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "dialogue",
+                    "content": [
+                        {
+                            "type": "characters",
+                            "content": [
+                                { "type": "line", "content": [
+                                    { "type": "character", "name": "Sigrunn", "text": "Sigrunn" }
+                                ]}
+                            ],
+                        },
+                        {
+                            "type": "lines",
+                            "content": [
+                                { "type": "block", "content": [
+                                    { "type": "line", "content": [
+                                        { "type": "text", "text": "God natt, Ogmund. Min elskede." }
+                                    ]}
+                                ]}
+
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "action",
+                    "content": [
+                        { "type": "block", "content": [
+                            { "type": "line", "content": [
+                                { "type": "character", "name": "Unge Marit", "text": "Marit" },
+                                { "type": "text", "text": " legger hodet sitt i fanget på " },
+                                { "type": "character", "name": "Sigrunn", "text": "Sigrunn" },
+                                { "type": "text", "text": "." },
+                            ]}
+                        ]}
+                    ]
+                },
+                {
+                    "type": "dialogue",
+                    "content": [
+                        { "type": "characters", "content": [
+                            { "type": "line", "content": [
+                                { "type": "character", "name": "Sigrunn", "text": "Sigrunn" }
+                            ]},
+                        ]},
+                        { "type": "lines", "content": [
+                            { "type": "block", "content": [
+                                { "type": "line", "content": [ { "type": "song", "text": "Min lille fugl med hjerte av gull." } ] },
+                                { "type": "line", "content": [ { "type": "song", "text": "Hvil dine vinger i kveld" } ] },
+                                { "type": "line", "content": [ { "type": "song", "text": "se, solen bukker ærbødig for månen," } ] },
+                                { "type": "line", "content": [ { "type": "song", "text": "og kysser dagen farvel." } ] }
+                            ]},
+                            { "type": "block", "content": [
+                                { "type": "line", "content": [ { "type": "song", "text": "Et stille vindpust bres over åker’n" } ] },
+                                { "type": "line", "content": [ { "type": "song", "text": "og hvisker god natt over landet." } ] },
+                                { "type": "line", "content": [ { "type": "song", "text": "Mens en tretopp kiler himmelen" } ] },
+                                { "type": "line", "content": [ { "type": "song", "text": "som speiles i maridalsvannet." } ] }
+                            ]},
+                            { "type": "block", "content": [
+                                { "type": "line", "content": [ { "type": "song", "text": "Vær ikke redd for mørket i natten" } ] },
+                                { "type": "line", "content": [ { "type": "song", "text": "for stjernene bærer deg frem," } ] },
+                                { "type": "line", "content": [ { "type": "song", "text": "gjennom porten til drømmelandet," } ] },
+                                { "type": "line", "content": [ { "type": "song", "text": "der er du fri, lille venn." } ] }
+                            ]},
+                            { "type": "block", "content": [
+                                { "type": "line", "content": [ { "type": "song", "text": "Om litt vil du myse mot solstrålene" } ] },
+                                { "type": "line", "content": [ { "type": "song", "text": "og spre vingene dine på ny" } ] },
+                                { "type": "line", "content": [ { "type": "song", "text": "mot dagen som venter på andre siden" } ] },
+                                { "type": "line", "content": [ { "type": "song", "text": "fly, lille fuglen min, fly..." } ] }
+                            ]}
+                        ]}
+                    ]
+                }
+            ]
+        }
+    ]
+}
