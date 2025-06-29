@@ -1,19 +1,4 @@
-<?php
-    session_start();
-
-    $accept_user = false;
-
-    if (isset($_SESSION['username']) && $_SESSION['username'] === "stale") {
-        $accept_user = true;
-    }
-    if (isset($_SESSION['username']) && $_SESSION['username'] === "nicklas") {
-        $accept_user = true;
-    }
-
-    if (!$accept_user) {
-        header('location:login.php');
-    }
-?>
+<?php require '../php/authenticate.php'; ?>
 <!DOCTYPE html>
 <html lang='no_NB'>
 
@@ -22,48 +7,26 @@
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <title>Showmaster</title>
 
-    <link rel='stylesheet' href='css/reset.css' />
-    <link rel='stylesheet' href='css/showmaster.css' />
+    <link rel='apple-touch-icon'      sizes='180x180' href='img/favicon/apple-touch-icon.png'>
+    <link rel='icon' type='image/png' sizes='32x32'   href='img/favicon/favicon-32x32.png'>
+    <link rel='icon' type='image/png' sizes='16x16'   href='img/favicon/favicon-16x16.png'>
+    <link rel='manifest'                              href='img/favicon/site.webmanifest'>
 
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.9.179/pdf.min.js'></script>
-    <script src='https://code.jquery.com/jquery-3.7.1.min.js'></script>
-    <script src='js/showmaster.js'></script>
+    <link rel='stylesheet' href='css/reset.css' />
+    <link rel='stylesheet' href='css/main.css' />
+
+    <script src='js/external/pdf-3.9.179.min.js'></script>
+    <script src='js/external/jquery-3.7.1.min.js'></script>
+    <script src='js/external/jquery-ui-1.13.2.min.js'></script>
+
+    <script src='js/modules/main.js' type='module'></script>
+
+    <script type='module'>
+        import { smlib } from '/js/modules/smlib.js'
+        smlib.pdfjsLib = pdfjsLib
+    </script>
 </head>
 
-<body>
-    <div id='toolbar'>
-        <div id='menu'>
-            <button class='settings' id='logout'><img src='img/logout.svg' alt='logg ut'></button>
-        </div>
-
-        <div class='navigation'>
-            <div class='buttons scenes'>
-                <div class='shortcuts scenes'></div>
-                <div class='heading'>Scener</div>
-                <button class='content'></button>
-                <button class='prev'>forrige</button>
-                <button class='next'>neste</button>
-            </div>
-            <div class='buttons music'>
-                <div class='shortcuts music'></div>
-                <div class='heading'>Musikk</div>
-                <button class='content'></button>
-                <button class='prev'>forrige</button>
-                <button class='next'>neste</button>
-            </div>
-        </div>
-    </div>
-
-    <div class='manus' id='manus'>
-    </div>
-
-    <div class='pdf' id='pdf'>
-    </div>
-
-    <div id='contextmenu'>
-        <div id='cue_add'>Add cue</div>
-        <div id='cue_remove'>Remove cue</div>
-    </div>
-</body>
+<body></body>
 
 </html>

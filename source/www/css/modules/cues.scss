@@ -1,0 +1,111 @@
+#manus .cues {
+    padding: 0;
+    background-color: hsl(0, 0%, 96%);
+    border-top: 1px solid #dddddd;
+    border-bottom: 1px solid #dddddd;
+
+    margin-left: calc(-8ch);
+    margin-right: calc(-8ch);
+    box-shadow: inset 1px 2px 4px rgba(0, 0, 0, 0.25);
+
+    &.error {
+        background-color: #ff8888;
+    }
+
+    .cue {
+        position: relative;
+
+        scroll-margin-top: 1.0em;
+
+        margin: 1em;
+        background-color: hsl(210, 100%, 97%);
+
+        box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.25);
+    }
+}
+
+.cues-placeholder {
+    background-color: #d3e2f3;
+    border: 1px dashed #3498db;
+    height: 0;
+    margin: -1px calc(-8ch) -1px calc(-8ch);
+
+}
+
+.ui-sortable-helper {
+    opacity: 0.7;
+}
+
+#manus .cues {
+    .block {
+        grid-column: 1 / -1;
+        padding: 0.75em;
+    }
+}
+
+
+#manus .cues .cue.music[data-mode='start'] {
+    display: grid;
+
+    grid-template-columns: auto 8em;
+    grid-template-rows: auto;
+    grid-template-areas:
+        'title metronome';
+
+    grid-auto-rows: auto;
+
+    .title {
+        padding: 0.75em;
+        font-family: serif;
+        font-size: 1.4em;
+        font-weight: bold;
+    }
+
+    .metronome {
+        grid-area: metronome;
+
+        display: grid;
+        grid:
+            'note text light' auto
+            / auto auto 3em;
+
+        align-items: center;
+
+        .note {
+            grid-area: note;
+            justify-self: right;
+            margin-right: 0.5em;
+
+            svg {
+                width: 10px;
+                height: 30px;
+            }
+        }
+
+        .text {
+            grid-area: text;
+            justify-self: left;
+        }
+
+        .light {
+            grid-area: light;
+            justify-self: center;
+
+            width: 2em;
+            height: 2em;
+
+            border-radius: 50%;
+
+            @keyframes blink {
+                0%, 100% {
+                    background-color: white;
+                    box-shadow: 0 0 2px 2px #eeeeee;
+                }
+                25% {
+                    background-color: hsl(122, 39%, 50%);
+                    box-shadow: 0 0 2px 2px hsl(122, 39%, 50%);
+                }
+            }
+        }
+    }
+}

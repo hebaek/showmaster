@@ -1,0 +1,83 @@
+#manus {
+    grid-area: manus;
+
+    font-family: monospace;
+    font-size: 0.8rem;
+
+    width: calc(60ch);
+
+    margin: 1rem 0 1rem 0;
+    padding: 4rem calc(8ch) 4rem calc(8ch);
+
+    background-color: #ffffff;
+    box-shadow: 0 0 5px var(--default-shadow);
+
+    overflow-x: clip;
+    overflow-y: scroll;
+
+    .scene {
+        scroll-margin-top: 2.5em;
+        margin-top:    2em;
+        margin-bottom: 2em;
+
+        > .title {
+            margin-bottom: 1em;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        > .title:before {
+            content: 'SCENE ';
+        }
+
+        > .dialogue {
+            padding-top:    1em;
+            padding-bottom: 0.1em;
+
+            .characters {
+                margin-left: calc(20ch);
+                margin-bottom: 0.2em;
+            }
+
+            .block {
+                margin-left: calc(10ch);
+                margin-top: 1em;
+                margin-bottom: 1em;
+                width: calc(35ch);
+            }
+
+            .song {
+                color: green;
+                text-transform: uppercase;
+            }
+        }
+
+        > .action {
+            .block {
+                padding-top:    1em;
+                padding-bottom: 1em;
+                width: 36em;
+            }
+        }
+
+    }
+
+    .block {
+//        margin-bottom: 1em;
+    }
+
+    .parenthetical {
+        margin-left: calc(4ch);
+    }
+
+    .character {
+        color: blue;
+        text-transform: uppercase;
+    }
+}
+
+
+
+body.fullscreen #manus {
+    display: none;
+}

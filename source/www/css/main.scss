@@ -1,0 +1,41 @@
+@use 'modules/toolbar';
+@use 'modules/manus';
+@use 'modules/cues';
+@use 'modules/pdf';
+
+
+
+:root {
+    --unit-100vh: 100vh;
+
+    --toolbar-width-open:   20rem;
+    --toolbar-width-closed:  3rem;
+
+    --toolbar-width: var(--toolbar-width-open);
+    --editbar-width: 20rem;
+
+    --default-shadow:           hsl(  0,   0%,  50%);
+
+    --body-color:               hsl(  0,   0%,  96%);
+    --toolbar-color:            hsl(210,  29%,  24%);
+    --editbar-color:            hsl(210,  68%,  80%);
+    --scenes-color:             hsl(101, 100%,  30%);
+    --music-color:              hsl(190, 100%,  30%);
+
+    --content-empty: hsl(0, 0%, 70%);
+}
+
+
+
+body {
+    display: grid;
+    grid: 'toolbar manus pdf' var(--unit-100vh) / var(--toolbar-width) max-content auto;
+    gap: 1rem;
+
+    background-color: var(--body-color);
+
+    &.fullscreen {
+        grid: 'toolbar manus pdf' var(--unit-100vh) / 0 0 100vw;
+        gap: 0;
+    }
+}

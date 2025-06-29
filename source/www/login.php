@@ -1,52 +1,11 @@
-<?php
-    session_start();
-
-    $clean = Array();
-    $clean['error']    = filter_input(INPUT_GET,  'error');
-    $clean['username'] = filter_input(INPUT_POST, 'username');
-    $clean['password'] = filter_input(INPUT_POST, 'password');
-    $clean['message']  = '';
-
-    $_SESSION = array();
-    unset($_SESSION);
-
-    session_destroy();
-    session_start();
-
-    if (isset($clean['username'])) {
-        if($clean['username'] === "stale" && $clean['password'] === "stale") {
-            $_SESSION['username'] = $clean['username'];
-            header('location:index.php');
-            exit;
-        }
-        if($clean['username'] === "nicklas" && $clean['password'] === "nicklas") {
-            $_SESSION['username'] = $clean['username'];
-            header('location:index.php');
-            exit;
-        }
-        else {
-            header('location:login.php?error=badcredentials');
-            exit;
-        }
-    }
-
-    if (isset($clean['error'])) {
-        switch ($clean['error']) {
-            case 'badcredentials':  $clean['message'] = 'Feil brukernavn eller passord';  break;
-            case 'authfailure':     $clean['message'] = 'Feil i autentisering';           break;
-            case 'dbfailure':       $clean['message'] = 'Feil i tilkobling til database'; break;
-            case 'timedout':        $clean['message'] = 'Logget ut pga inaktivitet';      break;
-            default:                $clean['message'] = 'En ukjent feil oppsto';          break;
-        }
-    }
-?>
+<?php require '../php/login.php'; ?>
 <!DOCTYPE html>
 <html lang='no_NB'>
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Showmaster</title>
+    <title>Showmaster - logg inn</title>
 
     <link rel='stylesheet' href='css/reset.css' />
     <link rel='stylesheet' href='css/login.css' />

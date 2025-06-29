@@ -133,24 +133,6 @@
             "name": "Prolog",
             "content": [
                 {
-                    "type": "cues",
-                    "content": [
-                        {
-                            "type": "music",
-                            "id": "1",
-                            "name": "Åpning",
-                            "content": [
-                                { "type": "block", "content": [
-                                    { "type": "line", "content": [ { "type": "text", "text": "Ståle trigger åpningslåta" } ] }
-                                ]},
-                                { "type": "block", "content": [
-                                    { "type": "line", "content": [ { "type": "text", "text": "Skuespillet starter etter 2:40" } ] }
-                                ]}
-                            ]
-                        }
-                    ]
-                },
-                {
                     "type": "action",
                     "content": [
                         {
@@ -503,16 +485,6 @@
                                 }
                             ]
                         }
-                    ]
-                },
-                {
-                    "type": "cues",
-                    "content": [
-                        { "type": "music", "content": [
-                            { "type": "block", "content": [
-                                { "type": "line", "content": [ { "type": "text", "text": "Musikken fader langsomt ut" } ] }
-                            ]}
-                        ]}
                     ]
                 },
                 {
@@ -960,16 +932,6 @@
                                 }
                             ]
                         }
-                    ]
-                },
-                {
-                    "type": "cues",
-                    "content": [
-                        { "type": "music", "content": [
-                            { "type": "block", "content": [
-                                { "type": "line", "content": [ { "type": "text", "text": "Musikk slutt" } ] }
-                            ]}
-                        ]}
                     ]
                 },
                 {
@@ -1613,24 +1575,6 @@
                     ]
                 },
                 {
-                    "type": "cues",
-                    "content": [
-                        {   "type": "music",
-                            "id": "2",
-                            "name": "Min lille fugl",
-                            "pdf": { "filename": "2 - min lille fugl.pdf", "page": 1 },
-                            "content": [
-                            { "type": "block", "content": [
-                                { "type": "line", "content": [ { "type": "text", "text": "Musikk: Min lille fugl" } ] },
-                                { "type": "line", "content": [ { "type": "text", "text": "Tempo: ca 92" } ] },
-                            ]},
-                            { "type": "block", "content": [
-                                { "type": "line", "content": [ { "type": "text", "text": "Ståle starter med bare en pad" } ] }
-                            ]}
-                        ]}
-                    ]
-                },
-                {
                     "type": "action",
                     "content": [
                         {
@@ -1755,18 +1699,6 @@
                                 }
                             ]
                         }
-                    ]
-                },
-                {
-                    "type": "cues",
-                    "content": [
-                        {
-                            "type": "music",
-                            "content": [
-                            { "type": "block", "content": [
-                                { "type": "line", "content": [ { "type": "text", "text": "Musikken fortsetter, men dempet" } ] }
-                            ]}
-                        ]}
                     ]
                 },
                 {
@@ -2007,6 +1939,45 @@
                     ]
                 },
                 {
+                    "type": "dialogue",
+                    "content": [
+                        {
+                            "type": "characters",
+                            "content": [
+                                {
+                                    "type": "line",
+                                    "content": [
+                                        {
+                                            "type": "character",
+                                            "name": "Jente 1 + 2",
+                                            "text": "Jente 1 + 2"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "lines",
+                            "content": [
+                                {
+                                    "type": "block",
+                                    "content": [
+                                        {
+                                            "type": "line",
+                                            "content": [
+                                                {
+                                                    "type": "text",
+                                                    "text": "Hadet, Marit!"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
                     "type": "action",
                     "content": [
                         {
@@ -2037,16 +2008,6 @@
                                 }
                             ]
                         }
-                    ]
-                },
-                {
-                    "type": "cues",
-                    "content": [
-                        { "type": "music", "content": [
-                            { "type": "block", "content": [
-                                { "type": "line", "content": [ { "type": "text", "text": "Musikken frem igjen" } ] }
-                            ]}
-                        ]}
                     ]
                 },
                 {
@@ -2136,32 +2097,6 @@
                                 }
                             ]
                         }
-                    ]
-                }
-            ]
-        },
-        {
-            "type": "cues",
-            "content": [
-                {   "type": "music",
-                    "content": [
-                        { "type": "block", "content": [
-                            { "type": "line", "content": [ { "type": "text", "text": "Min lille fugl avsluttes." } ] }
-                        ]}
-                    ]
-                },
-                {   "type": "music",
-                    "id": "3.1",
-                    "name": "Markedsdag 1: På markedet",
-                    "pdf": { "filename": "3 - markedsdag.pdf", "page": 1 },
-                    "content": [
-                        { "type": "block", "content": [
-                            { "type": "line", "content": [ { "type": "text", "text": "Musikk: Markedsdag 1: På markedet" } ] },
-                            { "type": "line", "content": [ { "type": "text", "text": "Tempo: ca 132" } ] },
-                        ]},
-                        { "type": "block", "content": [
-                            { "type": "line", "content": [ { "type": "text", "text": "Steinar og Niklas starter mens Ståle fader ut forrige sang" } ] }
-                        ]}
                     ]
                 }
             ]
@@ -2317,16 +2252,6 @@
                         }
                     ]
                 }
-            ]
-        },
-        {
-            "type": "cues",
-            "content": [
-                { "type": "music", "content": [
-                    { "type": "block", "content": [
-                        { "type": "line", "content": [ { "type": "text", "text": "Musikken fortsetter, men dempet" } ] }
-                    ]}
-                ]}
             ]
         },
         {
@@ -3245,32 +3170,6 @@
                                 }
                             ]
                         }
-                    ]
-                }
-            ]
-        },
-        {
-            "type": "cues",
-            "content": [
-                {   "type": "music",
-                    "content": [
-                        { "type": "block", "content": [
-                            { "type": "line", "content": [ { "type": "text", "text": "Markedsdag 1 fader ut" } ] },
-                            { "type": "line", "content": [ { "type": "text", "text": "Ståle starter neste sang samtidig" } ] }
-                        ]}
-                    ]
-                },
-                {   "type": "music",
-                    "id": "3.2",
-                    "name": "Markedsdag 2: Marit og Jon",
-                    "content": [
-                        { "type": "block", "content": [
-                            { "type": "line", "content": [ { "type": "text", "text": "Musikk: Markedsdag 2: Marit og Jon" } ] },
-                            { "type": "line", "content": [ { "type": "text", "text": "Tempo: ca 132" } ] }
-                        ]},
-                        { "type": "block", "content": [
-                            { "type": "line", "content": [ { "type": "text", "text": "Steinar og Niklas starter mens Ståle fader ut forrige sang" } ] }
-                        ]}
                     ]
                 }
             ]
@@ -4367,32 +4266,6 @@
                     ]
                 },
                 {
-                    "type": "cues",
-                    "content": [
-                        {   "type": "music",
-                            "content": [
-                                { "type": "block", "content": [
-                                    { "type": "line", "content": [ { "type": "text", "text": "Rask overgang tilbake til neste" } ] }
-                                ]},
-                            ]
-                        },
-                        {   "type": "music",
-                            "id": "3.3",
-                            "name": "Markedsdag 1: På markedet",
-                            "pdf": { "filename": "3 - markedsdag.pdf", "page": 1 },
-                            "content": [
-                                { "type": "block", "content": [
-                                    { "type": "line", "content": [ { "type": "text", "text": "Musikk: Markedsdag" } ] },
-                                    { "type": "line", "content": [ { "type": "text", "text": "Tempo: ca 132" } ] },
-                                ]},
-                                { "type": "block", "content": [
-                                    { "type": "line", "content": [ { "type": "text", "text": "Bare noen få takter, med tydelig slutt" } ] }
-                                ]}
-                            ]
-                        }
-                    ]
-                },
-                {
                     "type": "action",
                     "content": [
                         {
@@ -4439,8 +4312,8 @@
                                             "type": "line",
                                             "content": [
                                                 {
-                                                    "type": "text",
-                                                    "text": "HEI, JA!"
+                                                    "type": "song",
+                                                    "text": "Hei, ja!"
                                                 }
                                             ]
                                         }
@@ -4472,18 +4345,6 @@
                                 }
                             ]
                         }
-                    ]
-                }
-            ]
-        },
-        {
-            "type": "cues",
-            "content": [
-                {   "type": "music",
-                    "content": [
-                        { "type": "block", "content": [
-                            { "type": "line", "content": [ { "type": "text", "text": "Markedsdag avsluttes." } ] }
-                        ]},
                     ]
                 }
             ]
@@ -8841,20 +8702,20 @@
                     ]
                 },
                 {
-                    "type": "cues",
+                    "type": "action",
                     "content": [
-                        {   "type": "music",
-                            "id": "5.1",
-                            "name": "Vi er ikke egne herrer",
-                            "pdf": { "filename": "5 - noter.pdf", "page": 1 },
+                        {
+                            "type": "block",
                             "content": [
-                                { "type": "block", "content": [
-                                    { "type": "line", "content": [ { "type": "text", "text": "Musikk: Vi er ikke egne herrer - intro" } ] },
-                                    { "type": "line", "content": [ { "type": "text", "text": "Tempo: ca 116" } ] }
-                                ]},
-                                { "type": "block", "content": [
-                                    { "type": "line", "content": [ { "type": "text", "text": "Steinar legger trommegroove mens Niklas legger en stille kvint fra d." } ] }
-                                ]}
+                                {
+                                    "type": "line",
+                                    "content": [
+                                        {
+                                            "type": "text",
+                                            "text": "#MUSIKK 5.1 - VI ER IKKE EGNE HERRER"
+                                        }
+                                    ]
+                                }
                             ]
                         }
                     ]
@@ -9264,17 +9125,20 @@
                     ]
                 },
                 {
-                    "type": "cues",
+                    "type": "action",
                     "content": [
-                        {   "type": "music",
+                        {
+                            "type": "block",
                             "content": [
-                                { "type": "block", "content": [
-                                    { "type": "line", "content": [ { "type": "text", "text": "Sangen starter" } ] }
-                                ]},
-                                { "type": "block", "content": [
-                                    { "type": "line", "content": [ { "type": "text", "text": "Steinar og Niklas fortsetter" } ] },
-                                    { "type": "line", "content": [ { "type": "text", "text": "Ståle kommer inn med piano" } ] }
-                                ]}
+                                {
+                                    "type": "line",
+                                    "content": [
+                                        {
+                                            "type": "text",
+                                            "text": "MUSIKK: #5.1 - Vi er ikke egne herrer"
+                                        }
+                                    ]
+                                }
                             ]
                         }
                     ]
@@ -9415,18 +9279,6 @@
                     ]
                 },
                 {
-                    "type": "cues",
-                    "content": [
-                        {   "type": "music",
-                            "content": [
-                                { "type": "block", "content": [
-                                    { "type": "line", "content": [ { "type": "text", "text": "Vamp under dialog" } ] }
-                                ]}
-                            ]
-                        }
-                    ]
-                },
-                {
                     "type": "dialogue",
                     "content": [
                         {
@@ -9527,18 +9379,6 @@
                                         }
                                     ]
                                 }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "type": "cues",
-                    "content": [
-                        {   "type": "music",
-                            "content": [
-                                { "type": "block", "content": [
-                                    { "type": "line", "content": [ { "type": "text", "text": "Sangen fortsetter i takt 37" } ] }
-                                ]}
                             ]
                         }
                     ]
@@ -10104,32 +9944,6 @@
                     ]
                 },
                 {
-                    "type": "cues",
-                    "content": [
-                        {   "type": "music",
-                            "content": [
-                                { "type": "block", "content": [
-                                    { "type": "line", "content": [ { "type": "text", "text": "Direkte over i neste" } ] }
-                                ]}
-                            ]
-                        },
-                        {   "type": "music",
-                            "id": 5.2,
-                            "name": "Prosten er en stri mann",
-                            "pdf": { "filename": "5 - noter.pdf", "page": 9 },
-                            "content": [
-                                { "type": "block", "content": [
-                                    { "type": "line", "content": [ { "type": "text", "text": "Musikk: Prosten er en stri mann" } ] },
-                                    { "type": "line", "content": [ { "type": "text", "text": "Tempo: ca 136" } ] }
-                                ]},
-                                { "type": "block", "content": [
-                                    { "type": "line", "content": [ { "type": "text", "text": "Ståle spiller recitativ" } ] },
-                                ]}
-                            ]
-                        }
-                    ]
-                },
-                {
                     "type": "dialogue",
                     "content": [
                         {
@@ -10212,18 +10026,6 @@
                                         }
                                     ]
                                 }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "type": "cues",
-                    "content": [
-                        {   "type": "music",
-                            "content": [
-                                { "type": "block", "content": [
-                                    { "type": "line", "content": [ { "type": "text", "text": "Sangen starter" } ] }
-                                ]}
                             ]
                         }
                     ]
@@ -10567,17 +10369,6 @@
                             ]
                         }
                     ]
-                },                {
-                    "type": "cues",
-                    "content": [
-                        {   "type": "music",
-                            "content": [
-                                { "type": "block", "content": [
-                                    { "type": "line", "content": [ { "type": "text", "text": "Musikk slutt" } ] }
-                                ]}
-                            ]
-                        }
-                    ]
                 },
                 {
                     "type": "dialogue",
@@ -10814,24 +10605,6 @@
                     ]
                 },
                 {
-                    "type": "cues",
-                    "content": [
-                        {   "type": "music",
-                            "id": 5.3,
-                            "name": "Margaretadalen",
-                            "pdf": { "filename": "5 - noter.pdf", "page": 13 },
-                            "content": [
-                                { "type": "block", "content": [
-                                    { "type": "line", "content": [ { "type": "text", "text": "Musikk: Margaretadalen" } ] }
-                                ]},
-                                { "type": "block", "content": [
-                                    { "type": "line", "content": [ { "type": "text", "text": "Ståle spiller intro" } ] },
-                                ]}
-                            ]
-                        }
-                    ]
-                },
-                {
                     "type": "action",
                     "content": [
                         {
@@ -10847,7 +10620,7 @@
                                         },
                                         {
                                             "type": "text",
-                                            "text": " og "
+                                            "text": " OG "
                                         },
                                         {
                                             "type": "character",
@@ -10881,13 +10654,20 @@
             "name": "Sigrunn synger om dalen",
             "content": [
                 {
-                    "type": "cues",
+                    "type": "action",
                     "content": [
-                        {   "type": "music",
+                        {
+                            "type": "block",
                             "content": [
-                                { "type": "block", "content": [
-                                    { "type": "line", "content": [ { "type": "text", "text": "Sangen starter" } ] }
-                                ]}
+                                {
+                                    "type": "line",
+                                    "content": [
+                                        {
+                                            "type": "text",
+                                            "text": "MUSIKK: #5.3 - MARGARETADALEN"
+                                        }
+                                    ]
+                                }
                             ]
                         }
                     ]
@@ -11410,13 +11190,20 @@
                     ]
                 },
                 {
-                    "type": "cues",
+                    "type": "action",
                     "content": [
-                        {   "type": "music",
+                        {
+                            "type": "block",
                             "content": [
-                                { "type": "block", "content": [
-                                    { "type": "line", "content": [ { "type": "text", "text": "Musikk slutt" } ] }
-                                ]}
+                                {
+                                    "type": "line",
+                                    "content": [
+                                        {
+                                            "type": "text",
+                                            "text": "Scene slutt. "
+                                        }
+                                    ]
+                                }
                             ]
                         }
                     ]
@@ -11464,14 +11251,22 @@
                             ]
                         }
                     ]
-                },        {
-                    "type": "cues",
+                },
+                {
+                    "type": "action",
                     "content": [
-                        {   "type": "music",
+                        {
+                            "type": "block",
                             "content": [
-                                { "type": "block", "content": [
-                                    { "type": "line", "content": [ { "type": "text", "text": "TODO!" } ] }
-                                ]}
+                                {
+                                    "type": "line",
+                                    "content": [
+                                        {
+                                            "type": "text",
+                                            "text": "#MUSIKK: LYSTIG UNDERSCORE"
+                                        }
+                                    ]
+                                }
                             ]
                         }
                     ]
@@ -13375,25 +13170,7 @@
                             ]
                         }
                     ]
-                },        {
-                    "type": "cues",
-                    "content": [
-                        {   "type": "music",
-                            "id": 6,
-                            "name": "Elsk mens du kan",
-                            "content": [
-                                { "type": "block", "content": [
-                                    { "type": "line", "content": [ { "type": "text", "text": "Musikk: Elsk mens du kan" } ] },
-                                    { "type": "line", "content": [ { "type": "text", "text": "Tempo: ca 64" } ] }
-                                ]},
-                                { "type": "block", "content": [
-                                    { "type": "line", "content": [ { "type": "text", "text": "Start på cue i neste replikk" } ] },
-                                ]}
-                            ]
-                        }
-                    ]
                 },
-
                 {
                     "type": "dialogue",
                     "content": [
@@ -13424,15 +13201,6 @@
                                                 {
                                                     "type": "text",
                                                     "text": "Jeg har ikke tenkt meg noe sted."
-                                                }
-                                            ]
-                                        },
-                                        {
-                                            "type": "line",
-                                            "content": [
-                                                {
-                                                    "type": "cue",
-                                                    "text": "Start intro"
                                                 }
                                             ]
                                         },
@@ -14104,17 +13872,6 @@
                     ]
                 }
             ]
-        },        {
-            "type": "cues",
-            "content": [
-                {   "type": "music",
-                    "content": [
-                        { "type": "block", "content": [
-                            { "type": "line", "content": [ { "type": "text", "text": "Musikk slutt" } ] }
-                        ]}
-                    ]
-                }
-            ]
         },
         {
             "type": "scene",
@@ -14221,13 +13978,20 @@
                     ]
                 },
                 {
-                    "type": "cues",
+                    "type": "action",
                     "content": [
-                        {   "type": "music",
+                        {
+                            "type": "block",
                             "content": [
-                                { "type": "block", "content": [
-                                    { "type": "line", "content": [ { "type": "text", "text": "TODO" } ] }
-                                ]}
+                                {
+                                    "type": "line",
+                                    "content": [
+                                        {
+                                            "type": "text",
+                                            "text": "#MUSIKK - dramatisk."
+                                        }
+                                    ]
+                                }
                             ]
                         }
                     ]
@@ -16022,20 +15786,20 @@
                     ]
                 },
                 {
-                    "type": "cues",
+                    "type": "action",
                     "content": [
-                        {   "type": "music",
-                            "id": 7.1,
-                            "name": "Forgripe seg",
-                            "pdf": { "filename": "7 - noter.pdf", "page": 1 },
+                        {
+                            "type": "block",
                             "content": [
-                                { "type": "block", "content": [
-                                    { "type": "line", "content": [ { "type": "text", "text": "Musikk: Forgripe seg" } ] },
-                                    { "type": "line", "content": [ { "type": "text", "text": "Tempo: ca 172" } ] }
-                                ]},
-                                { "type": "block", "content": [
-                                    { "type": "line", "content": [ { "type": "text", "text": "Ståle spiller recitativ" } ] },
-                                ]}
+                                {
+                                    "type": "line",
+                                    "content": [
+                                        {
+                                            "type": "text",
+                                            "text": "MUSIKK #7.1 - FORGRIPE SEG"
+                                        }
+                                    ]
+                                }
                             ]
                         }
                     ]
@@ -16611,27 +16375,29 @@
                     ]
                 },
                 {
-                    "type": "cues",
+                    "type": "action",
                     "content": [
-                        {   "type": "music",
+                        {
+                            "type": "block",
                             "content": [
-                                { "type": "block", "content": [
-                                    { "type": "line", "content": [ { "type": "text", "text": "Direkte over i neste" } ] }
-                                ]}
-                            ]
-                        },
-                        {   "type": "music",
-                            "id": 7.2,
-                            "name": "Sira Lars - du hører på meg",
-                            "pdf": { "filename": "7 - noter.pdf", "page": 12 },
-                            "content": [
-                                { "type": "block", "content": [
-                                    { "type": "line", "content": [ { "type": "text", "text": "Musikk: Sira Lars - du hører på meg" } ] },
-                                    { "type": "line", "content": [ { "type": "text", "text": "Tempo: ca 62" } ] }
-                                ]},
-                                { "type": "block", "content": [
-                                    { "type": "line", "content": [ { "type": "text", "text": "Ståle spiller recitativ" } ] },
-                                ]}
+                                {
+                                    "type": "line",
+                                    "content": [
+                                        {
+                                            "type": "text",
+                                            "text": "MUSIKK #7.2 - "
+                                        },
+                                        {
+                                            "type": "character",
+                                            "name": "Sira Lars",
+                                            "text": "Sira Lars"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " DU HØRER PÅ MEG"
+                                        }
+                                    ]
+                                }
                             ]
                         }
                     ]
@@ -16769,29 +16535,6 @@
                     ]
                 },
                 {
-                    "type": "cues",
-                    "content": [
-                        {   "type": "music",
-                            "content": [
-                                { "type": "block", "content": [
-                                    { "type": "line", "content": [ { "type": "text", "text": "Direkte over i neste" } ] }
-                                ]}
-                            ]
-                        },
-                        {   "type": "music",
-                            "id": 7.3,
-                            "name": "Jeg kjenner denne dalen",
-                            "pdf": { "filename": "7 - noter.pdf", "page": 15 },
-                            "content": [
-                                { "type": "block", "content": [
-                                    { "type": "line", "content": [ { "type": "text", "text": "Musikk: Jeg kjenner denne dalen" } ] },
-                                    { "type": "line", "content": [ { "type": "text", "text": "Tempo: ca 50" } ] }
-                                ]}
-                            ]
-                        }
-                    ]
-                },
-                {
                     "type": "dialogue",
                     "content": [
                         {
@@ -16823,6 +16566,25 @@
                                                     "text": "Men jeg har mer å si!"
                                                 }
                                             ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "action",
+                    "content": [
+                        {
+                            "type": "block",
+                            "content": [
+                                {
+                                    "type": "line",
+                                    "content": [
+                                        {
+                                            "type": "text",
+                                            "text": "MUSIKK #7.3 - JEG KJENNER DENNE DALEN"
                                         }
                                     ]
                                 }
@@ -17025,27 +16787,20 @@
                     ]
                 },
                 {
-                    "type": "cues",
+                    "type": "action",
                     "content": [
-                        {   "type": "music",
+                        {
+                            "type": "block",
                             "content": [
-                                { "type": "block", "content": [
-                                    { "type": "line", "content": [ { "type": "text", "text": "Direkte over i neste" } ] }
-                                ]}
-                            ]
-                        },
-                        {   "type": "music",
-                            "id": 7.4,
-                            "name": "Slåsskamp og kaos",
-                            "pdf": { "filename": "7 - noter.pdf", "page": 21 },
-                            "content": [
-                                { "type": "block", "content": [
-                                    { "type": "line", "content": [ { "type": "text", "text": "Musikk: Slåsskamp og kaos" } ] },
-                                    { "type": "line", "content": [ { "type": "text", "text": "Tempo: ca 110" } ] }
-                                ]},
-                                { "type": "block", "content": [
-                                    { "type": "line", "content": [ { "type": "text", "text": "Kun fire takter i loop" } ] },
-                                ]}
+                                {
+                                    "type": "line",
+                                    "content": [
+                                        {
+                                            "type": "text",
+                                            "text": "MUSIKK #7.4 - HOLD KJEFT UNDERSCORE"
+                                        }
+                                    ]
+                                }
                             ]
                         }
                     ]
@@ -18641,18 +18396,6 @@
                     ]
                 },
                 {
-                    "type": "cues",
-                    "content": [
-                        {   "type": "music",
-                            "content": [
-                                { "type": "block", "content": [
-                                    { "type": "line", "content": [ { "type": "text", "text": "Kort stillhet" } ] }
-                                ]}
-                            ]
-                        }
-                    ]
-                },
-                {
                     "type": "dialogue",
                     "content": [
                         {
@@ -18687,18 +18430,6 @@
                                         }
                                     ]
                                 }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "type": "cues",
-                    "content": [
-                        {   "type": "music",
-                            "content": [
-                                { "type": "block", "content": [
-                                    { "type": "line", "content": [ { "type": "text", "text": "Stikk mens øynene stikkes ut" } ] }
-                                ]}
                             ]
                         }
                     ]
@@ -20034,17 +19765,20 @@
             "name": "Sigrunn mottar sakramentet",
             "content": [
                 {
-                    "type": "cues",
+                    "type": "action",
                     "content": [
-                        {   "type": "music",
-                            "id": 9,
-                            "name": "Bakgrunnsmusikk",
-                            "pdf": { "filename": "9 - bakgrunnsmusikk.pdf", "page": 1 },
+                        {
+                            "type": "block",
                             "content": [
-                                { "type": "block", "content": [
-                                    { "type": "line", "content": [ { "type": "text", "text": "Musikk: Bakgrunnsmusikk" } ] },
-                                    { "type": "line", "content": [ { "type": "text", "text": "Tempo: ca 60" } ] }
-                                ]}
+                                {
+                                    "type": "line",
+                                    "content": [
+                                        {
+                                            "type": "text",
+                                            "text": "#UNDERSCORE 5.0"
+                                        }
+                                    ]
+                                }
                             ]
                         }
                     ]
@@ -21637,25 +21371,12 @@
                                             "content": [
                                                 {
                                                     "type": "text",
-                                                    "text": "Ja, det ble hun. Men mens hun satt der i tårnet og ventet på døden, ba hun for alle gifte kvinner. Hele tiden. Og det er grunnen til at hun fortsatt den dag i dag er deres skytshelgen."
+                                                    "text": "Ja, det ble hun. Men mens hun satt der i tårnet og ventet på døden, ba hun for alle gifte kvinner. Hele tiden. Og det er grunnen til at hun  fortsatt den dag i dag er deres skytshelgen."
                                                 }
                                             ]
                                         }
                                     ]
                                 }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "type": "cues",
-                    "content": [
-                        {   "type": "music",
-                            "content": [
-                                { "type": "block", "content": [
-                                    { "type": "line", "content": [ { "type": "text", "text": "Musikk slutt" } ] },
-                                    { "type": "line", "content": [ { "type": "text", "text": "Stopp diskret ved aller første mulighet" } ] }
-                                ]}
                             ]
                         }
                     ]
@@ -22445,18 +22166,6 @@
                                         }
                                     ]
                                 }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "type": "cues",
-                    "content": [
-                        {   "type": "music",
-                            "content": [
-                                { "type": "block", "content": [
-                                    { "type": "line", "content": [ { "type": "text", "text": "TODO!" } ] }
-                                ]}
                             ]
                         }
                     ]
@@ -24958,18 +24667,6 @@
             "name": "Marit vender tilbake",
             "content": [
                 {
-                    "type": "cues",
-                    "content": [
-                        {   "type": "music",
-                            "content": [
-                                { "type": "block", "content": [
-                                    { "type": "line", "content": [ { "type": "text", "text": "Dyp pad på D når " }, { "type": "character", "name": "Marit", "text": "Marit" }, { "type": "text", "text": " kommer inn" } ] }
-                                ]}
-                            ]
-                        }
-                    ]
-                },
-                {
                     "type": "action",
                     "content": [
                         {
@@ -26313,14 +26010,20 @@
                     ]
                 },
                 {
-                    "type": "cues",
+                    "type": "action",
                     "content": [
-                        {   "type": "music",
+                        {
+                            "type": "block",
                             "content": [
-                                { "type": "block", "content": [
-                                    { "type": "line", "content": [ { "type": "text", "text": "Pest-akkorder" } ] },
-                                    { "type": "line", "content": [ { "type": "text", "text": "Stille etterpå" } ] }
-                                ]}
+                                {
+                                    "type": "line",
+                                    "content": [
+                                        {
+                                            "type": "text",
+                                            "text": "#MUSIKK: PEST-AKKORD!"
+                                        }
+                                    ]
+                                }
                             ]
                         }
                     ]
@@ -26686,8 +26389,8 @@
                                             "type": "line",
                                             "content": [
                                                 {
-                                                    "type": "text",
-                                                    "text": "Nei! Marit!"
+                                                    "type": "song",
+                                                    "text": "Nei!Marit!"
                                                 }
                                             ]
                                         }
@@ -26962,18 +26665,6 @@
             "id": "12",
             "name": "Marit dør",
             "content": [
-                {
-                    "type": "cues",
-                    "content": [
-                        {   "type": "music",
-                            "content": [
-                                { "type": "block", "content": [
-                                    { "type": "line", "content": [ { "type": "text", "text": "SPØRSMÅL: Skal det være musikk her?" } ] }
-                                ]}
-                            ]
-                        }
-                    ]
-                },
                 {
                     "type": "action",
                     "content": [
@@ -28715,14 +28406,20 @@
                     ]
                 },
                 {
-                    "type": "cues",
+                    "type": "action",
                     "content": [
-                        {   "type": "music",
+                        {
+                            "type": "block",
                             "content": [
-                                { "type": "block", "content": [
-                                    { "type": "line", "content": [ { "type": "text", "text": "Dyp pad på D" } ] },
-                                    { "type": "line", "content": [ { "type": "text", "text": "Skal fades ut når Marit dør" } ] }
-                                ]}
+                                {
+                                    "type": "line",
+                                    "content": [
+                                        {
+                                            "type": "text",
+                                            "text": "#MUSIKK: UNDERSCORE"
+                                        }
+                                    ]
+                                }
                             ]
                         }
                     ]
@@ -29001,18 +28698,6 @@
                     ]
                 },
                 {
-                    "type": "cues",
-                    "content": [
-                        {   "type": "music",
-                            "content": [
-                                { "type": "block", "content": [
-                                    { "type": "line", "content": [ { "type": "text", "text": "Musikken fades raskt men diskret ut" } ] }
-                                ]}
-                            ]
-                        }
-                    ]
-                },
-                {
                     "type": "dialogue",
                     "content": [
                         {
@@ -29057,6 +28742,25 @@
                                                     ]
                                                 }
                                             ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "action",
+                    "content": [
+                        {
+                            "type": "block",
+                            "content": [
+                                {
+                                    "type": "line",
+                                    "content": [
+                                        {
+                                            "type": "text",
+                                            "text": "#MUSIKK: STILLHET"
                                         }
                                     ]
                                 }
@@ -29135,23 +28839,6 @@
             "name": "Epilog",
             "content": [
                 {
-                    "type": "cues",
-                    "content": [
-                        {   "type": "music",
-                            "id": "13",
-                            "name": "Min lille fugl - reprise",
-                            "pdf": { "filename": "13 - min lille fugl.pdf", "page": 1 },
-                            "content": [
-                            { "type": "block", "content": [
-                                { "type": "line", "content": [ { "type": "text", "text": "Musikk: Min lille fugl - reprise" } ] }
-                            ]},
-                            { "type": "block", "content": [
-                                { "type": "line", "content": [ { "type": "text", "text": "Starter uten musikk, fades inn på cue" } ] }
-                            ]}
-                        ]}
-                    ]
-                },
-                {
                     "type": "dialogue",
                     "content": [
                         {
@@ -29198,15 +28885,7 @@
                                             "content": [
                                                 {
                                                     "type": "song",
-                                                    "text": "Se, solen bukker ærbødig for månen, og kysser dagen "
-                                                },
-                                                {
-                                                    "type": "cue",
-                                                    "text": "fade inn"
-                                                },
-                                                {
-                                                    "type": "song",
-                                                    "text": " farvel."
+                                                    "text": "Se, solen bukker ærbødig for månen, og kysser dagen farvel."
                                                 }
                                             ]
                                         }
@@ -29242,18 +28921,6 @@
                                 }
                             ]
                         }
-                    ]
-                },
-                {
-                    "type": "cues",
-                    "content": [
-                        {   "type": "music",
-                            "content": [
-                            { "type": "block", "content": [
-                                { "type": "line", "content": [ { "type": "text", "text": "Musikken fortsetter med nynnekor" } ] },
-                                { "type": "line", "content": [ { "type": "text", "text": "Fades stille ut til slutt" } ] }
-                            ]}
-                        ]}
                     ]
                 },
                 {

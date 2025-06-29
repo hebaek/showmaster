@@ -23,55 +23,185 @@
       "oAP" : "\/build\/build",
       "oF" : 0
     },
-    "\/source\/data\/original\/manus.fadein" : {
+    "\/node_modules" : {
+      "ft" : 65536,
+      "oA" : 1,
+      "oAP" : "\/build\/node_modules",
+      "oF" : 1
+    },
+    "\/package-lock.json" : {
+      "ft" : 524288,
+      "oA" : 1,
+      "oAP" : "\/build\/package-lock.json",
+      "oF" : 0,
+      "oO" : 0,
+      "oS" : 1
+    },
+    "\/package.json" : {
+      "ft" : 524288,
+      "oA" : 1,
+      "oAP" : "\/build\/package.json",
+      "oF" : 0,
+      "oO" : 0,
+      "oS" : 1
+    },
+    "\/source\/data\/manus.json" : {
+      "ft" : 524288,
+      "oA" : 0,
+      "oAP" : "\/build\/data\/manus.json",
+      "oF" : 1,
+      "oO" : 0,
+      "oS" : 1
+    },
+    "\/source\/data\/originals\/manus.fadein" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/build\/data\/original\/manus.fadein",
+      "oAP" : "\/build\/data\/originals\/manus.fadein",
       "oF" : 0
     },
-    "\/source\/data\/original\/manus.pdf" : {
+    "\/source\/data\/originals\/manus.pdf" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/build\/data\/original\/manus.pdf",
+      "oAP" : "\/build\/data\/originals\/manus.pdf",
       "oF" : 0
     },
-    "\/source\/data\/original\/manus.xml" : {
+    "\/source\/data\/originals\/manus.xml" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/build\/data\/original\/manus.xml",
+      "oAP" : "\/build\/data\/originals\/manus.xml",
       "oF" : 0
     },
-    "\/source\/script\/aiscript.py" : {
+    "\/source\/php\/authenticate.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 2,
+      "oAP" : "\/build\/php\/authenticate.php",
+      "oF" : 1
+    },
+    "\/source\/php\/login.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/build\/script\/aiscript.py",
+      "oAP" : "\/build\/php\/login.php",
       "oF" : 0
     },
-    "\/source\/script\/extract.py" : {
+    "\/source\/Plan.md" : {
+      "cB" : 0,
+      "cS" : 0,
+      "eF" : 1,
+      "eL" : 1,
+      "ema" : 1,
+      "eSQ" : 1,
+      "ft" : 4096,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/build\/Plan.html",
+      "oF" : 0,
+      "oFM" : 0,
+      "oS" : 0,
+      "pHT" : 0,
+      "pME" : 1,
+      "rFN" : 0,
+      "uCM" : 0
+    },
+    "\/source\/script\/fadein_to_json.py" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/build\/script\/extract.py",
+      "oAP" : "\/build\/script\/fadein_to_json.py",
+      "oF" : 0
+    },
+    "\/source\/script\/pdf_to_json.py" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/build\/script\/pdf_to_json.py",
       "oF" : 0
     },
     "\/source\/www\/css\/login.scss" : {
+      "aP" : 0,
+      "bl" : 0,
+      "co" : 2,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 0,
+      "oAP" : "\/build\/www\/css\/login.css",
+      "oF" : 0,
+      "oS" : 3,
+      "pg" : 2
+    },
+    "\/source\/www\/css\/main.scss" : {
+      "aP" : 0,
+      "bl" : 0,
+      "co" : 2,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 0,
+      "oAP" : "\/build\/www\/css\/main.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 2
+    },
+    "\/source\/www\/css\/modules\/cues.scss" : {
       "aP" : 0,
       "bl" : 0,
       "co" : 0,
       "ec" : 1,
       "ft" : 4,
       "ma" : 0,
-      "oA" : 0,
-      "oAP" : "\/build\/www\/css\/login.css",
+      "oA" : 1,
+      "oAP" : "\/build\/www\/css\/modules\/cues.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0
+    },
+    "\/source\/www\/css\/modules\/manus.scss" : {
+      "aP" : 0,
+      "bl" : 0,
+      "co" : 0,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/build\/www\/css\/modules\/manus.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0
+    },
+    "\/source\/www\/css\/modules\/pdf.scss" : {
+      "aP" : 0,
+      "bl" : 0,
+      "co" : 0,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/build\/www\/css\/modules\/pdf.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0
+    },
+    "\/source\/www\/css\/modules\/toolbar.scss" : {
+      "aP" : 0,
+      "bl" : 0,
+      "co" : 0,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/build\/www\/css\/modules\/toolbar.css",
       "oF" : 0,
       "oS" : 0,
       "pg" : 0
@@ -83,124 +213,108 @@
       "co" : 0,
       "ft" : 16,
       "ma" : 0,
-      "oA" : 0,
+      "oA" : 2,
       "oAP" : "\/build\/www\/css\/reset.css",
-      "oF" : 0,
+      "oF" : 1,
       "pg" : 0
     },
-    "\/source\/www\/css\/showmaster.scss" : {
-      "aP" : 0,
-      "bl" : 0,
-      "co" : 0,
-      "ec" : 1,
-      "ft" : 4,
-      "ma" : 0,
-      "oA" : 0,
-      "oAP" : "\/build\/www\/css\/showmaster.css",
-      "oF" : 0,
-      "oS" : 0,
-      "pg" : 0
-    },
-    "\/source\/www\/css\/styles.css" : {
-      "aP" : 1,
-      "bl" : 0,
-      "ci" : 0,
-      "co" : 0,
-      "ft" : 16,
-      "ma" : 0,
-      "oA" : 0,
-      "oAP" : "\/build\/www\/css\/styles.css",
-      "oF" : 0,
-      "pg" : 0
-    },
-    "\/source\/www\/data\/manus-backup.json" : {
-      "ft" : 524288,
-      "oA" : 0,
-      "oAP" : "\/build\/www\/data\/manus-backup.json",
-      "oF" : 0,
-      "oO" : 0,
-      "oS" : 1
-    },
-    "\/source\/www\/data\/manus-eksempel.json" : {
-      "ft" : 524288,
-      "oA" : 0,
-      "oAP" : "\/build\/www\/data\/manus-eksempel.json",
-      "oF" : 0,
-      "oO" : 0,
-      "oS" : 1
-    },
-    "\/source\/www\/data\/manus-old.json" : {
-      "ft" : 524288,
-      "oA" : 0,
-      "oAP" : "\/build\/www\/data\/manus-old.json",
-      "oF" : 0,
-      "oO" : 0,
-      "oS" : 1
-    },
-    "\/source\/www\/data\/manus.json" : {
-      "ft" : 524288,
-      "oA" : 0,
-      "oAP" : "\/build\/www\/data\/manus.json",
-      "oF" : 0,
-      "oO" : 0,
-      "oS" : 1
-    },
-    "\/source\/www\/data\/sheetmusic\/2 - min lille fugl.pdf" : {
+    "\/source\/www\/img\/favicon\/about.txt" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/build\/www\/data\/sheetmusic\/2 - min lille fugl.pdf",
-      "oF" : 0
+      "oA" : 2,
+      "oAP" : "\/build\/www\/img\/favicon\/about.txt",
+      "oF" : 1
     },
-    "\/source\/www\/data\/sheetmusic\/3 - markedsdag.pdf" : {
+    "\/source\/www\/img\/favicon\/android-chrome-192x192.png" : {
+      "ft" : 32768,
+      "iS" : 10134,
+      "oA" : 2,
+      "oAP" : "\/build\/www\/img\/favicon\/android-chrome-192x192.png",
+      "oF" : 1,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 90,
+      "rq" : 75
+    },
+    "\/source\/www\/img\/favicon\/android-chrome-512x512.png" : {
+      "ft" : 32768,
+      "iS" : 27481,
+      "oA" : 2,
+      "oAP" : "\/build\/www\/img\/favicon\/android-chrome-512x512.png",
+      "oF" : 1,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 90,
+      "rq" : 75
+    },
+    "\/source\/www\/img\/favicon\/apple-touch-icon.png" : {
+      "ft" : 32768,
+      "iS" : 8916,
+      "oA" : 2,
+      "oAP" : "\/build\/www\/img\/favicon\/apple-touch-icon.png",
+      "oF" : 1,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 90,
+      "rq" : 75
+    },
+    "\/source\/www\/img\/favicon\/favicon-16x16.png" : {
+      "ft" : 32768,
+      "iS" : 627,
+      "oA" : 2,
+      "oAP" : "\/build\/www\/img\/favicon\/favicon-16x16.png",
+      "oF" : 1,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 90,
+      "rq" : 75
+    },
+    "\/source\/www\/img\/favicon\/favicon-32x32.png" : {
+      "ft" : 32768,
+      "iS" : 1280,
+      "oA" : 2,
+      "oAP" : "\/build\/www\/img\/favicon\/favicon-32x32.png",
+      "oF" : 1,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 90,
+      "rq" : 75
+    },
+    "\/source\/www\/img\/favicon\/favicon.ico" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/build\/www\/data\/sheetmusic\/3 - markedsdag.pdf",
-      "oF" : 0
+      "oA" : 2,
+      "oAP" : "\/build\/www\/img\/favicon\/favicon.ico",
+      "oF" : 1
     },
-    "\/source\/www\/data\/sheetmusic\/5 - noter.pdf" : {
+    "\/source\/www\/img\/favicon\/site.webmanifest" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/build\/www\/data\/sheetmusic\/5 - noter.pdf",
-      "oF" : 0
-    },
-    "\/source\/www\/data\/sheetmusic\/7 - noter.pdf" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/build\/www\/data\/sheetmusic\/7 - noter.pdf",
-      "oF" : 0
-    },
-    "\/source\/www\/data\/sheetmusic\/9 - bakgrunnsmusikk.pdf" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/build\/www\/data\/sheetmusic\/9 - bakgrunnsmusikk.pdf",
-      "oF" : 0
-    },
-    "\/source\/www\/data\/sheetmusic\/13 - min lille fugl.pdf" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/build\/www\/data\/sheetmusic\/13 - min lille fugl.pdf",
-      "oF" : 0
+      "oA" : 2,
+      "oAP" : "\/build\/www\/img\/favicon\/site.webmanifest",
+      "oF" : 1
     },
     "\/source\/www\/img\/logo.png" : {
       "ft" : 32768,
       "iS" : 48090,
-      "oA" : 0,
+      "oA" : 2,
       "oAP" : "\/build\/www\/img\/logo.png",
-      "oF" : 0,
+      "oF" : 1,
       "oIPL" : 0,
-      "opt" : 1,
+      "opt" : 0,
       "oT" : 1,
       "ou" : "lpckwebp-none",
       "q" : 90,
@@ -216,44 +330,256 @@
       "plM" : 52780316221407,
       "prP" : 0
     },
-    "\/source\/www\/index.html" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/build\/www\/index.html",
-      "oF" : 0
-    },
     "\/source\/www\/index.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 0,
+      "oA" : 2,
       "oAP" : "\/build\/www\/index.php",
-      "oF" : 0
+      "oF" : 1
     },
-    "\/source\/www\/js\/showmaster.js" : {
+    "\/source\/www\/js\/external\/jquery-3.7.1.min.js" : {
       "bF" : 0,
       "ft" : 64,
       "ma" : 0,
       "mi" : 0,
-      "oA" : 0,
-      "oAP" : "\/build\/www\/js\/showmaster.js",
-      "oF" : 0,
+      "oA" : 2,
+      "oAP" : "\/build\/www\/js\/external\/jquery-3.7.1.min.js",
+      "oF" : 1,
       "sC" : 3,
       "tS" : 0
+    },
+    "\/source\/www\/js\/external\/jquery-ui-1.13.2.min.js" : {
+      "bF" : 0,
+      "ft" : 64,
+      "ma" : 0,
+      "mi" : 0,
+      "oA" : 2,
+      "oAP" : "\/build\/www\/js\/external\/jquery-ui-1.13.2.min.js",
+      "oF" : 1,
+      "sC" : 3,
+      "tS" : 0
+    },
+    "\/source\/www\/js\/external\/pdf-3.9.179.min.js" : {
+      "bF" : 0,
+      "ft" : 64,
+      "ma" : 0,
+      "mi" : 0,
+      "oA" : 2,
+      "oAP" : "\/build\/www\/js\/external\/pdf-3.9.179.min.js",
+      "oF" : 1,
+      "sC" : 3,
+      "tS" : 0
+    },
+    "\/source\/www\/js\/external\/pdf-3.9.179.worker.min.js" : {
+      "bF" : 0,
+      "ft" : 64,
+      "ma" : 0,
+      "mi" : 0,
+      "oA" : 2,
+      "oAP" : "\/build\/www\/js\/external\/pdf-3.9.179.worker.min.js",
+      "oF" : 1,
+      "sC" : 3,
+      "tS" : 0
+    },
+    "\/source\/www\/js\/modules\/data.ts" : {
+      "cDF" : 0,
+      "ft" : 128,
+      "jxM" : 1,
+      "ma" : 3,
+      "mDT" : 0,
+      "mi" : 2,
+      "moR" : 0,
+      "moT" : 2022,
+      "oA" : 0,
+      "oAP" : "\/build\/www\/js\/modules\/data.js",
+      "oF" : 2,
+      "rC" : 1,
+      "tEC" : 2022
+    },
+    "\/source\/www\/js\/modules\/flags.ts" : {
+      "cDF" : 0,
+      "ft" : 128,
+      "jxM" : 1,
+      "ma" : 3,
+      "mDT" : 0,
+      "mi" : 2,
+      "moR" : 0,
+      "moT" : 2022,
+      "oA" : 0,
+      "oAP" : "\/build\/www\/js\/modules\/flags.js",
+      "oF" : 2,
+      "rC" : 1,
+      "tEC" : 2022
+    },
+    "\/source\/www\/js\/modules\/main.ts" : {
+      "cDF" : 0,
+      "ft" : 128,
+      "jxM" : 1,
+      "ma" : 3,
+      "mDT" : 0,
+      "mi" : 2,
+      "moR" : 0,
+      "moT" : 2022,
+      "oA" : 0,
+      "oAP" : "\/build\/www\/js\/modules\/main.js",
+      "oF" : 2,
+      "rC" : 1,
+      "tEC" : 2022
+    },
+    "\/source\/www\/js\/modules\/smlib.ts" : {
+      "cDF" : 0,
+      "ft" : 128,
+      "jxM" : 1,
+      "ma" : 3,
+      "mDT" : 0,
+      "mi" : 2,
+      "moR" : 0,
+      "moT" : 2022,
+      "oA" : 0,
+      "oAP" : "\/build\/www\/js\/modules\/smlib.js",
+      "oF" : 2,
+      "rC" : 1,
+      "tEC" : 2022
+    },
+    "\/source\/www\/js\/plugins\/manus.ts" : {
+      "cDF" : 0,
+      "ft" : 128,
+      "jxM" : 1,
+      "ma" : 3,
+      "mDT" : 0,
+      "mi" : 2,
+      "moR" : 0,
+      "moT" : 2022,
+      "oA" : 0,
+      "oAP" : "\/build\/www\/js\/plugins\/manus.js",
+      "oF" : 2,
+      "rC" : 1,
+      "tEC" : 2022
+    },
+    "\/source\/www\/js\/plugins\/pdf.ts" : {
+      "cDF" : 0,
+      "ft" : 128,
+      "jxM" : 1,
+      "ma" : 3,
+      "mDT" : 0,
+      "mi" : 2,
+      "moR" : 0,
+      "moT" : 2022,
+      "oA" : 0,
+      "oAP" : "\/build\/www\/js\/plugins\/pdf.js",
+      "oF" : 2,
+      "rC" : 1,
+      "tEC" : 2022
+    },
+    "\/source\/www\/js\/plugins\/toolbar.ts" : {
+      "cDF" : 0,
+      "ft" : 128,
+      "jxM" : 1,
+      "ma" : 3,
+      "mDT" : 0,
+      "mi" : 2,
+      "moR" : 0,
+      "moT" : 2022,
+      "oA" : 0,
+      "oAP" : "\/build\/www\/js\/plugins\/toolbar.js",
+      "oF" : 2,
+      "rC" : 1,
+      "tEC" : 2022
     },
     "\/source\/www\/login.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 0,
+      "oA" : 2,
       "oAP" : "\/build\/www\/login.php",
+      "oF" : 1
+    },
+    "\/source\/www\/pdf\/2 - min lille fugl.pdf" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/build\/www\/pdf\/2 - min lille fugl.pdf",
       "oF" : 0
+    },
+    "\/source\/www\/pdf\/3 - markedsdag.pdf" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/build\/www\/pdf\/3 - markedsdag.pdf",
+      "oF" : 0
+    },
+    "\/source\/www\/pdf\/5 - noter.pdf" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/build\/www\/pdf\/5 - noter.pdf",
+      "oF" : 0
+    },
+    "\/source\/www\/pdf\/7 - noter.pdf" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/build\/www\/pdf\/7 - noter.pdf",
+      "oF" : 0
+    },
+    "\/source\/www\/pdf\/9 - bakgrunnsmusikk.pdf" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/build\/www\/pdf\/9 - bakgrunnsmusikk.pdf",
+      "oF" : 0
+    },
+    "\/source\/www\/pdf\/13 - min lille fugl.pdf" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/build\/www\/pdf\/13 - min lille fugl.pdf",
+      "oF" : 0
+    },
+    "\/source\/www\/service.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 2,
+      "oAP" : "\/build\/www\/service.php",
+      "oF" : 1
     }
   },
   "hooks" : [
-
+    {
+      "enabled" : 1,
+      "name" : "toolbar.ts",
+      "predicateDataBase64Encoded" : "YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMSAAGGoF8QD05TS2V5ZWRBcmNoaXZlctEICVRyb290gAGvEBYLDBMYICorLjU5Pj9CRkpPUFNZXWFjVSRudWxs0w0ODxAREl8QF05TQ29tcG91bmRQcmVkaWNhdGVUeXBlXxAPTlNTdWJwcmVkaWNhdGVzViRjbGFzcxACgAKAFdIUDxUXWk5TLm9iamVjdHOhFoADgBTUDxkaGxwdHh9fEBFOU1JpZ2h0RXhwcmVzc2lvbl8QEE5TTGVmdEV4cHJlc3Npb25fEBNOU1ByZWRpY2F0ZU9wZXJhdG9ygBOADoAEgBHVISIjJA8lJicoKVlOU09wZXJhbmReTlNTZWxlY3Rvck5hbWVfEBBOU0V4cHJlc3Npb25UeXBlW05TQXJndW1lbnRzgAaABRADgAiADVx2YWx1ZUZvcktleTrSIw8sLRABgAfSLzAxMlokY2xhc3NuYW1lWCRjbGFzc2VzXxAQTlNTZWxmRXhwcmVzc2lvbqMxMzRcTlNFeHByZXNzaW9uWE5TT2JqZWN00hQPNjihN4AJgAzTDyM6Ozw9WU5TS2V5UGF0aIALEAqACl1pbnB1dEZpbGVuYW1l0i8wQEFfEBxOU0tleVBhdGhTcGVjaWZpZXJFeHByZXNzaW9uo0AzNNIvMENEXk5TTXV0YWJsZUFycmF5o0NFNFdOU0FycmF50i8wR0hfEBNOU0tleVBhdGhFeHByZXNzaW9upEdJMzRfEBROU0Z1bmN0aW9uRXhwcmVzc2lvbtNLIw9MTU5fEA9OU0NvbnN0YW50VmFsdWWADxAAgBBadG9vbGJhci50c9IvMFFSXxAZTlNDb25zdGFudFZhbHVlRXhwcmVzc2lvbqNRMzTUD1RVVldNJ1haTlNNb2RpZmllcldOU0ZsYWdzXk5TT3BlcmF0b3JUeXBlgBIQY9IvMFpbXxAVTlNJblByZWRpY2F0ZU9wZXJhdG9yo1pcNF8QE05TUHJlZGljYXRlT3BlcmF0b3LSLzBeX18QFU5TQ29tcGFyaXNvblByZWRpY2F0ZaNeYDRbTlNQcmVkaWNhdGXSLzBFYqJFNNIvMGRlXxATTlNDb21wb3VuZFByZWRpY2F0ZaNkYDQACAARABoAJAApADIANwBJAEwAUQBTAGwAcgB5AJMApQCsAK4AsACyALcAwgDEAMYAyADRAOUA+AEOARABEgEUARYBIQErAToBTQFZAVsBXQFfAWEBYwFwAXUBdwF5AX4BiQGSAaUBqQG2Ab8BxAHGAcgBygHRAdsB3QHfAeEB7wH0AhMCFwIcAisCLwI3AjwCUgJXAm4CdQKHAokCiwKNApgCnQK5Ar0CxgLRAtkC6ALqAuwC8QMJAw0DIwMoA0ADRANQA1UDWANdA3MAAAAAAAACAQAAAAAAAABmAAAAAAAAAAAAAAAAAAADdw==",
+      "runOrder" : 2,
+      "scriptSourceString" : "mv build\/www\/js\/plugins\/plugins\/toolbar.js build\/www\/js\/plugins\/\nmv build\/www\/js\/plugins\/plugins\/toolbar.js.map build\/www\/js\/plugins\/",
+      "scriptType" : 1,
+      "uuidString" : "B201B1D8-E18C-4FE6-BC9C-2C8207D9301D"
+    },
+    {
+      "enabled" : 1,
+      "name" : "manus.ts",
+      "predicateDataBase64Encoded" : "YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMSAAGGoF8QD05TS2V5ZWRBcmNoaXZlctEICVRyb290gAGvEBYLDBMYICorLjU5Pj9CRkpPUFNZXWFjVSRudWxs0w0ODxAREl8QF05TQ29tcG91bmRQcmVkaWNhdGVUeXBlXxAPTlNTdWJwcmVkaWNhdGVzViRjbGFzcxACgAKAFdIUDxUXWk5TLm9iamVjdHOhFoADgBTUDxkaGxwdHh9fEBFOU1JpZ2h0RXhwcmVzc2lvbl8QEE5TTGVmdEV4cHJlc3Npb25fEBNOU1ByZWRpY2F0ZU9wZXJhdG9ygBOADoAEgBHVISIjJA8lJicoKVlOU09wZXJhbmReTlNTZWxlY3Rvck5hbWVfEBBOU0V4cHJlc3Npb25UeXBlW05TQXJndW1lbnRzgAaABRADgAiADVx2YWx1ZUZvcktleTrSIw8sLRABgAfSLzAxMlokY2xhc3NuYW1lWCRjbGFzc2VzXxAQTlNTZWxmRXhwcmVzc2lvbqMxMzRcTlNFeHByZXNzaW9uWE5TT2JqZWN00hQPNjihN4AJgAzTDyM6Ozw9WU5TS2V5UGF0aIALEAqACl1pbnB1dEZpbGVuYW1l0i8wQEFfEBxOU0tleVBhdGhTcGVjaWZpZXJFeHByZXNzaW9uo0AzNNIvMENEXk5TTXV0YWJsZUFycmF5o0NFNFdOU0FycmF50i8wR0hfEBNOU0tleVBhdGhFeHByZXNzaW9upEdJMzRfEBROU0Z1bmN0aW9uRXhwcmVzc2lvbtNLIw9MTU5fEA9OU0NvbnN0YW50VmFsdWWADxAAgBBYbWFudXMudHPSLzBRUl8QGU5TQ29uc3RhbnRWYWx1ZUV4cHJlc3Npb26jUTM01A9UVVZXTSdYWk5TTW9kaWZpZXJXTlNGbGFnc15OU09wZXJhdG9yVHlwZYASEGPSLzBaW18QFU5TSW5QcmVkaWNhdGVPcGVyYXRvcqNaXDRfEBNOU1ByZWRpY2F0ZU9wZXJhdG9y0i8wXl9fEBVOU0NvbXBhcmlzb25QcmVkaWNhdGWjXmA0W05TUHJlZGljYXRl0i8wRWKiRTTSLzBkZV8QE05TQ29tcG91bmRQcmVkaWNhdGWjZGA0AAgAEQAaACQAKQAyADcASQBMAFEAUwBsAHIAeQCTAKUArACuALAAsgC3AMIAxADGAMgA0QDlAPgBDgEQARIBFAEWASEBKwE6AU0BWQFbAV0BXwFhAWMBcAF1AXcBeQF+AYkBkgGlAakBtgG\/AcQBxgHIAcoB0QHbAd0B3wHhAe8B9AITAhcCHAIrAi8CNwI8AlICVwJuAnUChwKJAosCjQKWApsCtwK7AsQCzwLXAuYC6ALqAu8DBwMLAyEDJgM+A0IDTgNTA1YDWwNxAAAAAAAAAgEAAAAAAAAAZgAAAAAAAAAAAAAAAAAAA3U=",
+      "runOrder" : 0,
+      "scriptSourceString" : "mv build\/www\/js\/plugins\/plugins\/manus.js build\/www\/js\/plugins\/\nmv build\/www\/js\/plugins\/plugins\/manus.js.map build\/www\/js\/plugins\/",
+      "scriptType" : 1,
+      "uuidString" : "80DE5A02-C5E9-4F43-9E27-4CDDDBAD0F77"
+    },
+    {
+      "enabled" : 1,
+      "name" : "pdf.ts",
+      "predicateDataBase64Encoded" : "YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMSAAGGoF8QD05TS2V5ZWRBcmNoaXZlctEICVRyb290gAGvEBYLDBMYICorLjU5Pj9CRkpPUFNZXWFjVSRudWxs0w0ODxAREl8QF05TQ29tcG91bmRQcmVkaWNhdGVUeXBlXxAPTlNTdWJwcmVkaWNhdGVzViRjbGFzcxACgAKAFdIUDxUXWk5TLm9iamVjdHOhFoADgBTUDxkaGxwdHh9fEBFOU1JpZ2h0RXhwcmVzc2lvbl8QEE5TTGVmdEV4cHJlc3Npb25fEBNOU1ByZWRpY2F0ZU9wZXJhdG9ygBOADoAEgBHVISIjJA8lJicoKVlOU09wZXJhbmReTlNTZWxlY3Rvck5hbWVfEBBOU0V4cHJlc3Npb25UeXBlW05TQXJndW1lbnRzgAaABRADgAiADVx2YWx1ZUZvcktleTrSIw8sLRABgAfSLzAxMlokY2xhc3NuYW1lWCRjbGFzc2VzXxAQTlNTZWxmRXhwcmVzc2lvbqMxMzRcTlNFeHByZXNzaW9uWE5TT2JqZWN00hQPNjihN4AJgAzTDyM6Ozw9WU5TS2V5UGF0aIALEAqACl1pbnB1dEZpbGVuYW1l0i8wQEFfEBxOU0tleVBhdGhTcGVjaWZpZXJFeHByZXNzaW9uo0AzNNIvMENEXk5TTXV0YWJsZUFycmF5o0NFNFdOU0FycmF50i8wR0hfEBNOU0tleVBhdGhFeHByZXNzaW9upEdJMzRfEBROU0Z1bmN0aW9uRXhwcmVzc2lvbtNLIw9MTU5fEA9OU0NvbnN0YW50VmFsdWWADxAAgBBWcGRmLnRz0i8wUVJfEBlOU0NvbnN0YW50VmFsdWVFeHByZXNzaW9uo1EzNNQPVFVWV00nWFpOU01vZGlmaWVyV05TRmxhZ3NeTlNPcGVyYXRvclR5cGWAEhBj0i8wWltfEBVOU0luUHJlZGljYXRlT3BlcmF0b3KjWlw0XxATTlNQcmVkaWNhdGVPcGVyYXRvctIvMF5fXxAVTlNDb21wYXJpc29uUHJlZGljYXRlo15gNFtOU1ByZWRpY2F0ZdIvMEViokU00i8wZGVfEBNOU0NvbXBvdW5kUHJlZGljYXRlo2RgNAAIABEAGgAkACkAMgA3AEkATABRAFMAbAByAHkAkwClAKwArgCwALIAtwDCAMQAxgDIANEA5QD4AQ4BEAESARQBFgEhASsBOgFNAVkBWwFdAV8BYQFjAXABdQF3AXkBfgGJAZIBpQGpAbYBvwHEAcYByAHKAdEB2wHdAd8B4QHvAfQCEwIXAhwCKwIvAjcCPAJSAlcCbgJ1AocCiQKLAo0ClAKZArUCuQLCAs0C1QLkAuYC6ALtAwUDCQMfAyQDPANAA0wDUQNUA1kDbwAAAAAAAAIBAAAAAAAAAGYAAAAAAAAAAAAAAAAAAANz",
+      "runOrder" : 1,
+      "scriptSourceString" : "mv build\/www\/js\/plugins\/plugins\/pdf.js build\/www\/js\/plugins\/\nmv build\/www\/js\/plugins\/plugins\/pdf.js.map build\/www\/js\/plugins\/",
+      "scriptType" : 1,
+      "uuidString" : "41888418-7C41-40BC-AE4C-366D5F96EF07"
+    }
   ],
   "manualImportLinks" : {
 
@@ -262,9 +588,9 @@
     "creationDate" : 771059998.87183404,
     "displayValue" : "showmaster",
     "displayValueWasSetByUser" : 0,
-    "iconImageName" : "brackets-cafe",
+    "iconImageName" : "\/source\/www\/img\/favicon\/apple-touch-icon.png",
     "iconImageWasSetByUser" : 0,
-    "lastBuiltDate" : 771619887.32442701
+    "lastBuiltDate" : 772892230.10179698
   },
   "projectSettings" : {
     "abortBuildOnError" : 1,
@@ -1759,14 +2085,14 @@
       "autoOutputPathReplace2" : "",
       "autoOutputPathStyle" : 0,
       "createDeclarationFile" : 0,
-      "jsxMode" : 0,
-      "minifierStyle" : 0,
+      "jsxMode" : 1,
+      "minifierStyle" : 2,
       "moduleDetectionType" : 0,
       "moduleResolutionType" : 0,
-      "moduleType" : 2,
-      "removeComments" : 0,
-      "sourceMapStyle" : 0,
-      "targetECMAVersion" : 2018
+      "moduleType" : 2022,
+      "removeComments" : 1,
+      "sourceMapStyle" : 3,
+      "targetECMAVersion" : 2022
     },
     "languageDefaultsUserDefined" : [
 
@@ -1829,7 +2155,7 @@
     "tsAllowUMDGlobalAccess" : 0,
     "tsAllowUnreachableCode" : 0,
     "tsAllowUnusedLabels" : 0,
-    "tsAlwaysStrict" : 0,
+    "tsAlwaysStrict" : 1,
     "tsDownlevelIteration" : 0,
     "tsEmitBOM" : 0,
     "tsEmitDecoratorMetadata" : 0,

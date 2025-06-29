@@ -359,7 +359,7 @@ def parse_xml_to_json(source_file, target_file):
 if __name__ == '__main__':
     # File paths
     source_file = '../data/original/manus.xml'
-    target_file = '../www/data/manus.json'
+    target_file = '../www/data/newmanus.json'
 
     # Execute the conversion
     parse_xml_to_json(source_file, target_file)

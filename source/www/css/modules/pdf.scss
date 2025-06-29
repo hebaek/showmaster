@@ -1,0 +1,25 @@
+#pdf {
+    grid-area: pdf;
+
+    margin: 1rem 1rem 1rem 0;
+
+    background-color: #ffffff;
+    box-shadow: 0 0 5px var(--default-shadow);
+
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: start;
+    gap: 10px;
+
+    overflow-x: scroll;
+    overflow-y: clip;
+
+    .pdf_page {
+        display: none;
+        box-shadow: 0 0 5px var(--default-shadow);
+    }
+}
+
+.fullscreen #pdf {
+    margin: 0;
+}
