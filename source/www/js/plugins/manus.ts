@@ -220,10 +220,18 @@ export const setup = async (): Promise<void> => {
     render_cues()
     create_shortcuts()
 
+    $('#manus .scene').sortable({
+        axis: 'y',
+        connectWith: '.scene', // Allow sorting between scenes
+        items: '> .cues, > .content', // Sortable items
+        cancel: '.content', // Prevent sorting for content
+        placeholder: 'cues-placeholder' // Placeholder style
+    }).disableSelection();
+
     const pos = localStorage.getItem('scroll_position')
     if (pos) { $('#manus').scrollTop(parseInt(pos)) }
 
-    make_draggable()
+//    make_draggable()
 
     get_active()
     setup_events()

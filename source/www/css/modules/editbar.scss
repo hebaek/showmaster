@@ -1,0 +1,22 @@
+#editbar {
+    position: fixed;
+    top: 0;
+    left: calc(100vw - var(--editbar-width));
+
+    width: var(--editbar-width);
+    height: var(--unit-100vh);
+
+    background-color: beige;
+
+    z-index: 10;
+}
+
+
+
+#editbar .cue {
+    margin: 1em;
+    width: calc(100% - 2em);
+    height: 3rem;
+    background-color: gold;
+    border: 1px solid black;
+}

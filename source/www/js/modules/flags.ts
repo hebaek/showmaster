@@ -1,5 +1,6 @@
 const modules = {
     toolbar: { enable: true, file: '../plugins/toolbar.js' },
+    editbar: { enable: true, file: '../plugins/editbar.js' },
     manus:   { enable: true, file: '../plugins/manus.js'   },
     pdf:     { enable: true, file: '../plugins/pdf.js'     },
 }

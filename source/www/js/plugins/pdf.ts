@@ -164,8 +164,9 @@ const scroll_to_page = page => {
     const last = pages.length
 
     let current = parseInt(localStorage.getItem('current_pdf_page')) || 0
-    if      (page === 'next') { page = Math.min(last - 1, current + 1) }
-    else if (page === 'prev') { page = Math.max(       0, current - 1) }
+    if      (page === 'next'   ) { page = Math.min(last - 1, current + 1) }
+    else if (page === 'prev'   ) { page = Math.max(       0, current - 1) }
+    else if (page === 'current') { page = current }
     localStorage.setItem('current_pdf_page', page.toString())
 
     const gap = parseInt(container.css('gap')) || 0
@@ -274,7 +275,9 @@ export const setup = async (): Promise<void> => {
     ]
 
     await pdf_load(pdf)
-    pdf_render(pdf)
+    await pdf_render(pdf)
 
     setup_events()
+    get_active()
+    scroll_to_page('current')
 }

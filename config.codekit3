@@ -77,6 +77,174 @@
       "oAP" : "\/build\/data\/originals\/manus.xml",
       "oF" : 0
     },
+    "\/source\/db\/v1\/create.sql" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/build\/db\/v1\/create.sql",
+      "oF" : 0
+    },
+    "\/source\/db\/v1\/insert.sql" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/build\/db\/v1\/insert.sql",
+      "oF" : 0
+    },
+    "\/source\/db\/v1\/query.sql" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/build\/db\/v1\/query.sql",
+      "oF" : 0
+    },
+    "\/source\/db\/v1\/views.sql" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/build\/db\/v1\/views.sql",
+      "oF" : 0
+    },
+    "\/source\/db\/v2\/create.sql" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/build\/db\/v2\/create.sql",
+      "oF" : 0
+    },
+    "\/source\/db\/v2\/extract.py" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/build\/db\/v2\/extract.py",
+      "oF" : 0
+    },
+    "\/source\/db\/v2\/insert.sql" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/build\/db\/v2\/insert.sql",
+      "oF" : 0
+    },
+    "\/source\/db\/v2\/views.sql" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/build\/db\/v2\/views.sql",
+      "oF" : 0
+    },
+    "\/source\/db\/v3\/create.sql" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/build\/db\/v3\/create.sql",
+      "oF" : 0
+    },
+    "\/source\/db\/v3\/import_fadein.py" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/build\/db\/v3\/import_fadein.py",
+      "oF" : 0
+    },
+    "\/source\/db\/v3\/insert.sql" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/build\/db\/v3\/insert.sql",
+      "oF" : 0
+    },
+    "\/source\/db\/v3\/parser.py" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/build\/db\/v3\/parser.py",
+      "oF" : 0
+    },
+    "\/source\/db\/v3\/playground.sql" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/build\/db\/v3\/playground.sql",
+      "oF" : 0
+    },
+    "\/source\/db\/v3\/procedures.sql" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/build\/db\/v3\/procedures.sql",
+      "oF" : 0
+    },
+    "\/source\/db\/v3\/sql.py" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/build\/db\/v3\/sql.py",
+      "oF" : 0
+    },
+    "\/source\/db\/v3\/text_functions.py" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/build\/db\/v3\/text_functions.py",
+      "oF" : 0
+    },
+    "\/source\/db\/v4\/create.sql" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/build\/db\/v4\/create.sql",
+      "oF" : 0
+    },
+    "\/source\/db\/v4\/insert.sql" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/build\/db\/v4\/insert.sql",
+      "oF" : 0
+    },
+    "\/source\/db\/v4\/playground.sql" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/build\/db\/v4\/playground.sql",
+      "oF" : 0
+    },
+    "\/source\/db\/v4\/procedures.sql" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/build\/db\/v4\/procedures.sql",
+      "oF" : 0
+    },
+    "\/source\/db\/v4\/views.sql" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/build\/db\/v4\/views.sql",
+      "oF" : 0
+    },
     "\/source\/php\/authenticate.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -163,6 +331,19 @@
       "ma" : 0,
       "oA" : 1,
       "oAP" : "\/build\/www\/css\/modules\/cues.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0
+    },
+    "\/source\/www\/css\/modules\/editbar.scss" : {
+      "aP" : 0,
+      "bl" : 0,
+      "co" : 0,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/build\/www\/css\/modules\/editbar.css",
       "oF" : 0,
       "oS" : 0,
       "pg" : 0
@@ -442,6 +623,21 @@
       "rC" : 1,
       "tEC" : 2022
     },
+    "\/source\/www\/js\/plugins\/editbar.ts" : {
+      "cDF" : 0,
+      "ft" : 128,
+      "jxM" : 1,
+      "ma" : 3,
+      "mDT" : 0,
+      "mi" : 2,
+      "moR" : 0,
+      "moT" : 2022,
+      "oA" : 0,
+      "oAP" : "\/build\/www\/js\/plugins\/editbar.js",
+      "oF" : 0,
+      "rC" : 1,
+      "tEC" : 2022
+    },
     "\/source\/www\/js\/plugins\/manus.ts" : {
       "cDF" : 0,
       "ft" : 128,
@@ -484,6 +680,51 @@
       "oA" : 0,
       "oAP" : "\/build\/www\/js\/plugins\/toolbar.js",
       "oF" : 2,
+      "rC" : 1,
+      "tEC" : 2022
+    },
+    "\/source\/www\/js\/showmaster.ts" : {
+      "cDF" : 0,
+      "ft" : 128,
+      "jxM" : 1,
+      "ma" : 3,
+      "mDT" : 0,
+      "mi" : 2,
+      "moR" : 0,
+      "moT" : 2022,
+      "oA" : 0,
+      "oAP" : "\/build\/www\/js\/showmaster.js",
+      "oF" : 0,
+      "rC" : 1,
+      "tEC" : 2022
+    },
+    "\/source\/www\/js\/smlib\/smlib.ts" : {
+      "cDF" : 0,
+      "ft" : 128,
+      "jxM" : 1,
+      "ma" : 3,
+      "mDT" : 0,
+      "mi" : 2,
+      "moR" : 0,
+      "moT" : 2022,
+      "oA" : 0,
+      "oAP" : "\/build\/www\/js\/smlib\/smlib.js",
+      "oF" : 0,
+      "rC" : 1,
+      "tEC" : 2022
+    },
+    "\/source\/www\/js\/smlib\/storage.ts" : {
+      "cDF" : 0,
+      "ft" : 128,
+      "jxM" : 1,
+      "ma" : 3,
+      "mDT" : 0,
+      "mi" : 2,
+      "moR" : 0,
+      "moT" : 2022,
+      "oA" : 0,
+      "oAP" : "\/build\/www\/js\/smlib\/storage.js",
+      "oF" : 0,
       "rC" : 1,
       "tEC" : 2022
     },
@@ -564,21 +805,30 @@
     },
     {
       "enabled" : 1,
-      "name" : "manus.ts",
-      "predicateDataBase64Encoded" : "YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMSAAGGoF8QD05TS2V5ZWRBcmNoaXZlctEICVRyb290gAGvEBYLDBMYICorLjU5Pj9CRkpPUFNZXWFjVSRudWxs0w0ODxAREl8QF05TQ29tcG91bmRQcmVkaWNhdGVUeXBlXxAPTlNTdWJwcmVkaWNhdGVzViRjbGFzcxACgAKAFdIUDxUXWk5TLm9iamVjdHOhFoADgBTUDxkaGxwdHh9fEBFOU1JpZ2h0RXhwcmVzc2lvbl8QEE5TTGVmdEV4cHJlc3Npb25fEBNOU1ByZWRpY2F0ZU9wZXJhdG9ygBOADoAEgBHVISIjJA8lJicoKVlOU09wZXJhbmReTlNTZWxlY3Rvck5hbWVfEBBOU0V4cHJlc3Npb25UeXBlW05TQXJndW1lbnRzgAaABRADgAiADVx2YWx1ZUZvcktleTrSIw8sLRABgAfSLzAxMlokY2xhc3NuYW1lWCRjbGFzc2VzXxAQTlNTZWxmRXhwcmVzc2lvbqMxMzRcTlNFeHByZXNzaW9uWE5TT2JqZWN00hQPNjihN4AJgAzTDyM6Ozw9WU5TS2V5UGF0aIALEAqACl1pbnB1dEZpbGVuYW1l0i8wQEFfEBxOU0tleVBhdGhTcGVjaWZpZXJFeHByZXNzaW9uo0AzNNIvMENEXk5TTXV0YWJsZUFycmF5o0NFNFdOU0FycmF50i8wR0hfEBNOU0tleVBhdGhFeHByZXNzaW9upEdJMzRfEBROU0Z1bmN0aW9uRXhwcmVzc2lvbtNLIw9MTU5fEA9OU0NvbnN0YW50VmFsdWWADxAAgBBYbWFudXMudHPSLzBRUl8QGU5TQ29uc3RhbnRWYWx1ZUV4cHJlc3Npb26jUTM01A9UVVZXTSdYWk5TTW9kaWZpZXJXTlNGbGFnc15OU09wZXJhdG9yVHlwZYASEGPSLzBaW18QFU5TSW5QcmVkaWNhdGVPcGVyYXRvcqNaXDRfEBNOU1ByZWRpY2F0ZU9wZXJhdG9y0i8wXl9fEBVOU0NvbXBhcmlzb25QcmVkaWNhdGWjXmA0W05TUHJlZGljYXRl0i8wRWKiRTTSLzBkZV8QE05TQ29tcG91bmRQcmVkaWNhdGWjZGA0AAgAEQAaACQAKQAyADcASQBMAFEAUwBsAHIAeQCTAKUArACuALAAsgC3AMIAxADGAMgA0QDlAPgBDgEQARIBFAEWASEBKwE6AU0BWQFbAV0BXwFhAWMBcAF1AXcBeQF+AYkBkgGlAakBtgG\/AcQBxgHIAcoB0QHbAd0B3wHhAe8B9AITAhcCHAIrAi8CNwI8AlICVwJuAnUChwKJAosCjQKWApsCtwK7AsQCzwLXAuYC6ALqAu8DBwMLAyEDJgM+A0IDTgNTA1YDWwNxAAAAAAAAAgEAAAAAAAAAZgAAAAAAAAAAAAAAAAAAA3U=",
-      "runOrder" : 0,
-      "scriptSourceString" : "mv build\/www\/js\/plugins\/plugins\/manus.js build\/www\/js\/plugins\/\nmv build\/www\/js\/plugins\/plugins\/manus.js.map build\/www\/js\/plugins\/",
-      "scriptType" : 1,
-      "uuidString" : "80DE5A02-C5E9-4F43-9E27-4CDDDBAD0F77"
-    },
-    {
-      "enabled" : 1,
       "name" : "pdf.ts",
       "predicateDataBase64Encoded" : "YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMSAAGGoF8QD05TS2V5ZWRBcmNoaXZlctEICVRyb290gAGvEBYLDBMYICorLjU5Pj9CRkpPUFNZXWFjVSRudWxs0w0ODxAREl8QF05TQ29tcG91bmRQcmVkaWNhdGVUeXBlXxAPTlNTdWJwcmVkaWNhdGVzViRjbGFzcxACgAKAFdIUDxUXWk5TLm9iamVjdHOhFoADgBTUDxkaGxwdHh9fEBFOU1JpZ2h0RXhwcmVzc2lvbl8QEE5TTGVmdEV4cHJlc3Npb25fEBNOU1ByZWRpY2F0ZU9wZXJhdG9ygBOADoAEgBHVISIjJA8lJicoKVlOU09wZXJhbmReTlNTZWxlY3Rvck5hbWVfEBBOU0V4cHJlc3Npb25UeXBlW05TQXJndW1lbnRzgAaABRADgAiADVx2YWx1ZUZvcktleTrSIw8sLRABgAfSLzAxMlokY2xhc3NuYW1lWCRjbGFzc2VzXxAQTlNTZWxmRXhwcmVzc2lvbqMxMzRcTlNFeHByZXNzaW9uWE5TT2JqZWN00hQPNjihN4AJgAzTDyM6Ozw9WU5TS2V5UGF0aIALEAqACl1pbnB1dEZpbGVuYW1l0i8wQEFfEBxOU0tleVBhdGhTcGVjaWZpZXJFeHByZXNzaW9uo0AzNNIvMENEXk5TTXV0YWJsZUFycmF5o0NFNFdOU0FycmF50i8wR0hfEBNOU0tleVBhdGhFeHByZXNzaW9upEdJMzRfEBROU0Z1bmN0aW9uRXhwcmVzc2lvbtNLIw9MTU5fEA9OU0NvbnN0YW50VmFsdWWADxAAgBBWcGRmLnRz0i8wUVJfEBlOU0NvbnN0YW50VmFsdWVFeHByZXNzaW9uo1EzNNQPVFVWV00nWFpOU01vZGlmaWVyV05TRmxhZ3NeTlNPcGVyYXRvclR5cGWAEhBj0i8wWltfEBVOU0luUHJlZGljYXRlT3BlcmF0b3KjWlw0XxATTlNQcmVkaWNhdGVPcGVyYXRvctIvMF5fXxAVTlNDb21wYXJpc29uUHJlZGljYXRlo15gNFtOU1ByZWRpY2F0ZdIvMEViokU00i8wZGVfEBNOU0NvbXBvdW5kUHJlZGljYXRlo2RgNAAIABEAGgAkACkAMgA3AEkATABRAFMAbAByAHkAkwClAKwArgCwALIAtwDCAMQAxgDIANEA5QD4AQ4BEAESARQBFgEhASsBOgFNAVkBWwFdAV8BYQFjAXABdQF3AXkBfgGJAZIBpQGpAbYBvwHEAcYByAHKAdEB2wHdAd8B4QHvAfQCEwIXAhwCKwIvAjcCPAJSAlcCbgJ1AocCiQKLAo0ClAKZArUCuQLCAs0C1QLkAuYC6ALtAwUDCQMfAyQDPANAA0wDUQNUA1kDbwAAAAAAAAIBAAAAAAAAAGYAAAAAAAAAAAAAAAAAAANz",
       "runOrder" : 1,
       "scriptSourceString" : "mv build\/www\/js\/plugins\/plugins\/pdf.js build\/www\/js\/plugins\/\nmv build\/www\/js\/plugins\/plugins\/pdf.js.map build\/www\/js\/plugins\/",
       "scriptType" : 1,
       "uuidString" : "41888418-7C41-40BC-AE4C-366D5F96EF07"
+    },
+    {
+      "enabled" : 0,
+      "name" : "editbar.ts",
+      "predicateDataBase64Encoded" : "YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMSAAGGoF8QD05TS2V5ZWRBcmNoaXZlctEICVRyb290gAGvEBYLDBMYICorLjU5Pj9CRkpPUFNZXWFjVSRudWxs0w0ODxAREl8QF05TQ29tcG91bmRQcmVkaWNhdGVUeXBlXxAPTlNTdWJwcmVkaWNhdGVzViRjbGFzcxACgAKAFdIUDxUXWk5TLm9iamVjdHOhFoADgBTUDxkaGxwdHh9fEBFOU1JpZ2h0RXhwcmVzc2lvbl8QEE5TTGVmdEV4cHJlc3Npb25fEBNOU1ByZWRpY2F0ZU9wZXJhdG9ygBOADoAEgBHVISIjJA8lJicoKVlOU09wZXJhbmReTlNTZWxlY3Rvck5hbWVfEBBOU0V4cHJlc3Npb25UeXBlW05TQXJndW1lbnRzgAaABRADgAiADVx2YWx1ZUZvcktleTrSIw8sLRABgAfSLzAxMlokY2xhc3NuYW1lWCRjbGFzc2VzXxAQTlNTZWxmRXhwcmVzc2lvbqMxMzRcTlNFeHByZXNzaW9uWE5TT2JqZWN00hQPNjihN4AJgAzTDyM6Ozw9WU5TS2V5UGF0aIALEAqACl1pbnB1dEZpbGVuYW1l0i8wQEFfEBxOU0tleVBhdGhTcGVjaWZpZXJFeHByZXNzaW9uo0AzNNIvMENEXk5TTXV0YWJsZUFycmF5o0NFNFdOU0FycmF50i8wR0hfEBNOU0tleVBhdGhFeHByZXNzaW9upEdJMzRfEBROU0Z1bmN0aW9uRXhwcmVzc2lvbtNLIw9MTU5fEA9OU0NvbnN0YW50VmFsdWWADxAAgBBaZWRpdGJhci50c9IvMFFSXxAZTlNDb25zdGFudFZhbHVlRXhwcmVzc2lvbqNRMzTUD1RVVldNJ1haTlNNb2RpZmllcldOU0ZsYWdzXk5TT3BlcmF0b3JUeXBlgBIQY9IvMFpbXxAVTlNJblByZWRpY2F0ZU9wZXJhdG9yo1pcNF8QE05TUHJlZGljYXRlT3BlcmF0b3LSLzBeX18QFU5TQ29tcGFyaXNvblByZWRpY2F0ZaNeYDRbTlNQcmVkaWNhdGXSLzBFYqJFNNIvMGRlXxATTlNDb21wb3VuZFByZWRpY2F0ZaNkYDQACAARABoAJAApADIANwBJAEwAUQBTAGwAcgB5AJMApQCsAK4AsACyALcAwgDEAMYAyADRAOUA+AEOARABEgEUARYBIQErAToBTQFZAVsBXQFfAWEBYwFwAXUBdwF5AX4BiQGSAaUBqQG2Ab8BxAHGAcgBygHRAdsB3QHfAeEB7wH0AhMCFwIcAisCLwI3AjwCUgJXAm4CdQKHAokCiwKNApgCnQK5Ar0CxgLRAtkC6ALqAuwC8QMJAw0DIwMoA0ADRANQA1UDWANdA3MAAAAAAAACAQAAAAAAAABmAAAAAAAAAAAAAAAAAAADdw==",
+      "runOrder" : 3,
+      "scriptSourceString" : "mv build\/www\/js\/plugins\/plugins\/editbar.js build\/www\/js\/plugins\/\nmv build\/www\/js\/plugins\/plugins\/editbar.js.map build\/www\/js\/plugins\/",
+      "scriptType" : 1,
+      "uuidString" : "A288293A-2B8A-4638-9ED7-C262087BB54E"
+    },
+    {
+      "enabled" : 1,
+      "name" : "manus.ts",
+      "predicateDataBase64Encoded" : "YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMSAAGGoF8QD05TS2V5ZWRBcmNoaXZlctEICVRyb290gAGvEBYLDBMYICorLjU5Pj9CRkpPUFNZXWFjVSRudWxs0w0ODxAREl8QF05TQ29tcG91bmRQcmVkaWNhdGVUeXBlXxAPTlNTdWJwcmVkaWNhdGVzViRjbGFzcxACgAKAFdIUDxUXWk5TLm9iamVjdHOhFoADgBTUDxkaGxwdHh9fEBFOU1JpZ2h0RXhwcmVzc2lvbl8QEE5TTGVmdEV4cHJlc3Npb25fEBNOU1ByZWRpY2F0ZU9wZXJhdG9ygBOADoAEgBHVISIjJA8lJicoKVlOU09wZXJhbmReTlNTZWxlY3Rvck5hbWVfEBBOU0V4cHJlc3Npb25UeXBlW05TQXJndW1lbnRzgAaABRADgAiADVx2YWx1ZUZvcktleTrSIw8sLRABgAfSLzAxMlokY2xhc3NuYW1lWCRjbGFzc2VzXxAQTlNTZWxmRXhwcmVzc2lvbqMxMzRcTlNFeHByZXNzaW9uWE5TT2JqZWN00hQPNjihN4AJgAzTDyM6Ozw9WU5TS2V5UGF0aIALEAqACl1pbnB1dEZpbGVuYW1l0i8wQEFfEBxOU0tleVBhdGhTcGVjaWZpZXJFeHByZXNzaW9uo0AzNNIvMENEXk5TTXV0YWJsZUFycmF5o0NFNFdOU0FycmF50i8wR0hfEBNOU0tleVBhdGhFeHByZXNzaW9upEdJMzRfEBROU0Z1bmN0aW9uRXhwcmVzc2lvbtNLIw9MTU5fEA9OU0NvbnN0YW50VmFsdWWADxAAgBBYbWFudXMudHPSLzBRUl8QGU5TQ29uc3RhbnRWYWx1ZUV4cHJlc3Npb26jUTM01A9UVVZXTSdYWk5TTW9kaWZpZXJXTlNGbGFnc15OU09wZXJhdG9yVHlwZYASEGPSLzBaW18QFU5TSW5QcmVkaWNhdGVPcGVyYXRvcqNaXDRfEBNOU1ByZWRpY2F0ZU9wZXJhdG9y0i8wXl9fEBVOU0NvbXBhcmlzb25QcmVkaWNhdGWjXmA0W05TUHJlZGljYXRl0i8wRWKiRTTSLzBkZV8QE05TQ29tcG91bmRQcmVkaWNhdGWjZGA0AAgAEQAaACQAKQAyADcASQBMAFEAUwBsAHIAeQCTAKUArACuALAAsgC3AMIAxADGAMgA0QDlAPgBDgEQARIBFAEWASEBKwE6AU0BWQFbAV0BXwFhAWMBcAF1AXcBeQF+AYkBkgGlAakBtgG\/AcQBxgHIAcoB0QHbAd0B3wHhAe8B9AITAhcCHAIrAi8CNwI8AlICVwJuAnUChwKJAosCjQKWApsCtwK7AsQCzwLXAuYC6ALqAu8DBwMLAyEDJgM+A0IDTgNTA1YDWwNxAAAAAAAAAgEAAAAAAAAAZgAAAAAAAAAAAAAAAAAAA3U=",
+      "runOrder" : 0,
+      "scriptSourceString" : "mv build\/www\/js\/plugins\/plugins\/manus.js build\/www\/js\/plugins\/\nmv build\/www\/js\/plugins\/plugins\/manus.js.map build\/www\/js\/plugins\/",
+      "scriptType" : 1,
+      "uuidString" : "80DE5A02-C5E9-4F43-9E27-4CDDDBAD0F77"
     }
   ],
   "manualImportLinks" : {
@@ -590,7 +840,7 @@
     "displayValueWasSetByUser" : 0,
     "iconImageName" : "\/source\/www\/img\/favicon\/apple-touch-icon.png",
     "iconImageWasSetByUser" : 0,
-    "lastBuiltDate" : 772892230.10179698
+    "lastBuiltDate" : 773048556.73461294
   },
   "projectSettings" : {
     "abortBuildOnError" : 1,

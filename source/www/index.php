@@ -20,6 +20,7 @@
     <script src='js/external/jquery-ui-1.13.2.min.js'></script>
 
     <script src='js/modules/main.js' type='module'></script>
+<!--    <script src='js/showmaster.js' type='module'></script> -->
 
     <script type='module'>
         import { smlib } from '/js/modules/smlib.js'
